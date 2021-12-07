@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Flectra. See LICENSE file for full copyright and licensing details.
 
 from flectra import fields
 from flectra.addons.product.tests.test_product_attribute_value_config import TestProductAttributeValueCommon

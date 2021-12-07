@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Flectra. See LICENSE file for full copyright and licensing details.
 
 from flectra import fields, tools
 from flectra.addons.stock_account.tests.test_anglo_saxon_valuation_reconciliation_common import ValuationReconciliationTestCommon
