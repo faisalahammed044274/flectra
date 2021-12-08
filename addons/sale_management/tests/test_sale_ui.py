@@ -1,5 +1,5 @@
 import flectra.tests
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Flectra. See LICENSE file for full copyright and licensing details.
 
 
 @flectra.tests.tagged('post_install', '-at_install')

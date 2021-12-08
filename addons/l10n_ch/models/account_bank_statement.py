@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Flectra. See LICENSE file for full copyright and licensing details.
 
 from flectra import models, fields, api, _
 from flectra.addons.l10n_ch.models.res_bank import _is_l10n_ch_postal
