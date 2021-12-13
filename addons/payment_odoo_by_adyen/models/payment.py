@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Flectra. See LICENSE file for full copyright and licensing details.
 
 import hashlib
 import hmac
@@ -9,7 +9,7 @@ from werkzeug import urls
 
 from flectra import _, api, fields, models
 from flectra.exceptions import ValidationError
-from flectra.addons.payment_odoo_by_adyen.controllers.main import FlectraByAdyenController
+from flectra.addons.payment_flectra_by_adyen.controllers.main import FlectraByAdyenController
 
 _logger = logging.getLogger(__name__)
 

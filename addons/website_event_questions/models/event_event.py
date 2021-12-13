@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Flectra. See LICENSE file for full copyright and licensing details.
 
 from flectra import api, fields, models
 
@@ -53,7 +53,7 @@ class EventEvent(models.Model):
                 command = [(3, question.id) for question in questions_toremove]
             else:
                 command = [(5, 0)]
-            if event.event_type_id.use_mail_schedule:
+            if event.event_type_id.use_questions:
                 command += [
                     (0, 0, {
                         'title': question.title,

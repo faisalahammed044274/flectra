@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Flectra. See LICENSE file for full copyright and licensing details.
 
 from flectra import api, fields, models, _
 from flectra.tools.misc import formatLang
@@ -49,8 +49,8 @@ class SaleOrder(models.Model):
         self._send_reward_coupon_mail()
         return super(SaleOrder, self).action_confirm()
 
-    def action_cancel(self):
-        res = super(SaleOrder, self).action_cancel()
+    def _action_cancel(self):
+        res = super()._action_cancel()
         self.generated_coupon_ids.write({'state': 'expired'})
         self.applied_coupon_ids.write({'state': 'new'})
         self.applied_coupon_ids.sales_order_id = False
