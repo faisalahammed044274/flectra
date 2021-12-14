@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Flectra. See LICENSE file for full copyright and licensing details.
 import logging
 from lxml import etree
 import os
@@ -162,7 +162,7 @@ class Http(models.AbstractModel):
     @classmethod
     def _dispatch(cls):
         """
-        In case of rerouting for translate (e.g. when visiting flectrahq.com/fr_BE/),
+        In case of rerouting for translate (e.g. when visiting flectra.com/fr_BE/),
         _dispatch calls reroute() that returns _dispatch with altered request properties.
         The second _dispatch will continue until end of process. When second _dispatch is finished, the first _dispatch
         call receive the new altered request and continue.

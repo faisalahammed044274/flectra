@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Flectra. See LICENSE file for full copyright and licensing details.
 
 from flectra.addons.sms.tests import common as sms_common
 from flectra.addons.test_mail.tests.test_performance import BaseMailPerformance
