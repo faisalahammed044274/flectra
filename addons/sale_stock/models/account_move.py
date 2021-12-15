@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Flectra. See LICENSE file for full copyright and licensing details.
 
 from collections import defaultdict
 
@@ -92,7 +92,7 @@ class AccountMove(models.Model):
                 continue
             lot_values.append({
                 'product_name': lot_id.product_id.display_name,
-                'quantity': qty,
+                'quantity': self.env['ir.qweb.field.float'].value_to_html(qty, {'precision': self.env['decimal.precision'].precision_get('Product Unit of Measure')}),
                 'uom_name': lot_id.product_uom_id.name,
                 'lot_name': lot_id.name,
                 # The lot id is needed by localizations to inherit the method and add custom fields on the invoice's report.
