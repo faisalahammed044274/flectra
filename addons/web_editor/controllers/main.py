@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Flectra. See LICENSE file for full copyright and licensing details.
 import io
 import logging
 import re
@@ -20,7 +20,7 @@ from flectra.tools.misc import file_open
 from ..models.ir_attachment import SUPPORTED_IMAGE_MIMETYPES
 
 logger = logging.getLogger(__name__)
-DEFAULT_LIBRARY_ENDPOINT = 'https://media-api.flectrahq.com'
+DEFAULT_LIBRARY_ENDPOINT = 'https://media-api.flectra.com'
 
 class Web_Editor(http.Controller):
     #------------------------------------------------------

@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Flectra. See LICENSE file for full copyright and licensing details.
 
 import logging
 import poplib
@@ -191,6 +191,7 @@ flectra_mailgate: "|/path/to/flectra-mailgate.py --host=localhost -u %(uid)d -p 
             elif server.server_type == 'pop':
                 try:
                     while True:
+                        failed_in_loop = 0
                         pop_server = server.connect()
                         (num_messages, total_size) = pop_server.stat()
                         pop_server.list()
@@ -204,11 +205,13 @@ flectra_mailgate: "|/path/to/flectra-mailgate.py --host=localhost -u %(uid)d -p 
                             except Exception:
                                 _logger.info('Failed to process mail from %s server %s.', server.server_type, server.name, exc_info=True)
                                 failed += 1
+                                failed_in_loop += 1
                             self.env.cr.commit()
-                        if num_messages < MAX_POP_MESSAGES:
+                        _logger.info("Fetched %d email(s) on %s server %s; %d succeeded, %d failed.", num, server.server_type, server.name, (num - failed_in_loop), failed_in_loop)
+                        # Stop if (1) no more message left or (2) all messages have failed
+                        if num_messages < MAX_POP_MESSAGES or failed_in_loop == num:
                             break
                         pop_server.quit()
-                        _logger.info("Fetched %d email(s) on %s server %s; %d succeeded, %d failed.", num_messages, server.server_type, server.name, (num_messages - failed), failed)
                 except Exception:
                     _logger.info("General failure when trying to fetch mail from %s server %s.", server.server_type, server.name, exc_info=True)
                 finally:
