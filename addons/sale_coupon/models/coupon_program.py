@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Flectra. See LICENSE file for full copyright and licensing details.
 
 from flectra import api, fields, models, _
 
@@ -103,7 +103,7 @@ class CouponProgram(models.Model):
         return self.filtered(lambda program: program.promo_code_usage == 'code_needed' and program.promo_code != order.promo_code)
 
     def _filter_unexpired_programs(self, order):
-        return self.filtered(lambda program: program.maximum_use_number == 0 or program.order_count <= program.maximum_use_number)
+        return self.filtered(lambda program: program.maximum_use_number == 0 or program.order_count < program.maximum_use_number)
 
     def _filter_programs_on_partners(self, order):
         return self.filtered(lambda program: program._is_valid_partner(order.partner_id))
