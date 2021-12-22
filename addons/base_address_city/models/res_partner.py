@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Flectra. See LICENSE file for full copyright and licensing details.
 
 from lxml import etree
 
@@ -23,6 +23,11 @@ class Partner(models.Model):
             self.city = False
             self.zip = False
             self.state_id = False
+
+    @api.model
+    def _address_fields(self):
+        """Returns the list of address fields that are synced from the parent."""
+        return super(Partner, self)._address_fields() + ['city_id',]
 
     @api.model
     def _fields_view_get_address(self, arch):

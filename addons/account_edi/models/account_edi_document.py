@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Flectra. See LICENSE file for full copyright and licensing details.
 
 from flectra import models, fields, api
 from flectra.addons.account_edi_extended.models.account_edi_document import DEFAULT_BLOCKING_LEVEL
