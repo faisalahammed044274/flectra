@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Flectra. See LICENSE file for full copyright and licensing details.
 
 import base64
 from random import choice
@@ -105,7 +105,7 @@ class HrEmployeePrivate(models.Model):
         string='Tags')
     # misc
     notes = fields.Text('Notes', groups="hr.group_hr_user")
-    color = fields.Integer('Color Index', default=0, groups="hr.group_hr_user")
+    color = fields.Integer('Color Index', default=0)
     barcode = fields.Char(string="Badge ID", help="ID used for employee identification.", groups="hr.group_hr_user", copy=False)
     pin = fields.Char(string="PIN", groups="hr.group_hr_user", copy=False,
         help="PIN used to Check In/Out in Kiosk Mode (if enabled in Configuration).")

@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Flectra. See LICENSE file for full copyright and licensing details.
 from flectra.addons.sale_coupon.tests.common import TestSaleCouponCommon
 from flectra.exceptions import UserError
 from flectra.tests import tagged
