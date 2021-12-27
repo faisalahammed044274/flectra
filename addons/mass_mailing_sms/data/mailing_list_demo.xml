@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<flectra><data noupdate="0">
+<odoo><data noupdate="0">
     <record id="mailing_list_sms_0" model="mailing.list">
         <field name="name">Interested in Tree Promotions</field>
     </record>
@@ -29,4 +29,4 @@
         <field name="mobile">dummy</field>
         <field name="list_ids" eval="[(4, ref('mass_mailing_sms.mailing_list_sms_0'))]"/>
     </record>
-</data></flectra>
+</data></odoo>

@@ -1,9 +1,9 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo. See LICENSE file for full copyright and licensing details.
 
-from flectra import http
+from odoo import http
 
-from flectra.addons.website_event_track.controllers.event_track import EventTrackController
+from odoo.addons.website_event_track.controllers.event_track import EventTrackController
 
 
 class EventTrackLiveController(EventTrackController):

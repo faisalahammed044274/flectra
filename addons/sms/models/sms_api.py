@@ -1,10 +1,10 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo. See LICENSE file for full copyright and licensing details.
 
-from flectra import api, models
-from flectra.addons.iap.tools import iap_tools
+from odoo import api, models
+from odoo.addons.iap.tools import iap_tools
 
-DEFAULT_ENDPOINT = 'https://iap-sms.flectrahq.com'
+DEFAULT_ENDPOINT = 'https://iap-sms.odoo.com'
 
 
 class SmsApi(models.AbstractModel):

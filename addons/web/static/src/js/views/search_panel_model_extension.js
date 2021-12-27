@@ -1,4 +1,4 @@
-flectra.define("web/static/src/js/views/search_panel_model_extension.js", function (require) {
+odoo.define("web/static/src/js/views/search_panel_model_extension.js", function (require) {
     "use strict";
 
     const ActionModel = require("web/static/src/js/views/action_model.js");

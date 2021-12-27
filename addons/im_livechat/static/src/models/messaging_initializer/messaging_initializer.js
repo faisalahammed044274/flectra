@@ -1,4 +1,4 @@
-flectra.define('im_livechat/static/src/models/messaging_initializer/messaging_initializer.js', function (require) {
+odoo.define('im_livechat/static/src/models/messaging_initializer/messaging_initializer.js', function (require) {
 'use strict';
 
 const { registerInstancePatchModel } = require('mail/static/src/model/model_core.js');

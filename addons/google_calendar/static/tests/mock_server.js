@@ -1,4 +1,4 @@
-flectra.define('google_calendar.MockServer', function (require) {
+odoo.define('google_calendar.MockServer', function (require) {
     'use strict';
 
     var MockServer = require('web.MockServer');

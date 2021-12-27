@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo. See LICENSE file for full copyright and licensing details.
 
-from flectra import api, models
-from flectra.tools import float_is_zero
+from odoo import api, models
+from odoo.tools import float_is_zero
 
 
 class StockMoveLine(models.Model):

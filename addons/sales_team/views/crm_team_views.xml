@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<flectra><data>
+<odoo><data>
 
     <record id="crm_team_salesteams_search" model="ir.ui.view">
         <field name="name">Sales Teams - Search</field>
@@ -242,4 +242,4 @@
     </record>
 
 </data>
-</flectra>
+</odoo>

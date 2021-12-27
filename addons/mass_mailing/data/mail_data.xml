@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<flectra><data noupdate="1">
+<odoo><data noupdate="1">
     <!-- Reference: https://litmus.com/community/learning/24-how-to-code-a-responsive-email-from-scratch -->
     <template id="mass_mailing_mail_layout">
         &lt;!DOCTYPE html&gt;
@@ -17,4 +17,4 @@
             </body>
         </html>
     </template>
-</data></flectra>
+</data></odoo>

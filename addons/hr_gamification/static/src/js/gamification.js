@@ -1,4 +1,4 @@
-flectra.define('hr_gamification.hr_gamification', function(require) {
+odoo.define('hr_gamification.hr_gamification', function(require) {
 "use strict";
 
 var KanbanRecord = require('web.KanbanRecord');

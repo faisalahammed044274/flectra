@@ -2,7 +2,7 @@
 
 import json
 
-from flectra.tests import common
+from odoo.tests import common
 
 
 class TestMenu(common.TransactionCase):

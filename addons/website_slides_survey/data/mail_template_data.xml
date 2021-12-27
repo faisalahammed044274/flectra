@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<flectra>
+<odoo>
     <data noupdate="1">
         <record id="mail_template_user_input_certification_failed" model="mail.template">
             <field name="name">Certification failed email</field>
@@ -14,7 +14,7 @@
         Don't hesitate to enroll again!
         <div style="margin: 16px 0px 16px 0px;">
             <a href="${(object.slide_partner_id.channel_id.website_url) | safe}"
-                style="background-color: #009EFB; padding: 8px 16px 8px 16px; text-decoration: none; color: #fff; border-radius: 5px; font-size:13px;">
+                style="background-color: #875A7B; padding: 8px 16px 8px 16px; text-decoration: none; color: #fff; border-radius: 5px; font-size:13px;">
                 Enroll now
             </a>
         </div>
@@ -26,4 +26,4 @@
             <field name="auto_delete" eval="True"/>
         </record>
     </data>
-</flectra>
+</odoo>

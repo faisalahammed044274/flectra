@@ -1,4 +1,4 @@
-<flectra>
+<odoo>
     <data noupdate="1"> 
         <record id="location_order" model="stock.location">
             <field name="name">Order Processing</field>
@@ -24,4 +24,4 @@
             <field name="location_id" ref="stock.location_dispatch_zone"/>
         </record>
     </data>
-</flectra>
+</odoo>

@@ -1,4 +1,4 @@
-flectra.define('hr.Many2OneAvatarEmployeeTests', function (require) {
+odoo.define('hr.Many2OneAvatarEmployeeTests', function (require) {
 "use strict";
 
 const {

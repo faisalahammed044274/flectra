@@ -1,4 +1,4 @@
-flectra.define('event.event_steps', function (require) {
+odoo.define('event.event_steps', function (require) {
 "use strict";
 
 var core = require('web.core');
@@ -15,7 +15,7 @@ return EventAdditionalTourSteps;
 
 });
 
-flectra.define('event.event_tour', function (require) {
+odoo.define('event.event_tour', function (require) {
 "use strict";
 
 var core = require('web.core');
@@ -46,7 +46,7 @@ tour.register('event_tour', {
 }, {
     trigger: '.o_event_form_view input[name="name"]',
     content: _t("This is the <b>name</b> your guests will see when registering."),
-    run: 'text Flectra Experience 2020',
+    run: 'text Odoo Experience 2020',
 }, {
     trigger: '.o_event_form_view input[name="date_end"]',
     content: _t("When will your event take place? <b>Select</b> the start and end dates <b>and click Apply</b>."),

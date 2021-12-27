@@ -1,16 +1,16 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo. See LICENSE file for full copyright and licensing details.
 
 import base64
 
 from unittest.mock import patch
 
-from flectra.addons.mail.tests.common import mail_new_test_user
-from flectra.addons.test_mail.models.test_mail_models import MailTestTicket
-from flectra.addons.test_mail.tests.common import TestMailCommon, TestRecipients
-from flectra.tests import tagged
-from flectra.tests.common import users, Form
-from flectra.tools import mute_logger
+from odoo.addons.mail.tests.common import mail_new_test_user
+from odoo.addons.test_mail.models.test_mail_models import MailTestTicket
+from odoo.addons.test_mail.tests.common import TestMailCommon, TestRecipients
+from odoo.tests import tagged
+from odoo.tests.common import users, Form
+from odoo.tools import mute_logger
 
 @tagged('mail_composer')
 class TestMailComposer(TestMailCommon, TestRecipients):
@@ -195,7 +195,7 @@ class TestComposerForm(TestMailComposer):
 class TestComposerInternals(TestMailComposer):
 
     @users('employee')
-    @mute_logger('flectra.addons.mail.models.mail_mail')
+    @mute_logger('odoo.addons.mail.models.mail_mail')
     def test_mail_composer_attachments_comment(self):
         """ Test attachments management in comment mode. """
         attachment_data = self._generate_attachments_data(3)
@@ -229,7 +229,7 @@ class TestComposerInternals(TestMailComposer):
         self.assertEqual(generated.res_id, 0)
 
     @users('employee')
-    @mute_logger('flectra.addons.mail.models.mail_mail')
+    @mute_logger('odoo.addons.mail.models.mail_mail')
     def test_mail_composer_author(self):
         """ Test author_id / email_from synchronization, in both comment and mass mail
         modes. """
@@ -380,7 +380,7 @@ class TestComposerInternals(TestMailComposer):
             self.assertEqual(composer.mail_server_id.id, False)
 
     @users('employee')
-    @mute_logger('flectra.tests', 'flectra.addons.mail.models.mail_mail')
+    @mute_logger('odoo.tests', 'odoo.addons.mail.models.mail_mail')
     def test_mail_composer_parent(self):
         """ Test specific management in comment mode when having parent_id set:
         record_name, subject, parent's partners. """
@@ -447,7 +447,7 @@ class TestComposerResultsComment(TestMailComposer):
     notification and emails generated during this process. """
 
     @users('employee')
-    @mute_logger('flectra.tests', 'flectra.addons.mail.models.mail_mail')
+    @mute_logger('odoo.tests', 'odoo.addons.mail.models.mail_mail')
     def test_mail_composer_notifications_delete(self):
         """ Notifications are correctly deleted once sent """
         composer = self.env['mail.compose.message'].with_context(
@@ -489,7 +489,7 @@ class TestComposerResultsComment(TestMailComposer):
         self.assertEqual(len(self._new_mails.exists()), 2, 'Should not have deleted mail.mail records')
 
     @users('employee')
-    @mute_logger('flectra.tests', 'flectra.addons.mail.models.mail_mail')
+    @mute_logger('odoo.tests', 'odoo.addons.mail.models.mail_mail')
     def test_mail_composer_recipients(self):
         """ Test partner_ids given to composer are given to the final message. """
         composer = self.env['mail.compose.message'].with_context(
@@ -508,7 +508,7 @@ class TestComposerResultsComment(TestMailComposer):
         self.assertEqual(message.partner_ids, self.partner_1 | self.partner_2)
 
     @users('employee')
-    @mute_logger('flectra.models.unlink', 'flectra.addons.mail.models.mail_mail')
+    @mute_logger('odoo.models.unlink', 'odoo.addons.mail.models.mail_mail')
     def test_mail_composer_wtpl_complete(self):
         """ Test a posting process using a complex template, holding several
         additional recipients and attachments.
@@ -617,7 +617,7 @@ class TestComposerResultsMass(TestMailComposer):
         })
 
     @users('employee')
-    @mute_logger('flectra.models.unlink', 'flectra.addons.mail.models.mail_mail')
+    @mute_logger('odoo.models.unlink', 'odoo.addons.mail.models.mail_mail')
     def test_mail_composer_wtpl(self):
         self.template.auto_delete = False  # keep sent emails to check content
         composer_form = Form(self.env['mail.compose.message'].with_context(
@@ -650,7 +650,7 @@ class TestComposerResultsMass(TestMailComposer):
             self.assertEqual(message.partner_ids, self.env['res.partner'])
 
     @users('employee')
-    @mute_logger('flectra.models.unlink', 'flectra.addons.mail.models.mail_mail')
+    @mute_logger('odoo.models.unlink', 'odoo.addons.mail.models.mail_mail')
     def test_mail_composer_wtpl_complete(self):
         """ Test a composer in mass mode with a quite complete template, containing
         notably email-based recipients and attachments. """
@@ -722,7 +722,7 @@ class TestComposerResultsMass(TestMailComposer):
                                )
 
     @users('employee')
-    @mute_logger('flectra.models.unlink', 'flectra.addons.mail.models.mail_mail')
+    @mute_logger('odoo.models.unlink', 'odoo.addons.mail.models.mail_mail')
     def test_mail_composer_wtpl_delete(self):
         self.template.auto_delete = True
         composer_form = Form(self.env['mail.compose.message'].with_context(
@@ -754,7 +754,7 @@ class TestComposerResultsMass(TestMailComposer):
             self.assertEqual(message.partner_ids, self.env['res.partner'])
 
     @users('employee')
-    @mute_logger('flectra.models.unlink', 'flectra.addons.mail.models.mail_mail')
+    @mute_logger('odoo.models.unlink', 'odoo.addons.mail.models.mail_mail')
     def test_mail_composer_wtpl_delete_notif(self):
         self.template.auto_delete = True
         composer_form = Form(self.env['mail.compose.message'].with_context(
@@ -779,7 +779,7 @@ class TestComposerResultsMass(TestMailComposer):
             self.assertSentEmail(self.partner_employee, record.customer_id)
 
     @users('employee')
-    @mute_logger('flectra.models.unlink', 'flectra.addons.mail.models.mail_mail')
+    @mute_logger('odoo.models.unlink', 'odoo.addons.mail.models.mail_mail')
     def test_mail_composer_wtpl_recipients(self):
         """ Test various combinations of recipients: active_domain, active_id,
         active_ids, ... to ensure fallback behavior are working. """

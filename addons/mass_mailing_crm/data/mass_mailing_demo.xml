@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<flectra>
+<odoo>
     <data noupdate="1">
     <record id="mass_mail_lead_0" model="mailing.mailing">
         <field name="name">Lead Recall</field>
@@ -70,9 +70,9 @@
 </td></tr>
 <!-- POWERED BY -->
 <tr><td align="center" style="min-width: 590px;">
-        Powered by <a target="_blank" href="https://www.flectrahq.com?utm_source=db&amp;utm_medium=email" style="color: #009EFB;">Flectra</a>
+        Powered by <a target="_blank" href="https://www.odoo.com?utm_source=db&amp;utm_medium=email" style="color: #875A7B;">Odoo</a>
 </td></tr>
 </table></field>
     </record>
 </data>
-</flectra>
+</odoo>

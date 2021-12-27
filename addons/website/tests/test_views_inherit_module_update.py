@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo. See LICENSE file for full copyright and licensing details.
 
-from flectra.tests import standalone
+from odoo.tests import standalone
 
 """
 This test ensure `inherit_id` update is correctly replicated on cow views.

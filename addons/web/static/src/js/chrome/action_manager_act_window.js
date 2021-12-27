@@ -1,8 +1,8 @@
-flectra.define('web.ActWindowActionManager', function (require) {
+odoo.define('web.ActWindowActionManager', function (require) {
 "use strict";
 
 /**
- * The purpose of this file is to add the support of Flectra actions of type
+ * The purpose of this file is to add the support of Odoo actions of type
  * 'ir.actions.act_window' to the ActionManager.
  */
 
@@ -585,7 +585,7 @@ ActionManager.include({
      * case an 'ir.actions.act_window_close' is executed.
      *
      * @private
-     * @param {FlectraEvent} ev
+     * @param {OdooEvent} ev
      * @param {Object} ev.data.action_data typically, the html attributes of the
      *   button extended with additional information like the context
      * @param {Object} [ev.data.action_data.special=false]
@@ -698,7 +698,7 @@ ActionManager.include({
     },
     /**
      * @private
-     * @param {FlectraEvent} ev
+     * @param {OdooEvent} ev
      * @param {string} ev.data.controllerID the id of the controller that
      *   triggered the event
      * @param {string} ev.data.viewType the type of view to switch to

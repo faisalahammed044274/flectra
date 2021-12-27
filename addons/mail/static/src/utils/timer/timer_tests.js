@@ -1,4 +1,4 @@
-flectra.define('mail/static/src/utils/timer/timer_tests.js', function (require) {
+odoo.define('mail/static/src/utils/timer/timer_tests.js', function (require) {
 'use strict';
 
 const { afterEach, beforeEach, nextTick, start } = require('mail/static/src/utils/test_utils.js');

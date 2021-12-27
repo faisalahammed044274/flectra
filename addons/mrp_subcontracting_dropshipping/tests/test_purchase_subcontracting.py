@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo. See LICENSE file for full copyright and licensing details.
 
-from flectra.tests import Form
-from flectra.addons.mrp_subcontracting.tests.common import TestMrpSubcontractingCommon
+from odoo.tests import Form
+from odoo.addons.mrp_subcontracting.tests.common import TestMrpSubcontractingCommon
 
 
 class TestSubcontractingDropshippingFlows(TestMrpSubcontractingCommon):

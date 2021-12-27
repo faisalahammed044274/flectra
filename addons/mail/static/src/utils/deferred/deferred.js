@@ -1,4 +1,4 @@
-flectra.define('mail/static/src/utils/deferred/deferred.js', function (require) {
+odoo.define('mail/static/src/utils/deferred/deferred.js', function (require) {
 'use strict';
 
 /**

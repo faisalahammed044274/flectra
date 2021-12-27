@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<flectra>
+<odoo>
 <data noupdate="1">
     <!-- Maintenance-specific activities, for automatic generation mainly -->
     <record id="mail_act_maintenance_request" model="mail.activity.type">
@@ -56,4 +56,4 @@
         <field name="name">Internal Maintenance</field>
     </record>
 </data>
-</flectra>
+</odoo>

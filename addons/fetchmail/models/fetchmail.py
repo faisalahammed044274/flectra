@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo. See LICENSE file for full copyright and licensing details.
 
 import logging
 import poplib
@@ -8,8 +8,8 @@ from socket import gaierror, timeout
 from imaplib import IMAP4, IMAP4_SSL
 from poplib import POP3, POP3_SSL
 
-from flectra import api, fields, models, tools, _
-from flectra.exceptions import UserError
+from odoo import api, fields, models, tools, _
+from odoo.exceptions import UserError
 
 
 _logger = logging.getLogger(__name__)
@@ -55,7 +55,7 @@ class FetchmailServer(models.Model):
     priority = fields.Integer(string='Server Priority', readonly=True, states={'draft': [('readonly', False)]}, help="Defines the order of processing, lower values mean higher priority", default=5)
     message_ids = fields.One2many('mail.mail', 'fetchmail_server_id', string='Messages', readonly=True)
     configuration = fields.Text('Configuration', readonly=True)
-    script = fields.Char(readonly=True, default='/mail/static/scripts/flectra-mailgate.py')
+    script = fields.Char(readonly=True, default='/mail/static/scripts/odoo-mailgate.py')
 
     @api.onchange('server_type', 'is_ssl', 'object_id')
     def onchange_server_type(self):
@@ -71,11 +71,11 @@ class FetchmailServer(models.Model):
             'model': self.object_id.model if self.object_id else 'MODELNAME'
         }
         self.configuration = """Use the below script with the following command line options with your Mail Transport Agent (MTA)
-flectra-mailgate.py --host=HOSTNAME --port=PORT -u %(uid)d -p PASSWORD -d %(dbname)s
+odoo-mailgate.py --host=HOSTNAME --port=PORT -u %(uid)d -p PASSWORD -d %(dbname)s
 Example configuration for the postfix mta running locally:
-/etc/postfix/virtual_aliases: @youdomain flectra_mailgate@localhost
+/etc/postfix/virtual_aliases: @youdomain odoo_mailgate@localhost
 /etc/aliases:
-flectra_mailgate: "|/path/to/flectra-mailgate.py --host=localhost -u %(uid)d -p PASSWORD -d %(dbname)s"
+odoo_mailgate: "|/path/to/odoo-mailgate.py --host=localhost -u %(uid)d -p PASSWORD -d %(dbname)s"
         """ % conf
 
     @api.model
@@ -191,6 +191,7 @@ flectra_mailgate: "|/path/to/flectra-mailgate.py --host=localhost -u %(uid)d -p 
             elif server.server_type == 'pop':
                 try:
                     while True:
+                        failed_in_loop = 0
                         pop_server = server.connect()
                         (num_messages, total_size) = pop_server.stat()
                         pop_server.list()
@@ -204,11 +205,13 @@ flectra_mailgate: "|/path/to/flectra-mailgate.py --host=localhost -u %(uid)d -p 
                             except Exception:
                                 _logger.info('Failed to process mail from %s server %s.', server.server_type, server.name, exc_info=True)
                                 failed += 1
+                                failed_in_loop += 1
                             self.env.cr.commit()
-                        if num_messages < MAX_POP_MESSAGES:
+                        _logger.info("Fetched %d email(s) on %s server %s; %d succeeded, %d failed.", num, server.server_type, server.name, (num - failed_in_loop), failed_in_loop)
+                        # Stop if (1) no more message left or (2) all messages have failed
+                        if num_messages < MAX_POP_MESSAGES or failed_in_loop == num:
                             break
                         pop_server.quit()
-                        _logger.info("Fetched %d email(s) on %s server %s; %d succeeded, %d failed.", num_messages, server.server_type, server.name, (num_messages - failed), failed)
                 except Exception:
                     _logger.info("General failure when trying to fetch mail from %s server %s.", server.server_type, server.name, exc_info=True)
                 finally:

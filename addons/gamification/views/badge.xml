@@ -1,4 +1,4 @@
-<flectra>
+<odoo>
     <!-- Badge views -->
     <record id="gamification_badge_view_search" model="ir.ui.view">
         <field name="name">gamification.badge.view.search</field>
@@ -199,4 +199,4 @@
             </kanban>
         </field>
     </record>
-</flectra>
+</odoo>

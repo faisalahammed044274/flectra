@@ -1,4 +1,4 @@
-<flectra>
+<odoo>
     <record id="pos_order_form_inherit" model="ir.ui.view">
         <field name="name">pos.order.form.inherit</field>
         <field name="model">pos.order</field>
@@ -9,4 +9,4 @@
             </xpath>
         </field>
     </record>
-</flectra>
+</odoo>

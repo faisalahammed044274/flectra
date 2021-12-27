@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<flectra>
+<odoo>
     <record id="l10n_cl_latam_document_type_view" model="ir.ui.view">
         <field name="name">l10n.cl.latam.document.type.view</field>
         <field name="model">l10n_latam.document.type</field>
@@ -10,4 +10,4 @@
             </field>
         </field>
     </record>
-</flectra>
+</odoo>

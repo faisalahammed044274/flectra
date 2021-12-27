@@ -1,4 +1,4 @@
-flectra.define('website_sale_slides.unsubscribe_modal', function (require) {
+odoo.define('website_sale_slides.unsubscribe_modal', function (require) {
 "use strict";
 
 var SlidesUnsubscribe = require('website_slides.unsubscribe_modal');

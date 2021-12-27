@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<flectra>
+<odoo>
 
 <template id="index" name="Our References">
     <t t-call="website.layout">
@@ -251,4 +251,4 @@
     </xpath>
 </template>
 
-</flectra>
+</odoo>

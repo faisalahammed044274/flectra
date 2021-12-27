@@ -1,4 +1,4 @@
-flectra.define('mail/static/src/components/chatter/chatter_tests', function (require) {
+odoo.define('mail/static/src/components/chatter/chatter_tests', function (require) {
 'use strict';
 
 const components = {

@@ -1,8 +1,8 @@
-flectra.define('web.GraphController', function (require) {
+odoo.define('web.GraphController', function (require) {
 "use strict";
 
 /*---------------------------------------------------------
- * Flectra Graph view
+ * Odoo Graph view
  *---------------------------------------------------------*/
 
 const AbstractController = require('web.AbstractController');
@@ -287,7 +287,7 @@ var GraphController = AbstractController.extend({
 
     /**
      * @private
-     * @param {FlectraEvent} ev
+     * @param {OdooEvent} ev
      */
     _onItemSelected(ev) {
         const item = ev.data.item;
@@ -326,7 +326,7 @@ var GraphController = AbstractController.extend({
 
     /**
      * @private
-     * @param {FlectraEvent} ev
+     * @param {OdooEvent} ev
      * @param {Array[]} ev.data.domain
      */
     _onOpenView(ev) {

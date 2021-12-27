@@ -1,4 +1,4 @@
-flectra.define('web.DataManager', function (require) {
+odoo.define('web.DataManager', function (require) {
 "use strict";
 
 var config = require('web.config');
@@ -213,7 +213,7 @@ return core.Class.extend({
 
 });
 
-flectra.define('web.data_manager', function (require) {
+odoo.define('web.data_manager', function (require) {
 "use strict";
 
 var DataManager = require('web.DataManager');

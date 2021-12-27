@@ -1,4 +1,4 @@
-flectra.define('web.form_benchmarks', function (require) {
+odoo.define('web.form_benchmarks', function (require) {
     "use strict";
 
     const FormView = require('web.FormView');

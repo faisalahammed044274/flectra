@@ -1,11 +1,11 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo. See LICENSE file for full copyright and licensing details.
 
 import logging
 
-from flectra import api, models, fields
-from flectra.addons.phone_validation.tools import phone_validation
-from flectra.tools import html2plaintext, plaintext2html
+from odoo import api, models, fields
+from odoo.addons.phone_validation.tools import phone_validation
+from odoo.tools import html2plaintext, plaintext2html
 
 _logger = logging.getLogger(__name__)
 

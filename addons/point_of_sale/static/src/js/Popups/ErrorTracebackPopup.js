@@ -1,4 +1,4 @@
-flectra.define('point_of_sale.ErrorTracebackPopup', function(require) {
+odoo.define('point_of_sale.ErrorTracebackPopup', function(require) {
     'use strict';
 
     const ErrorPopup = require('point_of_sale.ErrorPopup');
@@ -16,7 +16,7 @@ flectra.define('point_of_sale.ErrorTracebackPopup', function(require) {
         }
         emailTraceback() {
             const address = this.env.pos.company.email;
-            const subject = this.env._t('IMPORTANT: Bug Report From Flectra Point Of Sale');
+            const subject = this.env._t('IMPORTANT: Bug Report From Odoo Point Of Sale');
             window.open(
                 'mailto:' +
                     address +

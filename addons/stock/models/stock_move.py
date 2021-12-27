@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo. See LICENSE file for full copyright and licensing details.
 
 import json
 from collections import defaultdict
@@ -11,11 +11,11 @@ from re import split as regex_split
 
 from dateutil import relativedelta
 
-from flectra import SUPERUSER_ID, _, api, fields, models
-from flectra.exceptions import UserError
-from flectra.osv import expression
-from flectra.tools.float_utils import float_compare, float_is_zero, float_repr, float_round
-from flectra.tools.misc import clean_context, format_date, OrderedSet
+from odoo import SUPERUSER_ID, _, api, fields, models
+from odoo.exceptions import UserError
+from odoo.osv import expression
+from odoo.tools.float_utils import float_compare, float_is_zero, float_repr, float_round
+from odoo.tools.misc import clean_context, format_date, OrderedSet
 
 PROCUREMENT_PRIORITIES = [('0', 'Normal'), ('1', 'Urgent')]
 
@@ -610,8 +610,8 @@ class StockMove(models.Model):
             # Avoids to write the exact same message multiple times.
             if last_message and last_message.subject == msg_subject:
                 continue
-            flectrabot_id = self.env['ir.model.data'].xmlid_to_res_id("base.partner_root")
-            doc.message_post(body=msg, author_id=flectrabot_id, subject=msg_subject)
+            odoobot_id = self.env['ir.model.data'].xmlid_to_res_id("base.partner_root")
+            doc.message_post(body=msg, author_id=odoobot_id, subject=msg_subject)
 
     def action_show_details(self):
         """ Returns an action that will open a form view (in a popup) allowing to work on all the
@@ -1638,11 +1638,12 @@ class StockMove(models.Model):
     def _recompute_state(self):
         moves_state_to_write = defaultdict(set)
         for move in self:
+            rounding = move.product_uom.rounding
             if move.state in ('cancel', 'done', 'draft'):
                 continue
-            elif move.reserved_availability == move.product_uom_qty:
+            elif float_compare(move.reserved_availability, move.product_uom_qty, precision_rounding=rounding) == 0:
                 moves_state_to_write['assigned'].add(move.id)
-            elif move.reserved_availability and move.reserved_availability <= move.product_uom_qty:
+            elif move.reserved_availability and float_compare(move.reserved_availability, move.product_uom_qty, precision_rounding=rounding) <= 0:
                 moves_state_to_write['partially_available'].add(move.id)
             elif move.procure_method == 'make_to_order' and not move.move_orig_ids:
                 moves_state_to_write['waiting'].add(move.id)

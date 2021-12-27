@@ -4,14 +4,14 @@ import time
 from werkzeug import urls
 from lxml import objectify
 
-import flectra
-from flectra.addons.payment.models.payment_acquirer import ValidationError
-from flectra.addons.payment.tests.common import PaymentAcquirerCommon
-from flectra.addons.payment_authorize.controllers.main import AuthorizeController
-from flectra.tools import mute_logger
+import odoo
+from odoo.addons.payment.models.payment_acquirer import ValidationError
+from odoo.addons.payment.tests.common import PaymentAcquirerCommon
+from odoo.addons.payment_authorize.controllers.main import AuthorizeController
+from odoo.tools import mute_logger
 
 
-@flectra.tests.tagged('post_install', '-at_install')
+@odoo.tests.tagged('post_install', '-at_install')
 class AuthorizeCommon(PaymentAcquirerCommon):
 
     @classmethod
@@ -31,7 +31,7 @@ class AuthorizeCommon(PaymentAcquirerCommon):
         # self.authorize.auto_confirm = 'confirm_so'
 
 
-@flectra.tests.tagged('post_install', '-at_install', '-standard', 'external')
+@odoo.tests.tagged('post_install', '-at_install', '-standard', 'external')
 class AuthorizeForm(AuthorizeCommon):
 
     def test_10_Authorize_form_render(self):
@@ -96,7 +96,7 @@ class AuthorizeForm(AuthorizeCommon):
                 'Authorize: wrong value for input %s: received %s instead of %s' % (values[1], values[2], form_values[values[1]])
             )
 
-    @mute_logger('flectra.addons.payment_authorize.models.payment', 'ValidationError')
+    @mute_logger('odoo.addons.payment_authorize.models.payment', 'ValidationError')
     def test_20_authorize_form_management(self):
         # be sure not to do stupid thing
         self.assertEqual(self.authorize.state, 'test', 'test without test environment')
@@ -183,7 +183,7 @@ class AuthorizeForm(AuthorizeCommon):
         self.assertNotEqual(tx.state, 'done', 'Authorize: erroneous validation did put tx into done state')
 
 
-@flectra.tests.tagged('post_install', '-at_install', '-standard')
+@odoo.tests.tagged('post_install', '-at_install', '-standard')
 class AuthorizeS2s(AuthorizeCommon):
     def test_30_authorize_s2s(self):
         # be sure not to do stupid thing
@@ -191,7 +191,7 @@ class AuthorizeS2s(AuthorizeCommon):
         self.assertEqual(authorize.state, 'test', 'test without test environment')
 
         # add credential
-        # FIXME: put this test in master-nightly on flectra/flectra + create sandbox account
+        # FIXME: put this test in master-nightly on odoo/odoo + create sandbox account
         authorize.write({
             'authorize_transaction_key': '',
             'authorize_login': '',

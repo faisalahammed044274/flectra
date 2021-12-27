@@ -1,4 +1,4 @@
-flectra.define('website.s_dynamic_snippet', function (require) {
+odoo.define('website.s_dynamic_snippet', function (require) {
 'use strict';
 
 const core = require('web.core');

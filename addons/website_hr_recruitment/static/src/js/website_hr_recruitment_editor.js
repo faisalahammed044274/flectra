@@ -1,4 +1,4 @@
-flectra.define('website_hr_recruitment.form', function (require) {
+odoo.define('website_hr_recruitment.form', function (require) {
 'use strict';
 
 var core = require('web.core');

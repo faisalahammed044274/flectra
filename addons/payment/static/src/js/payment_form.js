@@ -1,4 +1,4 @@
-flectra.define('payment.payment_form', function (require) {
+odoo.define('payment.payment_form', function (require) {
 "use strict";
 
 var core = require('web.core');

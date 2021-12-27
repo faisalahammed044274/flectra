@@ -1,4 +1,4 @@
-flectra.define('web.systray_tests', function (require) {
+odoo.define('web.systray_tests', function (require) {
     "use strict";
 
     var testUtils = require('web.test_utils');

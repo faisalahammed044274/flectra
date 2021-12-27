@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 from . import models
-from flectra import api, SUPERUSER_ID
+from odoo import api, SUPERUSER_ID
 
 
 def _create_picking_seq(cr, registry):

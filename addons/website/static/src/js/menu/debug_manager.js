@@ -1,4 +1,4 @@
-flectra.define('website.debugManager', function (require) {
+odoo.define('website.debugManager', function (require) {
 'use strict';
 
 var config = require('web.config');

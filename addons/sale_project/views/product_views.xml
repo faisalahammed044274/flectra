@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<flectra>
+<odoo>
 
     <record id="product_template_form_view_invoice_policy_inherit_sale_project" model="ir.ui.view">
         <field name="name">product.template.inherit.sale.projectform</field>
@@ -14,4 +14,4 @@
         </field>
     </record>
 
-</flectra>
+</odoo>

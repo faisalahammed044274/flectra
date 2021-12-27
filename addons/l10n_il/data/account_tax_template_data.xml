@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<flectra>
+<odoo>
 
     <!-- Sales Taxes -->
     <record id="il_vat_sales_17" model="account.tax.template">
@@ -490,4 +490,4 @@
         ]"/>
     </record>
 
-</flectra>
+</odoo>

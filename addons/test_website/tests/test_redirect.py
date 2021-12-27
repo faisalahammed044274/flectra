@@ -1,10 +1,10 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
-import flectra
-from flectra.tests import HttpCase, tagged
-from flectra.tests.common import HOST
-from flectra.tools import mute_logger
-from flectra.addons.http_routing.models.ir_http import slug
+# Part of Odoo. See LICENSE file for full copyright and licensing details.
+import odoo
+from odoo.tests import HttpCase, tagged
+from odoo.tests.common import HOST
+from odoo.tools import mute_logger
+from odoo.addons.http_routing.models.ir_http import slug
 
 from unittest.mock import patch
 
@@ -23,7 +23,7 @@ class TestRedirect(HttpCase):
             'groups_id': [(6, 0, [self.env.ref('base.group_portal').id])]
         })
 
-        self.base_url = "http://%s:%s" % (HOST, flectra.tools.config['http_port'])
+        self.base_url = "http://%s:%s" % (HOST, odoo.tools.config['http_port'])
 
     def test_01_redirect_308_model_converter(self):
 
@@ -59,7 +59,7 @@ class TestRedirect(HttpCase):
         self.assertTrue(country_ad.name in r.text, "Ensure the controller returned the expected value (2)")
         self.assertTrue(redirect_url in r.text, "Ensure the url_for has replaced the href URL in the DOM")
 
-    @mute_logger('flectra.addons.http_routing.models.ir_http')  # mute 403 warning
+    @mute_logger('odoo.addons.http_routing.models.ir_http')  # mute 403 warning
     def test_02_redirect_308_RequestUID(self):
         self.env['website.rewrite'].create({
             'name': 'Test Website Redirect',
@@ -71,7 +71,7 @@ class TestRedirect(HttpCase):
         rec_published = self.env['test.model'].create({'name': 'name', 'website_published': True})
         rec_unpublished = self.env['test.model'].create({'name': 'name', 'website_published': False})
 
-        WebsiteHttp = flectra.addons.website.models.ir_http.Http
+        WebsiteHttp = odoo.addons.website.models.ir_http.Http
 
         def _get_error_html(env, code, value):
             return str(code).split('_')[-1], "CUSTOM %s" % code

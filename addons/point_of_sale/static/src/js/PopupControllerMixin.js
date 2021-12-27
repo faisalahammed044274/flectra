@@ -1,4 +1,4 @@
-flectra.define('point_of_sale.PopupControllerMixin', function(require) {
+odoo.define('point_of_sale.PopupControllerMixin', function(require) {
     'use strict';
 
     const { useState } = owl;

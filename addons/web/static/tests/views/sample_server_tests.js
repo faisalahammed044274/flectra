@@ -1,4 +1,4 @@
-flectra.define('web.sample_server_tests', function (require) {
+odoo.define('web.sample_server_tests', function (require) {
     "use strict";
 
     const SampleServer = require('web.SampleServer');

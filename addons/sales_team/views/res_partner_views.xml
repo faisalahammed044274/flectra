@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<flectra>
+<odoo>
     <record id="res_partner_view_team" model="ir.ui.view">
         <field name="name">res.partner.view.team</field>
         <field name="model">res.partner</field>
@@ -10,4 +10,4 @@
             </xpath>
         </field>
     </record>
-</flectra>
+</odoo>

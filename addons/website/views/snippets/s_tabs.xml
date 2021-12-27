@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<flectra>
+<odoo>
 
 <template id="s_tabs" name="Tabs">
     <section class="s_tabs pt48 pb48" data-vcss="001">
@@ -123,4 +123,4 @@
     </xpath>
 </template>
 
-</flectra>
+</odoo>

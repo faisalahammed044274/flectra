@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<flectra>
+<odoo>
     <data>
         <record id="product_template_tree_view" model="ir.ui.view">
             <field name="name">product.template.tree.inherit.stock.account</field>
@@ -39,4 +39,4 @@
             </field>
         </record>
    </data>
-</flectra>
+</odoo>

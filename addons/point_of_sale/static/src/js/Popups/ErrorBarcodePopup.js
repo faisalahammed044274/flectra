@@ -1,4 +1,4 @@
-flectra.define('point_of_sale.ErrorBarcodePopup', function(require) {
+odoo.define('point_of_sale.ErrorBarcodePopup', function(require) {
     'use strict';
 
     const ErrorPopup = require('point_of_sale.ErrorPopup');

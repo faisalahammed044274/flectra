@@ -1,15 +1,15 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo. See LICENSE file for full copyright and licensing details.
 
-import flectra.tests
+import odoo.tests
 
 from datetime import timedelta
 
-from flectra.addons.base.tests.common import HttpCaseWithUserDemo
-from flectra.fields import Datetime
+from odoo.addons.base.tests.common import HttpCaseWithUserDemo
+from odoo.fields import Datetime
 
 
-@flectra.tests.common.tagged('post_install', '-at_install')
+@odoo.tests.common.tagged('post_install', '-at_install')
 class TestUi(HttpCaseWithUserDemo):
 
     def setUp(self):

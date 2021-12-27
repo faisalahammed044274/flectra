@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<flectra><data>
+<odoo><data>
 
     <record id="website_event_menu_view_search" model="ir.ui.view">
         <field name="name">website.event.menu.view.search</field>
@@ -48,4 +48,4 @@
     </record>
 
 </data>
-</flectra>
+</odoo>

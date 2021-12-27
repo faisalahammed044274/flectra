@@ -1,10 +1,10 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo. See LICENSE file for full copyright and licensing details.
 import logging
 import re
 
-from flectra import api, fields, models, _, SUPERUSER_ID
-from flectra.tools import float_compare
+from odoo import api, fields, models, _, SUPERUSER_ID
+from odoo.tools import float_compare
 
 
 _logger = logging.getLogger(__name__)

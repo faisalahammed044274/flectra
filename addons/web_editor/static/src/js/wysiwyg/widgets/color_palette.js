@@ -1,4 +1,4 @@
-flectra.define('web_editor.ColorPalette', function (require) {
+odoo.define('web_editor.ColorPalette', function (require) {
 'use strict';
 
 const ajax = require('web.ajax');

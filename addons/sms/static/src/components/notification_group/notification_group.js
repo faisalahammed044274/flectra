@@ -1,4 +1,4 @@
-flectra.define('sms/static/src/components/notification_group/notification_group.js', function (require) {
+odoo.define('sms/static/src/components/notification_group/notification_group.js', function (require) {
 'use strict';
 
 const components = {

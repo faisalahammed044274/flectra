@@ -1,9 +1,9 @@
 
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo. See LICENSE file for full copyright and licensing details.
 
-from flectra import api, models
-from flectra.addons.snailmail.country_utils import SNAILMAIL_COUNTRIES
+from odoo import api, models
+from odoo.addons.snailmail.country_utils import SNAILMAIL_COUNTRIES
 
 
 class ResPartner(models.Model):

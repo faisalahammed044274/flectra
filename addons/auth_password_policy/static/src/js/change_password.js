@@ -1,4 +1,4 @@
-flectra.define('auth_password_policy.ChangePassword', function (require) {
+odoo.define('auth_password_policy.ChangePassword', function (require) {
 "use strict";
 var ChangePassword = require('web.ChangePassword');
 var policy = require('auth_password_policy');

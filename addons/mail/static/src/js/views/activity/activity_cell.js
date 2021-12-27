@@ -1,4 +1,4 @@
-flectra.define("mail.ActivityCell", function (require) {
+odoo.define("mail.ActivityCell", function (require) {
     "use strict";
 
     require("mail.Activity");

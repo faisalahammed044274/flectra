@@ -1,4 +1,4 @@
-flectra.define('web.PivotModel', function (require) {
+odoo.define('web.PivotModel', function (require) {
 "use strict";
 
 /**

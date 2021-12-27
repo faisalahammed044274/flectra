@@ -2,10 +2,10 @@
 from random import randint
 from datetime import datetime
 
-from flectra import fields, tools
-from flectra.addons.stock_account.tests.test_anglo_saxon_valuation_reconciliation_common import ValuationReconciliationTestCommon
-from flectra.tests.common import SavepointCase, Form
-from flectra.tests import tagged
+from odoo import fields, tools
+from odoo.addons.stock_account.tests.test_anglo_saxon_valuation_reconciliation_common import ValuationReconciliationTestCommon
+from odoo.tests.common import SavepointCase, Form
+from odoo.tests import tagged
 
 
 @tagged('post_install', '-at_install')

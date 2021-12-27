@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<flectra>
+<odoo>
     <data>
         <record model="ir.ui.view" id="account_invoice_send_inherit_account_wizard_form">
             <field name="name">account.invoice.send.form.inherited.snailmail</field>
@@ -62,4 +62,4 @@
         </record>
 
     </data>
-</flectra>
+</odoo>

@@ -1,13 +1,13 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo. See LICENSE file for full copyright and licensing details.
 
 import collections
 import json
 import itertools
 import operator
 
-from flectra import api, fields, models, tools, _
-from flectra.exceptions import ValidationError
+from odoo import api, fields, models, tools, _
+from odoo.exceptions import ValidationError
 
 
 class SurveyQuestion(models.Model):

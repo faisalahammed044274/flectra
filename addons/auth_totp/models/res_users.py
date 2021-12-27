@@ -11,10 +11,10 @@ import time
 
 import werkzeug.urls
 
-from flectra import _, api, fields, models
-from flectra.addons.base.models.res_users import check_identity
-from flectra.exceptions import AccessDenied, UserError
-from flectra.http import request, db_list
+from odoo import _, api, fields, models
+from odoo.addons.base.models.res_users import check_identity
+from odoo.exceptions import AccessDenied, UserError
+from odoo.http import request, db_list
 
 _logger = logging.getLogger(__name__)
 

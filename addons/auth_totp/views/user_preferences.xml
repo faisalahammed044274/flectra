@@ -1,4 +1,4 @@
-<flectra>
+<odoo>
     <record model="ir.ui.view" id="view_totp_list">
         <field name="name">users list: add totp status</field>
         <field name="model">res.users</field>
@@ -117,7 +117,7 @@
                             <span class="alert alert-info" role="status">
                                 <i class="fa fa-warning"/>
                                 Two-factor authentication not enabled
-                                <a href="https://doc.flectrahq.com/2.0/applications/general/auth/2fa.html"
+                                <a href="https://www.odoo.com/documentation/14.0/applications/general/auth/2fa.html"
                                    title="What is this?" class="o_doc_link" target="_blank"></a>
                             </span>
                             <button name="totp_enable_wizard" type="object" string="Enable two-factor authentication"
@@ -129,7 +129,7 @@
                             <span class="text-success">
                                 <i class="fa fa-check-circle"/>
                                 Two-factor authentication enabled
-                                <a href="https://doc.flectrahq.com/2.0/applications/general/auth/2fa.html"
+                                <a href="https://www.odoo.com/documentation/14.0/applications/general/auth/2fa.html"
                                    title="What is this?" class="o_doc_link" target="_blank"></a>
                             </span>
                             <button name="totp_disable" type="object" string="(Disable two-factor authentication)"
@@ -164,4 +164,4 @@
             </button>
         </field>
     </record>
-</flectra>
+</odoo>

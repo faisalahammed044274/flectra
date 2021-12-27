@@ -1,7 +1,7 @@
 # coding: utf-8
-from flectra.addons.website_sale.controllers.main import WebsiteSale
-from flectra.addons.website.tools import MockRequest
-from flectra.tests import TransactionCase, tagged
+from odoo.addons.website_sale.controllers.main import WebsiteSale
+from odoo.addons.website.tools import MockRequest
+from odoo.tests import TransactionCase, tagged
 
 @tagged('post_install', '-at_install')
 class WebsiteSaleVisitorTests(TransactionCase):

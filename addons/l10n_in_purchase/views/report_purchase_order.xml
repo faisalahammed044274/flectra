@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<flectra>
+<odoo>
 
     <template id="gst_report_purchaseorder_document_inherit" inherit_id="purchase.report_purchaseorder_document">
         <xpath expr="//t[@t-foreach='o.order_line']//td[@id='product']" position="replace">
@@ -29,4 +29,4 @@
         </xpath>
     </template>
 
-</flectra>
+</odoo>

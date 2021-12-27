@@ -1,4 +1,4 @@
-flectra.define('website.editor.menu.translate', function (require) {
+odoo.define('website.editor.menu.translate', function (require) {
 'use strict';
 
 require('web.dom_ready');
@@ -49,7 +49,7 @@ var TranslatorInfoDialog = Dialog.extend({
 var WysiwygTranslate = Wysiwyg.extend({
     assetLibs: Wysiwyg.prototype.assetLibs.concat(['website.compiled_assets_wysiwyg']),
     _getWysiwygContructor: function () {
-        return flectra.__DEBUG__.services['web_editor.wysiwyg.multizone.translate'];
+        return odoo.__DEBUG__.services['web_editor.wysiwyg.multizone.translate'];
     }
 });
 

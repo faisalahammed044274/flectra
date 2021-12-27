@@ -1,4 +1,4 @@
-flectra.define('web.CustomFileInput', function (require) {
+odoo.define('web.CustomFileInput', function (require) {
     "use strict";
 
     const { Component, hooks } = owl;
@@ -37,7 +37,7 @@ flectra.define('web.CustomFileInput', function (require) {
         /**
          * Upload an attachment to the given action with the given parameters:
          * - ufile: list of files contained in the file input
-         * - csrf_token: CSRF token provided by the flectra global object
+         * - csrf_token: CSRF token provided by the odoo global object
          * - model: a specific model which will be given when creating the attachment
          * - id: the id of the model target instance
          * @private
@@ -45,7 +45,7 @@ flectra.define('web.CustomFileInput', function (require) {
         async _onFileInputChange() {
             const { action, model, id } = this.props;
             const params = {
-                csrf_token: flectra.csrf_token,
+                csrf_token: odoo.csrf_token,
                 ufile: [...this.fileInputRef.el.files],
             };
             if (model) {

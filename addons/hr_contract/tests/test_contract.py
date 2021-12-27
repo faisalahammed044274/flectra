@@ -1,9 +1,9 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo. See LICENSE file for full copyright and licensing details.
 
 from datetime import datetime, date
-from flectra.exceptions import ValidationError
-from flectra.addons.hr_contract.tests.common import TestContractCommon
+from odoo.exceptions import ValidationError
+from odoo.addons.hr_contract.tests.common import TestContractCommon
 
 
 class TestHrContracts(TestContractCommon):

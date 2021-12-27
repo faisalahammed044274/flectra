@@ -1,12 +1,12 @@
 # -*- coding: utf-8 -*-
-import flectra
-from flectra import fields
-from flectra.exceptions import ValidationError
-from flectra.addons.payment.tests.common import PaymentAcquirerCommon
+import odoo
+from odoo import fields
+from odoo.exceptions import ValidationError
+from odoo.addons.payment.tests.common import PaymentAcquirerCommon
 from unittest.mock import patch
 from . import stripe_mocks
 from ..models.payment import STRIPE_SIGNATURE_AGE_TOLERANCE
-from flectra.tools import mute_logger
+from odoo.tools import mute_logger
 
 
 class StripeCommon(PaymentAcquirerCommon):
@@ -38,11 +38,11 @@ class StripeCommon(PaymentAcquirerCommon):
         cls.stripe.write({'payment_icon_ids': [(5, 0, 0)]})
 
 
-@flectra.tests.tagged('post_install', '-at_install', '-standard', 'external')
+@odoo.tests.tagged('post_install', '-at_install', '-standard', 'external')
 class StripeTest(StripeCommon):
 
     def run(self, result=None):
-        with mute_logger('flectra.addons.payment.models.payment_acquirer', 'flectra.addons.payment_stripe.models.payment'):
+        with mute_logger('odoo.addons.payment.models.payment_acquirer', 'odoo.addons.payment_stripe.models.payment'):
             StripeCommon.run(self, result)
 
     def test_10_stripe_s2s(self):
@@ -185,8 +185,8 @@ class StripeTest(StripeCommon):
         with self.assertRaises(ValidationError):
             self.env['payment.acquirer']._handle_stripe_webhook(dict(type='checkout.session.completed'))
 
-    @patch('flectra.addons.payment_stripe.models.payment.request')
-    @patch('flectra.addons.payment_stripe.models.payment.datetime')
+    @patch('odoo.addons.payment_stripe.models.payment.request')
+    @patch('odoo.addons.payment_stripe.models.payment.datetime')
     def test_handle_checkout_webhook(self, dt, request):
         # pass signature verification
         dt.utcnow.return_value.timestamp.return_value = 1591264652
@@ -210,8 +210,8 @@ class StripeTest(StripeCommon):
 
         self.assertTrue(actual)
 
-    @patch('flectra.addons.payment_stripe.models.payment.request')
-    @patch('flectra.addons.payment_stripe.models.payment.datetime')
+    @patch('odoo.addons.payment_stripe.models.payment.request')
+    @patch('odoo.addons.payment_stripe.models.payment.datetime')
     def test_handle_checkout_webhook_wrong_amount(self, dt, request):
         # pass signature verification
         dt.utcnow.return_value.timestamp.return_value = 1591264652
@@ -244,15 +244,15 @@ class StripeTest(StripeCommon):
 
         self.assertFalse(actual)
 
-    def test_handle_checkout_webhook_no_flectra_tx(self):
+    def test_handle_checkout_webhook_no_odoo_tx(self):
         stripe_object = stripe_mocks.checkout_session_object
 
         actual = self.stripe._handle_checkout_webhook(stripe_object)
 
         self.assertFalse(actual)
 
-    @patch('flectra.addons.payment_stripe.models.payment.request')
-    @patch('flectra.addons.payment_stripe.models.payment.datetime')
+    @patch('odoo.addons.payment_stripe.models.payment.request')
+    @patch('odoo.addons.payment_stripe.models.payment.datetime')
     def test_handle_checkout_webhook_no_stripe_tx(self, dt, request):
         # pass signature verification
         dt.utcnow.return_value.timestamp.return_value = 1591264652
@@ -273,8 +273,8 @@ class StripeTest(StripeCommon):
         with self.assertRaises(ValidationError):
             self.stripe._handle_checkout_webhook(stripe_object)
 
-    @patch('flectra.addons.payment_stripe.models.payment.request')
-    @patch('flectra.addons.payment_stripe.models.payment.datetime')
+    @patch('odoo.addons.payment_stripe.models.payment.request')
+    @patch('odoo.addons.payment_stripe.models.payment.datetime')
     def test_verify_stripe_signature(self, dt, request):
         dt.utcnow.return_value.timestamp.return_value = 1591264652
         request.httprequest.headers = {'Stripe-Signature': stripe_mocks.checkout_session_signature}
@@ -284,8 +284,8 @@ class StripeTest(StripeCommon):
 
         self.assertTrue(actual)
 
-    @patch('flectra.addons.payment_stripe.models.payment.request')
-    @patch('flectra.addons.payment_stripe.models.payment.datetime')
+    @patch('odoo.addons.payment_stripe.models.payment.request')
+    @patch('odoo.addons.payment_stripe.models.payment.datetime')
     def test_verify_stripe_signature_tampered_body(self, dt, request):
         dt.utcnow.return_value.timestamp.return_value = 1591264652
         request.httprequest.headers = {'Stripe-Signature': stripe_mocks.checkout_session_signature}
@@ -294,8 +294,8 @@ class StripeTest(StripeCommon):
         with self.assertRaises(ValidationError):
             self.stripe._verify_stripe_signature()
 
-    @patch('flectra.addons.payment_stripe.models.payment.request')
-    @patch('flectra.addons.payment_stripe.models.payment.datetime')
+    @patch('odoo.addons.payment_stripe.models.payment.request')
+    @patch('odoo.addons.payment_stripe.models.payment.datetime')
     def test_verify_stripe_signature_wrong_secret(self, dt, request):
         dt.utcnow.return_value.timestamp.return_value = 1591264652
         request.httprequest.headers = {'Stripe-Signature': stripe_mocks.checkout_session_signature}
@@ -307,8 +307,8 @@ class StripeTest(StripeCommon):
         with self.assertRaises(ValidationError):
             self.stripe._verify_stripe_signature()
 
-    @patch('flectra.addons.payment_stripe.models.payment.request')
-    @patch('flectra.addons.payment_stripe.models.payment.datetime')
+    @patch('odoo.addons.payment_stripe.models.payment.request')
+    @patch('odoo.addons.payment_stripe.models.payment.datetime')
     def test_verify_stripe_signature_too_old(self, dt, request):
         dt.utcnow.return_value.timestamp.return_value = 1591264652 + STRIPE_SIGNATURE_AGE_TOLERANCE + 1
         request.httprequest.headers = {'Stripe-Signature': stripe_mocks.checkout_session_signature}

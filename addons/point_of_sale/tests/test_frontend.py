@@ -1,15 +1,15 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo. See LICENSE file for full copyright and licensing details.
 
-from flectra import tools
-from flectra.api import Environment
-from flectra.tools import DEFAULT_SERVER_DATE_FORMAT
+from odoo import tools
+from odoo.api import Environment
+from odoo.tools import DEFAULT_SERVER_DATE_FORMAT
 from datetime import date, timedelta
 
-import flectra.tests
+import odoo.tests
 
 
-class TestPointOfSaleHttpCommon(flectra.tests.HttpCase):
+class TestPointOfSaleHttpCommon(odoo.tests.HttpCase):
 
     def setUp(self):
         super().setUp()
@@ -471,7 +471,7 @@ class TestPointOfSaleHttpCommon(flectra.tests.HttpCase):
         )
 
 
-@flectra.tests.tagged('post_install', '-at_install')
+@odoo.tests.tagged('post_install', '-at_install')
 class TestUi(TestPointOfSaleHttpCommon):
     def test_01_pos_basic_order(self):
 

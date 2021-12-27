@@ -1,11 +1,11 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo. See LICENSE file for full copyright and licensing details.
 
 import re
 
-from flectra import api, fields, models
-from flectra.exceptions import UserError
-from flectra.osv.expression import expression
+from odoo import api, fields, models
+from odoo.exceptions import UserError
+from odoo.osv.expression import expression
 
 
 class PurchaseReport(models.Model):

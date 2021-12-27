@@ -1,11 +1,11 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo. See LICENSE file for full copyright and licensing details.
 
-from flectra.api import Environment
-import flectra.tests
+from odoo.api import Environment
+import odoo.tests
 
-@flectra.tests.tagged('post_install', '-at_install')
-class TestWebsiteHrRecruitmentForm(flectra.tests.HttpCase):
+@odoo.tests.tagged('post_install', '-at_install')
+class TestWebsiteHrRecruitmentForm(odoo.tests.HttpCase):
     def test_tour(self):
         job = self.env['hr.job'].create({
             'name': 'A Test Job',

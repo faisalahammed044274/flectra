@@ -2,8 +2,8 @@
 
 from collections import defaultdict
 
-from flectra import models, fields, api, _
-from flectra.exceptions import UserError
+from odoo import models, fields, api, _
+from odoo.exceptions import UserError
 
 
 class Base(models.AbstractModel):

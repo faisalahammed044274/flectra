@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<flectra><data noupdate="1">
+<odoo><data noupdate="1">
     <record id="payment_acquirer_test" model="payment.acquirer">
         <field name="name">Test</field>
         <field name="display_as">Test (do not use in production)</field>
@@ -26,4 +26,4 @@
         <field name="state">test</field>
         <field name="payment_flow">s2s</field>
     </record>
-</data></flectra>
+</data></odoo>

@@ -1,12 +1,12 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo. See LICENSE file for full copyright and licensing details.
 
 from itertools import chain
 
-from flectra import api, fields, models, tools, _
-from flectra.exceptions import UserError, ValidationError
-from flectra.tools import float_repr
-from flectra.tools.misc import get_lang
+from odoo import api, fields, models, tools, _
+from odoo.exceptions import UserError, ValidationError
+from odoo.tools import float_repr
+from odoo.tools.misc import get_lang
 
 
 class Pricelist(models.Model):

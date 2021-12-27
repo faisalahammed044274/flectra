@@ -1,4 +1,4 @@
-flectra.define('website.navbar', function (require) {
+odoo.define('website.navbar', function (require) {
 'use strict';
 
 var core = require('web.core');
@@ -243,7 +243,7 @@ var WebsiteNavbar = publicWidget.RootWidget.extend({
      * children have something to save.
      *
      * @private
-     * @param {FlectraEvent} ev
+     * @param {OdooEvent} ev
      */
     _onSave: function (ev) {
         ev.data.defs.push(this._handleAction('on_save'));

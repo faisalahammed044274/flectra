@@ -1,4 +1,4 @@
-flectra.define('hr_attendance.tests', function (require) {
+odoo.define('hr_attendance.tests', function (require) {
 "use strict";
 
 var testUtils = require('web.test_utils');

@@ -1,4 +1,4 @@
-flectra.define('wysiwyg.widgets.Dialog', function (require) {
+odoo.define('wysiwyg.widgets.Dialog', function (require) {
 'use strict';
 
 var config = require('web.config');

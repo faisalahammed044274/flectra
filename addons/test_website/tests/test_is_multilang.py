@@ -1,10 +1,10 @@
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
-import flectra.tests
+# Part of Odoo. See LICENSE file for full copyright and licensing details.
+import odoo.tests
 import lxml
 
 
-@flectra.tests.common.tagged('post_install', '-at_install')
-class TestIsMultiLang(flectra.tests.HttpCase):
+@odoo.tests.common.tagged('post_install', '-at_install')
+class TestIsMultiLang(odoo.tests.HttpCase):
 
     def test_01_is_multilang_url(self):
         website = self.env['website'].search([], limit=1)
@@ -34,7 +34,7 @@ class TestIsMultiLang(flectra.tests.HttpCase):
 
         it.active = True
         be.active = True
-        website.domain = 'http://127.0.0.1:7073'  # for _is_canonical_url
+        website.domain = 'http://127.0.0.1:8069'  # for _is_canonical_url
         website.default_lang_id = en
         website.language_ids = en + it + be
         params = {

@@ -1,15 +1,15 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo. See LICENSE file for full copyright and licensing details.
 
 import logging
 import re
 
-from flectra import api, fields, models, tools, _
-from flectra.exceptions import UserError, ValidationError
-from flectra.osv import expression
+from odoo import api, fields, models, tools, _
+from odoo.exceptions import UserError, ValidationError
+from odoo.osv import expression
 
 
-from flectra.tools import float_compare
+from odoo.tools import float_compare
 
 _logger = logging.getLogger(__name__)
 
@@ -396,7 +396,7 @@ class ProductProduct(models.Model):
             self = to_unlink
 
         try:
-            with self.env.cr.savepoint(), tools.mute_logger('flectra.sql_db'):
+            with self.env.cr.savepoint(), tools.mute_logger('odoo.sql_db'):
                 self.unlink()
         except Exception:
             # We catch all kind of exceptions to be sure that the operation

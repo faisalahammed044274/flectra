@@ -1,15 +1,15 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo. See LICENSE file for full copyright and licensing details.
 import re
 from collections import OrderedDict
 
-from flectra import models
-from flectra.http import request
-from flectra.addons.base.models.assetsbundle import AssetsBundle
-from flectra.addons.http_routing.models.ir_http import url_for
-from flectra.osv import expression
-from flectra.addons.website.models import ir_http
-from flectra.tools import html_escape as escape
+from odoo import models
+from odoo.http import request
+from odoo.addons.base.models.assetsbundle import AssetsBundle
+from odoo.addons.http_routing.models.ir_http import url_for
+from odoo.osv import expression
+from odoo.addons.website.models import ir_http
+from odoo.tools import html_escape as escape
 
 re_background_image = re.compile(r"(background-image\s*:\s*url\(\s*['\"]?\s*)([^)'\"]+)")
 

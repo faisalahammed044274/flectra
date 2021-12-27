@@ -1,4 +1,4 @@
-flectra.define('web.daterangepicker.extensions', function () {
+odoo.define('web.daterangepicker.extensions', function () {
 'use strict';
 
 /**

@@ -1,4 +1,4 @@
-flectra.define('website.s_table_of_content', function (require) {
+odoo.define('website.s_table_of_content', function (require) {
 'use strict';
 
 const publicWidget = require('web.public.widget');

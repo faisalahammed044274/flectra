@@ -1,10 +1,10 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo. See LICENSE file for full copyright and licensing details.
 
-from flectra.addons.stock_account.tests.test_anglo_saxon_valuation_reconciliation_common import ValuationReconciliationTestCommon
-from flectra.tests import common, Form
-from flectra.exceptions import UserError
-from flectra.tools import mute_logger, float_compare
+from odoo.addons.stock_account.tests.test_anglo_saxon_valuation_reconciliation_common import ValuationReconciliationTestCommon
+from odoo.tests import common, Form
+from odoo.exceptions import UserError
+from odoo.tools import mute_logger, float_compare
 
 
 # these tests create accounting entries, and therefore need a chart of accounts
@@ -1022,7 +1022,7 @@ class TestSaleMrpFlow(ValuationReconciliationTestCommon):
         for move in backorder_4.move_lines:
             self.assertEqual(move.product_qty, 1)
 
-    @mute_logger('flectra.tests.common.onchange')
+    @mute_logger('odoo.tests.common.onchange')
     def test_05_mrp_sale_kit_availability(self):
         """
         Check that the 'Not enough inventory' warning message shows correct
@@ -1226,7 +1226,7 @@ class TestSaleMrpFlow(ValuationReconciliationTestCommon):
         # All kits should be delivered
         self.assertEqual(order_line.qty_delivered, 10)
 
-    @mute_logger('flectra.tests.common.onchange')
+    @mute_logger('odoo.tests.common.onchange')
     def test_07_kit_availability_mixed_uom(self):
         """
         Check that the 'Not enough inventory' warning message displays correct

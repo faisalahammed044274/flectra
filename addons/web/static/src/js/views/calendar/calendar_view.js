@@ -1,4 +1,4 @@
-flectra.define('web.CalendarView', function (require) {
+odoo.define('web.CalendarView', function (require) {
 "use strict";
 
 var AbstractView = require('web.AbstractView');

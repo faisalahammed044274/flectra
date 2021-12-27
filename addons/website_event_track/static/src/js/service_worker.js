@@ -1,11 +1,11 @@
 importScripts("/website_event_track/static/lib/idb-keyval/idb-keyval.js");
 
-const PREFIX = "flectra-event";
+const PREFIX = "odoo-event";
 const SYNCABLE_ROUTES = ["/event/track/toggle_reminder"];
 const CACHABLE_ROUTES = ["/web/webclient/version_info"];
 const MAX_CACHE_SIZE = 512 * 1024 * 1024; // 500 MB
 const MAX_CACHE_QUOTA = 0.5;
-const CDN_URL = __FLECTRA_CDN_URL__; // {string|undefined} the cdn_url configured for the website if activated
+const CDN_URL = __ODOO_CDN_URL__; // {string|undefined} the cdn_url configured for the website if activated
 
 const { Store, set, get, del } = idbKeyval;
 const pendingRequestsQueueName = `${PREFIX}-pending-requests`;

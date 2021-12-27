@@ -2,7 +2,7 @@
 
 import json
 
-from flectra import fields
+from odoo import fields
 
 
 def monkey_patch(cls):

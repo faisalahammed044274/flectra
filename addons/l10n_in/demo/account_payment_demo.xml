@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<flectra noupdate="1">
+<odoo noupdate="1">
     <!-- Demo of at(Tax liability on advances). Advance payment need to consideration for which invoices have not been issued in the same month.-->
     <record id="demo_payment_at" model="account.payment">
         <field name="partner_id" ref="l10n_in.res_partner_registered_customer"/>
@@ -20,4 +20,4 @@
     <function model="account.payment" name="action_post">
         <value eval="[ref('demo_payment_at')]"/>
     </function>
-</flectra> 
+</odoo>

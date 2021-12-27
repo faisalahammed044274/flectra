@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<flectra>
+<odoo>
 
     <record id="view_afip_responsibility_type_form" model="ir.ui.view">
         <field name="name">afip.responsibility.type.form</field>
@@ -34,4 +34,4 @@
 
     <menuitem name="Responsibility Types" action="action_afip_responsibility_type" id="menu_afip_responsibility_type" sequence="10" parent="menu_afip_config"/>
 
-</flectra>
+</odoo>

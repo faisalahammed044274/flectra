@@ -1,10 +1,10 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo. See LICENSE file for full copyright and licensing details.
 
-from flectra import _
-from flectra.http import route, request
-from flectra.osv import expression
-from flectra.addons.mass_mailing.controllers.main import MassMailController
+from odoo import _
+from odoo.http import route, request
+from odoo.osv import expression
+from odoo.addons.mass_mailing.controllers.main import MassMailController
 
 
 class MassMailController(MassMailController):

@@ -1,4 +1,4 @@
-<flectra>
+<odoo>
 	<record id="lu_2011_tax_AB-EC-0" model="account.tax.template">
 		<field name="sequence">171</field>
         <field name="description">0%</field>
@@ -5373,4 +5373,4 @@
 		    }),
 		]"/>
 	</record>
-</flectra>
+</odoo>

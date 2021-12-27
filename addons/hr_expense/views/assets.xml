@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<flectra>
+<odoo>
     <data>
         <template id="assets_backend" name="HR Expense Assets assets" inherit_id="web.assets_backend">
             <xpath expr="." position="inside">
@@ -18,4 +18,4 @@
             </xpath>
         </template>
     </data>
-</flectra>
+</odoo>

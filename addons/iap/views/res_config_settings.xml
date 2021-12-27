@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<flectra>
+<odoo>
     <record id="open_iap_account" model="ir.actions.server">
         <field name="name">Open IAP Account</field>
         <field name="model_id" ref="base_setup.model_res_config_settings"/>
@@ -23,9 +23,9 @@ if records:
                         <div class="col-12 col-lg-6 o_setting_box" id="iap_credits_setting">
                             <div class='o_setting_right_pane'>
                                 <div class="o_form_label">
-                                Flectra IAP
-                                <a href="https://doc.flectrahq.com/2.0/applications/general/in_app_purchase/in_app_purchase.html" title="Documentation" class="o_doc_link" target="_blank"></a>
-                                <a href="https://doc.flectrahq.com/2.0/developer/webservices/iap.html" title="Documentation" class="ml-1 o_doc_link" target="_blank"></a>
+                                Odoo IAP
+                                <a href="https://www.odoo.com/documentation/14.0/applications/general/in_app_purchase/in_app_purchase.html" title="Documentation" class="o_doc_link" target="_blank"></a>
+                                <a href="https://www.odoo.com/documentation/14.0/developer/webservices/iap.html" title="Documentation" class="ml-1 o_doc_link" target="_blank"></a>
                                 </div>
                                 <div class="text-muted">
                                     View your IAP Services and recharge your credits
@@ -40,4 +40,4 @@ if records:
             </xpath>
         </field>
     </record>
-</flectra>
+</odoo>

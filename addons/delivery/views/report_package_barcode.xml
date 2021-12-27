@@ -1,4 +1,4 @@
-<flectra>
+<odoo>
     <template id="report_package_barcode_delivery" inherit_id="stock.report_package_barcode">
         <xpath expr="//div[hasclass('o_packaging_type')]" position="after">
             <div t-if="o.shipping_weight" class="col-auto">
@@ -17,4 +17,4 @@
             </div>
         </xpath>
     </template>
-</flectra>
+</odoo>

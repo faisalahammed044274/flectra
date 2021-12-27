@@ -1,10 +1,10 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo. See LICENSE file for full copyright and licensing details.
 
 from datetime import date, datetime
 
-from flectra.tests import tagged
-from flectra.tests.common import SavepointCase
+from odoo.tests import tagged
+from odoo.tests.common import SavepointCase
 
 
 @tagged('company_leave')

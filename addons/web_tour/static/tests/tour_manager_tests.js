@@ -1,4 +1,4 @@
-flectra.define('web_tour.tour_manager_tests', async function (require) {
+odoo.define('web_tour.tour_manager_tests', async function (require) {
     "use strict";
 
     const KanbanView = require('web.KanbanView');

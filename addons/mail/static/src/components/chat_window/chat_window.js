@@ -1,4 +1,4 @@
-flectra.define('mail/static/src/components/chat_window/chat_window.js', function (require) {
+odoo.define('mail/static/src/components/chat_window/chat_window.js', function (require) {
 'use strict';
 
 const components = {

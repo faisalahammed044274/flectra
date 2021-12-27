@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo. See LICENSE file for full copyright and licensing details.
 
 import logging
 import re
@@ -8,12 +8,12 @@ from binascii import Error as binascii_error
 from collections import defaultdict
 from operator import itemgetter
 
-from flectra import _, api, fields, models, modules, tools
-from flectra.exceptions import AccessError, UserError
-from flectra.http import request
-from flectra.osv import expression
-from flectra.tools import groupby
-from flectra.tools.misc import clean_context
+from odoo import _, api, fields, models, modules, tools
+from odoo.exceptions import AccessError, UserError
+from odoo.http import request
+from odoo.osv import expression
+from odoo.tools import groupby
+from odoo.tools.misc import clean_context
 
 _logger = logging.getLogger(__name__)
 _image_dataurl = re.compile(r'(data:image/[a-z]+?);base64,([a-z0-9+/\n]{3,}=*)\n*([\'"])(?: data-filename="([^"]*)")?', re.I)

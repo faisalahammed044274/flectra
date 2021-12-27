@@ -1,13 +1,13 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo. See LICENSE file for full copyright and licensing details.
 
 import pytz
 from dateutil.parser import parse
 from dateutil.relativedelta import relativedelta
 
-from flectra import api, fields, models, _
-from flectra.exceptions import UserError, ValidationError
-from flectra.tools import html2plaintext, is_html_empty, plaintext2html, email_normalize
+from odoo import api, fields, models, _
+from odoo.exceptions import UserError, ValidationError
+from odoo.tools import html2plaintext, is_html_empty, plaintext2html, email_normalize
 
 ATTENDEE_CONVERTER_O2M = {
     'needsAction': 'notresponded',
@@ -78,7 +78,7 @@ class Meeting(models.Model):
 
 
     @api.model
-    def _microsoft_to_flectra_values(self, microsoft_event, default_reminders=(), default_values={}):
+    def _microsoft_to_odoo_values(self, microsoft_event, default_reminders=(), default_values={}):
         if microsoft_event.is_cancelled():
             return {'active': False}
 
@@ -88,7 +88,7 @@ class Meeting(models.Model):
             'confidential': 'confidential',
         }
 
-        commands_attendee, commands_partner = self._flectra_attendee_commands_m(microsoft_event)
+        commands_attendee, commands_partner = self._odoo_attendee_commands_m(microsoft_event)
         timeZone_start = pytz.timezone(microsoft_event.start.get('timeZone'))
         timeZone_stop = pytz.timezone(microsoft_event.end.get('timeZone'))
         start = parse(microsoft_event.start.get('dateTime')).astimezone(timeZone_start).replace(tzinfo=None)
@@ -123,14 +123,14 @@ class Meeting(models.Model):
         if microsoft_event.is_recurrent():
             values['microsoft_recurrence_master_id'] = microsoft_event.seriesMasterId
 
-        alarm_commands = self._flectra_reminders_commands_m(microsoft_event)
+        alarm_commands = self._odoo_reminders_commands_m(microsoft_event)
         if alarm_commands:
             values['alarm_ids'] = alarm_commands
 
         return values
 
     @api.model
-    def _microsoft_to_flectra_recurrence_values(self, microsoft_event, default_reminders=(), values={}):
+    def _microsoft_to_odoo_recurrence_values(self, microsoft_event, default_reminders=(), values={}):
         timeZone_start = pytz.timezone(microsoft_event.start.get('timeZone'))
         timeZone_stop = pytz.timezone(microsoft_event.end.get('timeZone'))
         start = parse(microsoft_event.start.get('dateTime')).astimezone(timeZone_start).replace(tzinfo=None)
@@ -145,7 +145,7 @@ class Meeting(models.Model):
         return values
 
     @api.model
-    def _flectra_attendee_commands_m(self, microsoft_event):
+    def _odoo_attendee_commands_m(self, microsoft_event):
         commands_attendee = []
         commands_partner = []
 
@@ -154,7 +154,7 @@ class Meeting(models.Model):
         existing_attendees = self.env['calendar.attendee']
         if microsoft_event.exists(self.env):
             existing_attendees = self.env['calendar.attendee'].search([
-                ('event_id', '=', microsoft_event.flectra_id(self.env)),
+                ('event_id', '=', microsoft_event.odoo_id(self.env)),
                 ('email', 'in', emails)])
         elif self.env.user.partner_id.email not in emails:
             commands_attendee += [(0, 0, {'state': 'accepted', 'partner_id': self.env.user.partner_id.id})]
@@ -172,18 +172,18 @@ class Meeting(models.Model):
                 commands_partner += [(4, partner.id)]
                 if m_attendee.get('emailAddress').get('name') and not partner.name:
                     partner.name = m_attendee.get('emailAddress').get('name')
-        for flectra_attendee in attendees_by_emails.values():
+        for odoo_attendee in attendees_by_emails.values():
             # Remove old attendees
-            if flectra_attendee.email not in emails:
-                commands_attendee += [(2, flectra_attendee.id)]
-                commands_partner += [(3, flectra_attendee.partner_id.id)]
+            if odoo_attendee.email not in emails:
+                commands_attendee += [(2, odoo_attendee.id)]
+                commands_partner += [(3, odoo_attendee.partner_id.id)]
         return commands_attendee, commands_partner
 
     @api.model
-    def _flectra_reminders_commands_m(self, microsoft_event):
+    def _odoo_reminders_commands_m(self, microsoft_event):
         reminders_commands = []
         if microsoft_event.isReminderOn:
-            event_id = self.browse(microsoft_event.flectra_id(self.env))
+            event_id = self.browse(microsoft_event.odoo_id(self.env))
             alarm_type_label = _("Notification")
 
             minutes = microsoft_event.reminderMinutesBeforeStart or 0
@@ -229,7 +229,7 @@ class Meeting(models.Model):
                 reminders_commands += [(3, a.id) for a in alarm_to_rm]
 
         else:
-            event_id = self.browse(microsoft_event.flectra_id(self.env))
+            event_id = self.browse(microsoft_event.odoo_id(self.env))
             alarm_to_rm = event_id.alarm_ids.filtered(lambda a: a.alarm_type == 'notification')
             if alarm_to_rm:
                 reminders_commands = [(3, a.id) for a in alarm_to_rm]
@@ -248,10 +248,10 @@ class Meeting(models.Model):
         values['id'] = self.microsoft_id
         microsoft_guid = self.env['ir.config_parameter'].sudo().get_param('microsoft_calendar.microsoft_guid', False)
         values['singleValueExtendedProperties'] = [{
-            'id': 'String {%s} Name flectra_id' % microsoft_guid,
+            'id': 'String {%s} Name odoo_id' % microsoft_guid,
             'value': str(self.id),
         }, {
-            'id': 'String {%s} Name owner_flectra_id' % microsoft_guid,
+            'id': 'String {%s} Name owner_odoo_id' % microsoft_guid,
             'value': str(self.user_id.id),
         }]
 
@@ -385,7 +385,7 @@ class Meeting(models.Model):
                               for event in invalid_event_ids]
             invalid_events = '\n'.join(invalid_events)
             details = "(%d/%d)" % (list_length_limit, total_invalid_events) if list_length_limit < total_invalid_events else "(%d)" % total_invalid_events
-            raise ValidationError(_("For a correct synchronization between Flectra and Outlook Calendar, "
+            raise ValidationError(_("For a correct synchronization between Odoo and Outlook Calendar, "
                                     "all attendees must have an email address. However, some events do "
                                     "not respect this condition. As long as the events are incorrect, "
                                     "the calendars will not be synchronized."
@@ -397,10 +397,10 @@ class Meeting(models.Model):
         values['id'] = self.microsoft_id
         microsoft_guid = self.env['ir.config_parameter'].sudo().get_param('microsoft_calendar.microsoft_guid', False)
         values['singleValueExtendedProperties'] = [{
-            'id': 'String {%s} Name flectra_id' % microsoft_guid,
+            'id': 'String {%s} Name odoo_id' % microsoft_guid,
             'value': str(self.id),
         }, {
-            'id': 'String {%s} Name owner_flectra_id' % microsoft_guid,
+            'id': 'String {%s} Name owner_odoo_id' % microsoft_guid,
             'value': str(self.user_id.id),
         }]
 

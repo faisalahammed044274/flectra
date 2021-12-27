@@ -1,4 +1,4 @@
-flectra.define('rating.portal.chatter', function (require) {
+odoo.define('rating.portal.chatter', function (require) {
 'use strict';
 
 var core = require('web.core');

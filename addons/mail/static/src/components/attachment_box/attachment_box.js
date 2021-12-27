@@ -1,4 +1,4 @@
-flectra.define('mail/static/src/components/attachment_box/attachment_box.js', function (require) {
+odoo.define('mail/static/src/components/attachment_box/attachment_box.js', function (require) {
 'use strict';
 
 const components = {

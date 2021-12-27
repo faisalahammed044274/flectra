@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<flectra>
+<odoo>
     <record id="l10n_au_chart_template" model="account.chart.template">
         <field name="name">Australian Tax and Account Chart Template (by Willow IT)</field>
         <field name="bank_account_code_prefix">1111</field>
@@ -8,4 +8,4 @@
         <field name="code_digits">5</field>
         <field name="currency_id" ref="base.AUD"/>
     </record>
-</flectra>
+</odoo>

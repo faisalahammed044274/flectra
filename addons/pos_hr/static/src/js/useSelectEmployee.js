@@ -1,4 +1,4 @@
-flectra.define('pos_hr.useSelectEmployee', function (require) {
+odoo.define('pos_hr.useSelectEmployee', function (require) {
     'use strict';
 
     const { Component } = owl;

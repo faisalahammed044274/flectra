@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
-from flectra import api, models, fields, _
-from flectra.exceptions import ValidationError
+from odoo import api, models, fields, _
+from odoo.exceptions import ValidationError
 
 class ResCompany(models.Model):
     _inherit = 'res.company'

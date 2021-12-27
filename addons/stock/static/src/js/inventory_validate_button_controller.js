@@ -1,4 +1,4 @@
-flectra.define('stock.InventoryValidationController', function (require) {
+odoo.define('stock.InventoryValidationController', function (require) {
 "use strict";
 
 var core = require('web.core');

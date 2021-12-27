@@ -1,4 +1,4 @@
-flectra.define('website/static/tests/dashboard_tests', function (require) {
+odoo.define('website/static/tests/dashboard_tests', function (require) {
 "use strict";
 
 const ControlPanel = require('web.ControlPanel');

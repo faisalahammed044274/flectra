@@ -1,4 +1,4 @@
-flectra.define('website.s_media_list_options', function (require) {
+odoo.define('website.s_media_list_options', function (require) {
 'use strict';
 
 const options = require('web_editor.snippets.options');

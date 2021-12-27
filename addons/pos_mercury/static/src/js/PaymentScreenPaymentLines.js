@@ -1,4 +1,4 @@
-flectra.define('pos_mercury.PaymentScreenPaymentLines', function (require) {
+odoo.define('pos_mercury.PaymentScreenPaymentLines', function (require) {
     'use strict';
 
     const PaymentScreenPaymentLines = require('point_of_sale.PaymentScreenPaymentLines');

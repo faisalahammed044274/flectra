@@ -1,12 +1,12 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo. See LICENSE file for full copyright and licensing details.
 
 from psycopg2 import IntegrityError
 
-from flectra.tests.common import TransactionCase, new_test_user
-from flectra.exceptions import ValidationError
-from flectra.service.model import check
-from flectra.tools import mute_logger
+from odoo.tests.common import TransactionCase, new_test_user
+from odoo.exceptions import ValidationError
+from odoo.service.model import check
+from odoo.tools import mute_logger
 
 
 class TestWebsiteResUsers(TransactionCase):
@@ -37,7 +37,7 @@ class TestWebsiteResUsers(TransactionCase):
     def test_change_login(self):
         new_test_user(self.env, login='Pou', website_id=self.website_1.id)
         user_belle = new_test_user(self.env, login='Belle', website_id=self.website_1.id)
-        with self.assertRaises(IntegrityError), mute_logger('flectra.sql_db'):
+        with self.assertRaises(IntegrityError), mute_logger('odoo.sql_db'):
             user_belle.login = 'Pou'
 
     def test_change_login_no_website(self):
@@ -56,5 +56,5 @@ class TestWebsiteResUsers(TransactionCase):
 
         # Should be a ValidationError (with a nice translated error message),
         # not an IntegrityError
-        with self.assertRaises(ValidationError), mute_logger('flectra.sql_db'):
+        with self.assertRaises(ValidationError), mute_logger('odoo.sql_db'):
             check_new_test_user(self.env.registry._db.dbname)

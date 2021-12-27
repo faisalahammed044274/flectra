@@ -1,4 +1,4 @@
-flectra.define('pos_cache.pos_cache', function (require) {
+odoo.define('pos_cache.pos_cache', function (require) {
 "use strict";
 
 var models = require('point_of_sale.models');

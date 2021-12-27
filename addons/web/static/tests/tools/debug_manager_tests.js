@@ -1,4 +1,4 @@
-flectra.define('web.debugManagerTests', function (require) {
+odoo.define('web.debugManagerTests', function (require) {
 "use strict";
 
 var testUtils = require('web.test_utils');

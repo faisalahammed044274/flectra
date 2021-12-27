@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<flectra>
+<odoo>
 <data>
     <!-- survey assets  -->
     <template id="survey_assets" name="Survey Results assets">
@@ -66,4 +66,4 @@
         </xpath>
     </template>
 </data>
-</flectra>
+</odoo>

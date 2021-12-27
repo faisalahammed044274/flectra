@@ -1,4 +1,4 @@
-flectra.define('payment_stripe.processing', function (require) {
+odoo.define('payment_stripe.processing', function (require) {
 'use strict';
 
 var ajax = require('web.ajax');
@@ -45,4 +45,4 @@ return PaymentProcessing.include({
         }
     },
 });
-}); 
+});

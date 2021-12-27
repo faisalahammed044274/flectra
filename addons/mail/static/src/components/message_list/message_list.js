@@ -1,4 +1,4 @@
-flectra.define('mail/static/src/components/message_list/message_list.js', function (require) {
+odoo.define('mail/static/src/components/message_list/message_list.js', function (require) {
 'use strict';
 
 const components = {

@@ -1,4 +1,4 @@
-flectra.define('im_livechat.legacy.im_livechat.im_livechat', function (require) {
+odoo.define('im_livechat.legacy.im_livechat.im_livechat', function (require) {
 "use strict";
 
 require('bus.BusService');
@@ -395,7 +395,7 @@ var LivechatButton = Widget.extend({
 
     /**
      * @private
-     * @param {FlectraEvent} ev
+     * @param {OdooEvent} ev
      */
     _onCloseChatWindow: function (ev) {
         ev.stopPropagation();
@@ -422,7 +422,7 @@ var LivechatButton = Widget.extend({
     },
     /**
      * @private
-     * @param {FlectraEvent} ev
+     * @param {OdooEvent} ev
      * @param {Object} ev.data.messageData
      */
     _onPostMessageChatWindow: function (ev) {
@@ -436,7 +436,7 @@ var LivechatButton = Widget.extend({
     },
     /**
      * @private
-     * @param {FlectraEvent} ev
+     * @param {OdooEvent} ev
      */
     _onSaveChatWindow: function (ev) {
         ev.stopPropagation();
@@ -444,7 +444,7 @@ var LivechatButton = Widget.extend({
     },
     /**
      * @private
-     * @param {FlectraEvent} ev
+     * @param {OdooEvent} ev
      */
     _onUpdatedTypingPartners(ev) {
         ev.stopPropagation();
@@ -452,7 +452,7 @@ var LivechatButton = Widget.extend({
     },
     /**
      * @private
-     * @param {FlectraEvent} ev
+     * @param {OdooEvent} ev
      */
     _onUpdatedUnreadCounter: function (ev) {
         ev.stopPropagation();
@@ -605,7 +605,7 @@ return {
 
 });
 
-flectra.define('im_livechat.legacy.im_livechat.model.WebsiteLivechat', function (require) {
+odoo.define('im_livechat.legacy.im_livechat.model.WebsiteLivechat', function (require) {
 "use strict";
 
 var AbstractThread = require('im_livechat.legacy.mail.model.AbstractThread');
@@ -792,7 +792,7 @@ return WebsiteLivechat;
 
 });
 
-flectra.define('im_livechat.legacy.im_livechat.model.WebsiteLivechatMessage', function (require) {
+odoo.define('im_livechat.legacy.im_livechat.model.WebsiteLivechatMessage', function (require) {
 "use strict";
 
 var AbstractMessage = require('im_livechat.legacy.mail.model.AbstractMessage');
@@ -859,7 +859,7 @@ return WebsiteLivechatMessage;
 
 });
 
-flectra.define('im_livechat.legacy.im_livechat.WebsiteLivechatWindow', function (require) {
+odoo.define('im_livechat.legacy.im_livechat.WebsiteLivechatWindow', function (require) {
 "use strict";
 
 var AbstractThreadWindow = require('im_livechat.legacy.mail.AbstractThreadWindow');
@@ -965,7 +965,7 @@ return LivechatWindow;
 
 });
 
-flectra.define('im_livechat.legacy.mail.model.AbstractThread', function (require) {
+odoo.define('im_livechat.legacy.mail.model.AbstractThread', function (require) {
 "use strict";
 
 var Class = require('web.Class');
@@ -1173,7 +1173,7 @@ return AbstractThread;
 
 });
 
-flectra.define('im_livechat.legacy.mail.model.ThreadTypingMixin', function (require) {
+odoo.define('im_livechat.legacy.mail.model.ThreadTypingMixin', function (require) {
 "use strict";
 
 var CCThrottleFunction = require('im_livechat.legacy.mail.model.CCThrottleFunction');
@@ -1284,7 +1284,7 @@ var ThreadTypingMixin = {
      * The choice of the members name for display is not random: it displays
      * the user that have been typing for the longest time. Also, this function
      * is hard-coded to display at most 2 partners. This limitation comes from
-     * how translation works in Flectra, for which unevaluated string cannot be
+     * how translation works in Odoo, for which unevaluated string cannot be
      * translated.
      *
      * @returns {string} list of members that are typing something on the thread
@@ -1534,7 +1534,7 @@ return ThreadTypingMixin;
 
 });
 
-flectra.define('im_livechat.legacy.mail.model.AbstractMessage', function (require) {
+odoo.define('im_livechat.legacy.mail.model.AbstractMessage', function (require) {
 "use strict";
 
 var mailUtils = require('mail.utils');
@@ -1997,7 +1997,7 @@ return AbstractMessage;
 
 });
 
-flectra.define('im_livechat.legacy.mail.AbstractThreadWindow', function (require) {
+odoo.define('im_livechat.legacy.mail.AbstractThreadWindow', function (require) {
 "use strict";
 
 var ThreadWidget = require('im_livechat.legacy.mail.widget.Thread');
@@ -2501,7 +2501,7 @@ return AbstractThreadWindow;
 
 });
 
-flectra.define('im_livechat.legacy.mail.model.CCThrottleFunctionObject', function (require) {
+odoo.define('im_livechat.legacy.mail.model.CCThrottleFunctionObject', function (require) {
 "use strict";
 
 var Class = require('web.Class');
@@ -2623,7 +2623,7 @@ return CCThrottleFunctionObject;
 
 });
 
-flectra.define('im_livechat.legacy.mail.model.CCThrottleFunction', function (require) {
+odoo.define('im_livechat.legacy.mail.model.CCThrottleFunction', function (require) {
 "use strict";
 
 var CCThrottleFunctionObject = require('im_livechat.legacy.mail.model.CCThrottleFunctionObject');
@@ -2682,7 +2682,7 @@ return CCThrottleFunction;
 
 });
 
-flectra.define('im_livechat.legacy.mail.model.Timer', function (require) {
+odoo.define('im_livechat.legacy.mail.model.Timer', function (require) {
 "use strict";
 
 var Class = require('web.Class');
@@ -2752,7 +2752,7 @@ return Timer;
 
 });
 
-flectra.define('im_livechat.legacy.mail.model.Timers', function (require) {
+odoo.define('im_livechat.legacy.mail.model.Timers', function (require) {
 "use strict";
 
 var Timer = require('im_livechat.legacy.mail.model.Timer');
@@ -2835,7 +2835,7 @@ return Timers;
 
 });
 
-flectra.define('im_livechat.legacy.mail.widget.Thread', function (require) {
+odoo.define('im_livechat.legacy.mail.widget.Thread', function (require) {
 "use strict";
 
 var DocumentViewer = require('im_livechat.legacy.mail.DocumentViewer');
@@ -3521,7 +3521,7 @@ return ThreadWidget;
 
 });
 
-flectra.define('im_livechat.legacy.mail.DocumentViewer', function (require) {
+odoo.define('im_livechat.legacy.mail.DocumentViewer', function (require) {
 "use strict";
 
 var core = require('web.core');

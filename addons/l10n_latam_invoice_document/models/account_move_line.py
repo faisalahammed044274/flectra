@@ -1,7 +1,7 @@
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo. See LICENSE file for full copyright and licensing details.
 
-from flectra import models, api, fields
-from flectra.tools.sql import column_exists, create_column
+from odoo import models, api, fields
+from odoo.tools.sql import column_exists, create_column
 
 
 class AccountMoveLine(models.Model):

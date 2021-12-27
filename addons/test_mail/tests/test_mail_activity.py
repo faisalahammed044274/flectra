@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo. See LICENSE file for full copyright and licensing details.
 
 from datetime import date, datetime, timedelta
 from dateutil.relativedelta import relativedelta
@@ -8,11 +8,11 @@ from unittest.mock import DEFAULT
 
 import pytz
 
-from flectra import fields, exceptions, tests
-from flectra.addons.test_mail.tests.common import TestMailCommon
-from flectra.addons.test_mail.models.test_mail_models import MailTestActivity
-from flectra.tools import mute_logger
-from flectra.tests.common import Form
+from odoo import fields, exceptions, tests
+from odoo.addons.test_mail.tests.common import TestMailCommon
+from odoo.addons.test_mail.models.test_mail_models import MailTestActivity
+from odoo.tools import mute_logger
+from odoo.tests.common import Form
 
 
 class TestActivityCommon(TestMailCommon):
@@ -28,7 +28,7 @@ class TestActivityCommon(TestMailCommon):
 @tests.tagged('mail_activity')
 class TestActivityRights(TestActivityCommon):
 
-    @mute_logger('flectra.addons.mail.models.mail_mail')
+    @mute_logger('odoo.addons.mail.models.mail_mail')
     def test_activity_security_user_access_other(self):
         activity = self.test_record.with_user(self.user_employee).activity_schedule(
             'test_mail.mail_act_test_todo',
@@ -36,14 +36,14 @@ class TestActivityRights(TestActivityCommon):
         self.assertTrue(activity.can_write)
         activity.write({'user_id': self.user_employee.id})
 
-    @mute_logger('flectra.addons.mail.models.mail_mail')
+    @mute_logger('odoo.addons.mail.models.mail_mail')
     def test_activity_security_user_access_own(self):
         activity = self.test_record.with_user(self.user_employee).activity_schedule(
             'test_mail.mail_act_test_todo')
         self.assertTrue(activity.can_write)
         activity.write({'user_id': self.user_admin.id})
 
-    @mute_logger('flectra.addons.mail.models.mail_mail')
+    @mute_logger('odoo.addons.mail.models.mail_mail')
     def test_activity_security_user_noaccess_automated(self):
         def _employee_crash(*args, **kwargs):
             """ If employee is test employee, consider he has no access on document """
@@ -118,7 +118,7 @@ class TestActivityFlow(TestActivityCommon):
             self.assertEqual(test_record.activity_ids, self.env['mail.activity'])
             self.assertEqual(test_record.message_ids[0].subtype_id, self.env.ref('mail.mt_activities'))
 
-    @mute_logger('flectra.addons.mail.models.mail_mail')
+    @mute_logger('odoo.addons.mail.models.mail_mail')
     def test_activity_notify_other_user(self):
         self.user_admin.notification_type = 'email'
         rec = self.test_record.with_user(self.user_employee)
@@ -141,7 +141,7 @@ class TestActivityFlow(TestActivityCommon):
         self.assertEqual(activity.create_uid, self.user_employee)
         self.assertEqual(activity.user_id, self.user_employee)
 
-    @mute_logger('flectra.addons.mail.models.mail_mail')
+    @mute_logger('odoo.addons.mail.models.mail_mail')
     def test_activity_dont_notify_no_user_change(self):
         self.user_employee.notification_type = 'email'
         activity = self.test_record.activity_schedule('test_mail.mail_act_test_todo', user_id=self.user_employee.id)
@@ -149,7 +149,7 @@ class TestActivityFlow(TestActivityCommon):
             activity.with_user(self.user_admin).write({'user_id': self.user_employee.id})
         self.assertEqual(activity.user_id, self.user_employee)
 
-    @mute_logger('flectra.addons.mail.models.mail_mail')
+    @mute_logger('odoo.addons.mail.models.mail_mail')
     def test_activity_summary_sync(self):
         """ Test summary from type is copied on activities if set (currently only in form-based onchange) """
         ActivityType = self.env['mail.activity.type']
@@ -219,7 +219,7 @@ class TestActivityFlow(TestActivityCommon):
 @tests.tagged('mail_activity')
 class TestActivityMixin(TestActivityCommon):
 
-    @mute_logger('flectra.addons.mail.models.mail_mail')
+    @mute_logger('odoo.addons.mail.models.mail_mail')
     def test_activity_mixin(self):
         self.user_employee.tz = self.user_admin.tz
         with self.with_user('employee'):
@@ -300,7 +300,7 @@ class TestActivityMixin(TestActivityCommon):
             self.assertEqual(self.test_record.activity_ids, self.env['mail.activity'])
             self.assertEqual(len(self.test_record.message_ids), 2)
 
-    @mute_logger('flectra.addons.mail.models.mail_mail')
+    @mute_logger('odoo.addons.mail.models.mail_mail')
     def test_activity_mixin_archive(self):
         rec = self.test_record.with_user(self.user_employee)
         new_act = rec.activity_schedule(
@@ -314,7 +314,7 @@ class TestActivityMixin(TestActivityCommon):
         self.assertEqual(rec.active, True)
         self.assertEqual(rec.activity_ids, self.env['mail.activity'])
 
-    @mute_logger('flectra.addons.mail.models.mail_mail')
+    @mute_logger('odoo.addons.mail.models.mail_mail')
     def test_activity_mixin_reschedule_user(self):
         rec = self.test_record.with_user(self.user_employee)
         rec.activity_schedule(
@@ -335,7 +335,7 @@ class TestActivityMixin(TestActivityCommon):
             new_user_id=self.user_employee.id)
         self.assertEqual(rec.activity_ids[0].user_id, self.user_employee)
 
-    @mute_logger('flectra.addons.mail.models.mail_mail')
+    @mute_logger('odoo.addons.mail.models.mail_mail')
     def test_my_activity_flow_employee(self):
         Activity = self.env['mail.activity']
         date_today = date.today()

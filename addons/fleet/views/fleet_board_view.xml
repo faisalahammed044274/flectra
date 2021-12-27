@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<flectra>
+<odoo>
     <record id="fleet_costs_report_view_search" model="ir.ui.view">
         <field name="name">fleet.vehicle.cost.view.search</field>
         <field name="model">fleet.vehicle.cost.report</field>
@@ -57,10 +57,10 @@
         <p class="o_view_nocontent_empty_folder">
           No data for analysis
         </p><p>
-          Flectra helps you managing the costs for your different vehicles
+          Odoo helps you managing the costs for your different vehicles
           Costs are generally created from services and contract and appears here.
         </p><p>
-          Thanks to the different filters, Flectra can only print the effective
+          Thanks to the different filters, Odoo can only print the effective
           costs, sort them by type and by vehicle.
         </p>
       </field>
@@ -72,4 +72,4 @@
               action="fleet_costs_reporting_action"
               sequence="1"
               groups="fleet_group_manager"/>
-</flectra>
+</odoo>

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<flectra>
+<odoo>
 	<!-- LINK.TRACKER VIEWS -->
     <record id="link_tracker_view_search" model="ir.ui.view">
         <field name="name">link.tracker.view.search.inherit.mass.mail</field>
@@ -86,4 +86,4 @@
         sequence="5"
         action="link_tracker.link_tracker_action"/>
 
-</flectra>
+</odoo>

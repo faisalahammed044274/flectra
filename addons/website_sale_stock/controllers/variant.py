@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo. See LICENSE file for full copyright and licensing details.
 
-from flectra import http
-from flectra.addons.website_sale.controllers.variant import WebsiteSaleVariantController
+from odoo import http
+from odoo.addons.website_sale.controllers.variant import WebsiteSaleVariantController
 
 
 class WebsiteSaleStockVariantController(WebsiteSaleVariantController):

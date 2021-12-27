@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<flectra>
+<odoo>
     <record id="google_calendar_reset_account_view_form" model="ir.ui.view">
         <field name="name">google.calendar.account.reset.form</field>
         <field name="model">google.calendar.account.reset</field>
@@ -26,4 +26,4 @@
         <field name="view_mode">form</field>
         <field name="target">new</field>
     </record>
-</flectra>
+</odoo>

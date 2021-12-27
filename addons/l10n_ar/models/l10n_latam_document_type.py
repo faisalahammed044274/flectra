@@ -1,5 +1,5 @@
-from flectra import models, api, fields, _
-from flectra.exceptions import UserError
+from odoo import models, api, fields, _
+from odoo.exceptions import UserError
 
 
 class L10nLatamDocumentType(models.Model):

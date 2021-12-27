@@ -1,4 +1,4 @@
-flectra.define('web.ajax_tests', function (require) {
+odoo.define('web.ajax_tests', function (require) {
 "use strict";
 
 var ajax = require('web.ajax');

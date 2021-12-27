@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo. See LICENSE file for full copyright and licensing details.
 
-from flectra import models, fields, api, SUPERUSER_ID
-from flectra.http import request
+from odoo import models, fields, api, SUPERUSER_ID
+from odoo.http import request
 
 
 class website_form_config(models.Model):

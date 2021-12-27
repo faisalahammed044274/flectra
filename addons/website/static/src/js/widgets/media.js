@@ -1,4 +1,4 @@
-flectra.define('website.widgets.media', function (require) {
+odoo.define('website.widgets.media', function (require) {
 'use strict';
 
 const {ImageWidget} = require('wysiwyg.widgets.media');

@@ -1,4 +1,4 @@
-flectra.define('website_links.charts', function (require) {
+odoo.define('website_links.charts', function (require) {
 'use strict';
 
 var core = require('web.core');

@@ -1,4 +1,4 @@
-flectra.define('website_crm.tour', function(require) {
+odoo.define('website_crm.tour', function(require) {
     'use strict';
 
     var tour = require('web_tour.tour');
@@ -21,7 +21,7 @@ flectra.define('website_crm.tour', function(require) {
     }, {
         content: "Complete Company",
         trigger: "input[name=partner_name]",
-        run: "text FlectraHQ Inc., Odoo S.A."
+        run: "text Odoo S.A."
     }, {
         content: "Complete Subject",
         trigger: "input[name=name]",

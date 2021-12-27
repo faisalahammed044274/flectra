@@ -1,13 +1,13 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo. See LICENSE file for full copyright and licensing details.
 
 from ast import literal_eval
 
-from flectra import api, fields, models
+from odoo import api, fields, models
 from pytz import timezone, UTC, utc
 from datetime import timedelta
 
-from flectra.tools import format_time
+from odoo.tools import format_time
 
 
 class HrEmployeeBase(models.AbstractModel):

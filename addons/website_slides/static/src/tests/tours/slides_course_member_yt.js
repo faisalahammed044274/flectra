@@ -1,4 +1,4 @@
-flectra.define('website_slides.tour.slide.course.member.youtube', function (require) {
+odoo.define('website_slides.tour.slide.course.member.youtube', function (require) {
 'use strict';
 
 var tour = require('web_tour.tour');

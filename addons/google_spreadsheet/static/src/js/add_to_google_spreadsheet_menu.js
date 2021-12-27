@@ -1,4 +1,4 @@
-flectra.define('board.AddToGoogleSpreadsheetMenu', function (require) {
+odoo.define('board.AddToGoogleSpreadsheetMenu', function (require) {
     "use strict";
 
     const Domain = require('web.Domain');

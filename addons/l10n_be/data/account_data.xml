@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<flectra>
+<odoo>
 	<data noupdate="1">
 		
 		<!-- Account Tax Group -->
@@ -21,4 +21,4 @@
 		</record>
 
 	</data>
-</flectra> 
+</odoo>

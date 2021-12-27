@@ -1,11 +1,11 @@
 # -*- coding:utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo. See LICENSE file for full copyright and licensing details.
 
-from flectra import api, models, fields, _
-from flectra.tests.common import Form
-from flectra.exceptions import UserError
-from flectra.addons.l10n_it_edi.tools.remove_signature import remove_signature
-from flectra.osv.expression import OR, AND
+from odoo import api, models, fields, _
+from odoo.tests.common import Form
+from odoo.exceptions import UserError
+from odoo.addons.l10n_it_edi.tools.remove_signature import remove_signature
+from odoo.osv.expression import OR, AND
 
 from lxml import etree
 from datetime import datetime
@@ -154,7 +154,7 @@ class AccountEdiFormat(models.Model):
         res = invoice.invoice_generate_xml()
         if len(invoice.commercial_partner_id.l10n_it_pa_index or '') == 6:
             invoice.message_post(
-                body=(_("Invoices for PA are not managed by Flectra, you can download the document and send it on your own."))
+                body=(_("Invoices for PA are not managed by Odoo, you can download the document and send it on your own."))
             )
         else:
             invoice.l10n_it_send_state = 'to_send'

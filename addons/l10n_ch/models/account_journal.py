@@ -1,12 +1,12 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo. See LICENSE file for full copyright and licensing details.
 
-from flectra import models, fields, api
+from odoo import models, fields, api
 
-from flectra.exceptions import ValidationError
+from odoo.exceptions import ValidationError
 
-from flectra.addons.base_iban.models.res_partner_bank import validate_iban
-from flectra.addons.base.models.res_bank import sanitize_account_number
+from odoo.addons.base_iban.models.res_partner_bank import validate_iban
+from odoo.addons.base.models.res_bank import sanitize_account_number
 
 
 class AccountJournal(models.Model):
@@ -16,7 +16,7 @@ class AccountJournal(models.Model):
     l10n_ch_postal = fields.Char('Client Number', related='bank_account_id.l10n_ch_postal', readonly=False)
     invoice_reference_model = fields.Selection(selection_add=[
         ('ch', 'Switzerland')
-    ], ondelete={'ch': lambda recs: recs.write({'invoice_reference_model': 'flectra'})})
+    ], ondelete={'ch': lambda recs: recs.write({'invoice_reference_model': 'odoo'})})
 
     @api.model
     def create(self, vals):

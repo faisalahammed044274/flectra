@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<flectra>
+<odoo>
     <record id="tva_acq_normale19" model="account.tax.template">
         <field name="chart_template_id" ref="l10n_dz_pcg_chart_template"/>
         <field name="name">TVA (achat) 19,0%</field>
@@ -341,4 +341,4 @@
             }),
         ]"/>
     </record>
-</flectra>
+</odoo>

@@ -1,4 +1,4 @@
-flectra.define('website_sale.form', function (require) {
+odoo.define('website_sale.form', function (require) {
 'use strict';
 
 var FormEditorRegistry = require('website_form.form_editor_registry');

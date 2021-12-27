@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<flectra>
+<odoo>
     <data>
 
         <record id="product_category_form_view_inherit" model="ir.ui.view">
@@ -418,4 +418,4 @@
     <menuitem id="menu_forecast_inventory" name="Forecasted Inventory" parent="stock.menu_warehouse_report" sequence="101" action="stock.report_stock_quantity_action"/>
 
     </data>
-</flectra>
+</odoo>

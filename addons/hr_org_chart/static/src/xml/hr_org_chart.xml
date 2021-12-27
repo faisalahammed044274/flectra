@@ -6,7 +6,7 @@
         <t t-set="is_self" t-value="employee.id == view_employee_id"/>
 
         <div class="o_media_left">
-            <!-- NOTE: Since by the default on not squared images flectra add white borders,
+            <!-- NOTE: Since by the default on not squared images odoo add white borders,
                 use bg-images to get a clean and centred images -->
             <a t-if="! is_self"
                 class="o_media_object rounded-circle o_employee_redirect"

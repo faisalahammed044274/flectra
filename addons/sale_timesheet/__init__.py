@@ -1,11 +1,11 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo. See LICENSE file for full copyright and licensing details.
 from . import controllers
 from . import models
 from . import wizard
 from . import report
 
-from flectra import api, SUPERUSER_ID
+from odoo import api, SUPERUSER_ID
 
 def uninstall_hook(cr, registry):
     env = api.Environment(cr, SUPERUSER_ID, {})

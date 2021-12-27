@@ -1,9 +1,9 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo. See LICENSE file for full copyright and licensing details.
 
 from collections import defaultdict
 
-from flectra import models
+from odoo import models
 
 
 class EventRegistration(models.Model):

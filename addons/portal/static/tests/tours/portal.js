@@ -1,4 +1,4 @@
-flectra.define('portal.tour', function (require) {
+odoo.define('portal.tour', function (require) {
 'use strict';
 
 var tour = require("web_tour.tour");

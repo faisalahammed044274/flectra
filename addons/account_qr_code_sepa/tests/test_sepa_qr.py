@@ -1,7 +1,7 @@
 # -*- coding:utf-8 -*-
 
-from flectra.exceptions import UserError
-from flectra.addons.account.tests.common import AccountTestInvoicingCommon
+from odoo.exceptions import UserError
+from odoo.addons.account.tests.common import AccountTestInvoicingCommon
 
 
 class TestSEPAQRCode(AccountTestInvoicingCommon):

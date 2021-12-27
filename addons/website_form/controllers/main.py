@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo. See LICENSE file for full copyright and licensing details.
 
 import base64
 import json
@@ -9,12 +9,12 @@ from datetime import datetime
 from psycopg2 import IntegrityError
 from werkzeug.exceptions import BadRequest
 
-from flectra import http, SUPERUSER_ID, _
-from flectra.http import request
-from flectra.tools import DEFAULT_SERVER_DATE_FORMAT, DEFAULT_SERVER_DATETIME_FORMAT
-from flectra.tools.translate import _
-from flectra.exceptions import ValidationError, UserError
-from flectra.addons.base.models.ir_qweb_fields import nl2br
+from odoo import http, SUPERUSER_ID, _
+from odoo.http import request
+from odoo.tools import DEFAULT_SERVER_DATE_FORMAT, DEFAULT_SERVER_DATETIME_FORMAT
+from odoo.tools.translate import _
+from odoo.exceptions import ValidationError, UserError
+from odoo.addons.base.models.ir_qweb_fields import nl2br
 
 
 class WebsiteForm(http.Controller):

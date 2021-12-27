@@ -1,6 +1,6 @@
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
-from flectra.tests.common import SavepointCase, tagged
-from flectra.exceptions import ValidationError
+# Part of Odoo. See LICENSE file for full copyright and licensing details.
+from odoo.tests.common import SavepointCase, tagged
+from odoo.exceptions import ValidationError
 from unittest.mock import patch
 
 import stdnum.eu.vat
@@ -48,7 +48,7 @@ class TestStructure(SavepointCase):
         })
 
         # reactivate it and correct the vat number
-        with patch('flectra.addons.base_vat.models.res_partner.check_vies', type(self)._vies_check_func):
+        with patch('odoo.addons.base_vat.models.res_partner.check_vies', type(self)._vies_check_func):
             self.env.user.company_id.vat_check_vies = True
 
     def test_vat_syntactic_validation(self):

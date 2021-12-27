@@ -1,4 +1,4 @@
-flectra.define('snailmail/static/src/models/message.message.js', function (require) {
+odoo.define('snailmail/static/src/models/message.message.js', function (require) {
 'use strict';
 
 const { registerInstancePatchModel } = require('mail/static/src/model/model_core.js');

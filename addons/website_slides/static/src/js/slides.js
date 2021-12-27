@@ -1,4 +1,4 @@
-flectra.define('website_slides.slides', function (require) {
+odoo.define('website_slides.slides', function (require) {
 'use strict';
 
 var publicWidget = require('web.public.widget');
@@ -38,7 +38,7 @@ return publicWidget.registry.websiteSlides;
 
 //==============================================================================
 
-flectra.define('website_slides.slides_embed', function (require) {
+odoo.define('website_slides.slides_embed', function (require) {
 'use strict';
 
 var publicWidget = require('web.public.widget');

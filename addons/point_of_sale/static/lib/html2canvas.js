@@ -2865,4 +2865,4 @@
         return canvas;
       };
     };
-    })(window,document); 
+    })(window,document);

@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo. See LICENSE file for full copyright and licensing details.
 
 from dateutil import relativedelta
 from datetime import timedelta
@@ -7,10 +7,10 @@ from functools import partial
 import datetime
 from pytz import timezone
 
-from flectra import api, exceptions, fields, models, _
-from flectra.exceptions import ValidationError
-from flectra.addons.resource.models.resource import make_aware, Intervals
-from flectra.tools.float_utils import float_compare
+from odoo import api, exceptions, fields, models, _
+from odoo.exceptions import ValidationError
+from odoo.addons.resource.models.resource import make_aware, Intervals
+from odoo.tools.float_utils import float_compare
 
 
 class MrpWorkcenter(models.Model):

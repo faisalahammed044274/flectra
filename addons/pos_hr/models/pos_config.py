@@ -2,7 +2,7 @@
 
 from functools import partial
 
-from flectra import models, fields
+from odoo import models, fields
 
 
 class PosConfig(models.Model):

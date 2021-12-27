@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
 
-from flectra.tests import Form
-from flectra.addons.mail.tests.common import mail_new_test_user
-from flectra.addons.stock.tests import common2
+from odoo.tests import Form
+from odoo.addons.mail.tests.common import mail_new_test_user
+from odoo.addons.stock.tests import common2
 
 
 class TestMrpCommon(common2.TestStockCommon):

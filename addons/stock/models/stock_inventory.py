@@ -1,12 +1,12 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo. See LICENSE file for full copyright and licensing details.
 
-from flectra import _, api, fields, models
-from flectra.addons.base.models.ir_model import MODULE_UNINSTALL_FLAG
-from flectra.exceptions import UserError, ValidationError
-from flectra.osv import expression
-from flectra.tools import float_compare, float_is_zero
-from flectra.tools.misc import OrderedSet
+from odoo import _, api, fields, models
+from odoo.addons.base.models.ir_model import MODULE_UNINSTALL_FLAG
+from odoo.exceptions import UserError, ValidationError
+from odoo.osv import expression
+from odoo.tools import float_compare, float_is_zero
+from odoo.tools.misc import OrderedSet
 
 
 class Inventory(models.Model):
@@ -580,7 +580,7 @@ class InventoryLine(models.Model):
         if not self.env.context.get('default_inventory_id'):
             raise NotImplementedError(_('Unsupported search on %s outside of an Inventory Adjustment', 'difference_qty'))
         lines = self.search([('inventory_id', '=', self.env.context.get('default_inventory_id'))])
-        line_ids = lines.filtered(lambda line: float_is_zero(line.difference_qty, line.product_id.uom_id.rounding) == result).ids
+        line_ids = lines.filtered(lambda line: float_is_zero(line.difference_qty, precision_rounding=line.product_id.uom_id.rounding) == result).ids
         return [('id', 'in', line_ids)]
 
     def _search_outdated(self, operator, value):

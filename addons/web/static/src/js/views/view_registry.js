@@ -1,4 +1,4 @@
-flectra.define('web.view_registry', function (require) {
+odoo.define('web.view_registry', function (require) {
 "use strict";
 
 /**
@@ -16,7 +16,7 @@ return new Registry();
 
 });
 
-flectra.define('web._view_registry', function (require) {
+odoo.define('web._view_registry', function (require) {
 "use strict";
 
 /**

@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<flectra>
+<odoo>
     <!-- Tax Definitions -->
     <!-- for purchase -->
     <record id="tax_purchase_vat10" model="account.tax.template">
@@ -206,4 +206,4 @@
                 }),
             ]"/>
     </record>
-</flectra>
+</odoo>

@@ -1,10 +1,10 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo. See LICENSE file for full copyright and licensing details.
 
-from flectra import api, models, tools, _
-from flectra.addons.website.models import ir_http
-from flectra.exceptions import UserError
-from flectra.http import request
+from odoo import api, models, tools, _
+from odoo.addons.website.models import ir_http
+from odoo.exceptions import UserError
+from odoo.http import request
 
 
 class Lang(models.Model):

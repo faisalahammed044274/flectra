@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<flectra>
+<odoo>
     <data>
         <record id="view_city_tree" model="ir.ui.view">
             <field name="model">res.city</field>
@@ -36,5 +36,5 @@
             </field>
         </record>
     </data>
-</flectra>
+</odoo>
 

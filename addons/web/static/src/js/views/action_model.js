@@ -1,4 +1,4 @@
-flectra.define("web/static/src/js/views/action_model.js", function (require) {
+odoo.define("web/static/src/js/views/action_model.js", function (require) {
     "use strict";
 
     const Domain = require("web.Domain");

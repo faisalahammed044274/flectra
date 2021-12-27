@@ -1,4 +1,4 @@
-flectra.define('website.theme_preview_kanban', function (require) {
+odoo.define('website.theme_preview_kanban', function (require) {
 "use strict";
 
 var KanbanController = require('web.KanbanController');

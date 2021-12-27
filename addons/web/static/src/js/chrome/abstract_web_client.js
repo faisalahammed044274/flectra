@@ -1,4 +1,4 @@
-flectra.define('web.AbstractWebClient', function (require) {
+odoo.define('web.AbstractWebClient', function (require) {
 "use strict";
 
 /**
@@ -92,8 +92,8 @@ var AbstractWebClient = Widget.extend(KeyboardNavigationMixin, {
         webclient_started: '_onWebClientStarted',
     },
     init: function (parent) {
-        // a flag to determine that flectra is fully loaded
-        flectra.isReady = false;
+        // a flag to determine that odoo is fully loaded
+        odoo.isReady = false;
         this.client_options = {};
         this._super(parent);
         KeyboardNavigationMixin.init.call(this);
@@ -101,7 +101,7 @@ var AbstractWebClient = Widget.extend(KeyboardNavigationMixin, {
         this._current_state = null;
         this.menu_dp = new concurrency.DropPrevious();
         this.action_mutex = new concurrency.Mutex();
-        this.set('title_part', {"zopenerp": "Flectra"});
+        this.set('title_part', {"zopenerp": "Odoo"});
         this.env = env;
         this.env.bus.on('set_title_part', this, this._onSetTitlePart);
     },
@@ -350,7 +350,7 @@ var AbstractWebClient = Widget.extend(KeyboardNavigationMixin, {
      * it can call back the caller.
      *
      * @private
-     * @param {FlectraEvent} event
+     * @param {OdooEvent} event
      */
     _onCallService: function (ev) {
         const payload = ev.data;
@@ -392,7 +392,7 @@ var AbstractWebClient = Widget.extend(KeyboardNavigationMixin, {
     },
     /**
      * @private
-     * @param {FlectraEvent} e
+     * @param {OdooEvent} e
      * @param {Object} e.data.filter the filter description
      * @param {function} e.data.on_success called when the RPC succeeds with its
      *   returned value as argument
@@ -404,7 +404,7 @@ var AbstractWebClient = Widget.extend(KeyboardNavigationMixin, {
     },
     /**
      * @private
-     * @param {FlectraEvent} e
+     * @param {OdooEvent} e
      * @param {Object} e.data.filter the filter description
      * @param {function} e.data.on_success called when the RPC succeeds with its
      *   returned value as argument
@@ -418,7 +418,7 @@ var AbstractWebClient = Widget.extend(KeyboardNavigationMixin, {
      * Displays a warning in a dialog or with the notification service
      *
      * @private
-     * @param {FlectraEvent} e
+     * @param {OdooEvent} e
      * @param {string} e.data.message the warning's message
      * @param {string} e.data.title the warning's title
      * @param {string} [e.data.type] 'dialog' to display in a dialog
@@ -441,7 +441,7 @@ var AbstractWebClient = Widget.extend(KeyboardNavigationMixin, {
      * main scrolling area of the webclient.
      *
      * @private
-     * @param {FlectraEvent} ev
+     * @param {OdooEvent} ev
      * @param {function} ev.data.callback
      */
     _onGetScrollPosition: function (ev) {
@@ -451,7 +451,7 @@ var AbstractWebClient = Widget.extend(KeyboardNavigationMixin, {
      * Loads an action from the database given its ID.
      *
      * @private
-     * @param {FlectraEvent} event
+     * @param {OdooEvent} event
      * @param {integer} event.data.actionID
      * @param {Object} event.data.context
      * @param {function} event.data.on_success
@@ -463,7 +463,7 @@ var AbstractWebClient = Widget.extend(KeyboardNavigationMixin, {
     },
     /**
      * @private
-     * @param {FlectraEvent} e
+     * @param {OdooEvent} e
      */
     _onPushState: function (e) {
         this.do_push_state(_.extend(e.data.state, {'cids': $.bbq.getState().cids}));
@@ -473,7 +473,7 @@ var AbstractWebClient = Widget.extend(KeyboardNavigationMixin, {
      * It must be called with: trigger_up('scrollTo', options).
      *
      * @private
-     * @param {FlectraEvent} ev
+     * @param {OdooEvent} ev
      * @param {integer} [ev.data.top] the number of pixels to scroll from top
      * @param {integer} [ev.data.left] the number of pixels to scroll from left
      * @param {string} [ev.data.selector] the selector of the target element to
@@ -509,7 +509,7 @@ var AbstractWebClient = Widget.extend(KeyboardNavigationMixin, {
      * Displays a visual effect (for example, a rainbowman0
      *
      * @private
-     * @param {FlectraEvent} e
+     * @param {OdooEvent} e
      * @param {Object} [e.data] - key-value options to decide rainbowman
      *   behavior / appearance
      */
@@ -541,7 +541,7 @@ var AbstractWebClient = Widget.extend(KeyboardNavigationMixin, {
         if (!this.isStarted) {
             // Listen to 'scroll' event and propagate it on main bus
             this.action_manager.$el.on('scroll', core.bus.trigger.bind(core.bus, 'scroll'));
-            flectra.isReady = true;
+            odoo.isReady = true;
             core.bus.trigger('web_client_ready');
             if (session.uid === 1) {
                 this.$el.addClass('o_is_superuser');

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<flectra>
+<odoo>
 
 <template id="event_layout" inherit_id="website_event.layout">
     <xpath expr="//div[@id='wrap']" position="attributes">
@@ -50,4 +50,4 @@
     </ul>
 </template>
 
-</flectra>
+</odoo>

@@ -1,4 +1,4 @@
-flectra.define('website_sale_slides.course.join.widget', function (require) {
+odoo.define('website_sale_slides.course.join.widget', function (require) {
 "use strict";
 
 var CourseJoinWidget = require('website_slides.course.join.widget').courseJoinWidget;

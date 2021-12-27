@@ -1,12 +1,12 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo. See LICENSE file for full copyright and licensing details.
 
 import psycopg2
 
-from flectra import api
-from flectra.addons.test_mail.tests.common import TestMailCommon
-from flectra.tests import common, tagged
-from flectra.tools import mute_logger
+from odoo import api
+from odoo.addons.test_mail.tests.common import TestMailCommon
+from odoo.tests import common, tagged
+from odoo.tools import mute_logger
 
 
 @tagged('mail_mail')
@@ -22,7 +22,7 @@ class TestMailMail(TestMailCommon):
             'email_from': 'ignasse@example.com',
         }).with_context({})
 
-    @mute_logger('flectra.addons.mail.models.mail_mail')
+    @mute_logger('odoo.addons.mail.models.mail_mail')
     def test_mail_message_notify_from_mail_mail(self):
         # Due ot post-commit hooks, store send emails in every step
         mail = self.env['mail.mail'].sudo().create({
@@ -77,7 +77,7 @@ class TestMailMail(TestMailCommon):
 
 class TestMailMailRace(common.TransactionCase):
 
-    @mute_logger('flectra.addons.mail.models.mail_mail')
+    @mute_logger('odoo.addons.mail.models.mail_mail')
     def test_mail_bounce_during_send(self):
         self.partner = self.env['res.partner'].create({
             'name': 'Ernest Partner',
@@ -110,7 +110,7 @@ class TestMailMailRace(common.TransactionCase):
         bounce_deferred = []
         @api.model
         def send_email(self, message, *args, **kwargs):
-            with this.registry.cursor() as cr, mute_logger('flectra.sql_db'):
+            with this.registry.cursor() as cr, mute_logger('odoo.sql_db'):
                 try:
                     # try ro aquire lock (no wait) on notification (should fail)
                     cr.execute("SELECT notification_status FROM mail_message_res_partner_needaction_rel WHERE id = %s FOR UPDATE NOWAIT", [notif.id])

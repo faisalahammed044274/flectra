@@ -1,4 +1,4 @@
-flectra.define('website.s_facebook_page_options', function (require) {
+odoo.define('website.s_facebook_page_options', function (require) {
 'use strict';
 
 const options = require('web_editor.snippets.options');
@@ -137,7 +137,7 @@ options.registry.facebookPage = options.Class.extend({
      * @private
      */
     _checkURL: function () {
-        const defaultURL = 'https://www.facebook.com/Flectra';
+        const defaultURL = 'https://www.facebook.com/Odoo';
         const match = this.fbData.href.match(/^(?:https?:\/\/)?(?:www\.)?(?:fb|facebook)\.com\/(?:([\w.]+)|[^/?#]+-([0-9]{15,16}))(?:$|[/?# ])/);
         if (match) {
             // Check if the page exists on Facebook or not

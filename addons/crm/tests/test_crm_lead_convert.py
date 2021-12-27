@@ -1,11 +1,11 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo. See LICENSE file for full copyright and licensing details.
 
-from flectra import SUPERUSER_ID
-from flectra.addons.crm.tests import common as crm_common
-from flectra.fields import Datetime
-from flectra.tests.common import tagged, users
-from flectra.tests.common import Form
+from odoo import SUPERUSER_ID
+from odoo.addons.crm.tests import common as crm_common
+from odoo.fields import Datetime
+from odoo.tests.common import tagged, users
+from odoo.tests.common import Form
 
 @tagged('lead_manage')
 class TestLeadConvertForm(crm_common.TestLeadConvertCommon):

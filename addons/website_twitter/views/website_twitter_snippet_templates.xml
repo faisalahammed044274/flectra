@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<flectra>
+<odoo>
     <template id="s_twitter" name="Twitter Scroller">
         <section class="twitter" data-screen-name="OpenERP" data-limit="15">
             <div class="twitter_timeline o_not_editable"/>
@@ -34,4 +34,4 @@
             <script type="text/javascript" src="/website_twitter/static/src/js/website.twitter.editor.js"/>
         </xpath>
     </template>
-</flectra>
+</odoo>

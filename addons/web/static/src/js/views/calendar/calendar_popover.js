@@ -1,4 +1,4 @@
-flectra.define('web.CalendarPopover', function (require) {
+odoo.define('web.CalendarPopover', function (require) {
 "use strict";
 
 var fieldRegistry = require('web.field_registry');

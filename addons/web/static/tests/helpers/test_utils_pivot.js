@@ -1,4 +1,4 @@
-flectra.define('web.test_utils_pivot', function (require) {
+odoo.define('web.test_utils_pivot', function (require) {
 "use strict";
 
 var testUtilsDom = require('web.test_utils_dom');

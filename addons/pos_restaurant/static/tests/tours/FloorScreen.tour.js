@@ -1,4 +1,4 @@
-flectra.define('pos_restaurant.tour.FloorScreen', function (require) {
+odoo.define('pos_restaurant.tour.FloorScreen', function (require) {
     'use strict';
 
     const { Chrome } = require('pos_restaurant.tour.ChromeTourMethods');

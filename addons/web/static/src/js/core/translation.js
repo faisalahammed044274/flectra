@@ -1,5 +1,5 @@
 
-flectra.define('web.translation', function (require) {
+odoo.define('web.translation', function (require) {
 "use strict";
 
 var Class = require('web.Class');

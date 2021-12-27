@@ -1,4 +1,4 @@
-flectra.define('website_forum.share', function (require) {
+odoo.define('website_forum.share', function (require) {
 'use strict';
 
 var core = require('web.core');

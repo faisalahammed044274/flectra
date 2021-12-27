@@ -1,4 +1,4 @@
-flectra.define('mail/static/src/models/follower_subtype_list/follower_subtype_list.js', function (require) {
+odoo.define('mail/static/src/models/follower_subtype_list/follower_subtype_list.js', function (require) {
 'use strict';
 
 const { registerNewModel } = require('mail/static/src/model/model_core.js');

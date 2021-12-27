@@ -1,11 +1,11 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo. See LICENSE file for full copyright and licensing details.
 import json
-from flectra import http
-from flectra.http import request
+from odoo import http
+from odoo.http import request
 
-from flectra.addons.sale_product_configurator.controllers.main import ProductConfiguratorController
-from flectra.addons.website_sale.controllers.main import WebsiteSale
+from odoo.addons.sale_product_configurator.controllers.main import ProductConfiguratorController
+from odoo.addons.website_sale.controllers.main import WebsiteSale
 
 class WebsiteSaleProductConfiguratorController(ProductConfiguratorController):
     @http.route(['/sale_product_configurator/show_optional_products_website'], type='json', auth="public", methods=['POST'], website=True)

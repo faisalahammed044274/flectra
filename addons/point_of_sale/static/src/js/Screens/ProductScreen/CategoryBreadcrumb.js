@@ -1,4 +1,4 @@
-flectra.define('point_of_sale.CategoryBreadcrumb', function(require) {
+odoo.define('point_of_sale.CategoryBreadcrumb', function(require) {
     'use strict';
 
     const PosComponent = require('point_of_sale.PosComponent');

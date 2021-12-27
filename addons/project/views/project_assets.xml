@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<flectra>
+<odoo>
         <template id="assets_backend" name="project assets" inherit_id="web.assets_backend">
             <xpath expr="." position="inside">
                 <link rel="stylesheet" href="/project/static/src/css/project.css"/>
@@ -18,4 +18,4 @@
                 <script type="text/javascript" src="/project/static/src/js/portal_rating.js"/>
             </xpath>
         </template>
-</flectra>
+</odoo>

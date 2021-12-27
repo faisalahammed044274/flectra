@@ -1,10 +1,10 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo. See LICENSE file for full copyright and licensing details.
 
 from datetime import datetime, timedelta
 
-from flectra.tests.common import Form
-from flectra.addons.stock.tests.test_report import TestReportsCommon
+from odoo.tests.common import Form
+from odoo.addons.stock.tests.test_report import TestReportsCommon
 
 
 class TestSaleStockReports(TestReportsCommon):

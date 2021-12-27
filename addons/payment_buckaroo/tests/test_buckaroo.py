@@ -3,14 +3,14 @@
 from lxml import objectify
 from werkzeug import urls
 
-import flectra
-from flectra.addons.payment.models.payment_acquirer import ValidationError
-from flectra.addons.payment.tests.common import PaymentAcquirerCommon
-from flectra.addons.payment_buckaroo.controllers.main import BuckarooController
-from flectra.tools import mute_logger
+import odoo
+from odoo.addons.payment.models.payment_acquirer import ValidationError
+from odoo.addons.payment.tests.common import PaymentAcquirerCommon
+from odoo.addons.payment_buckaroo.controllers.main import BuckarooController
+from odoo.tools import mute_logger
 
 
-@flectra.tests.tagged('post_install', '-at_install', 'external', '-standard')
+@odoo.tests.tagged('post_install', '-at_install', 'external', '-standard')
 class BuckarooCommon(PaymentAcquirerCommon):
 
     @classmethod
@@ -24,7 +24,7 @@ class BuckarooCommon(PaymentAcquirerCommon):
             'state': 'test',
         })
 
-@flectra.tests.tagged('post_install', '-at_install', 'external', '-standard')
+@odoo.tests.tagged('post_install', '-at_install', 'external', '-standard')
 class BuckarooForm(BuckarooCommon):
 
     def test_10_Buckaroo_form_render(self):
@@ -103,7 +103,7 @@ class BuckarooForm(BuckarooCommon):
                 'Buckaroo: wrong value for form input %s: received %s instead of %s' % (form_input.get('name'), form_input.get('value'), form_values[form_input.get('name')])
             )
 
-    @mute_logger('flectra.addons.payment_buckaroo.models.payment', 'ValidationError')
+    @mute_logger('odoo.addons.payment_buckaroo.models.payment', 'ValidationError')
     def test_20_buckaroo_form_management(self):
         # be sure not to do stupid thing
         self.assertEqual(self.buckaroo.state, 'test', 'test without test environment')
@@ -118,7 +118,7 @@ class BuckarooForm(BuckarooCommon):
             'brq_payment': u'573311D081B04069BD6336001611DBD4',
             'BRQ_PAYMENT_METHOD': u'paypal',
             'BRQ_SERVICE_PAYPAL_PAYERCOUNTRY': u'NL',
-            'BRQ_SERVICE_PAYPAL_PAYEREMAIL': u'fhe@flectrahq.com',
+            'BRQ_SERVICE_PAYPAL_PAYEREMAIL': u'fhe@odoo.com',
             'BRQ_SERVICE_PAYPAL_PAYERFIRSTNAME': u'Jan',
             'BRQ_SERVICE_PAYPAL_PAYERLASTNAME': u'Tester',
             'BRQ_SERVICE_PAYPAL_PAYERMIDDLENAME': u'de',

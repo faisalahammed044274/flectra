@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding='UTF-8'?>
-<flectra>
+<odoo>
     <record id="website_visitor_cron" model="ir.cron">
         <field name="name">Website Visitor : Archive old visitors</field>
         <field name="model_id" ref="model_website_visitor"/>
@@ -11,4 +11,4 @@
         <field name="active" eval="True"/>
         <field name="doall" eval="False"/>
     </record>
-</flectra>
+</odoo>

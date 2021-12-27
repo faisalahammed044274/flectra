@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo. See LICENSE file for full copyright and licensing details.
 
 import base64
 import inspect
@@ -12,15 +12,15 @@ from werkzeug import urls
 from werkzeug.datastructures import OrderedMultiDict
 from werkzeug.exceptions import NotFound
 
-from flectra import api, fields, models, tools
-from flectra.addons.http_routing.models.ir_http import slugify, _guess_mimetype, url_for
-from flectra.addons.website.models.ir_http import sitemap_qs2dom
-from flectra.addons.portal.controllers.portal import pager
-from flectra.exceptions import UserError
-from flectra.http import request
-from flectra.modules.module import get_resource_path
-from flectra.osv.expression import FALSE_DOMAIN
-from flectra.tools.translate import _
+from odoo import api, fields, models, tools, http
+from odoo.addons.http_routing.models.ir_http import slugify, _guess_mimetype, url_for
+from odoo.addons.website.models.ir_http import sitemap_qs2dom
+from odoo.addons.portal.controllers.portal import pager
+from odoo.exceptions import UserError
+from odoo.http import request
+from odoo.modules.module import get_resource_path
+from odoo.osv.expression import FALSE_DOMAIN
+from odoo.tools.translate import _
 
 logger = logging.getLogger(__name__)
 
@@ -794,7 +794,7 @@ class Website(models.Model):
             :rtype: list({name: str, url: str})
         """
 
-        router = request.httprequest.app.get_db_router(request.db)
+        router = http.root.get_db_router(request.db)
         # Force enumeration to be performed as public user
         url_set = set()
 
@@ -973,7 +973,7 @@ class Website(models.Model):
         """
         self.ensure_one()
         if request.endpoint:
-            router = request.httprequest.app.get_db_router(request.db).bind('')
+            router = http.root.get_db_router(request.db).bind('')
             arguments = dict(request.endpoint_arguments)
             for key, val in list(arguments.items()):
                 if isinstance(val, models.BaseModel):

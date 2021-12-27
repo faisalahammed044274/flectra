@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<flectra>
+<odoo>
     <template id="website.s_dynamic_snippet_template">
         <section t-attf-class="#{snippet_name} s_dynamic d-none pt24 pb24">
             <div class="container o_not_editable">
@@ -75,4 +75,4 @@
             <script type="text/javascript" src="/website/static/src/snippets/s_dynamic_snippet/000.js"/>
         </xpath>
     </template>
-</flectra>
+</odoo>

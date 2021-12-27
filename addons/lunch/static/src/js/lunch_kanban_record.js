@@ -1,4 +1,4 @@
-flectra.define('lunch.LunchKanbanRecord', function (require) {
+odoo.define('lunch.LunchKanbanRecord', function (require) {
     "use strict";
 
     /**

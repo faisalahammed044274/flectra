@@ -1,10 +1,10 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
-import flectra.tests
+# Part of Odoo. See LICENSE file for full copyright and licensing details.
+import odoo.tests
 
 
-@flectra.tests.tagged('-at_install', 'post_install')
-class TestUi(flectra.tests.HttpCase):
+@odoo.tests.tagged('-at_install', 'post_install')
+class TestUi(odoo.tests.HttpCase):
     def test_01_wishlist_tour(self):
 
         self.env['product.template'].search([]).write({'website_published': False})

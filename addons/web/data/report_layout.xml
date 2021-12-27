@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<flectra>
+<odoo>
     <data>
 
          <record id="report_layout_background" model="report.layout">
@@ -42,4 +42,4 @@
         </record>
 
     </data>
-</flectra>
+</odoo>

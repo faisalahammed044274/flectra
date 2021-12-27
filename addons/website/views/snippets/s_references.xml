@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<flectra>
+<odoo>
 
 <template id="s_references" name="References">
     <section class="s_references pt48 pb32">
@@ -36,4 +36,4 @@
     </xpath>
 </template>
 
-</flectra>
+</odoo>

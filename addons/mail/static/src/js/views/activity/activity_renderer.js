@@ -1,4 +1,4 @@
-flectra.define('mail.ActivityRenderer', function (require) {
+odoo.define('mail.ActivityRenderer', function (require) {
 "use strict";
 
 const AbstractRendererOwl = require('web.AbstractRendererOwl');
@@ -17,7 +17,7 @@ const _t = core._t;
 const { useState } = owl.hooks;
 
 /**
- * Owl Component Adapter for ActivityRecord which is KanbanRecord (Flectra Widget)
+ * Owl Component Adapter for ActivityRecord which is KanbanRecord (Odoo Widget)
  * TODO: Remove this adapter when ActivityRecord is a Component
  */
 class ActivityRecordAdapter extends ComponentAdapter {
@@ -48,7 +48,7 @@ class ActivityCellAdapter extends ComponentAdapter {
 }
 
 /**
- * Owl Component Adapter for KanbanColumnProgressBar (Flectra Widget)
+ * Owl Component Adapter for KanbanColumnProgressBar (Odoo Widget)
  * TODO: Remove this adapter when KanbanColumnProgressBar is a Component
  */
 class KanbanColumnProgressBarAdapter extends ComponentAdapter {

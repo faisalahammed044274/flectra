@@ -1,4 +1,4 @@
-flectra.define('web.basic_fields_tests', function (require) {
+odoo.define('web.basic_fields_tests', function (require) {
 "use strict";
 
 var ajax = require('web.ajax');
@@ -5475,7 +5475,7 @@ QUnit.module('basic_fields', {
 
         this.data.partner.records = [{
             'id': 999,
-            'int_field': 7073,
+            'int_field': 8069,
         }];
 
         var form = await createView({
@@ -5493,11 +5493,11 @@ QUnit.module('basic_fields', {
         });
 
         assert.ok(form.$('.o_form_view').hasClass('o_form_readonly'), 'Form in readonly mode');
-        assert.strictEqual(form.$('.o_field_widget[name=int_field]').text(), '7073',
+        assert.strictEqual(form.$('.o_field_widget[name=int_field]').text(), '8069',
             'Integer value must not be formatted');
         await testUtils.form.clickEdit(form);
 
-        assert.strictEqual(form.$('.o_field_widget').val(), '7073',
+        assert.strictEqual(form.$('.o_field_widget').val(), '8069',
             'Integer value must not be formatted');
 
         form.destroy();
@@ -5508,7 +5508,7 @@ QUnit.module('basic_fields', {
 
         this.data.partner.records = [{
             'id': 999,
-            'int_field': 7073,
+            'int_field': 8069,
         }];
 
         var form = await createView({

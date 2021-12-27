@@ -1,4 +1,4 @@
-flectra.define('hr_expense.documents.upload.mixin', function (require) {
+odoo.define('hr_expense.documents.upload.mixin', function (require) {
 "use strict";
 
 var core = require('web.core');

@@ -1,4 +1,4 @@
-flectra.define('web.filter_menu_generator_tests', function (require) {
+odoo.define('web.filter_menu_generator_tests', function (require) {
     "use strict";
 
     const Domain = require('web.Domain');

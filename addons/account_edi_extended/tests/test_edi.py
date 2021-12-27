@@ -1,8 +1,8 @@
 
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo. See LICENSE file for full copyright and licensing details.
 
-from flectra.addons.account_edi_extended.tests.common import AccountEdiExtendedTestCommon, _mocked_post, _mocked_post_two_steps, _generate_mocked_needs_web_services, _mocked_cancel_failed, _generate_mocked_support_batching
+from odoo.addons.account_edi_extended.tests.common import AccountEdiExtendedTestCommon, _mocked_post, _mocked_post_two_steps, _generate_mocked_needs_web_services, _mocked_cancel_failed, _generate_mocked_support_batching
 
 
 class TestAccountEdi(AccountEdiExtendedTestCommon):

@@ -1,9 +1,9 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo. See LICENSE file for full copyright and licensing details.
 
-from flectra import models, fields, api, _
-from flectra.tools.safe_eval import safe_eval
-from flectra.exceptions import UserError, ValidationError
+from odoo import models, fields, api, _
+from odoo.tools.safe_eval import safe_eval
+from odoo.exceptions import UserError, ValidationError
 
 
 class PriceRule(models.Model):

@@ -1,4 +1,4 @@
-flectra.define('web.Class', function () {
+odoo.define('web.Class', function () {
 "use strict";
 /**
  * Improved John Resig's inheritance, based on:
@@ -48,7 +48,7 @@ flectra.define('web.Class', function () {
  *
  * @class Class
  */
-function FlectraClass(){}
+function OdooClass(){}
 
 var initializing = false;
 var fnTest = /xyz/.test(function(){xyz();}) ? /\b_super\b/ : /.*/;
@@ -58,7 +58,7 @@ var fnTest = /xyz/.test(function(){xyz();}) ? /\b_super\b/ : /.*/;
  *
  * @param {Object} prop class-level properties (class attributes and instance methods) to set on the new class
  */
-FlectraClass.extend = function() {
+OdooClass.extend = function() {
     var _super = this.prototype;
     // Support mixins arguments
     var args = _.toArray(arguments);
@@ -98,7 +98,7 @@ FlectraClass.extend = function() {
 
     // The dummy class constructor
     function Class() {
-        if(this.constructor !== FlectraClass){
+        if(this.constructor !== OdooClass){
             throw new Error("You can only instanciate objects with the 'new' operator");
         }
         // All construction is actually done in the init method
@@ -151,5 +151,5 @@ FlectraClass.extend = function() {
     return Class;
 };
 
-return FlectraClass;
+return OdooClass;
 });

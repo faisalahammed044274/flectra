@@ -2,7 +2,7 @@
 
 from collections import OrderedDict
 
-from flectra import fields, models
+from odoo import fields, models
 
 
 class ProductAttributeCategory(models.Model):

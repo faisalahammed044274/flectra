@@ -1,18 +1,18 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo. See LICENSE file for full copyright and licensing details.
 
 import base64
 
 from unittest.mock import patch
 
-from flectra.addons.test_mail.data.test_mail_data import MAIL_TEMPLATE_PLAINTEXT
-from flectra.addons.test_mail.models.test_mail_models import MailTestSimple
-from flectra.addons.test_mail.tests.common import TestMailCommon, TestRecipients
-from flectra.api import call_kw
-from flectra.exceptions import AccessError
-from flectra.tests import tagged
-from flectra.tools import mute_logger, formataddr
-from flectra.tests.common import users
+from odoo.addons.test_mail.data.test_mail_data import MAIL_TEMPLATE_PLAINTEXT
+from odoo.addons.test_mail.models.test_mail_models import MailTestSimple
+from odoo.addons.test_mail.tests.common import TestMailCommon, TestRecipients
+from odoo.api import call_kw
+from odoo.exceptions import AccessError
+from odoo.tests import tagged
+from odoo.tools import mute_logger, formataddr
+from odoo.tests.common import users
 
 
 @tagged('mail_post')
@@ -105,7 +105,7 @@ class TestMessagePost(TestMailCommon, TestRecipients):
         self.assertNotIn('body', emp_info['button_access']['url'])
         self.assertNotIn('subject', emp_info['button_access']['url'])
 
-    @mute_logger('flectra.addons.mail.models.mail_mail')
+    @mute_logger('odoo.addons.mail.models.mail_mail')
     def test_post_needaction(self):
         (self.user_employee | self.user_admin).write({'notification_type': 'inbox'})
         with self.assertSinglePostNotifications([{'partner': self.partner_employee, 'type': 'inbox'}], {'content': 'Body'}):
@@ -129,8 +129,8 @@ class TestMessagePost(TestMailCommon, TestRecipients):
                 partner_ids=[self.partner_portal.id])
 
     def test_post_inactive_follower(self):
-        # In some case flectrabot is follower of a record.
-        # Even if it shouldn't be the case, we want to be sure that flectrabot is not notified
+        # In some case odoobot is follower of a record.
+        # Even if it shouldn't be the case, we want to be sure that odoobot is not notified
         (self.user_employee | self.user_admin).write({'notification_type': 'inbox'})
         self.test_record._message_subscribe(self.user_employee.partner_id.ids)
         with self.assertSinglePostNotifications([{'partner': self.partner_employee, 'type': 'inbox'}], {'content': 'Test'}):
@@ -144,7 +144,7 @@ class TestMessagePost(TestMailCommon, TestRecipients):
             self.test_record.message_post(
                 body='Test', message_type='comment', subtype_xmlid='mail.mt_comment')
 
-    @mute_logger('flectra.addons.mail.models.mail_mail')
+    @mute_logger('odoo.addons.mail.models.mail_mail')
     def test_post_notifications(self):
         _body, _subject = '<p>Test Body</p>', 'Test Subject'
 
@@ -174,7 +174,7 @@ class TestMessagePost(TestMailCommon, TestRecipients):
         self.assertFalse(self.env['mail.mail'].sudo().search([('mail_message_id', '=', msg.id)]),
                          'message_post: mail.mail notifications should have been auto-deleted')
 
-    @mute_logger('flectra.addons.mail.models.mail_mail')
+    @mute_logger('odoo.addons.mail.models.mail_mail')
     def test_post_notifications_keep_emails(self):
         self.test_record.message_subscribe(partner_ids=[self.user_admin.partner_id.id])
 
@@ -188,12 +188,12 @@ class TestMessagePost(TestMailCommon, TestRecipients):
         # notifications emails should not have been deleted: one for customers, one for user
         self.assertEqual(len(self.env['mail.mail'].sudo().search([('mail_message_id', '=', msg.id)])), 2)
 
-    @mute_logger('flectra.addons.mail.models.mail_mail')
+    @mute_logger('odoo.addons.mail.models.mail_mail')
     def test_post_notifications_emails_tweak(self):
         pass
         # we should check _notification_groups behavior, for emails and buttons
 
-    @mute_logger('flectra.addons.mail.models.mail_mail')
+    @mute_logger('odoo.addons.mail.models.mail_mail')
     def test_post_attachments(self):
         _attachments = [
             ('List1', b'My first attachment'),
@@ -235,7 +235,7 @@ class TestMessagePost(TestMailCommon, TestRecipients):
         self.assertIn(('Attach1', b'migration test', 'application/octet-stream'),  self._mails[0]['attachments'])
         self.assertIn(('Attach2', b'migration test', 'application/octet-stream'), self._mails[0]['attachments'])
 
-    @mute_logger('flectra.addons.mail.models.mail_mail')
+    @mute_logger('odoo.addons.mail.models.mail_mail')
     def test_post_answer(self):
         with self.mock_mail_gateway():
             parent_msg = self.test_record.with_user(self.user_employee).message_post(
@@ -268,7 +268,7 @@ class TestMessagePost(TestMailCommon, TestRecipients):
         self.assertEqual(new_msg.parent_id.id, parent_msg.id, 'message_post: flatten error')
         self.assertEqual(new_msg.partner_ids, self.env['res.partner'])
 
-    @mute_logger('flectra.addons.mail.models.mail_mail')
+    @mute_logger('odoo.addons.mail.models.mail_mail')
     def test_post_email_with_multiline_subject(self):
         _body, _body_alt, _subject = '<p>Test Body</p>', 'Test Body', '1st line\n2nd line'
         msg = self.test_record.with_user(self.user_employee).message_post(
@@ -278,7 +278,7 @@ class TestMessagePost(TestMailCommon, TestRecipients):
         )
         self.assertEqual(msg.subject, '1st line 2nd line')
 
-    @mute_logger('flectra.addons.mail.models.mail_mail')
+    @mute_logger('odoo.addons.mail.models.mail_mail')
     def test_post_portal_ok(self):
         self.test_record.message_subscribe((self.partner_1 | self.user_employee.partner_id).ids)
 
@@ -298,7 +298,7 @@ class TestMessagePost(TestMailCommon, TestRecipients):
                 body='<p>Test</p>', subject='Subject',
                 message_type='comment', subtype_xmlid='mail.mt_comment')
 
-    @mute_logger('flectra.addons.mail.models.mail_mail', 'flectra.addons.mail.models.mail_thread')
+    @mute_logger('odoo.addons.mail.models.mail_mail', 'odoo.addons.mail.models.mail_thread')
     def test_post_internal(self):
         self.test_record.message_subscribe([self.user_admin.partner_id.id])
         msg = self.test_record.with_user(self.user_employee).message_post(
@@ -329,7 +329,7 @@ class TestMessagePost(TestMailCommon, TestRecipients):
         self.assertEqual(new_note.email_from, formataddr((self.user_employee.name, self.user_employee.email)))
         self.assertEqual(new_note.notified_partner_ids, self.env['res.partner'])
 
-    @mute_logger('flectra.addons.mail.models.mail_mail')
+    @mute_logger('odoo.addons.mail.models.mail_mail')
     def test_post_notify(self):
         self.user_employee.write({'notification_type': 'inbox'})
 
@@ -363,7 +363,7 @@ class TestMessagePost(TestMailCommon, TestRecipients):
         self.assertNotIn('/mail/view?model=', partner_mail, 'The email sent to admin should not contain an access link')
         # todo xdo add test message_notify on thread with followers and stuff
 
-    @mute_logger('flectra.addons.mail.models.mail_mail')
+    @mute_logger('odoo.addons.mail.models.mail_mail')
     def test_post_post_w_template(self):
         test_record = self.env['mail.test.simple'].with_context(self._test_context).create({'name': 'Test', 'email_from': 'ignasse@example.com'})
         self.user_employee.write({

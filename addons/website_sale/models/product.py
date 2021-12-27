@@ -1,12 +1,12 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo. See LICENSE file for full copyright and licensing details.
 
-from flectra import api, fields, models, tools, _
-from flectra.exceptions import ValidationError, UserError
-from flectra.addons.http_routing.models.ir_http import slug
-from flectra.addons.website.models import ir_http
-from flectra.tools.translate import html_translate
-from flectra.osv import expression
+from odoo import api, fields, models, tools, _
+from odoo.exceptions import ValidationError, UserError
+from odoo.addons.http_routing.models.ir_http import slug
+from odoo.addons.website.models import ir_http
+from odoo.tools.translate import html_translate
+from odoo.osv import expression
 
 
 class ProductRibbon(models.Model):
@@ -51,7 +51,7 @@ class ProductPricelist(models.Model):
         if data.get('company_id') and not data.get('website_id'):
             # l10n modules install will change the company currency, creating a
             # pricelist for that currency. Do not use user's company in that
-            # case as module install are done with FlectraBot (company 1)
+            # case as module install are done with OdooBot (company 1)
             self = self.with_context(default_company_id=data['company_id'])
         res = super(ProductPricelist, self).create(data)
         self.clear_cache()

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<flectra>
+<odoo>
     <template id="assets_backend_inherit_sale" inherit_id="web.assets_backend" name="Sale backend assets">
         <xpath expr="link[last()]" position="after">
             <link rel="stylesheet" type="text/scss" href="/sale/static/src/scss/sale_onboarding.scss"/>
@@ -37,4 +37,4 @@
             <script type="text/javascript" src="/sale/static/tests/sales_team_dashboard_tests.js"></script>
         </xpath>
     </template>
-</flectra>
+</odoo>

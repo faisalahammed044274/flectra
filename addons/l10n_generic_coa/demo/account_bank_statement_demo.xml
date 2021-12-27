@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<flectra>
+<odoo>
     <data noupdate="1">
         <record id="demo_bank_statement_1" model="account.bank.statement">
             <field name="journal_id" model="account.journal" search="[
@@ -126,4 +126,4 @@
             <value eval="[ref('demo_bank_statement_1')]"/>
         </function>
     </data>
-</flectra>
+</odoo>

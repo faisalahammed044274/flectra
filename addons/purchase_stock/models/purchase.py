@@ -1,12 +1,12 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
-from flectra import api, fields, models, SUPERUSER_ID, _
-from flectra.tools.float_utils import float_compare, float_round
+# Part of Odoo. See LICENSE file for full copyright and licensing details.
+from odoo import api, fields, models, SUPERUSER_ID, _
+from odoo.tools.float_utils import float_compare, float_round
 from datetime import datetime
 from dateutil.relativedelta import relativedelta
-from flectra.exceptions import UserError
+from odoo.exceptions import UserError
 
-from flectra.addons.purchase.models.purchase import PurchaseOrder as Purchase
+from odoo.addons.purchase.models.purchase import PurchaseOrder as Purchase
 
 
 class PurchaseOrder(models.Model):

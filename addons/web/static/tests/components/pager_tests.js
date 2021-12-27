@@ -1,4 +1,4 @@
-flectra.define('web.pager_tests', function (require) {
+odoo.define('web.pager_tests', function (require) {
     "use strict";
 
     const Pager = require('web.Pager');

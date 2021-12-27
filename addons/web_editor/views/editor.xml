@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<flectra>
+<odoo>
 
 <template id="wysiwyg_iframe_editor_assets" name="Editor assets for wysiwyg iframe content" groups="base.group_user">
     <t t-call-assets="web.assets_common"/>
@@ -23,7 +23,7 @@
     <script type="text/javascript" src="/web/static/lib/nearest/jquery.nearest.js"/>
     <script type="text/javascript" src="/web_editor/static/lib/webgl-image-filter/webgl-image-filter.js"/>
 
-    <!-- flectra utils -->
+    <!-- odoo utils -->
 
     <t t-call="web._assets_helpers">
         <link rel="stylesheet" type="text/scss" href="/web_editor/static/src/scss/bootstrap_overridden.scss"/>
@@ -71,22 +71,22 @@
     <script type="text/javascript">
         (function () {
             "use strict";
-            flectra.define('jquery', function () {return $;});
+            odoo.define('jquery', function () {return $;});
 
             var uniqId = 0;
-            flectra.__define__ = window.define;
+            odoo.__define__ = window.define;
             window.define = function (id) {
-                if (!flectra.__enable_summernote__) return;
+                if (!odoo.__enable_summernote__) return;
                 var args = Array.prototype.slice.call(arguments);
                 var factorie = args.pop();
                 var id = args[0];
 
                 if (id instanceof Array) {
                     var name = "summernote_factorie_" + (++uniqId);
-                    flectra[name] = factorie;
+                    odoo[name] = factorie;
 
                     var head = '';
-                    var fn = 'var fn = flectra.'+name+';\ndelete flectra.'+name+';\n';
+                    var fn = 'var fn = odoo.'+name+';\ndelete odoo.'+name+';\n';
                     fn += 'return fn(';
                     for (var k=0; k&lt;id.length; k++) {
                         head += 'var a'+(++uniqId)+' = require("'+id[k]+'");\n';
@@ -94,9 +94,9 @@
                     }
                     fn += 'null);';
 
-                    flectra.define(flectra.website_next_define, new Function('require', head + fn));
+                    odoo.define(odoo.website_next_define, new Function('require', head + fn));
                 } else {
-                    flectra.define(id, factorie);
+                    odoo.define(id, factorie);
                 }
             };
         })();
@@ -108,15 +108,15 @@
         'module/HelpDialog', 'module/ImageDialog', 'module/LinkDialog', 'module/Popover',
         'module/Statusbar', 'module/Toolbar', 'Renderer', 'EventHandler', 'defaults', 'summernote']" />
     <t t-foreach="summer_js_files" t-as="file">
-        <script>flectra.website_next_define = 'summernote/<t t-esc="file" />';</script>
+        <script>odoo.website_next_define = 'summernote/<t t-esc="file" />';</script>
         <script type="text/javascript" t-attf-src="/web_editor/static/lib/summernote/src/js/{{ file }}.js"></script>
     </t>
     <script type="text/javascript" src="/web_editor/static/src/js/editor/summernote.js" />
     <script type="text/javascript">
-        window.define = flectra.__define__;
-        delete flectra.__define__;
-        delete flectra.website_next_define;
-        delete flectra.__enable_summernote__;
+        window.define = odoo.__define__;
+        delete odoo.__define__;
+        delete odoo.website_next_define;
+        delete odoo.__enable_summernote__;
     </script>
     <link rel="stylesheet" type="text/css" href="/web_editor/static/lib/summernote/src/css/summernote.css"/>
 </template>
@@ -179,7 +179,7 @@
     </xpath>
 </template>
 
-<template id="assets_frontend" inherit_id="web.assets_frontend" name="Web Editor Frontend Assets (used in public flectra)" priority="15">
+<template id="assets_frontend" inherit_id="web.assets_frontend" name="Web Editor Frontend Assets (used in public odoo)" priority="15">
     <xpath expr="//link[last()]" position="after">
         <link rel="stylesheet" type="text/scss" href="/web_editor/static/src/scss/web_editor.common.scss"/> <!-- not in common because compiled differently with context -->
         <link rel="stylesheet" type ="text/scss" href="/web_editor/static/src/scss/web_editor.frontend.scss"/>
@@ -192,7 +192,7 @@
 <template id="qunit_suite" inherit_id="web.qunit_suite_tests">
     <xpath expr="//script[last()]" position="after">
         <script type="text/javascript">
-            flectra.define('web_editor.wysiwyg.root.test', function (require) {
+            odoo.define('web_editor.wysiwyg.root.test', function (require) {
                 'use strict';
                 var WysiwygRoot = require('web_editor.wysiwyg.root');
                 if (WysiwygRoot) {
@@ -260,4 +260,4 @@
         </div>
     </colorpicker>
 </template>
-</flectra>
+</odoo>

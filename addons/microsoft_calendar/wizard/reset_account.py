@@ -1,10 +1,10 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo. See LICENSE file for full copyright and licensing details.
 
-from flectra import fields, models
+from odoo import fields, models
 
-from flectra.addons.microsoft_calendar.models.microsoft_sync import microsoft_calendar_token
-from flectra.addons.microsoft_calendar.utils.microsoft_calendar import MicrosoftCalendarService
+from odoo.addons.microsoft_calendar.models.microsoft_sync import microsoft_calendar_token
+from odoo.addons.microsoft_calendar.utils.microsoft_calendar import MicrosoftCalendarService
 
 
 class ResetMicrosoftAccount(models.TransientModel):
@@ -15,7 +15,7 @@ class ResetMicrosoftAccount(models.TransientModel):
     delete_policy = fields.Selection(
         [('dont_delete', "Leave them untouched"),
          ('delete_microsoft', "Delete from the current Microsoft Calendar account"),
-         ('delete_flectra', "Delete from Flectra"),
+         ('delete_odoo', "Delete from Odoo"),
          ('delete_both', "Delete from both"),
     ], string="User's Existing Events", required=True, default='dont_delete',
     help="This will only affect events for which the user is the owner")
@@ -35,7 +35,7 @@ class ResetMicrosoftAccount(models.TransientModel):
                 for event in events:
                     microsoft.delete(event.microsoft_id, token=token)
 
-        if self.delete_policy in ('delete_flectra', 'delete_both'):
+        if self.delete_policy in ('delete_odoo', 'delete_both'):
             events.microsoft_id = False
             events.unlink()
 

@@ -1,4 +1,4 @@
-flectra.define('website_mail_channel.s_channel_options', function (require) {
+odoo.define('website_mail_channel.s_channel_options', function (require) {
 'use strict';
 
 var core = require('web.core');

@@ -1,5 +1,5 @@
 <?xml version="1.0" ?>
-<flectra><data>
+<odoo><data>
     <record id="mail_channel_view_form_" model="ir.ui.view">
         <field name="name">mail.channel.view.form.inherit.hr</field>
         <field name="model">mail.channel</field>
@@ -11,4 +11,4 @@
             </xpath>
         </field>
     </record>
-</data></flectra> 
+</data></odoo>

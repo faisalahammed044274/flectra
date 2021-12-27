@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo. See LICENSE file for full copyright and licensing details.
 
 from .common import TestSaleCommon
-from flectra.tests import Form, tagged
+from odoo.tests import Form, tagged
 
 
 @tagged('post_install', '-at_install')
@@ -98,7 +98,7 @@ class TestSaleToInvoice(TestSaleCommon):
 
         # Make a credit note
         credit_note_wizard = self.env['account.move.reversal'].with_context({'active_ids': [self.invoice.id], 'active_id': self.invoice.id, 'active_model': 'account.move'}).create({
-            'refund_method': 'refund',  # this is the only mode for which the SO line is linked to the refund (https://github.com/flectra/flectra/commit/e680f29560ac20133c7af0c6364c6ef494662eac)
+            'refund_method': 'refund',  # this is the only mode for which the SO line is linked to the refund (https://github.com/odoo/odoo/commit/e680f29560ac20133c7af0c6364c6ef494662eac)
             'reason': 'reason test create',
         })
         credit_note_wizard.reverse_moves()
@@ -251,7 +251,7 @@ class TestSaleToInvoice(TestSaleCommon):
 
         # Make a credit note
         credit_note_wizard = self.env['account.move.reversal'].with_context({'active_ids': [self.invoice.id], 'active_id': self.invoice.id, 'active_model': 'account.move'}).create({
-            'refund_method': 'modify',  # this is the only mode for which the SO line is linked to the refund (https://github.com/flectra/flectra/commit/e680f29560ac20133c7af0c6364c6ef494662eac)
+            'refund_method': 'modify',  # this is the only mode for which the SO line is linked to the refund (https://github.com/odoo/odoo/commit/e680f29560ac20133c7af0c6364c6ef494662eac)
             'reason': 'reason test modify',
         })
         invoice_refund = self.env['account.move'].browse(credit_note_wizard.reverse_moves()['res_id'])

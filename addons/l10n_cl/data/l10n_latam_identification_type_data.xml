@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<flectra>
+<odoo>
     <data noupdate="False">
         <record model='l10n_latam.identification.type' id='it_RUT'>
             <field name='name'>RUT</field>
@@ -21,4 +21,4 @@
             <field name='country_id' ref="base.cl"/>
         </record>
     </data>
-</flectra>
+</odoo>

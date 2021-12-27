@@ -1,8 +1,8 @@
 import logging
 import re
 
-from flectra import tools, models, fields, api, _
-from flectra.exceptions import ValidationError
+from odoo import tools, models, fields, api, _
+from odoo.exceptions import ValidationError
 
 _logger = logging.getLogger(__name__)
 

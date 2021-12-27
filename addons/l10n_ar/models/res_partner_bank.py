@@ -1,6 +1,6 @@
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
-from flectra import models, api, _
-from flectra.exceptions import ValidationError
+# Part of Odoo. See LICENSE file for full copyright and licensing details.
+from odoo import models, api, _
+from odoo.exceptions import ValidationError
 import logging
 _logger = logging.getLogger(__name__)
 

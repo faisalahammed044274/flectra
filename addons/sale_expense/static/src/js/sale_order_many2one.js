@@ -1,4 +1,4 @@
-flectra.define('sale_expense.sale_order_many2one', function (require) {
+odoo.define('sale_expense.sale_order_many2one', function (require) {
 "use strict";
 
 var FieldMany2One = require('web.relational_fields').FieldMany2One;

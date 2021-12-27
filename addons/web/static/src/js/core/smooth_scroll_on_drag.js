@@ -1,4 +1,4 @@
-flectra.define('web/static/src/js/core/smooth_scroll_on_drag.js', function (require) {
+odoo.define('web/static/src/js/core/smooth_scroll_on_drag.js', function (require) {
 "use strict";
 
 const Class = require('web.Class');

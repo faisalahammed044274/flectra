@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<flectra><data noupdate="1">
+<odoo><data noupdate="1">
     <!--Karma-->
     <record id="base.user_root" model="res.users">
         <field name="karma">2500</field>
@@ -73,4 +73,4 @@
         <field name="karma_min">10000</field>
         <field name="image_1920" type="base64" file="gamification/static/img/rank_doctor_badge.svg"/>
     </record>
-</data></flectra>
+</data></odoo>

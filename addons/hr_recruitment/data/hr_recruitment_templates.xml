@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<flectra>
+<odoo>
     <data>
         <template id="applicant_hired_template">
 Applicant hired<br/>
@@ -9,4 +9,4 @@ Applicant hired<br/>
 </ul>
         </template>
     </data>
-</flectra> 
+</odoo>

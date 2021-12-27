@@ -1,4 +1,4 @@
-flectra.define('mail.BasicView', function (require) {
+odoo.define('mail.BasicView', function (require) {
 "use strict";
 
 const BasicView = require('web.BasicView');

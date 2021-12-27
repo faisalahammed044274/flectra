@@ -1,4 +1,4 @@
-flectra.define('mail.field_char_emojis', function (require) {
+odoo.define('mail.field_char_emojis', function (require) {
 "use strict";
 
 var basicFields = require('web.basic_fields');

@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo. See LICENSE file for full copyright and licensing details.
 
-from flectra.addons.account.tests.common import AccountTestInvoicingCommon
-from flectra.tests import common, Form
+from odoo.addons.account.tests.common import AccountTestInvoicingCommon
+from odoo.tests import common, Form
 
 QR_IBAN = 'CH21 3080 8001 2345 6782 7'
 ISR_SUBS_NUMBER = "01-162-8"

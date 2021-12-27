@@ -1,4 +1,4 @@
-flectra.define('wysiwyg.widgets', function (require) {
+odoo.define('wysiwyg.widgets', function (require) {
 'use strict';
 
 var Dialog = require('wysiwyg.widgets.Dialog');

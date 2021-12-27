@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<flectra>
+<odoo>
     <data>
 
     <!-- Purchase Requisition Type -->
@@ -307,4 +307,4 @@
         action="action_purchase_requisition"/>
 
     </data>
-</flectra>
+</odoo>

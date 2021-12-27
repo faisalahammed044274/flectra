@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo. See LICENSE file for full copyright and licensing details.
 
 from ast import literal_eval
 from datetime import timedelta
@@ -11,11 +11,11 @@ import babel.dates
 import base64
 import pytz
 
-from flectra import exceptions, http, fields, _
-from flectra.http import request
-from flectra.osv import expression
-from flectra.tools import is_html_empty, plaintext2html
-from flectra.tools.misc import babel_locale_parse
+from odoo import exceptions, http, fields, _
+from odoo.http import request
+from odoo.osv import expression
+from odoo.tools import is_html_empty, plaintext2html
+from odoo.tools.misc import babel_locale_parse
 
 
 class EventTrackController(http.Controller):

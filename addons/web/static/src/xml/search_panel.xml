@@ -23,13 +23,13 @@
                     <li t-foreach="section.sortedGroupIds" t-as="groupId" t-key="groupId"
                         class="o_search_panel_filter_group list-group-item border-0"
                         >
-                        <!-- TODO: this is a workaround for issue https://github.com/flectra/owl/issues/695 (remove when solved) -->
+                        <!-- TODO: this is a workaround for issue https://github.com/odoo/owl/issues/695 (remove when solved) -->
                         <t t-set="_section" t-value="section"/>
                         <t t-set="group" t-value="section.groups.get(groupId)"/>
                         <header class="o_search_panel_group_header">
                             <div class="custom-control custom-checkbox">
                                 <!-- TODO: "indeterminate" could not be set in the template and had to be set in
-                                     JS manually. See https://github.com/flectra/owl/issues/713 (adapt when solved)
+                                     JS manually. See https://github.com/odoo/owl/issues/713 (adapt when solved)
                                 -->
                                 <input type="checkbox"
                                     class="custom-control-input"
@@ -51,7 +51,7 @@
                         <ul class="list-group d-block">
                             <t t-call="web.SearchPanel.FiltersGroup">
                                 <t t-set="values" t-value="group.values"/>
-                                <!-- TODO: this is a workaround for issue https://github.com/flectra/owl/issues/695 (remove when solved) -->
+                                <!-- TODO: this is a workaround for issue https://github.com/odoo/owl/issues/695 (remove when solved) -->
                                 <t t-set="section" t-value="_section"/>
                             </t>
                         </ul>
@@ -60,7 +60,7 @@
                         <t t-call="web.SearchPanel.FiltersGroup">
                             <t t-set="group" t-value="section.groups.get(false)"/>
                             <t t-set="values" t-value="group.values"/>
-                            <!-- TODO: this is a workaround for issue https://github.com/flectra/owl/issues/695 (remove when solved) -->
+                            <!-- TODO: this is a workaround for issue https://github.com/odoo/owl/issues/695 (remove when solved) -->
                             <t t-set="section" t-value="section"/>
                         </t>
                     </ul>

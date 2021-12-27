@@ -95,4 +95,4 @@ nz_63110,l10n_nz.l10n_nz_chart_template,63110,Travel,account.data_account_type_e
 nz_63120,l10n_nz.l10n_nz_chart_template,63120,Meals & Entertainment,account.data_account_type_expenses,FALSE
 nz_81000,l10n_nz.l10n_nz_chart_template,81000,Interest Income,account.data_account_type_other_income,FALSE
 nz_91000,l10n_nz.l10n_nz_chart_template,91000,Interest Expense,account.data_account_type_expenses,FALSE
-nz_92000,l10n_nz.l10n_nz_chart_template,92000,Income Tax Expense,account.data_account_type_expenses,FALSE 
+nz_92000,l10n_nz.l10n_nz_chart_template,92000,Income Tax Expense,account.data_account_type_expenses,FALSE

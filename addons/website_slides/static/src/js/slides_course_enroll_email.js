@@ -1,4 +1,4 @@
-flectra.define('website_slides.course.enroll', function (require) {
+odoo.define('website_slides.course.enroll', function (require) {
 'use strict';
 
 var core = require('web.core');

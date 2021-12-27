@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<flectra>
+<odoo>
     <template id="assets_backend" name="purchase assets" inherit_id="web.assets_backend">
         <xpath expr="." position="inside">
             <link rel="stylesheet" type="text/scss" href="/purchase/static/src/scss/purchase.scss"/>
@@ -16,4 +16,4 @@
             <script type="text/javascript" src="/purchase/static/src/js/purchase_datetimepicker.js"></script>
         </xpath>
     </template>
-</flectra>
+</odoo>

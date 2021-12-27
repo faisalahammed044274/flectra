@@ -1,4 +1,4 @@
-flectra.define('point_of_sale.DebugManager.Backend', function(require) {
+odoo.define('point_of_sale.DebugManager.Backend', function(require) {
     'use strict';
 
     const { _t } = require('web.core');

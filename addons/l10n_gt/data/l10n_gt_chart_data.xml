@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<flectra>
+<odoo>
     <data>
         <record id="cuentas_plantilla" model="account.chart.template">
             <field name="name">Plantilla de cuentas de Guatemala (sencilla)</field>
@@ -10,4 +10,4 @@
             <field name="currency_id" ref="base.GTQ"/>
         </record>
     </data>
-</flectra>
+</odoo>

@@ -5,7 +5,7 @@ import json
 
 from freezegun import freeze_time
 
-from flectra.tests import tagged
+from odoo.tests import tagged
 
 
 @tagged('post_install', '-at_install')

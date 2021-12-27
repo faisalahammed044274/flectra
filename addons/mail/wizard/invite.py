@@ -1,11 +1,11 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo. See LICENSE file for full copyright and licensing details.
 
 from lxml import etree
 from lxml.html import builder as html
 
-from flectra import _, api, fields, models
-from flectra.exceptions import UserError
+from odoo import _, api, fields, models
+from odoo.exceptions import UserError
 
 
 class Invite(models.TransientModel):

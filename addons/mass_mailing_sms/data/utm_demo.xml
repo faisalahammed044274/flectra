@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<flectra><data noupdate="0">
+<odoo><data noupdate="0">
     <record id="mailing_tag_0" model="utm.tag">
         <field name="name">Bioutifoul SMS</field>
         <field name="color" eval="2"/>
@@ -10,4 +10,4 @@
         <field name="user_id" ref="base.user_admin"/>
         <field name="tag_ids" eval="[(4, ref('mailing_tag_0')), (4, ref('utm.utm_tag_1'))]"/>
     </record>
-</data></flectra>
+</data></odoo>

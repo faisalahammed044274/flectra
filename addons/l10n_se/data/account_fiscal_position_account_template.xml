@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<flectra>
+<odoo>
     <data noupdate="1">
         <record id="fps_euro_25_goods_acc" model="account.fiscal.position.account.template">
             <field name="position_id" ref="fp_euro_b2b"/>
@@ -82,4 +82,4 @@
             <field name="account_dest_id" ref="a3305"/>
         </record>  
     </data>
-</flectra>
+</odoo>

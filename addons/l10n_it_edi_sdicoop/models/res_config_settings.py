@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-from flectra import api, models, fields
+from odoo import api, models, fields
 
 
 class ResConfigSettings(models.TransientModel):

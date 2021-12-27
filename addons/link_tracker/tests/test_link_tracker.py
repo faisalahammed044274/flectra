@@ -1,14 +1,14 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo. See LICENSE file for full copyright and licensing details.
 
 from unittest.mock import patch
 
 from .common import MockLinkTracker
-from flectra.tests import common
+from odoo.tests import common
 
 
 class TestLinkTracker(common.TransactionCase, MockLinkTracker):
-    @patch('flectra.addons.link_tracker.models.link_tracker.LinkTracker.get_base_url',
+    @patch('odoo.addons.link_tracker.models.link_tracker.LinkTracker.get_base_url',
            return_value='http://example.com')
     def test_no_external_tracking(self, mocked_get_base_url):
         self.env['ir.config_parameter'].set_param('link_tracker.no_external_tracking', '1')

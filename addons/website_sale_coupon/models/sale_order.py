@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
 from datetime import timedelta
 
-from flectra import api, fields, models
-from flectra.http import request
+from odoo import api, fields, models
+from odoo.http import request
 
 
 class SaleOrder(models.Model):

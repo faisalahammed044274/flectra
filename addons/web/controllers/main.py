@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo. See LICENSE file for full copyright and licensing details.
 
 import babel.messages.pofile
 import base64
@@ -30,20 +30,20 @@ from lxml import etree
 import unicodedata
 
 
-import flectra
-import flectra.modules.registry
-from flectra.api import call_kw, Environment
-from flectra.modules import get_module_path, get_resource_path
-from flectra.tools import image_process, topological_sort, html_escape, pycompat, ustr, apply_inheritance_specs, lazy_property, float_repr
-from flectra.tools.mimetypes import guess_mimetype
-from flectra.tools.translate import _
-from flectra.tools.misc import str2bool, xlsxwriter, file_open
-from flectra.tools.safe_eval import safe_eval, time
-from flectra import http, tools
-from flectra.http import content_disposition, dispatch_rpc, request, serialize_exception as _serialize_exception, Response
-from flectra.exceptions import AccessError, UserError, AccessDenied
-from flectra.models import check_method_name
-from flectra.service import db, security
+import odoo
+import odoo.modules.registry
+from odoo.api import call_kw, Environment
+from odoo.modules import get_module_path, get_resource_path
+from odoo.tools import image_process, topological_sort, html_escape, pycompat, ustr, apply_inheritance_specs, lazy_property, float_repr
+from odoo.tools.mimetypes import guess_mimetype
+from odoo.tools.translate import _
+from odoo.tools.misc import str2bool, xlsxwriter, file_open
+from odoo.tools.safe_eval import safe_eval, time
+from odoo import http, tools
+from odoo.http import content_disposition, dispatch_rpc, request, serialize_exception as _serialize_exception, Response
+from odoo.exceptions import AccessError, UserError, AccessDenied
+from odoo.models import check_method_name
+from odoo.service import db, security
 
 _logger = logging.getLogger(__name__)
 
@@ -52,7 +52,7 @@ if hasattr(sys, 'frozen'):
     path = os.path.realpath(os.path.join(os.path.dirname(__file__), '..', 'views'))
     loader = jinja2.FileSystemLoader(path)
 else:
-    loader = jinja2.PackageLoader('flectra.addons.web', "views")
+    loader = jinja2.PackageLoader('odoo.addons.web', "views")
 
 env = jinja2.Environment(loader=loader, autoescape=True)
 env.filters["json"] = json.dumps
@@ -95,7 +95,7 @@ OPERATOR_MAPPING = {
 }
 
 #----------------------------------------------------------
-# Flectra Web helpers
+# Odoo Web helpers
 #----------------------------------------------------------
 
 db_list = http.db_list
@@ -113,7 +113,7 @@ def serialize_exception(f):
             se = _serialize_exception(e)
             error = {
                 'code': 200,
-                'message': "Flectra Server Error",
+                'message': "Odoo Server Error",
                 'data': se
             }
             return werkzeug.exceptions.InternalServerError(json.dumps(error))
@@ -128,9 +128,8 @@ def redirect_with_hash(*args, **kw):
     return http.redirect_with_hash(*args, **kw)
 
 def abort_and_redirect(url):
-    r = request.httprequest
     response = werkzeug.utils.redirect(url, 302)
-    response = r.app.get_response(r, response, explicit_session=False)
+    response = http.root.get_response(request.httprequest, response, explicit_session=False)
     werkzeug.exceptions.abort(response)
 
 def ensure_db(redirect='/web/database/selector'):
@@ -201,16 +200,16 @@ def module_installed(environment):
 
 def module_installed_bypass_session(dbname):
     try:
-        registry = flectra.registry(dbname)
+        registry = odoo.registry(dbname)
         with registry.cursor() as cr:
             return module_installed(
-                environment=Environment(cr, flectra.SUPERUSER_ID, {}))
+                environment=Environment(cr, odoo.SUPERUSER_ID, {}))
     except Exception:
         pass
     return {}
 
 def module_boot(db=None):
-    server_wide_modules = flectra.conf.server_wide_modules or []
+    server_wide_modules = odoo.conf.server_wide_modules or []
     serverside = ['base', 'web']
     dbside = []
     for i in server_wide_modules:
@@ -256,7 +255,7 @@ def manifest_list(extension, mods=None, db=None, debug=None):
     db: a database name (return all installed modules in that database)
     """
     if debug is not None:
-        _logger.warning("flectra.addons.web.main.manifest_list(): debug parameter is deprecated")
+        _logger.warning("odoo.addons.web.main.manifest_list(): debug parameter is deprecated")
     mods = mods.split(',')
     files = manifest_glob(extension, addons=mods, db=db, include_remotes=True)
     return [wp for _fp, wp, addon in files]
@@ -389,7 +388,7 @@ def generate_views(action):
     action['views'] = [(view_id, view_modes[0])]
 
 def fix_view_modes(action):
-    """ For historical reasons, Flectra has weird dealings in relation to
+    """ For historical reasons, Odoo has weird dealings in relation to
     view_mode and the view_type attribute (on window actions):
 
     * one of the view modes is ``tree``, which stands for both list views
@@ -647,6 +646,10 @@ class HomeStaticTemplateHelpers(object):
     def get_qweb_templates(cls, addons, db=None, debug=False):
         return cls(addons, db, debug=debug)._get_qweb_templates()[0]
 
+# Shared parameters for all login/signup flows
+SIGN_UP_REQUEST_PARAMS = {'db', 'login', 'debug', 'token', 'message', 'error', 'scope', 'mode',
+                          'redirect', 'redirect_hostname', 'email', 'name', 'partner_id',
+                          'password', 'confirm_password', 'city', 'country_id', 'lang'}
 
 class GroupsTreeNode:
     """
@@ -878,7 +881,7 @@ class GroupExportXlsxWriter(ExportXlsxWriter):
 
 
 #----------------------------------------------------------
-# Flectra Web web Controllers
+# Odoo Web web Controllers
 #----------------------------------------------------------
 class Home(http.Controller):
 
@@ -932,12 +935,12 @@ class Home(http.Controller):
             return http.redirect_with_hash(redirect)
 
         if not request.uid:
-            request.uid = flectra.SUPERUSER_ID
+            request.uid = odoo.SUPERUSER_ID
 
-        values = request.params.copy()
+        values = {k: v for k, v in request.params.items() if k in SIGN_UP_REQUEST_PARAMS}
         try:
             values['databases'] = http.db_list()
-        except flectra.exceptions.AccessDenied:
+        except odoo.exceptions.AccessDenied:
             values['databases'] = None
 
         if request.httprequest.method == 'POST':
@@ -946,9 +949,9 @@ class Home(http.Controller):
                 uid = request.session.authenticate(request.session.db, request.params['login'], request.params['password'])
                 request.params['login_success'] = True
                 return http.redirect_with_hash(self._login_redirect(uid, redirect=redirect))
-            except flectra.exceptions.AccessDenied as e:
+            except odoo.exceptions.AccessDenied as e:
                 request.uid = old_uid
-                if e.args == flectra.exceptions.AccessDenied().args:
+                if e.args == odoo.exceptions.AccessDenied().args:
                     values['error'] = _("Wrong login/password")
                 else:
                     values['error'] = e.args[0]
@@ -959,7 +962,7 @@ class Home(http.Controller):
         if 'login' not in values and request.session.get('auth_login'):
             values['login'] = request.session.get('auth_login')
 
-        if not flectra.tools.config['list_db']:
+        if not odoo.tools.config['list_db']:
             values['disable_database_manager'] = True
 
         response = request.render('web.login', values)
@@ -970,7 +973,7 @@ class Home(http.Controller):
     def switch_to_admin(self):
         uid = request.env.user.id
         if request.env.user._is_system():
-            uid = request.session.uid = flectra.SUPERUSER_ID
+            uid = request.session.uid = odoo.SUPERUSER_ID
             # invalidate session token cache as we've changed the uid
             request.env['res.users'].clear_caches()
             request.session.session_token = security.compute_session_token(request.session, request.env)
@@ -1075,7 +1078,7 @@ class WebClient(http.Controller):
 
     @http.route('/web/webclient/version_info', type='json', auth="none")
     def version_info(self):
-        return flectra.service.common.exp_version()
+        return odoo.service.common.exp_version()
 
     @http.route('/web/tests', type='http', auth="user")
     def test_suite(self, mod=None, **kwargs):
@@ -1102,7 +1105,7 @@ class Proxy(http.Controller):
             from werkzeug.wrappers import BaseResponse
             base_url = request.httprequest.base_url
             query_string = request.httprequest.query_string
-            client = Client(request.httprequest.app, BaseResponse)
+            client = Client(http.root, BaseResponse)
             headers = {'X-Openerp-Session-Id': request.session.sid}
             return client.post('/' + path, base_url=base_url, query_string=query_string,
                                headers=headers, data=data)
@@ -1111,17 +1114,17 @@ class Database(http.Controller):
 
     def _render_template(self, **d):
         d.setdefault('manage',True)
-        d['insecure'] = flectra.tools.config.verify_admin_password('admin')
-        d['list_db'] = flectra.tools.config['list_db']
-        d['langs'] = flectra.service.db.exp_list_lang()
-        d['countries'] = flectra.service.db.exp_list_countries()
+        d['insecure'] = odoo.tools.config.verify_admin_password('admin')
+        d['list_db'] = odoo.tools.config['list_db']
+        d['langs'] = odoo.service.db.exp_list_lang()
+        d['countries'] = odoo.service.db.exp_list_countries()
         d['pattern'] = DBNAME_PATTERN
         # databases list
         d['databases'] = []
         try:
             d['databases'] = http.db_list()
-            d['incompatible_databases'] = flectra.service.db.list_db_incompatible(d['databases'])
-        except flectra.exceptions.AccessDenied:
+            d['incompatible_databases'] = odoo.service.db.list_db_incompatible(d['databases'])
+        except odoo.exceptions.AccessDenied:
             monodb = db_monodb()
             if monodb:
                 d['databases'] = [monodb]
@@ -1139,7 +1142,7 @@ class Database(http.Controller):
 
     @http.route('/web/database/create', type='http', auth="none", methods=['POST'], csrf=False)
     def create(self, master_pwd, name, lang, password, **post):
-        insecure = flectra.tools.config.verify_admin_password('admin')
+        insecure = odoo.tools.config.verify_admin_password('admin')
         if insecure and master_pwd:
             dispatch_rpc('db', 'change_admin_password', ["admin", master_pwd])
         try:
@@ -1156,7 +1159,7 @@ class Database(http.Controller):
 
     @http.route('/web/database/duplicate', type='http', auth="none", methods=['POST'], csrf=False)
     def duplicate(self, master_pwd, name, new_name):
-        insecure = flectra.tools.config.verify_admin_password('admin')
+        insecure = odoo.tools.config.verify_admin_password('admin')
         if insecure and master_pwd:
             dispatch_rpc('db', 'change_admin_password', ["admin", master_pwd])
         try:
@@ -1171,7 +1174,7 @@ class Database(http.Controller):
 
     @http.route('/web/database/drop', type='http', auth="none", methods=['POST'], csrf=False)
     def drop(self, master_pwd, name):
-        insecure = flectra.tools.config.verify_admin_password('admin')
+        insecure = odoo.tools.config.verify_admin_password('admin')
         if insecure and master_pwd:
             dispatch_rpc('db', 'change_admin_password', ["admin", master_pwd])
         try:
@@ -1184,18 +1187,18 @@ class Database(http.Controller):
 
     @http.route('/web/database/backup', type='http', auth="none", methods=['POST'], csrf=False)
     def backup(self, master_pwd, name, backup_format = 'zip'):
-        insecure = flectra.tools.config.verify_admin_password('admin')
+        insecure = odoo.tools.config.verify_admin_password('admin')
         if insecure and master_pwd:
             dispatch_rpc('db', 'change_admin_password', ["admin", master_pwd])
         try:
-            flectra.service.db.check_super(master_pwd)
+            odoo.service.db.check_super(master_pwd)
             ts = datetime.datetime.utcnow().strftime("%Y-%m-%d_%H-%M-%S")
             filename = "%s_%s.%s" % (name, ts, backup_format)
             headers = [
                 ('Content-Type', 'application/octet-stream; charset=binary'),
                 ('Content-Disposition', content_disposition(filename)),
             ]
-            dump_stream = flectra.service.db.dump_db(name, None, backup_format)
+            dump_stream = odoo.service.db.dump_db(name, None, backup_format)
             response = werkzeug.wrappers.Response(dump_stream, headers=headers, direct_passthrough=True)
             return response
         except Exception as e:
@@ -1205,7 +1208,7 @@ class Database(http.Controller):
 
     @http.route('/web/database/restore', type='http', auth="none", methods=['POST'], csrf=False)
     def restore(self, master_pwd, backup_file, name, copy=False):
-        insecure = flectra.tools.config.verify_admin_password('admin')
+        insecure = odoo.tools.config.verify_admin_password('admin')
         if insecure and master_pwd:
             dispatch_rpc('db', 'change_admin_password', ["admin", master_pwd])
         try:
@@ -1285,7 +1288,7 @@ class Session(http.Controller):
     @http.route('/web/session/modules', type='json', auth="user")
     def modules(self):
         # return all installed modules. Web client is smart enough to not load a module twice
-        return module_installed(environment=request.env(user=flectra.SUPERUSER_ID))
+        return module_installed(environment=request.env(user=odoo.SUPERUSER_ID))
 
     @http.route('/web/session/save_session_action', type='json', auth="user")
     def save_session_action(self, the_action):
@@ -1328,7 +1331,7 @@ class Session(http.Controller):
             'state': json.dumps({'d': request.db, 'u': ICP.get_param('web.base.url')}),
             'scope': 'userinfo',
         }
-        return 'https://accounts.flectrahq.com/oauth2/auth?' + url_encode(params)
+        return 'https://accounts.odoo.com/oauth2/auth?' + url_encode(params)
 
     @http.route('/web/session/destroy', type='json', auth="user")
     def destroy(self):
@@ -1542,7 +1545,7 @@ class Binary(http.Controller):
             image_base64 = base64.b64encode(placeholder_content)
 
             if not (width or height):
-                width, height = flectra.tools.image_guess_size_from_field_name(field)
+                width, height = odoo.tools.image_guess_size_from_field_name(field)
 
         try:
             image_base64 = image_process(image_base64, size=(int(width), int(height)), crop=crop, quality=int(quality))
@@ -1636,14 +1639,14 @@ class Binary(http.Controller):
             dbname = db_monodb()
 
         if not uid:
-            uid = flectra.SUPERUSER_ID
+            uid = odoo.SUPERUSER_ID
 
         if not dbname:
             response = http.send_file(placeholder(imgname + imgext))
         else:
             try:
                 # create an empty registry
-                registry = flectra.modules.registry.Registry(dbname)
+                registry = odoo.modules.registry.Registry(dbname)
                 with registry.cursor() as cr:
                     company = int(kw['company']) if kw and kw.get('company') else False
                     if company:
@@ -1784,7 +1787,7 @@ class Export(http.Controller):
             fields['id'] = parent_field
 
         fields_sequence = sorted(fields.items(),
-            key=lambda field: flectra.tools.ustr(field[1].get('string', '').lower()))
+            key=lambda field: odoo.tools.ustr(field[1].get('string', '').lower()))
 
         records = []
         for field_name, field in fields_sequence:
@@ -1903,7 +1906,7 @@ class ExportFormat(object):
         raise NotImplementedError()
 
     def from_data(self, fields, rows):
-        """ Conversion method from Flectra's export data to whatever the
+        """ Conversion method from Odoo's export data to whatever the
         current export class outputs
 
         :params list fields: a list of fields to export
@@ -2145,7 +2148,7 @@ class ReportController(http.Controller):
             se = _serialize_exception(e)
             error = {
                 'code': 200,
-                'message': "Flectra Server Error",
+                'message': "Odoo Server Error",
                 'data': se
             }
             return request.make_response(html_escape(json.dumps(error)))

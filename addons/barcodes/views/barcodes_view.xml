@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<flectra>
+<odoo>
         <!--     BARCODE NOMENCLATURES     -->
         <record model="ir.ui.view" id="view_barcode_nomenclature_form">
             <field name="name">Barcode Nomenclatures</field>
@@ -80,4 +80,4 @@
                 </form>
             </field>
         </record>
-</flectra>
+</odoo>

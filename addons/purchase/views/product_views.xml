@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<flectra>
+<odoo>
 
         <!-- Product Suppliers-->
         <record id="product_supplierinfo_tree_view2" model="ir.ui.view">
@@ -141,4 +141,4 @@
             </field>
         </record>
 
-</flectra>
+</odoo>

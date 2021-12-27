@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo. See LICENSE file for full copyright and licensing details.
 
-from flectra.addons.survey.controllers.main import Survey
+from odoo.addons.survey.controllers.main import Survey
 
 
 class Survey(Survey):

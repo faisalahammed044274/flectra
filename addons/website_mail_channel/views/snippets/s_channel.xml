@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<flectra>
+<odoo>
 
 <template id="s_channel" name="Discussion Group">
     <div class="s_channel"
@@ -44,4 +44,4 @@
     </xpath>
 </template>
 
-</flectra>
+</odoo>

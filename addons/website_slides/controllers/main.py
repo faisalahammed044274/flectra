@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo. See LICENSE file for full copyright and licensing details.
 
 import base64
 import json
@@ -10,13 +10,13 @@ import math
 from ast import literal_eval
 from collections import defaultdict
 
-from flectra import http, tools, _
-from flectra.addons.http_routing.models.ir_http import slug
-from flectra.addons.website_profile.controllers.main import WebsiteProfile
-from flectra.addons.website.models.ir_http import sitemap_qs2dom
-from flectra.exceptions import AccessError, UserError
-from flectra.http import request
-from flectra.osv import expression
+from odoo import http, tools, _
+from odoo.addons.http_routing.models.ir_http import slug
+from odoo.addons.website_profile.controllers.main import WebsiteProfile
+from odoo.addons.website.models.ir_http import sitemap_qs2dom
+from odoo.exceptions import AccessError, UserError
+from odoo.http import request
+from odoo.osv import expression
 
 _logger = logging.getLogger(__name__)
 

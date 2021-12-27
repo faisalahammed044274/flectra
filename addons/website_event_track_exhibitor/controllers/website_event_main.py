@@ -1,11 +1,11 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo. See LICENSE file for full copyright and licensing details.
 
 from babel.dates import format_datetime
 
-from flectra import _
-from flectra.http import request
-from flectra.addons.website_event.controllers.main import WebsiteEventController
+from odoo import _
+from odoo.http import request
+from odoo.addons.website_event.controllers.main import WebsiteEventController
 
 
 class WebsiteEventController(WebsiteEventController):

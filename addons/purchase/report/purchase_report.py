@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo. See LICENSE file for full copyright and licensing details.
 
 #
 # Please note that these reports are not multi-currency !!!
@@ -7,9 +7,9 @@
 
 import re
 
-from flectra import api, fields, models, tools
-from flectra.exceptions import UserError
-from flectra.osv.expression import AND, expression
+from odoo import api, fields, models, tools
+from odoo.exceptions import UserError
+from odoo.osv.expression import AND, expression
 
 
 class PurchaseReport(models.Model):
@@ -34,8 +34,9 @@ class PurchaseReport(models.Model):
     company_id = fields.Many2one('res.company', 'Company', readonly=True)
     currency_id = fields.Many2one('res.currency', 'Currency', readonly=True)
     user_id = fields.Many2one('res.users', 'Purchase Representative', readonly=True)
-    delay = fields.Float('Days to Confirm', digits=(16, 2), readonly=True, help="Amount of time between purchase approval and order by date.")
-    delay_pass = fields.Float('Days to Receive', digits=(16, 2), readonly=True, help="Amount of time between date planned and order by date for each purchase order line.")
+    delay = fields.Float('Days to Confirm', digits=(16, 2), readonly=True, group_operator='avg', help="Amount of time between purchase approval and order by date.")
+    delay_pass = fields.Float('Days to Receive', digits=(16, 2), readonly=True, group_operator='avg',
+                              help="Amount of time between date planned and order by date for each purchase order line.")
     avg_days_to_purchase = fields.Float(
         'Average Days to Purchase', digits=(16, 2), readonly=True, store=False,  # needs store=False to prevent showing up as a 'measure' option
         help="Amount of time between purchase approval and document creation date. Due to a hack needed to calculate this, \

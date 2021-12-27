@@ -1,4 +1,4 @@
-flectra.define('unsplash.api', function (require) {
+odoo.define('unsplash.api', function (require) {
 'use strict';
 
 var Class = require('web.Class');

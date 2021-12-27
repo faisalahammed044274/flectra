@@ -1,4 +1,4 @@
-flectra.define('l10n_co_pos.pos', function (require) {
+odoo.define('l10n_co_pos.pos', function (require) {
 "use strict";
 
 var models = require('point_of_sale.models');

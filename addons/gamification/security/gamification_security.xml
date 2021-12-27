@@ -1,4 +1,4 @@
-<flectra noupdate="1">
+<odoo noupdate="1">
 
         <record id="goal_user_visibility" model="ir.rule">
             <field name="name">User can only see his/her goals or goal from the same challenge in board visibility</field>
@@ -33,4 +33,4 @@
             <field name="domain_force">[('user_id.company_id', 'in', company_ids)]</field>
         </record>
 
-</flectra>
+</odoo>

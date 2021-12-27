@@ -1,6 +1,6 @@
 from werkzeug import urls
 
-from flectra import models, api
+from odoo import models, api
 
 
 class Image(models.AbstractModel):

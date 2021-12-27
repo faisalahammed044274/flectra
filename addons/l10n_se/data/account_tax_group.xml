@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<flectra>
+<odoo>
     <data noupdate="1">
         <record id="tax_group_25" model="account.tax.group">
             <field name="name">VAT 25%</field>
@@ -14,4 +14,4 @@
             <field name="name">VAT 0%</field>
         </record>
     </data>
-</flectra>
+</odoo>

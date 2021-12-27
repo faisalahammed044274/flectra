@@ -1,12 +1,12 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo. See LICENSE file for full copyright and licensing details.
 
 from psycopg2 import IntegrityError
 
-from flectra.addons.test_mail.tests.common import TestMailCommon
-from flectra.tests import tagged
-from flectra.tests import users
-from flectra.tools.misc import mute_logger
+from odoo.addons.test_mail.tests.common import TestMailCommon
+from odoo.tests import tagged
+from odoo.tests import users
+from odoo.tools.misc import mute_logger
 
 
 @tagged('mail_followers')
@@ -135,7 +135,7 @@ class BaseFollowersTest(TestMailCommon):
         """Test that a follower cannot suffer from dissociative identity disorder.
            It cannot be both a partner and a channel.
         """
-        with self.assertRaises(IntegrityError), mute_logger('flectra.sql_db'):
+        with self.assertRaises(IntegrityError), mute_logger('odoo.sql_db'):
             self.env['mail.followers'].create({
                 'res_model': self.test_record._name,
                 'res_id': self.test_record.id,

@@ -1,4 +1,4 @@
-flectra.define('web.datepicker_tests', function (require) {
+odoo.define('web.datepicker_tests', function (require) {
     "use strict";
 
     const { DatePicker, DateTimePicker } = require('web.DatePickerOwl');

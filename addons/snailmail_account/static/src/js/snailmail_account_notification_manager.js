@@ -1,4 +1,4 @@
-flectra.define('snailmail_account.NotificationManager', function (require) {
+odoo.define('snailmail_account.NotificationManager', function (require) {
 "use strict";
 
 var AbstractService = require('web.AbstractService');

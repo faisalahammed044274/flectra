@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<flectra>
+<odoo>
     <record id="stock_package_destination_form_view" model="ir.ui.view">
         <field name="name">stock.package.destination.view</field>
         <field name="model">stock.package.destination</field>
@@ -56,4 +56,4 @@
             </form>
         </field>
     </record>
-</flectra>
+</odoo>

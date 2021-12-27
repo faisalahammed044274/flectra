@@ -26,7 +26,7 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 /**
  * Stripped down to only parsing/decoding.
  */
-flectra.define('web.contentdisposition', function () {
+odoo.define('web.contentdisposition', function () {
 'use strict';
 
 /**

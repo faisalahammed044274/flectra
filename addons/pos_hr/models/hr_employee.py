@@ -1,10 +1,10 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo. See LICENSE file for full copyright and licensing details.
 
 import hashlib
 
-from flectra import api, models, _
-from flectra.exceptions import UserError
+from odoo import api, models, _
+from odoo.exceptions import UserError
 
 class HrEmployee(models.Model):
 

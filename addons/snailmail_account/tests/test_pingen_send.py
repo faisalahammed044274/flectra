@@ -4,8 +4,8 @@ import json
 import base64
 import logging
 
-from flectra.tests.common import HttpCase
-from flectra.tests import tagged
+from odoo.tests.common import HttpCase
+from odoo.tests import tagged
 
 _logger = logging.getLogger(__name__)
 

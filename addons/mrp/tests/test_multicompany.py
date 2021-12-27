@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo. See LICENSE file for full copyright and licensing details.
 
-from flectra.tests import common, Form
-from flectra.exceptions import UserError
+from odoo.tests import common, Form
+from odoo.exceptions import UserError
 
 
 class TestMrpMulticompany(common.TransactionCase):

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<flectra>
+<odoo>
 
 <template id="submenu" name="Submenu">
     <t t-set="has_visible_submenu" t-value="(submenu.is_mega_menu and submenu.is_visible) or submenu.child_id.filtered(lambda menu: menu.is_visible)"/>
@@ -66,7 +66,7 @@
         <t t-set="x_icon" t-value="website.image_url(website, 'favicon')"/>
     </xpath>
     <xpath expr="//head/meta[last()]" position="after">
-        <meta name="generator" content="Flectra"/>
+        <meta name="generator" content="Odoo"/>
         <t t-set="website_meta" t-value="seo_object and seo_object.get_website_meta() or {}"/>
         <meta name="default_title" t-att-content="default_title" groups="website.group_website_designer"/>
         <meta t-if="main_object and 'website_indexed' in main_object
@@ -200,7 +200,7 @@
     <xpath expr="//t[@t-call='web.brand_promotion_message']" position="replace">
         <t t-call="web.brand_promotion_message">
             <t t-set="_message">
-                Create a <a target="_blank" href="http://www.flectrahq.com/page/website-builder?utm_source=db&amp;utm_medium=website">free website</a>
+                Create a <a target="_blank" href="http://www.odoo.com/page/website-builder?utm_source=db&amp;utm_medium=website">free website</a>
             </t>
             <t t-set="_utm_medium" t-valuef="website"/>
         </t>
@@ -1651,7 +1651,7 @@
                 <div class="container">
                     <div class="row">
                         <div class="col-lg-9 pb24">
-                            <h3>50,000+ companies run Flectra to grow their businesses.</h3>
+                            <h3>50,000+ companies run Odoo to grow their businesses.</h3>
                             <p class="lead">Join us and make your company a better place.</p>
                         </div>
                         <div class="col-lg-3 pb24">
@@ -2025,13 +2025,13 @@
 </template>
 
 <!-- Error and special pages -->
-<template id="website_info" name="Flectra Information">
+<template id="website_info" name="Odoo Information">
     <t t-call="website.layout">
         <div id="wrap"/>
     </t>
 </template>
 
-<template id="show_website_info" inherit_id="website.website_info" customize_show="True" name="Show Flectra Information">
+<template id="show_website_info" inherit_id="website.website_info" customize_show="True" name="Show Odoo Information">
     <xpath expr="//div[@id='wrap']" position="inside">
         <div class="oe_structure">
             <section class="container">
@@ -2040,10 +2040,10 @@
               </t>
               <t t-if="version">
                 <h1><t t-esc="res_company.name"/>
-                    <small>Flectra Version <t t-raw="version.get('server_version')"/></small>
+                    <small>Odoo Version <t t-raw="version.get('server_version')"/></small>
                 </h1>
                 <p>
-                    Information about the <t t-esc="res_company.name"/> instance of Flectra, the <a target="_blank" href="https://www.flectrahq.com">Open Source ERP</a>.
+                    Information about the <t t-esc="res_company.name"/> instance of Odoo, the <a target="_blank" href="https://www.odoo.com">Open Source ERP</a>.
                 </p>
 
                 <div class="alert alert-warning alert-dismissable mt16" groups="website.group_website_publisher" role="status">
@@ -2071,7 +2071,7 @@
                     <h2 class='mt32'>Installed Localizations / Account Charts</h2>
                     <dl class="dl-horizontal" t-foreach="l10n" t-as="app">
                         <dt>
-                            <a t-attf-href="https://www.flectrahq.com/page/accounting/#{app.name}">
+                            <a t-attf-href="https://www.odoo.com/page/accounting/#{app.name}">
                                 <t t-raw="app.shortdesc"/>
                             </a>
                         </dt>
@@ -2107,21 +2107,21 @@
 <template id="default_css">
     <style type="text/css">
         div#wrap div &gt; h1{
-            color: #009EFB;
+            color: #875A7B;
         }
     </style>
 </template>
 <template id="default_less">
     <style type="text/less">
         div#wrap div &gt; h1 {
-            color: @o-brand-flectra;
+            color: @o-brand-odoo;
         }
     </style>
 </template>
 <template id="default_scss">
     <style type="text/scss">
         div#wrap div &gt; h1 {
-            color: $o-brand-flectra;
+            color: $o-brand-odoo;
         }
     </style>
 </template>
@@ -2462,4 +2462,4 @@ Sitemap: <t t-esc="url_root"/>sitemap.xml
     </tr>
 </template>
 
-</flectra>
+</odoo>

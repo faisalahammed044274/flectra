@@ -1,4 +1,4 @@
-flectra.define('point_of_sale.TextInputPopup', function(require) {
+odoo.define('point_of_sale.TextInputPopup', function(require) {
     'use strict';
 
     const { useState, useRef } = owl.hooks;

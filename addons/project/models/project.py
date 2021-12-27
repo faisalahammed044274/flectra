@@ -1,14 +1,14 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo. See LICENSE file for full copyright and licensing details.
 
 import ast
 from datetime import timedelta, datetime
 from random import randint
 
-from flectra import api, fields, models, tools, SUPERUSER_ID, _
-from flectra.exceptions import UserError, AccessError, ValidationError, RedirectWarning
-from flectra.tools.misc import format_date, get_lang
-from flectra.osv.expression import OR
+from odoo import api, fields, models, tools, SUPERUSER_ID, _
+from odoo.exceptions import UserError, AccessError, ValidationError, RedirectWarning
+from odoo.tools.misc import format_date, get_lang
+from odoo.osv.expression import OR
 
 from .project_task_recurrence import DAYS, WEEKS
 
@@ -1324,11 +1324,11 @@ class Task(models.Model):
     def _notify_email_header_dict(self):
         headers = super(Task, self)._notify_email_header_dict()
         if self.project_id:
-            current_objects = [h for h in headers.get('X-Flectra-Objects', '').split(',') if h]
+            current_objects = [h for h in headers.get('X-Odoo-Objects', '').split(',') if h]
             current_objects.insert(0, 'project.project-%s, ' % self.project_id.id)
-            headers['X-Flectra-Objects'] = ','.join(current_objects)
+            headers['X-Odoo-Objects'] = ','.join(current_objects)
         if self.tag_ids:
-            headers['X-Flectra-Tags'] = ','.join(self.tag_ids.mapped('name'))
+            headers['X-Odoo-Tags'] = ','.join(self.tag_ids.mapped('name'))
         return headers
 
     def _message_post_after_hook(self, message, msg_vals):

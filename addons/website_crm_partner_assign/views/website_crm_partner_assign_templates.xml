@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<flectra>
+<odoo>
 
 <!-- Page -->
 <template id="layout" name="Partners Layout">
@@ -821,4 +821,4 @@
         </t>
     </template>
 
-</flectra>
+</odoo>

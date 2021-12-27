@@ -1,4 +1,4 @@
-flectra.define('web.abstract_view_tests', function (require) {
+odoo.define('web.abstract_view_tests', function (require) {
 "use strict";
 
 var AbstractView = require('web.AbstractView');

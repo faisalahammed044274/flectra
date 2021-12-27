@@ -1,4 +1,4 @@
-flectra.define('web.BrowserDetection', function (require) {
+odoo.define('web.BrowserDetection', function (require) {
     "use strict";
     var Class = require('web.Class');
 

@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo. See LICENSE file for full copyright and licensing details.
 
 import jinja2
 import json
@@ -11,12 +11,12 @@ import threading
 import time
 import urllib3
 
-from flectra import http
-from flectra.addons.hw_drivers.connection_manager import connection_manager
-from flectra.addons.hw_drivers.driver import Driver
-from flectra.addons.hw_drivers.event_manager import event_manager
-from flectra.addons.hw_drivers.main import iot_devices
-from flectra.addons.hw_drivers.tools import helpers
+from odoo import http
+from odoo.addons.hw_drivers.connection_manager import connection_manager
+from odoo.addons.hw_drivers.driver import Driver
+from odoo.addons.hw_drivers.event_manager import event_manager
+from odoo.addons.hw_drivers.main import iot_devices
+from odoo.addons.hw_drivers.tools import helpers
 
 path = os.path.realpath(os.path.join(os.path.dirname(__file__), '../../views'))
 loader = jinja2.FileSystemLoader(path)
@@ -72,7 +72,7 @@ class DisplayDriver(Driver):
     def run(self):
         while self.device_identifier != 'distant_display' and not self._stopped.isSet():
             time.sleep(60)
-            if self.url != 'http://localhost:7073/point_of_sale/display/' + self.device_identifier:
+            if self.url != 'http://localhost:8069/point_of_sale/display/' + self.device_identifier:
                 # Refresh the page every minute
                 self.call_xdotools('F5')
 
@@ -81,7 +81,7 @@ class DisplayDriver(Driver):
         os.environ['XAUTHORITY'] = '/run/lightdm/pi/xauthority'
         firefox_env = os.environ.copy()
         firefox_env['HOME'] = '/tmp/' + self._x_screen
-        self.url = url or 'http://localhost:7073/point_of_sale/display/' + self.device_identifier
+        self.url = url or 'http://localhost:8069/point_of_sale/display/' + self.device_identifier
         new_window = subprocess.call(['xdotool', 'search', '--onlyvisible', '--screen', self._x_screen, '--class', 'Firefox'])
         subprocess.Popen(['firefox', self.url], env=firefox_env)
         if new_window:
@@ -89,12 +89,12 @@ class DisplayDriver(Driver):
 
     def load_url(self):
         url = None
-        if helpers.get_flectra_server_url():
+        if helpers.get_odoo_server_url():
             # disable certifiacte verification
             urllib3.disable_warnings()
             http = urllib3.PoolManager(cert_reqs='CERT_NONE')
             try:
-                response = http.request('GET', "%s/iot/box/%s/display_url" % (helpers.get_flectra_server_url(), helpers.get_mac_address()))
+                response = http.request('GET', "%s/iot/box/%s/display_url" % (helpers.get_odoo_server_url(), helpers.get_mac_address()))
                 if response.status == 200:
                     data = json.loads(response.data.decode('utf8'))
                     url = data[self.device_identifier]
@@ -211,7 +211,7 @@ class DisplayController(http.Controller):
             display_identifier = DisplayDriver.get_default_display().device_identifier
 
         return pos_display_template.render({
-            'title': "Flectra -- Point of Sale",
+            'title': "Odoo -- Point of Sale",
             'breadcrumb': 'POS Client display',
             'cust_js': cust_js,
             'display_ifaces': display_ifaces,

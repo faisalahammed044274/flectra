@@ -1,13 +1,13 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo. See LICENSE file for full copyright and licensing details.
 from datetime import datetime, timedelta
 from hashlib import sha256
 from json import dumps
 
-from flectra import models, api, fields
-from flectra.fields import Datetime
-from flectra.tools.translate import _, _lt
-from flectra.exceptions import UserError
+from odoo import models, api, fields
+from odoo.fields import Datetime
+from odoo.tools.translate import _, _lt
+from odoo.exceptions import UserError
 
 
 class pos_config(models.Model):

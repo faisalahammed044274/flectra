@@ -1,13 +1,13 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
-from flectra.api import model
+# Part of Odoo. See LICENSE file for full copyright and licensing details.
+from odoo.api import model
 from typing import Iterator, Mapping
 from collections import abc
 
 
 class MicrosoftEvent(abc.Set):
     """This helper class holds the values of a Microsoft event.
-    Inspired by Flectra recordset, one instance can be a single Microsoft event or a
+    Inspired by Odoo recordset, one instance can be a single Microsoft event or a
     (immutable) set of Microsoft events.
     All usual set operations are supported (union, intersection, etc).
 
@@ -56,68 +56,68 @@ class MicrosoftEvent(abc.Set):
     def microsoft_ids(self):
         return tuple(e.id for e in self)
 
-    def flectra_id(self, env):
-        self.flectra_ids(env)  # load ids
-        return self._flectra_id
+    def odoo_id(self, env):
+        self.odoo_ids(env)  # load ids
+        return self._odoo_id
 
-    def _meta_flectra_id(self, microsoft_guid):
-        """Returns the Flectra id stored in the Microsoft Event metadata.
+    def _meta_odoo_id(self, microsoft_guid):
+        """Returns the Odoo id stored in the Microsoft Event metadata.
         This id might not actually exists in the database.
         """
         if self.singleValueExtendedProperties:
-            o_id = [prop['value'] for prop in self.singleValueExtendedProperties if prop['id'] == 'String {%s} Name flectra_id' % microsoft_guid][0]
+            o_id = [prop['value'] for prop in self.singleValueExtendedProperties if prop['id'] == 'String {%s} Name odoo_id' % microsoft_guid][0]
             return int(o_id)
 
-    def flectra_ids(self, env):
-        ids = tuple(e._flectra_id for e in self if e._flectra_id)
+    def odoo_ids(self, env):
+        ids = tuple(e._odoo_id for e in self if e._odoo_id)
         if len(ids) == len(self):
             return ids
-        found = self._load_flectra_ids_from_db(env)
+        found = self._load_odoo_ids_from_db(env)
         unsure = self - found
         if unsure:
-            unsure._load_flectra_ids_from_metadata(env)
+            unsure._load_odoo_ids_from_metadata(env)
 
-        return tuple(e._flectra_id for e in self)
+        return tuple(e._odoo_id for e in self)
 
-    def _load_flectra_ids_from_metadata(self, env):
+    def _load_odoo_ids_from_metadata(self, env):
         model_env = self._get_model(env)
         microsoft_guid = env['ir.config_parameter'].sudo().get_param('microsoft_calendar.microsoft_guid', False)
-        unsure_flectra_ids = tuple(e._meta_flectra_id(microsoft_guid) for e in self)
-        flectra_events = model_env.browse(_id for _id in unsure_flectra_ids if _id)
+        unsure_odoo_ids = tuple(e._meta_odoo_id(microsoft_guid) for e in self)
+        odoo_events = model_env.browse(_id for _id in unsure_odoo_ids if _id)
 
         # Extended properties are copied when splitting a recurrence Microsoft side.
-        # Hence, we may have two Microsoft recurrences linked to the same Flectra id.
-        # Therefore, we only consider Flectra records without microsoft id when trying
+        # Hence, we may have two Microsoft recurrences linked to the same Odoo id.
+        # Therefore, we only consider Odoo records without microsoft id when trying
         # to match events.
-        o_ids = flectra_events.exists().filtered(lambda e: not e.microsoft_id).ids
+        o_ids = odoo_events.exists().filtered(lambda e: not e.microsoft_id).ids
         for e in self:
-            flectra_id = e._meta_flectra_id(microsoft_guid)
-            if flectra_id in o_ids:
-                e._events[e.id]['_flectra_id'] = flectra_id
+            odoo_id = e._meta_odoo_id(microsoft_guid)
+            if odoo_id in o_ids:
+                e._events[e.id]['_odoo_id'] = odoo_id
 
-    def _load_flectra_ids_from_db(self, env):
+    def _load_odoo_ids_from_db(self, env):
         model_env = self._get_model(env)
-        flectra_events = model_env.with_context(active_test=False)._from_microsoft_ids(self.ids).with_env(env)
-        mapping = {e.microsoft_id: e.id for e in flectra_events}
-        existing_microsoft_ids = flectra_events.mapped('microsoft_id')
+        odoo_events = model_env.with_context(active_test=False)._from_microsoft_ids(self.ids).with_env(env)
+        mapping = {e.microsoft_id: e.id for e in odoo_events}
+        existing_microsoft_ids = odoo_events.mapped('microsoft_id')
         for e in self:
-            flectra_id = mapping.get(e.id)
-            if flectra_id:
-                e._events[e.id]['_flectra_id'] = flectra_id
+            odoo_id = mapping.get(e.id)
+            if odoo_id:
+                e._events[e.id]['_odoo_id'] = odoo_id
         return self.filter(lambda e: e.id in existing_microsoft_ids)
 
     def owner(self, env):
-        # Owner/organizer could be desynchronised between Microsoft and Flectra.
+        # Owner/organizer could be desynchronised between Microsoft and Odoo.
         # Let userA, userB be two new users (never synced to Microsoft before).
-        # UserA creates an event in Flectra (he is the owner) but userB syncs first.
+        # UserA creates an event in Odoo (he is the owner) but userB syncs first.
         # There is no way to insert the event into userA's calendar since we don't have
         # any authentication access. The event is therefore inserted into userB's calendar
-        # (he is the orginizer in Microsoft). The "real" owner (in Flectra) is stored as an
+        # (he is the orginizer in Microsoft). The "real" owner (in Odoo) is stored as an
         # extended property. There is currently no support to "transfert" ownership when
         # userA syncs his calendar the first time.
         if self.singleValueExtendedProperties:
             microsoft_guid = env['ir.config_parameter'].sudo().get_param('microsoft_calendar.microsoft_guid', False)
-            real_owner_id = [prop['value'] for prop in self.singleValueExtendedProperties if prop['id'] == 'String {%s} Name owner_flectra_id' % microsoft_guid][0]
+            real_owner_id = [prop['value'] for prop in self.singleValueExtendedProperties if prop['id'] == 'String {%s} Name owner_odoo_id' % microsoft_guid][0]
             real_owner = real_owner_id and env['res.users'].browse(int(real_owner_id))
         else:
             real_owner_id = False
@@ -127,7 +127,7 @@ class MicrosoftEvent(abc.Set):
         elif self.isOrganizer:
             return env.user
         elif self.organizer and self.organizer.get('emailAddress') and self.organizer.get('emailAddress').get('address'):
-            # In Microsoft: 1 email = 1 user; but in Flectra several users might have the same email
+            # In Microsoft: 1 email = 1 user; but in Odoo several users might have the same email
             return env['res.users'].search([('email', '=', self.organizer.get('emailAddress').get('address'))], limit=1)
         else:
             return env['res.users']
@@ -210,10 +210,10 @@ class MicrosoftEvent(abc.Set):
     def exists(self, env) -> 'MicrosoftEvent':
         recurrences = self.filter(MicrosoftEvent.is_recurrence)
         events = self - recurrences
-        recurrences.flectra_ids(env)
-        events.flectra_ids(env)
+        recurrences.odoo_ids(env)
+        events.odoo_ids(env)
 
-        return self.filter(lambda e: e._flectra_id)
+        return self.filter(lambda e: e._odoo_id)
 
     def _get_model(self, env):
         if all(e.is_recurrence() for e in self):

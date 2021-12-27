@@ -1,13 +1,13 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo. See LICENSE file for full copyright and licensing details.
 
 from collections import defaultdict
 from datetime import datetime
 from dateutil.relativedelta import relativedelta
 from itertools import groupby
 
-from flectra import api, fields, models, SUPERUSER_ID, _
-from flectra.addons.stock.models.stock_rule import ProcurementException
+from odoo import api, fields, models, SUPERUSER_ID, _
+from odoo.addons.stock.models.stock_rule import ProcurementException
 
 
 class StockRule(models.Model):

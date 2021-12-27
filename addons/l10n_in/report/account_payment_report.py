@@ -1,7 +1,7 @@
 # -*- coding:utf-8 -*-
-#az Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+#az Part of Odoo. See LICENSE file for full copyright and licensing details.
 
-from flectra import api, fields, models, tools
+from odoo import api, fields, models, tools
 
 
 class L10nInPaymentReport(models.AbstractModel):

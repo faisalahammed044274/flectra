@@ -1,4 +1,4 @@
-flectra.define('web.relational_fields_tests', function (require) {
+odoo.define('web.relational_fields_tests', function (require) {
 "use strict";
 
 var AbstractStorageService = require('web.AbstractStorageService');

@@ -1,4 +1,4 @@
-flectra.define('website.s_dynamic_snippet_carousel', function (require) {
+odoo.define('website.s_dynamic_snippet_carousel', function (require) {
 'use strict';
 
 const config = require('web.config');

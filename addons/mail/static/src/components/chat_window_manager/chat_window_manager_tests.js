@@ -1,4 +1,4 @@
-flectra.define('mail/static/src/components/chat_window_manager/chat_window_manager_tests.js', function (require) {
+odoo.define('mail/static/src/components/chat_window_manager/chat_window_manager_tests.js', function (require) {
 'use strict';
 
 const { makeDeferred } = require('mail/static/src/utils/deferred/deferred.js');

@@ -1,7 +1,7 @@
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
-from flectra.tests import tagged
-from flectra.addons.account.tests.common import AccountTestInvoicingCommon
-from flectra.exceptions import UserError
+# Part of Odoo. See LICENSE file for full copyright and licensing details.
+from odoo.tests import tagged
+from odoo.addons.account.tests.common import AccountTestInvoicingCommon
+from odoo.exceptions import UserError
 
 
 @tagged('standard', 'at_install')

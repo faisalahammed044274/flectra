@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<flectra>
+<odoo>
     <template id="assets_backend" inherit_id="web.assets_backend" name="Adyen for Platforms Backend Assets">
         <xpath expr="." position="inside">
             <script type="text/javascript" src="/adyen_platforms/static/src/js/adyen_account_fields.js"></script>
@@ -7,4 +7,4 @@
             <script type="text/javascript" src="/adyen_platforms/static/src/js/adyen_transactions.js"></script>
         </xpath>
     </template>
-</flectra>
+</odoo>

@@ -1,4 +1,4 @@
-flectra.define('website_sale.utils', function (require) {
+odoo.define('website_sale.utils', function (require) {
 'use strict';
 
 function animateClone($cart, $elem, offsetTop, offsetLeft) {

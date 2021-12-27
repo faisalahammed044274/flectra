@@ -1,11 +1,11 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo. See LICENSE file for full copyright and licensing details.
 
 """ Implementation of "INVENTORY VALUATION TESTS (With valuation layers)" spreadsheet. """
 
-from flectra.addons.stock_account.tests.test_stockvaluation import _create_accounting_data
-from flectra.tests import Form, tagged
-from flectra.tests.common import SavepointCase, TransactionCase
+from odoo.addons.stock_account.tests.test_stockvaluation import _create_accounting_data
+from odoo.tests import Form, tagged
+from odoo.tests.common import SavepointCase, TransactionCase
 
 
 class TestStockValuationCommon(SavepointCase):

@@ -1,4 +1,4 @@
-<flectra>
+<odoo>
     <record id="mrp_production_form_view_inherited" model="ir.ui.view">
         <field name="name">mrp.production.view.inherited</field>
         <field name="model">mrp.production</field>
@@ -16,4 +16,4 @@
             </xpath>
         </field>
     </record>
-</flectra>
+</odoo>

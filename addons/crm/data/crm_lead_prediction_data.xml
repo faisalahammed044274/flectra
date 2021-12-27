@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding='UTF-8'?>
-<flectra>
+<odoo>
     <data noupdate="1">
         <!-- Lead scoring frequency fields -->
         <record id="frequency_field_state_id" model="crm.lead.scoring.frequency.field">
@@ -41,4 +41,4 @@
         <field name="active" eval="False"/>
         <field name="doall" eval="False"/>
     </record>
-</flectra>
+</odoo>

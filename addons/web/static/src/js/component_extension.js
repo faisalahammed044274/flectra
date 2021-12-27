@@ -1,9 +1,9 @@
 (function () {
     /**
-     * Symbol used in ComponentWrapper to redirect Owl events to Flectra legacy
+     * Symbol used in ComponentWrapper to redirect Owl events to Odoo legacy
      * events.
      */
-    flectra.widgetSymbol = Symbol('widget');
+    odoo.widgetSymbol = Symbol('widget');
 
     /**
      * Add a new method to owl Components to ensure that no performed RPC is
@@ -34,8 +34,8 @@
      */
     const originalTrigger = owl.Component.prototype.__trigger;
     owl.Component.prototype.__trigger = function (component, evType, payload) {
-        if (this.env[flectra.widgetSymbol]) {
-            this.env[flectra.widgetSymbol](evType);
+        if (this.env[odoo.widgetSymbol]) {
+            this.env[odoo.widgetSymbol](evType);
         }
         originalTrigger.call(this, component, evType, payload);
     };

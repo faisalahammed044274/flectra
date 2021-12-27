@@ -1,4 +1,4 @@
-flectra.define('board.dashboard_tests', function (require) {
+odoo.define('board.dashboard_tests', function (require) {
 "use strict";
 
 var BoardView = require('board.BoardView');

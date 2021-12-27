@@ -1,10 +1,10 @@
-import flectra.tests
-from flectra.tests.common import HOST
-from flectra.tools import config
+import odoo.tests
+from odoo.tests.common import HOST
+from odoo.tools import config
 
 
-@flectra.tests.common.tagged('post_install', '-at_install')
-class TestWebsiteAttachment(flectra.tests.HttpCase):
+@odoo.tests.common.tagged('post_install', '-at_install')
+class TestWebsiteAttachment(odoo.tests.HttpCase):
 
     def test_01_type_url_301_image(self):
         IMD = self.env['ir.model.data']

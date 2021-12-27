@@ -1,4 +1,4 @@
-flectra.define("web.patchMixin", function () {
+odoo.define("web.patchMixin", function () {
     "use strict";
 
     /**

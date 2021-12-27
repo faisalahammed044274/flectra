@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<flectra>
+<odoo>
     <data>
         <record id="report_layout_din5008" model="report.layout">
             <field name="view_id" ref="l10n_de.external_layout_din5008"/>
@@ -8,4 +8,4 @@
             <field name="name">DIN 5008</field>
         </record>
     </data>
-</flectra> 
+</odoo>

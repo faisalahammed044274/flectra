@@ -1,13 +1,13 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo. See LICENSE file for full copyright and licensing details.
 
 import itertools
 import logging
 from collections import defaultdict
 
-from flectra import api, fields, models, tools, _, SUPERUSER_ID
-from flectra.exceptions import ValidationError, RedirectWarning, UserError
-from flectra.osv import expression
+from odoo import api, fields, models, tools, _, SUPERUSER_ID
+from odoo.exceptions import ValidationError, RedirectWarning, UserError
+from odoo.osv import expression
 
 _logger = logging.getLogger(__name__)
 

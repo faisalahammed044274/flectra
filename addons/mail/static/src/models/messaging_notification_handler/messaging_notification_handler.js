@@ -1,4 +1,4 @@
-flectra.define('mail/static/src/models/messaging_notification_handler/messaging_notification_handler.js', function (require) {
+odoo.define('mail/static/src/models/messaging_notification_handler/messaging_notification_handler.js', function (require) {
 'use strict';
 
 const { registerNewModel } = require('mail/static/src/model/model_core.js');
@@ -233,7 +233,7 @@ function factory(dependencies) {
             }
 
             // Message from mailing channel should not make a notification in
-            // Flectra for users with notification "Handled by Email".
+            // Odoo for users with notification "Handled by Email".
             // Channel has been marked as read server-side in this case, so
             // it should not display a notification by incrementing the
             // unread counter.
@@ -249,16 +249,16 @@ function factory(dependencies) {
             }
             // In all other cases: update counter and notify if necessary
 
-            // Chat from FlectraBot is considered disturbing and should only be
+            // Chat from OdooBot is considered disturbing and should only be
             // shown on the menu, but no notification and no thread open.
-            const isChatWithFlectraBot = (
+            const isChatWithOdooBot = (
                 channel.correspondent &&
                 channel.correspondent === this.env.messaging.partnerRoot
             );
-            if (!isChatWithFlectraBot) {
-                const isFlectraFocused = this.env.services['bus_service'].isFlectraFocused();
+            if (!isChatWithOdooBot) {
+                const isOdooFocused = this.env.services['bus_service'].isOdooFocused();
                 // Notify if out of focus
-                if (!isFlectraFocused && channel.isChatChannel) {
+                if (!isOdooFocused && channel.isChatChannel) {
                     this._notifyNewChannelMessageWhileOutOfFocus({
                         channel,
                         message,
@@ -750,7 +750,9 @@ function factory(dependencies) {
                     notificationTitle = owl.utils.escape(authorName);
                 }
             }
-            const notificationContent = htmlToTextContentInline(message.body).substr(0, PREVIEW_MSG_MAX_SIZE);
+            const notificationContent = owl.utils.escape(
+                htmlToTextContentInline(message.body).substr(0, PREVIEW_MSG_MAX_SIZE)
+            );
             this.env.services['bus_service'].sendNotification(notificationTitle, notificationContent);
             messaging.update({ outOfFocusUnreadMessageCounter: increment() });
             const titlePattern = messaging.outOfFocusUnreadMessageCounter === 1

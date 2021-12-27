@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<flectra>
+<odoo>
     <data>
         <record id="crm.model_crm_lead" model="ir.model">
             <field name="website_form_key">create_lead</field>
@@ -33,4 +33,4 @@
             <field name="state">open</field>
         </record>
     </data>
-</flectra>
+</odoo>

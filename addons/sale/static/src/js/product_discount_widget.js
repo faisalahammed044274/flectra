@@ -1,4 +1,4 @@
-flectra.define('sale.product_discount', function (require) {
+odoo.define('sale.product_discount', function (require) {
     "use strict";
 
     const BasicFields = require('web.basic_fields');
@@ -19,7 +19,7 @@ flectra.define('sale.product_discount', function (require) {
          * Override changes at a discount.
          *
          * @override
-         * @param {FlectraEvent} ev
+         * @param {OdooEvent} ev
          *
          */
         async reset(record, ev) {

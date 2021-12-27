@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<flectra>
+<odoo>
     <record id="fleet_vehicle_assignation_log_view_list" model="ir.ui.view">
         <field name="name">fleet.vehicle.assignation.log.view.tree.inherit.hr.fleet</field>
         <field name="model">fleet.vehicle.assignation.log</field>
@@ -33,4 +33,4 @@
             </xpath>
         </field>
     </record>
-</flectra>
+</odoo>

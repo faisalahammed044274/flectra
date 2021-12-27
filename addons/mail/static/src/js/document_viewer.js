@@ -1,4 +1,4 @@
-flectra.define('mail.DocumentViewer', function (require) {
+odoo.define('mail.DocumentViewer', function (require) {
 "use strict";
 
 var core = require('web.core');

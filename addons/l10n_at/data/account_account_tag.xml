@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<flectra>
+<odoo>
     <data>
         <record
             id="account_tag_l10n_at_AAI1"
@@ -535,4 +535,4 @@
             <field name="color" eval="1" />
         </record>
     </data>
-</flectra>
+</odoo>

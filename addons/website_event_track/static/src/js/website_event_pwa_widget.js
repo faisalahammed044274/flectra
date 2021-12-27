@@ -1,4 +1,4 @@
-flectra.define("website_event_track.website_event_pwa_widget", function (require) {
+odoo.define("website_event_track.website_event_pwa_widget", function (require) {
     "use strict";
 
     /*

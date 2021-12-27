@@ -1,4 +1,4 @@
-flectra.define('website.s_countdown_options', function (require) {
+odoo.define('website.s_countdown_options', function (require) {
 'use strict';
 
 const core = require('web.core');
@@ -11,6 +11,16 @@ options.registry.countdown = options.Class.extend({
     events: _.extend({}, options.Class.prototype.events || {}, {
         'click .toggle-edit-message': '_onToggleEndMessageClick',
     }),
+
+    /**
+     * Remove any preview classes, if present.
+     *
+     * @override
+     */
+    cleanForSave: async function () {
+        this.$target.find('.s_countdown_canvas_wrapper').removeClass("s_countdown_none");
+        this.$target.find('.s_countdown_end_message').removeClass("s_countdown_enable_preview");
+    },
 
     //--------------------------------------------------------------------------
     // Options
@@ -30,6 +40,9 @@ options.registry.countdown = options.Class.extend({
             }
         } else {
             const $message = this.$target.find('.s_countdown_end_message').detach();
+            if (this.showEndMessage) {
+                this._onToggleEndMessageClick();
+            }
             if ($message.length) {
                 this.endMessage = $message[0].outerHTML;
             }
@@ -86,9 +99,9 @@ options.registry.countdown = options.Class.extend({
      */
     updateUIEndMessage: function () {
         this.$target.find('.s_countdown_canvas_wrapper')
-            .toggleClass("d-none", this.showEndMessage === true && this.$target.hasClass("hide-countdown"));
+            .toggleClass("s_countdown_none", this.showEndMessage === true && this.$target.hasClass("hide-countdown"));
         this.$target.find('.s_countdown_end_message')
-            .toggleClass("d-none", !this.showEndMessage);
+            .toggleClass("s_countdown_enable_preview", this.showEndMessage === true);
     },
 
     //--------------------------------------------------------------------------

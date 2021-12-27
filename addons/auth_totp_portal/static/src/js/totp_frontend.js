@@ -1,4 +1,4 @@
-flectra.define('auth_totp_portal.button', function (require) {
+odoo.define('auth_totp_portal.button', function (require) {
 'use strict';
 
 const {_t} = require('web.core');

@@ -2,7 +2,7 @@
 import requests
 import logging
 
-from flectra.tools import html2plaintext
+from odoo.tools import html2plaintext
 
 _logger = logging.getLogger(__name__)
 

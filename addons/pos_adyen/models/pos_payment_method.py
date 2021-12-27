@@ -1,5 +1,5 @@
 # coding: utf-8
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo. See LICENSE file for full copyright and licensing details.
 import json
 import logging
 import pprint
@@ -8,8 +8,8 @@ import requests
 import string
 from werkzeug.exceptions import Forbidden
 
-from flectra import fields, models, api, _
-from flectra.exceptions import ValidationError
+from odoo import fields, models, api, _
+from odoo.exceptions import ValidationError
 
 _logger = logging.getLogger(__name__)
 
@@ -17,14 +17,14 @@ class PosPaymentMethod(models.Model):
     _inherit = 'pos.payment.method'
 
     def _get_payment_terminal_selection(self):
-        return super(PosPaymentMethod, self)._get_payment_terminal_selection() + [('flectra_adyen', 'Flectra Payments by Adyen'), ('adyen', 'Adyen')]
+        return super(PosPaymentMethod, self)._get_payment_terminal_selection() + [('odoo_adyen', 'Odoo Payments by Adyen'), ('adyen', 'Adyen')]
 
     # Adyen
     adyen_api_key = fields.Char(string="Adyen API key", help='Used when connecting to Adyen: https://docs.adyen.com/user-management/how-to-get-the-api-key/#description', copy=False)
     adyen_terminal_identifier = fields.Char(help='[Terminal model]-[Serial number], for example: P400Plus-123456789', copy=False)
     adyen_test_mode = fields.Boolean(help='Run transactions in the test environment.')
 
-    # Flectra Payments by Adyen
+    # Odoo Payments by Adyen
     adyen_account_id = fields.Many2one('adyen.account', related='company_id.adyen_account_id')
     adyen_payout_id = fields.Many2one('adyen.payout', string='Adyen Payout', domain="[('adyen_account_id', '=', adyen_account_id)]")
     adyen_terminal_id = fields.Many2one('adyen.terminal', string='Adyen Terminal', domain="[('adyen_account_id', '=', adyen_account_id)]")
@@ -52,7 +52,7 @@ class PosPaymentMethod(models.Model):
     @api.onchange('adyen_terminal_id')
     def onchange_use_payment_terminal(self):
         for payment_method in self:
-            if payment_method.use_payment_terminal == 'flectra_adyen' and payment_method.adyen_terminal_id:
+            if payment_method.use_payment_terminal == 'odoo_adyen' and payment_method.adyen_terminal_id:
                 payment_method.adyen_terminal_identifier = payment_method.adyen_terminal_id.terminal_uuid
 
     def _is_write_forbidden(self, fields):
@@ -103,8 +103,8 @@ class PosPaymentMethod(models.Model):
         if not operation:
             operation = 'terminal_request'
 
-        if self.use_payment_terminal == 'flectra_adyen':
-            return self._proxy_adyen_request_flectra_proxy(data, operation)
+        if self.use_payment_terminal == 'odoo_adyen':
+            return self._proxy_adyen_request_odoo_proxy(data, operation)
         else:
             return self._proxy_adyen_request_direct(data, operation)
 
@@ -135,7 +135,7 @@ class PosPaymentMethod(models.Model):
 
         return req.json()
 
-    def _proxy_adyen_request_flectra_proxy(self, data, operation):
+    def _proxy_adyen_request_odoo_proxy(self, data, operation):
         try:
             return self.env.company.sudo().adyen_account_id._adyen_rpc(operation, {
                 'request_data': data,

@@ -1,5 +1,5 @@
 <?xml version="1.0" ?>
-<flectra>
+<odoo>
     <template id="mail_template_paypal_invite_user_to_configure">
         <div>
             <p>
@@ -7,14 +7,14 @@
                 <br/><br/>
                 You have received a payment through PayPal.<br/>
                 Kindly follow the instructions given by PayPal to create your account.<br/>
-                Then, help us complete your Paypal credentials in Flectra.<br/><br/>
+                Then, help us complete your Paypal credentials in Odoo.<br/><br/>
             </p>
-            <a t-attf-href="/web#id=#{acquirer.id}&amp;model=payment.acquirer&amp;view_type=form" style="background-color: #009EFB; padding: 10px; text-decoration: none; color: #fff; border-radius: 5px; font-size: 12px;">Set Paypal credentials</a>
+            <a t-attf-href="/web#id=#{acquirer.id}&amp;model=payment.acquirer&amp;view_type=form" style="background-color: #875A7B; padding: 10px; text-decoration: none; color: #fff; border-radius: 5px; font-size: 12px;">Set Paypal credentials</a>
             <p>
                 <br/><br/>
                 Thanks,<br/>
-                <b>The Flectra Team</b>
+                <b>The Odoo Team</b>
             </p>
         </div>
     </template>
-</flectra>
+</odoo>

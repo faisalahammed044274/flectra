@@ -1,4 +1,4 @@
-flectra.define('web.DatePickerOwl', function (require) {
+odoo.define('web.DatePickerOwl', function (require) {
     "use strict";
 
     const field_utils = require('web.field_utils');

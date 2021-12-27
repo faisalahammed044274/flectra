@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
-from flectra import api, fields, models
-from flectra.tools.translate import html_translate
+# Part of Odoo. See LICENSE file for full copyright and licensing details.
+from odoo import api, fields, models
+from odoo.tools.translate import html_translate
 
 
 class KarmaRank(models.Model):

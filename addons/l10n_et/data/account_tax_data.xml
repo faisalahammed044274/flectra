@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<flectra>
+<odoo>
     <data>
 
         <record id="id_tax03" model="account.tax.template">
@@ -447,4 +447,4 @@
         </record>
 
     </data>
-</flectra>
+</odoo>

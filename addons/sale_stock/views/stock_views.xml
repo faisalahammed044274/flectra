@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<flectra>
+<odoo>
     <data>
         <template id="exception_on_so">
             <div>
@@ -100,4 +100,4 @@
             </field>
         </record>
     </data>
-</flectra>
+</odoo>

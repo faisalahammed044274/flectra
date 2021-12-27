@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<flectra>
+<odoo>
     <data>
         <!--
             Integrate Livechat in Common Frontend for Website
-            Template registering all the assets required to execute the Livechat from a page containing Flectra
+            Template registering all the assets required to execute the Livechat from a page containing Odoo
         -->
         <template id="assets_frontend" name="im_livechat assets frontend" inherit_id="website.assets_frontend">
             <xpath expr="." position="inside">
@@ -202,4 +202,4 @@
         </template>
 
     </data>
-</flectra>
+</odoo>

@@ -1,4 +1,4 @@
-flectra.define('web.KanbanRenderer', function (require) {
+odoo.define('web.KanbanRenderer', function (require) {
 "use strict";
 
 var BasicRenderer = require('web.BasicRenderer');
@@ -603,7 +603,7 @@ var KanbanRenderer = BasicRenderer.extend({
     },
     /**
      * @private
-     * @param {FlectraEvent} ev
+     * @param {OdooEvent} ev
      */
     _onQuickCreateColumnUpdated: function (ev) {
         ev.stopPropagation();
@@ -646,7 +646,7 @@ var KanbanRenderer = BasicRenderer.extend({
      * received data.
      *
      * @private
-     * @param {FlectraEvent} ev
+     * @param {OdooEvent} ev
      */
     _onSetProgressBarState: function (ev) {
         if (!this.columnOptions.progressBarStates[ev.data.columnID]) {

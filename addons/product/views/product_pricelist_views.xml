@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<flectra>
+<odoo>
     <data>
 
         <record model="ir.ui.view" id="product_pricelist_item_view_search">
@@ -336,4 +336,4 @@
             <field name="view_mode">tree,form</field>
         </record>
     </data>
-</flectra>
+</odoo>

@@ -4,10 +4,10 @@ import babel.dates
 
 from datetime import datetime, timedelta, time
 
-from flectra import fields, http, _
-from flectra.addons.website.controllers.backend import WebsiteBackend
-from flectra.http import request
-from flectra.tools.misc import get_lang
+from odoo import fields, http, _
+from odoo.addons.website.controllers.backend import WebsiteBackend
+from odoo.http import request
+from odoo.tools.misc import get_lang
 
 
 class WebsiteSaleBackend(WebsiteBackend):

@@ -1,7 +1,7 @@
 # coding: utf-8
 # Copyright 2016 iterativo (https://www.iterativo.do) <info@iterativo.do>
 
-from flectra import models, api, _
+from odoo import models, api, _
 
 
 class AccountChartTemplate(models.Model):

@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<flectra>
+<odoo>
     <data>
 
         <!-- EVENT.TYPE VIEWS -->
@@ -802,4 +802,4 @@
             <field name="action" ref="event.action_event_mail"/>
         </record>
     </data>
-</flectra>
+</odoo>

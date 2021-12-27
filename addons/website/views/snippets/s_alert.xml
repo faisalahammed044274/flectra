@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<flectra>
+<odoo>
 
 <template id="s_alert" name="Alert">
     <div class="s_alert s_alert_md alert-info w-100 clearfix">
@@ -45,4 +45,4 @@
     </xpath>
 </template>
 
-</flectra>
+</odoo>

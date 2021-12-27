@@ -1,9 +1,9 @@
-flectra.define('web.AbstractController', function (require) {
+odoo.define('web.AbstractController', function (require) {
 "use strict";
 
 /**
  * The Controller class is the class coordinating the model and the renderer.
- * It is the C in MVC, and is what was formerly known in Flectra as a View.
+ * It is the C in MVC, and is what was formerly known in Odoo as a View.
  *
  * Its role is to listen to events bubbling up from the model/renderer, and call
  * the appropriate methods if necessary.  It also render control panel buttons,
@@ -546,7 +546,7 @@ var AbstractController = mvc.Controller.extend(ActionMixin, {
      * or from the view to focus the search bar
      *
      * @private
-     * @param {FlectraEvent} ev
+     * @param {OdooEvent} ev
      */
     _onNavigationMove: function (ev) {
         switch (ev.data.direction) {
@@ -561,7 +561,7 @@ var AbstractController = mvc.Controller.extend(ActionMixin, {
         }
     },
     /**
-     * When an Flectra event arrives requesting a record to be opened, this method
+     * When an Odoo event arrives requesting a record to be opened, this method
      * gets the res_id, and request a switch view in the appropriate mode
      *
      * Note: this method seems wrong, it relies on the model being a basic model,
@@ -569,7 +569,7 @@ var AbstractController = mvc.Controller.extend(ActionMixin, {
      * @todo move this to basic controller?
      *
      * @private
-     * @param {FlectraEvent} ev
+     * @param {OdooEvent} ev
      * @param {number} ev.data.id The local model ID for the record to be
      *   opened
      * @param {string} [ev.data.mode='readonly']
@@ -598,7 +598,7 @@ var AbstractController = mvc.Controller.extend(ActionMixin, {
      * Intercepts the 'switch_view' event to add the controllerID into the data,
      * and lets the event bubble up.
      *
-     * @param {FlectraEvent} ev
+     * @param {OdooEvent} ev
      */
     _onSwitchView: function (ev) {
         ev.data.controllerID = this.controllerID;

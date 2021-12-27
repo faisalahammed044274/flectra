@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<flectra>
+<odoo>
     <data>
         <record model="ir.ui.view" id="view_mail_form">
             <field name="name">mail.mail.form</field>
@@ -130,4 +130,4 @@
             action="action_view_mail_mail"
             sequence="1"/>
     </data>
-</flectra>
+</odoo>

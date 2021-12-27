@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<flectra>
+<odoo>
     <data>
         <!-- SMS Template Preview -->
         <record model="ir.ui.view" id="sms_template_preview_form">
@@ -39,4 +39,4 @@
         </record>
 
     </data>
-</flectra>
+</odoo>

@@ -1,5 +1,5 @@
 <?xml version="1.0" ?>
-<flectra><data>
+<odoo><data>
     <template id='course_main' inherit_id="website_slides.course_main">
     <!-- Channel (training) main template: add link to forum -->
     <xpath expr="//li[hasclass('o_wslides_course_header_nav_review_training')]" position="after">
@@ -25,4 +25,4 @@
         </xpath>
     </template>
 
-</data></flectra>
+</data></odoo>

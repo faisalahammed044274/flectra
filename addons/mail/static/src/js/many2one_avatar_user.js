@@ -1,4 +1,4 @@
-flectra.define('mail.Many2OneAvatarUser', function (require) {
+odoo.define('mail.Many2OneAvatarUser', function (require) {
     "use strict";
 
     // This module defines an extension of the Many2OneAvatar widget, which is

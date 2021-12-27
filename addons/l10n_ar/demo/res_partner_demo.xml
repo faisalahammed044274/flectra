@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<flectra>
+<odoo>
 
     <!-- ADHOC - Supplier/Customer -->
 
@@ -58,20 +58,20 @@
         <field name='l10n_ar_afip_responsibility_type_id' ref="l10n_ar.res_IVAE"/>
     </record>
 
-    <!-- Flectra -->
-    <record id="res_partner_flectra" model="res.partner">
-        <field name="name">Flectra Inc</field>
+    <!-- Odoo -->
+    <record id="res_partner_odoo" model="res.partner">
+        <field name="name">Odoo Inc</field>
         <field name="is_company">1</field>
         <field name="city">San Francisco</field>
         <field name="zip">CA 94107</field>
         <field name="country_id" ref="base.us"/>
         <field name="street">51 Federal Street, Suite 401</field>
-        <field name="email">info@flectrahq.com</field>
+        <field name="email">info@odoo.com</field>
         <field name="phone">(+00) (11) 222 3333</field>
-        <field name="website">https://www.flectrahq.com/</field>
+        <field name="website">https://www.odoo.com/</field>
         <field name='l10n_latam_identification_type_id' ref="l10n_latam_base.it_fid"/>
         <field name='vat'>111222333444</field>
-        <field name="image_1920" type="base64" file="l10n_ar/demo/flectra_logo.jpg"/>
+        <field name="image_1920" type="base64" file="l10n_ar/demo/odoo_logo.jpg"/>
         <field name='l10n_ar_afip_responsibility_type_id' ref="l10n_ar.res_EXT"/>
     </record>
 
@@ -84,7 +84,7 @@
         <field name='l10n_ar_afip_responsibility_type_id' ref="l10n_ar.res_IVARI"/>
     </record>
 
-    <!-- Flectra -->
+    <!-- Odoo -->
     <record id="res_partner_expresso" model="res.partner">
         <field name="name">Expresso</field>
         <field name="is_company">1</field>
@@ -154,4 +154,4 @@
         <field name='l10n_ar_afip_responsibility_type_id' ref="l10n_ar.res_IVARI"/>
     </record>
 
-</flectra>
+</odoo>

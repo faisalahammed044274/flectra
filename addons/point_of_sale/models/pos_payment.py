@@ -1,6 +1,6 @@
-from flectra import api, fields, models, _
-from flectra.tools import formatLang
-from flectra.exceptions import ValidationError
+from odoo import api, fields, models, _
+from odoo.tools import formatLang
+from odoo.exceptions import ValidationError
 
 
 class PosPayment(models.Model):

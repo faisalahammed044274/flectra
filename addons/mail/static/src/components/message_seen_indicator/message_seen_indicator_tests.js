@@ -1,4 +1,4 @@
-flectra.define('mail/static/src/components/message_seen_indicator/message_seen_indicator_tests', function (require) {
+odoo.define('mail/static/src/components/message_seen_indicator/message_seen_indicator_tests', function (require) {
 'use strict';
 
 const components = {

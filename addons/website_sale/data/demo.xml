@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<flectra noupdate="1">
+<odoo noupdate="1">
 
         <record model="website" id="website.website2">
             <field name="salesteam_id" ref="sales_team.salesteam_website_sales"/>
@@ -736,4 +736,4 @@
             <field name="user_id" ref="base.user_demo"/>
         </record>
 
-</flectra>
+</odoo>

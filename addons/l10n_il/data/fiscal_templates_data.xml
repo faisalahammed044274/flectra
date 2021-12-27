@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<flectra>
+<odoo>
     <!-- Israel keep standard taxes -->
     <record id="account_fiscal_position_israel" model="account.fiscal.position.template">
         <field name="name">Israel</field>
@@ -44,4 +44,4 @@
     </record>
 
 
-</flectra>
+</odoo>

@@ -1,4 +1,4 @@
-flectra.define('point_of_sale.SelectionPopup', function (require) {
+odoo.define('point_of_sale.SelectionPopup', function (require) {
     'use strict';
 
     const { useState } = owl.hooks;

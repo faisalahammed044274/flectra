@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<flectra>
+<odoo>
 
         <record id="hr_employee_view_form_inherit_expense" model="ir.ui.view">
             <field name="name">hr.employee.view.form.expense</field>
@@ -396,12 +396,12 @@
                 <p class="o_view_nocontent_expense_receipt">
                     Did you try the mobile app?
                 </p>
-                <p>Snap pictures of your receipts and let Flectra<br/> automatically create expenses for you.</p>
+                <p>Snap pictures of your receipts and let Odoo<br/> automatically create expenses for you.</p>
                 <p>
-                    <a href="https://apps.apple.com/be/app/flectra/id1561830563" target="_blank">
+                    <a href="https://apps.apple.com/be/app/odoo/id1272543640" target="_blank">
                         <img alt="Apple App Store" class="img img-fluid h-100 o_expense_apple_store" src="/hr_expense/static/img/app_store.png"/>
                     </a>
-                    <a href="https://play.google.com/store/apps/details?id=com.flectra.flectrahq" target="_blank" class="o_expense_google_store">
+                    <a href="https://play.google.com/store/apps/details?id=com.odoo.mobile" target="_blank" class="o_expense_google_store">
                         <img alt="Google Play Store" class="img img-fluid h-100 o_expense_google_store" src="/hr_expense/static/img/play_store.png"/>
                     </a>
                 </p>
@@ -431,12 +431,12 @@
                 <p class="o_view_nocontent_expense_receipt">
                     Did you try the mobile app?
                 </p>
-                <p>Snap pictures of your receipts and let Flectra<br/> automatically create expenses for you.</p>
+                <p>Snap pictures of your receipts and let Odoo<br/> automatically create expenses for you.</p>
                 <p>
-                    <a href="https://apps.apple.com/be/app/flectra/id1561830563" target="_blank">
+                    <a href="https://apps.apple.com/be/app/odoo/id1272543640" target="_blank">
                         <img alt="Apple App Store" class="img img-fluid h-100 o_expense_apple_store" src="/hr_expense/static/img/app_store.png"/>
                     </a>
-                    <a href="https://play.google.com/store/apps/details?id=com.flectra.flectrahq" target="_blank" class="o_expense_google_store">
+                    <a href="https://play.google.com/store/apps/details?id=com.odoo.mobile" target="_blank" class="o_expense_google_store">
                         <img alt="Google Play Store" class="img img-fluid h-100 o_expense_google_store" src="/hr_expense/static/img/play_store.png"/>
                     </a>
                 </p>
@@ -1128,4 +1128,4 @@ if records:
             action="hr_expense_product" groups="hr_expense.group_hr_expense_manager" sequence="10"/>
 
         <menuitem id="menu_hr_expense_account_employee_expenses" name="Employee Expenses" sequence="22" parent="account.menu_finance_payables" groups="hr_expense.group_hr_expense_user" action="action_hr_expense_account"/>
-</flectra>
+</odoo>

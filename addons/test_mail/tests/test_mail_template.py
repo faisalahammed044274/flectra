@@ -1,10 +1,10 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo. See LICENSE file for full copyright and licensing details.
 
 import base64
 
-from flectra.addons.test_mail.tests.common import TestMailCommon, TestRecipients
-from flectra.tools import mute_logger
+from odoo.addons.test_mail.tests.common import TestMailCommon, TestRecipients
+from odoo.tools import mute_logger
 
 
 class TestMailTemplate(TestMailCommon, TestRecipients):
@@ -45,7 +45,7 @@ class TestMailTemplate(TestMailCommon, TestRecipients):
         # Force the attachments of the template to be in the natural order.
         cls.email_template.invalidate_cache(['attachment_ids'], ids=cls.email_template.ids)
 
-    @mute_logger('flectra.addons.mail.models.mail_mail')
+    @mute_logger('odoo.addons.mail.models.mail_mail')
     def test_template_send_email(self):
         mail_id = self.email_template.send_mail(self.test_record.id)
         mail = self.env['mail.mail'].sudo().browse(mail_id)
@@ -54,7 +54,7 @@ class TestMailTemplate(TestMailCommon, TestRecipients):
         self.assertEqual(mail.email_cc, self.email_template.email_cc)
         self.assertEqual(mail.recipient_ids, self.partner_2 | self.user_admin.partner_id)
 
-    @mute_logger('flectra.addons.mail.models.mail_mail')
+    @mute_logger('odoo.addons.mail.models.mail_mail')
     def test_template_translation(self):
         self.env['res.lang']._activate_lang('es_ES')
         self.env.ref('base.module_base')._update_translations(['es_ES'])
@@ -133,7 +133,7 @@ class TestMailTemplate(TestMailCommon, TestRecipients):
 
     #     self.email_template_in_2_days = self.email_template.copy()
 
-    #     with patch('flectra.addons.mail.tests.test_mail_template.datetime', wraps=datetime) as mock_datetime:
+    #     with patch('odoo.addons.mail.tests.test_mail_template.datetime', wraps=datetime) as mock_datetime:
     #         mock_datetime.now.return_value = datetime(2017, 11, 15, 11, 30, 28)
     #         mock_datetime.side_effect = lambda *args, **kw: datetime(*args, **kw)
 

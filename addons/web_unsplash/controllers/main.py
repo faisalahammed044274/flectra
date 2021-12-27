@@ -1,14 +1,14 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo. See LICENSE file for full copyright and licensing details.
 import base64
 import logging
 import mimetypes
 import requests
 import werkzeug.utils
 
-from flectra import http, tools, _
-from flectra.http import request
-from flectra.tools.mimetypes import guess_mimetype
+from odoo import http, tools, _
+from odoo.http import request
+from odoo.tools.mimetypes import guess_mimetype
 from werkzeug.urls import url_encode
 
 logger = logging.getLogger(__name__)

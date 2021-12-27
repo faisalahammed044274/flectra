@@ -1,10 +1,10 @@
-flectra.define('hr_holidays/static/src/bugfix/bugfix_tests.js', function (require) {
+odoo.define('hr_holidays/static/src/bugfix/bugfix_tests.js', function (require) {
 'use strict';
 
 /**
  * This file allows introducing new QUnit test modules without contaminating
  * other test files. This is useful when bug fixing requires adding new
- * components for instance in stable versions of Flectra. Any test that is defined
+ * components for instance in stable versions of Odoo. Any test that is defined
  * in this file should be isolated in its own file in master.
  */
 QUnit.module('hr_holidays', {}, function () {
@@ -18,7 +18,7 @@ QUnit.module('bugfix_tests.js', {
 });
 
 // FIXME move me in hr_holidays/static/src/components/thread_view/thread_view_tests.js
-flectra.define('hr_holidays/static/src/components/thread_view/thread_view_tests.js', function (require) {
+odoo.define('hr_holidays/static/src/components/thread_view/thread_view_tests.js', function (require) {
 'use strict';
 
 const components = {

@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo. See LICENSE file for full copyright and licensing details.
 
-from flectra import api, fields, models, tools
-from flectra.tools import email_re
+from odoo import api, fields, models, tools
+from odoo.tools import email_re
 
 
 class MailComposeMessage(models.TransientModel):

@@ -1,4 +1,4 @@
-flectra.define('website_event.register_toaster_widget', function (require) {
+odoo.define('website_event.register_toaster_widget', function (require) {
 'use strict';
 
 let core = require('web.core');

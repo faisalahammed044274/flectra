@@ -1,4 +1,4 @@
-flectra.define('point_of_sale.MobileOrderManagementScreen', function (require) {
+odoo.define('point_of_sale.MobileOrderManagementScreen', function (require) {
     const OrderManagementScreen = require('point_of_sale.OrderManagementScreen');
     const Registries = require('point_of_sale.Registries');
     const { useListener } = require('web.custom_hooks');

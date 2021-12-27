@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo. See LICENSE file for full copyright and licensing details.
 
-from flectra import _, fields, models
-from flectra.osv import expression
+from odoo import _, fields, models
+from odoo.osv import expression
 
 
 class StockQuantityHistory(models.TransientModel):

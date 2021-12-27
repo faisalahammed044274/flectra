@@ -1,4 +1,4 @@
-flectra.define('website_slides.Activity', function (require) {
+odoo.define('website_slides.Activity', function (require) {
 "use strict";
 
 var field_registry = require('web.field_registry');
@@ -44,7 +44,7 @@ applyInclude(KanbanActivity);
 
 });
 
-flectra.define('website_slides/static/src/components/activity/activity.js', function (require) {
+odoo.define('website_slides/static/src/components/activity/activity.js', function (require) {
 'use strict';
 
 const components = {

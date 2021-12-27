@@ -1,10 +1,10 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo. See LICENSE file for full copyright and licensing details.
 
 from ast import literal_eval
 
-from flectra.addons.mass_mailing_sms.tests.common import MassSMSCommon
-from flectra.tests.common import users
+from odoo.addons.mass_mailing_sms.tests.common import MassSMSCommon
+from odoo.tests.common import users
 
 
 class TestMassMailValues(MassSMSCommon):

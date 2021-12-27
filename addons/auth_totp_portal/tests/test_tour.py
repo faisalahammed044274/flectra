@@ -2,9 +2,9 @@ import time
 
 from passlib.totp import TOTP
 
-from flectra import http
-from flectra.tests import tagged, HttpCase
-from flectra.addons.auth_totp.controllers.home import Home
+from odoo import http
+from odoo.tests import tagged, HttpCase
+from odoo.addons.auth_totp.controllers.home import Home
 
 
 @tagged('post_install', '-at_install')

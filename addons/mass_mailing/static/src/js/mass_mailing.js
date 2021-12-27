@@ -1,4 +1,4 @@
-flectra.define('mass_mailing.mass_mailing', function (require) {
+odoo.define('mass_mailing.mass_mailing', function (require) {
 "use strict";
 
 var KanbanColumn = require('web.KanbanColumn');

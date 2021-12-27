@@ -1,4 +1,4 @@
-flectra.define('pos_restaurant.chrome', function (require) {
+odoo.define('pos_restaurant.chrome', function (require) {
     'use strict';
 
     const Chrome = require('point_of_sale.Chrome');

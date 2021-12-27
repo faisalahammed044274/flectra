@@ -1,4 +1,4 @@
-flectra.define('point_of_sale.PaymentInterface', function (require) {
+odoo.define('point_of_sale.PaymentInterface', function (require) {
 "use strict";
 
 var core = require('web.core');

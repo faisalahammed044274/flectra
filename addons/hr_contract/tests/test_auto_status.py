@@ -1,9 +1,9 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo. See LICENSE file for full copyright and licensing details.
 
 from datetime import date, datetime
 from dateutil.relativedelta import relativedelta
-from flectra.addons.hr_contract.tests.common import TestContractCommon
+from odoo.addons.hr_contract.tests.common import TestContractCommon
 
 
 class TestHrContracts(TestContractCommon):

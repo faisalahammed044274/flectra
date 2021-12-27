@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<flectra>
+<odoo>
 
 <template id="event_track_proposal">
     <t t-call="website_event.layout">
@@ -164,4 +164,4 @@
     </section>
 </template>
 
-</flectra>
+</odoo>

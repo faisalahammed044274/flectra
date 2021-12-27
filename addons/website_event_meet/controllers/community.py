@@ -1,15 +1,15 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo. See LICENSE file for full copyright and licensing details.
 
 import logging
 from werkzeug.exceptions import Forbidden, NotFound
 from werkzeug.utils import redirect
 
-from flectra import exceptions, http
-from flectra.http import request
-from flectra.addons.http_routing.models.ir_http import slug
-from flectra.addons.website_event.controllers.community import EventCommunityController
-from flectra.osv import expression
+from odoo import exceptions, http
+from odoo.http import request
+from odoo.addons.http_routing.models.ir_http import slug
+from odoo.addons.website_event.controllers.community import EventCommunityController
+from odoo.osv import expression
 
 _logger = logging.getLogger(__name__)
 

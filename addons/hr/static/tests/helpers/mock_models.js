@@ -1,4 +1,4 @@
-flectra.define('hr/static/tests/helpers/mock_models.js', function (require) {
+odoo.define('hr/static/tests/helpers/mock_models.js', function (require) {
 'use strict';
 
 const MockModels = require('mail/static/tests/helpers/mock_models.js');

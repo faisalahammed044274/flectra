@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-from flectra.tests import common
+from odoo.tests import common
 
 
 class TestBarcodeNomenclature(common.TransactionCase):

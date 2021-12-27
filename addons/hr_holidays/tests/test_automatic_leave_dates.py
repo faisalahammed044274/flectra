@@ -1,10 +1,10 @@
 # -*- coding: utf-8 -*-
 from datetime import date, datetime
 
-from flectra.tests.common import Form
+from odoo.tests.common import Form
 
-from flectra.addons.hr_holidays.tests.common import TestHrHolidaysCommon
-from flectra.exceptions import ValidationError
+from odoo.addons.hr_holidays.tests.common import TestHrHolidaysCommon
+from odoo.exceptions import ValidationError
 
 
 class TestAutomaticLeaveDates(TestHrHolidaysCommon):

@@ -1,13 +1,13 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo. See LICENSE file for full copyright and licensing details.
 
-from flectra.addons.test_mail.tests.common import TestMailCommon
-from flectra.tools import mute_logger
+from odoo.addons.test_mail.tests.common import TestMailCommon
+from odoo.tools import mute_logger
 
 
 class TestInvite(TestMailCommon):
 
-    @mute_logger('flectra.addons.mail.models.mail_mail')
+    @mute_logger('odoo.addons.mail.models.mail_mail')
     def test_invite_email(self):
         test_record = self.env['mail.test.simple'].with_context(self._test_context).create({'name': 'Test', 'email_from': 'ignasse@example.com'})
         test_partner = self.env['res.partner'].with_context(self._test_context).create({

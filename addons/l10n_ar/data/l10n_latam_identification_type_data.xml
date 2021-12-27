@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<flectra>
+<odoo>
 <data>
     <record model='l10n_latam.identification.type' id='l10n_latam_base.it_fid'>
         <field name='l10n_ar_afip_code'>91</field>
@@ -330,4 +330,4 @@
         <field name='active' eval='False'/>
     </record>
 </data>
-</flectra>
+</odoo>

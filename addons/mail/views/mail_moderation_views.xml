@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<flectra>
+<odoo>
     <data>
         <record id="mail_moderation_view_tree" model="ir.ui.view">
             <field name="name">mail.moderation.view.tree</field>
@@ -49,4 +49,4 @@
             sequence="22"
             action="mail_moderation_action"/>
     </data>
-</flectra>
+</odoo>

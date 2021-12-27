@@ -1,4 +1,4 @@
-flectra.define('mail/static/src/services/dialog_service/dialog_service.js', function (require) {
+odoo.define('mail/static/src/services/dialog_service/dialog_service.js', function (require) {
 'use strict';
 
 const components = {

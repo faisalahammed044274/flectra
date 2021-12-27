@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<flectra>
+<odoo>
     <data>
         <template id="account_invoice_line_it_FatturaPA">
             <t t-set="taxes" t-value="line.tax_ids.compute_all(line.price_unit)"/>
@@ -207,4 +207,4 @@
             </p:FatturaElettronica>
         </template>
     </data>
-</flectra>
+</odoo>

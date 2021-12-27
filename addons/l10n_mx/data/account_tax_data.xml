@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<flectra>
+<odoo>
   <data>
     <record id="tax9" model="account.tax.template">
         <field name="sequence" eval="10"/>
@@ -473,4 +473,4 @@
         ]"/>
     </record>
   </data>
-</flectra>
+</odoo>

@@ -1,4 +1,4 @@
-flectra.define('web_editor.base', function (require) {
+odoo.define('web_editor.base', function (require) {
 'use strict';
 
 // TODO this should be re-removed as soon as possible.
@@ -125,7 +125,7 @@ return {
 
 //==============================================================================
 
-flectra.define('web_editor.context', function (require) {
+odoo.define('web_editor.context', function (require) {
 'use strict';
 
 // TODO this should be re-removed as soon as possible.
@@ -162,7 +162,7 @@ return {
 
 //==============================================================================
 
-flectra.define('web_editor.ready', function (require) {
+odoo.define('web_editor.ready', function (require) {
 'use strict';
 
 // TODO this should be re-removed as soon as possible.

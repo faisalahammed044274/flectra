@@ -1,4 +1,4 @@
-flectra.define('pos_mercury.OrderReceipt', function(require) {
+odoo.define('pos_mercury.OrderReceipt', function(require) {
     'use strict';
 
     const OrderReceipt = require('point_of_sale.OrderReceipt');

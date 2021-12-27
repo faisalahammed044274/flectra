@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo. See LICENSE file for full copyright and licensing details.
 
-from flectra.addons.account_edi.tests.common import AccountEdiTestCommon
+from odoo.addons.account_edi.tests.common import AccountEdiTestCommon
 from contextlib import contextmanager
 from unittest.mock import patch
 import base64
@@ -88,25 +88,25 @@ class AccountEdiExtendedTestCommon(AccountEdiTestCommon):
                  ):
 
         try:
-            with patch('flectra.addons.account_edi.models.account_edi_format.AccountEdiFormat._is_required_for_invoice',
+            with patch('odoo.addons.account_edi.models.account_edi_format.AccountEdiFormat._is_required_for_invoice',
                        new=_is_required_for_invoice_method), \
-                 patch('flectra.addons.account_edi.models.account_edi_format.AccountEdiFormat._is_required_for_payment',
+                 patch('odoo.addons.account_edi.models.account_edi_format.AccountEdiFormat._is_required_for_payment',
                        new=_is_required_for_payment_method), \
-                 patch('flectra.addons.account_edi.models.account_edi_format.AccountEdiFormat._needs_web_services',
+                 patch('odoo.addons.account_edi.models.account_edi_format.AccountEdiFormat._needs_web_services',
                        new=_needs_web_services_method), \
-                 patch('flectra.addons.account_edi.models.account_edi_format.AccountEdiFormat._support_batching',
+                 patch('odoo.addons.account_edi.models.account_edi_format.AccountEdiFormat._support_batching',
                        new=_support_batching_method), \
-                 patch('flectra.addons.account_edi.models.account_edi_format.AccountEdiFormat._get_batch_key',
+                 patch('odoo.addons.account_edi.models.account_edi_format.AccountEdiFormat._get_batch_key',
                        new=_get_batch_key_method), \
-                 patch('flectra.addons.account_edi.models.account_edi_format.AccountEdiFormat._check_move_configuration',
+                 patch('odoo.addons.account_edi.models.account_edi_format.AccountEdiFormat._check_move_configuration',
                        new=_check_move_configuration_method), \
-                 patch('flectra.addons.account_edi.models.account_edi_format.AccountEdiFormat._post_invoice_edi',
+                 patch('odoo.addons.account_edi.models.account_edi_format.AccountEdiFormat._post_invoice_edi',
                        new=_post_invoice_edi_method), \
-                 patch('flectra.addons.account_edi.models.account_edi_format.AccountEdiFormat._cancel_invoice_edi',
+                 patch('odoo.addons.account_edi.models.account_edi_format.AccountEdiFormat._cancel_invoice_edi',
                        new=_cancel_invoice_edi_method), \
-                 patch('flectra.addons.account_edi.models.account_edi_format.AccountEdiFormat._post_payment_edi',
+                 patch('odoo.addons.account_edi.models.account_edi_format.AccountEdiFormat._post_payment_edi',
                        new=_post_payment_edi_method), \
-                 patch('flectra.addons.account_edi.models.account_edi_format.AccountEdiFormat._cancel_payment_edi',
+                 patch('odoo.addons.account_edi.models.account_edi_format.AccountEdiFormat._cancel_payment_edi',
                        new=_cancel_payment_edi_method):
 
                 yield

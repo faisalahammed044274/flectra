@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<flectra>
+<odoo>
   	<!-- Chart template -->
     <record id="l10n_fr_pcg_chart_template" model="account.chart.template">
         <field name="name">Plan Comptable Général (France)</field>
@@ -10,4 +10,4 @@
         <field name="transfer_account_code_prefix">58</field>
         <field name="complete_tax_set" eval="True" />
     </record>
-</flectra>
+</odoo>

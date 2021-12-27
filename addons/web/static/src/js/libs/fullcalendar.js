@@ -1,4 +1,4 @@
-flectra.define('/web/static/src/js/libs/fullcalendar.js', function () {
+odoo.define('/web/static/src/js/libs/fullcalendar.js', function () {
     "use strict";
 
     function createYearCalendarView(FullCalendar) {

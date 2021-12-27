@@ -1,4 +1,4 @@
-flectra.define('hr_timesheet.res.config.form', function (require) {
+odoo.define('hr_timesheet.res.config.form', function (require) {
     "use strict";
 
     const core = require('web.core');
@@ -12,7 +12,7 @@ flectra.define('hr_timesheet.res.config.form', function (require) {
         async _renderView() {
             const self = this;
             await this._super(...arguments);
-            const google_url = "https://play.google.com/store/apps/details?id=com.flectra.FlectraTimesheets";
+            const google_url = "https://play.google.com/store/apps/details?id=com.odoo.OdooTimesheets";
             const apple_url = "https://apps.apple.com/be/app/awesome-timesheet/id1078657549";
             const action_desktop = {
                 name: _t('Download our App'),

@@ -1,4 +1,4 @@
-flectra.define('web.CalendarModel', function (require) {
+odoo.define('web.CalendarModel', function (require) {
 "use strict";
 
 var AbstractModel = require('web.AbstractModel');
@@ -21,7 +21,7 @@ return AbstractModel.extend({
         this._super.apply(this, arguments);
         this.end_date = null;
         var week_start = _t.database.parameters.week_start;
-        // calendar uses index 0 for Sunday but Flectra stores it as 7
+        // calendar uses index 0 for Sunday but Odoo stores it as 7
         this.week_start = week_start !== undefined && week_start !== false ? week_start % 7 : moment().startOf('week').day();
         this.week_stop = this.week_start + 6;
     },
@@ -132,7 +132,7 @@ return AbstractModel.extend({
         return true;
     },
     /**
-     * @param {FlectraEvent} event
+     * @param {OdooEvent} event
      */
     createRecord: function (event) {
         var data = this.calendarEventToRecord(event.data.data);

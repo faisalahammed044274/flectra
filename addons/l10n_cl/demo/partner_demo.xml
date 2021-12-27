@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<flectra>
+<odoo>
 
     <record id="res_partner_bmya" model="res.partner">
         <field name="name">Blanco Martin &amp; Asociados EIRL</field>
@@ -41,4 +41,4 @@
         <field name="image_1920" type="base64" file="l10n_cl/demo/teksa-logo-300.png"/>
     </record>
 
-</flectra>
+</odoo>

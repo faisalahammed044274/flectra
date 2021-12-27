@@ -1,4 +1,4 @@
-flectra.define('mail/static/src/components/discuss/tests/discuss_sidebar_tests.js', function (require) {
+odoo.define('mail/static/src/components/discuss/tests/discuss_sidebar_tests.js', function (require) {
 'use strict';
 
 const { makeDeferred } = require('mail/static/src/utils/deferred/deferred.js');

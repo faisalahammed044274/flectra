@@ -1,9 +1,9 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo. See LICENSE file for full copyright and licensing details.
 
 from datetime import timedelta
-from flectra import api, fields, models
-from flectra.tools.float_utils import float_round, float_is_zero
+from odoo import api, fields, models
+from odoo.tools.float_utils import float_round, float_is_zero
 
 
 class ProductTemplate(models.Model):

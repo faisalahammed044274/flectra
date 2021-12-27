@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<flectra>
+<odoo>
 
         <menuitem id="crm_menu_resellers" name="Resellers" parent="crm.crm_menu_config" sequence="16"/>
 
@@ -153,4 +153,4 @@
         </field>
     </record>
 
-</flectra>
+</odoo>

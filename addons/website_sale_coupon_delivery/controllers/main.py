@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
-from flectra import http
-from flectra.addons.website_sale_delivery.controllers.main import WebsiteSaleDelivery
-from flectra.http import request
+from odoo import http
+from odoo.addons.website_sale_delivery.controllers.main import WebsiteSaleDelivery
+from odoo.http import request
 
 
 class WebsiteSaleCouponDelivery(WebsiteSaleDelivery):

@@ -1,9 +1,9 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo. See LICENSE file for full copyright and licensing details.
 
-from flectra.tests import Form
-from flectra.addons.hr.tests.common import TestHrCommon
-from flectra.addons.base.models.qweb import QWebException
+from odoo.tests import Form
+from odoo.addons.hr.tests.common import TestHrCommon
+from odoo.addons.base.models.qweb import QWebException
 
 
 class TestMultiCompany(TestHrCommon):

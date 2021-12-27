@@ -1,4 +1,4 @@
-flectra.define('base_automation.BaseAutomatioErrorDialogTests', function (require) {
+odoo.define('base_automation.BaseAutomatioErrorDialogTests', function (require) {
 'use strict';
 
     const CrashManager = require('web.CrashManager').CrashManager;
@@ -13,7 +13,7 @@ flectra.define('base_automation.BaseAutomatioErrorDialogTests', function (requir
 
             let baseAutomationName = 'Test base automation error dialog';
             let error = {
-                type: 'Flectra Client Error',
+                type: 'Odoo Client Error',
                 message: 'Message',
                 data: {
                     debug: 'Traceback',
@@ -49,7 +49,7 @@ flectra.define('base_automation.BaseAutomatioErrorDialogTests', function (requir
             assert.expect(3);
 
             let error = {
-                type: 'Flectra Client Error',
+                type: 'Odoo Client Error',
                 message: 'Message',
                 data: {
                     debug: 'Traceback',

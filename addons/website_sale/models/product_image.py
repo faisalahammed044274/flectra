@@ -1,10 +1,10 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo. See LICENSE file for full copyright and licensing details.
 
-from flectra import api, fields, models, tools, _
-from flectra.exceptions import ValidationError
+from odoo import api, fields, models, tools, _
+from odoo.exceptions import ValidationError
 
-from flectra.addons.website.tools import get_video_embed_code
+from odoo.addons.website.tools import get_video_embed_code
 
 
 class ProductImage(models.Model):

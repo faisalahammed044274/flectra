@@ -1,10 +1,10 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo. See LICENSE file for full copyright and licensing details.
 
 import logging
-from flectra import api, fields, models
-from flectra.tools.translate import xml_translate
-from flectra.modules.module import get_resource_from_path
+from odoo import api, fields, models
+from odoo.tools.translate import xml_translate
+from odoo.modules.module import get_resource_from_path
 
 _logger = logging.getLogger(__name__)
 

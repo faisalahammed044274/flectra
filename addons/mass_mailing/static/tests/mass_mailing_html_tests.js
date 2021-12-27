@@ -1,4 +1,4 @@
-flectra.define('mass_mailing.field_html_tests', function (require) {
+odoo.define('mass_mailing.field_html_tests', function (require) {
 "use strict";
 
 var ajax = require('web.ajax');

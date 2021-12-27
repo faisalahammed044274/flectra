@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-from flectra.addons.account.tests.common import AccountTestInvoicingCommon
+from odoo.addons.account.tests.common import AccountTestInvoicingCommon
 
 
 class PaymentAcquirerCommon(AccountTestInvoicingCommon):

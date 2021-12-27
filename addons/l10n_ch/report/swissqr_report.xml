@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<flectra>
+<odoo>
     <data>
 
         <record id="l10n_ch_qr_report" model="ir.actions.report">
@@ -209,4 +209,4 @@
             </t>
         </template>
     </data>
-</flectra>
+</odoo>

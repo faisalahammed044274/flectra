@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<flectra>
+<odoo>
 
     <template id="assets_common" inherit_id="web.assets_common" name="Event Assets Common">
         <xpath expr="//script[last()]" position="after">
@@ -29,4 +29,4 @@
         </xpath>
     </template>
 
-</flectra>
+</odoo>

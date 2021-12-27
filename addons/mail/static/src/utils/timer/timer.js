@@ -1,4 +1,4 @@
-flectra.define('mail/static/src/utils/timer/timer.js', function (require) {
+odoo.define('mail/static/src/utils/timer/timer.js', function (require) {
 'use strict';
 
 const { makeDeferred } = require('mail/static/src/utils/deferred/deferred.js');

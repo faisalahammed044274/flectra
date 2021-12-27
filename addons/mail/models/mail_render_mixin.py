@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo. See LICENSE file for full copyright and licensing details.
 
 import babel
 import copy
@@ -10,9 +10,9 @@ import re
 import dateutil.relativedelta as relativedelta
 from werkzeug import urls
 
-from flectra import _, api, fields, models, tools
-from flectra.exceptions import UserError
-from flectra.tools import safe_eval
+from odoo import _, api, fields, models, tools
+from odoo.exceptions import UserError
+from odoo.tools import safe_eval
 
 _logger = logging.getLogger(__name__)
 

@@ -1,4 +1,4 @@
-flectra.define('website.mobile', function (require) {
+odoo.define('website.mobile', function (require) {
 'use strict';
 
 var core = require('web.core');

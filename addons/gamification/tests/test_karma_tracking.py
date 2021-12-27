@@ -1,13 +1,13 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo. See LICENSE file for full copyright and licensing details.
 
 from datetime import date
 from dateutil.relativedelta import relativedelta
 from unittest.mock import patch
 
-from flectra import exceptions, fields
-from flectra.addons.mail.tests.common import mail_new_test_user
-from flectra.tests import common
+from odoo import exceptions, fields
+from odoo.addons.mail.tests.common import mail_new_test_user
+from odoo.tests import common
 
 
 class TestKarmaTrackingCommon(common.SavepointCase):
@@ -78,7 +78,7 @@ class TestKarmaTrackingCommon(common.SavepointCase):
         self.assertEqual(len(results), 0)
 
     def test_consolidation_cron(self):
-        self.patcher = patch('flectra.addons.gamification.models.gamification_karma_tracking.fields.Date', wraps=fields.Date)
+        self.patcher = patch('odoo.addons.gamification.models.gamification_karma_tracking.fields.Date', wraps=fields.Date)
         self.mock_datetime = self.patcher.start()
         self.mock_datetime.today.return_value = date(self.test_date.year, self.test_date.month + 1, self.test_date.day)
 
@@ -203,7 +203,7 @@ class TestComputeRankCommon(common.SavepointCase):
         def _patched_send_mail(*args, **kwargs):
             pass
 
-        patch_email = patch('flectra.addons.mail.models.mail_template.MailTemplate.send_mail', _patched_send_mail)
+        patch_email = patch('odoo.addons.mail.models.mail_template.MailTemplate.send_mail', _patched_send_mail)
         patch_email.start()
 
         cls.users = cls.env['res.users']
@@ -290,7 +290,7 @@ class TestComputeRankCommon(common.SavepointCase):
             nonlocal number_of_users
             number_of_users = len(_self & self.users)
 
-        patch_bulk = patch('flectra.addons.gamification.models.res_users.Users._recompute_rank', _patched_recompute_rank)
+        patch_bulk = patch('odoo.addons.gamification.models.res_users.Users._recompute_rank', _patched_recompute_rank)
         patch_bulk.start()
         self.rank_3.karma_min = 700
         self.assertEqual(number_of_users, 7, "Should just recompute for the 7 users between 500 and 700")
@@ -302,7 +302,7 @@ class TestComputeRankCommon(common.SavepointCase):
         def _patched_check_in_bulk(*args, **kwargs):
             raise
 
-        patch_bulk = patch('flectra.addons.gamification.models.res_users.Users._recompute_rank_bulk', _patched_check_in_bulk)
+        patch_bulk = patch('odoo.addons.gamification.models.res_users.Users._recompute_rank_bulk', _patched_check_in_bulk)
         patch_bulk.start()
 
         # call on 5 users should not trigger the bulk function

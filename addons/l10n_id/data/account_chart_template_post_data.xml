@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<flectra>
+<odoo>
     <record id="l10n_id_chart" model="account.chart.template">
         <field name="property_account_receivable_id" ref="a_1_121001"/>
         <field name="property_account_payable_id" ref="a_2_110001"/>
@@ -13,4 +13,4 @@
         <field name="default_pos_receivable_account_id" ref="a_1_1210011"/>
         <field name="use_anglo_saxon" eval="1"/>
     </record>
-</flectra>
+</odoo>

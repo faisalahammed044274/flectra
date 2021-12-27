@@ -1,4 +1,4 @@
-flectra.define("web.env", function (require) {
+odoo.define("web.env", function (require) {
     "use strict";
 
     /**

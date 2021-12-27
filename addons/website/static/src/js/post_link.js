@@ -1,4 +1,4 @@
-flectra.define('website.post_link', function (require) {
+odoo.define('website.post_link', function (require) {
 'use strict';
 
 const publicWidget = require('web.public.widget');

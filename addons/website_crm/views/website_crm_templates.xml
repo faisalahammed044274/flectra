@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<flectra>
+<odoo>
         <template id="contactus_form" name="Contact Form (Opportunity)" inherit_id="website_form.contactus_form" customize_show="True">
             <xpath expr="//span[@data-for='contactus_form']" position="attributes">
                 <attribute name="t-att-data-values">{
@@ -105,4 +105,4 @@
             </xpath>
         </template>
 
-</flectra>
+</odoo>

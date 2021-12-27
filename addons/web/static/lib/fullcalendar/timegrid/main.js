@@ -268,7 +268,7 @@ Docs & License: https://fullcalendar.io/
                 // if the event is short that the title will be cut off,
                 // attach a className that condenses the title into the time area.
                 //if (seg.eventRange.def.title && seg.bottom - seg.top < 30) {
-                // FLECTRA FIX: fc-short without title as done in 3.0 and 5.0
+                // ODOO FIX: fc-short without title as done in 3.0 and 5.0
                 if (seg.bottom - seg.top < 30) {
                     seg.el.classList.add('fc-short'); // TODO: "condensed" is a better name
                 }

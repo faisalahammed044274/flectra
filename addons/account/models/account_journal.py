@@ -110,7 +110,7 @@ class AccountJournal(models.Model):
     sequence = fields.Integer(help='Used to order Journals in the dashboard view', default=10)
 
     invoice_reference_type = fields.Selection(string='Communication Type', required=True, selection=[('none', 'Free'), ('partner', 'Based on Customer'), ('invoice', 'Based on Invoice')], default='invoice', help='You can set here the default communication that will appear on customer invoices, once validated, to help the customer to refer to that particular invoice when making the payment.')
-    invoice_reference_model = fields.Selection(string='Communication Standard', required=True, selection=[('flectra', 'Flectra'),('euro', 'European')], default=_default_invoice_reference_model, help="You can choose different models for each type of reference. The default one is the Flectra reference.")
+    invoice_reference_model = fields.Selection(string='Communication Standard', required=True, selection=[('flectra', 'Odoo'),('euro', 'European')], default=_default_invoice_reference_model, help="You can choose different models for each type of reference. The default one is the Odoo reference.")
 
     #groups_id = fields.Many2many('res.groups', 'account_journal_group_rel', 'journal_id', 'group_id', string='Groups')
     currency_id = fields.Many2one('res.currency', help='The currency used to enter statement', string="Currency")
@@ -135,11 +135,11 @@ class AccountJournal(models.Model):
         compute='_compute_inbound_payment_method_ids',
         store=True,
         readonly=False,
-        help="Manual: Get paid by cash, check or any other method outside of Flectra.\n"
+        help="Manual: Get paid by cash, check or any other method outside of Odoo, Flectra.\n"
              "Electronic: Get paid automatically through a payment acquirer by requesting a transaction"
              " on a card saved by the customer when buying or subscribing online (payment token).\n"
              "Batch Deposit: Encase several customer checks at once by generating a batch deposit to"
-             " submit to your bank. When encoding the bank statement in Flectra,you are suggested to"
+             " submit to your bank. When encoding the bank statement in Odoo,you are suggested to"
              " reconcile the transaction with the batch deposit. Enable this option from the settings."
     )
     outbound_payment_method_ids = fields.Many2many(
@@ -152,8 +152,8 @@ class AccountJournal(models.Model):
         compute='_compute_outbound_payment_method_ids',
         store=True,
         readonly=False,
-        help="Manual:Pay bill by cash or any other method outside of Flectra.\n"
-             "Check:Pay bill by check and print it from Flectra.\n"
+        help="Manual:Pay bill by cash or any other method outside of Odoo, Flectra.\n"
+             "Check:Pay bill by check and print it from Odoo, Flectra.\n"
              "SEPA Credit Transfer: Pay bill from a SEPA Credit Transfer file you submit to your"
              " bank. Enable this option from the settings."
     )
@@ -194,7 +194,7 @@ class AccountJournal(models.Model):
     # alias configuration for journals
     alias_id = fields.Many2one('mail.alias', string='Email Alias', help="Send one separate email for each invoice.\n\n"
                                                                   "Any file extension will be accepted.\n\n"
-                                                                  "Only PDF and XML files will be interpreted by Flectra", copy=False)
+                                                                  "Only PDF and XML files will be interpreted by Odoo", copy=False)
     alias_domain = fields.Char('Alias domain', compute='_compute_alias_domain', default=_default_alias_domain, compute_sudo=True)
     alias_name = fields.Char('Alias Name', copy=False, related='alias_id.alias_name', help="It creates draft invoices and bills by sending an email.", readonly=False)
 

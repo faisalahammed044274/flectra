@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo. See LICENSE file for full copyright and licensing details.
 from datetime import datetime
 
-from flectra.tests.common import HttpCase, new_test_user, tagged
+from odoo.tests.common import HttpCase, new_test_user, tagged
 
 
 @tagged("post_install", "-at_install")

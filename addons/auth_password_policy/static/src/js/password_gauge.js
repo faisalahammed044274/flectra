@@ -1,4 +1,4 @@
-flectra.define('auth_password_policy', function (require) {
+odoo.define('auth_password_policy', function (require) {
 "use strict";
 var core = require('web.core');
 var _t = core._t;
@@ -96,7 +96,7 @@ return {
 }
 });
 
-flectra.define('auth_password_policy.Meter', function (require) {
+odoo.define('auth_password_policy.Meter', function (require) {
 "use strict";
 var core = require('web.core');
 var policy = require('auth_password_policy');

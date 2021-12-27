@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<flectra>
+<odoo>
     <data>
         <record id="chart_at_template_transfer_288" model="account.account.template">
             <field name="name">Schwebende Geldbewegungen</field>
@@ -1598,4 +1598,4 @@
           <field name="user_type_id" ref="account.data_account_type_equity" />
         </record>
     </data>
-</flectra>
+</odoo>

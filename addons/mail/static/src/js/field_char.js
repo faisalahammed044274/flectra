@@ -1,4 +1,4 @@
-flectra.define('sms.onchange_in_keyup', function (require) {
+odoo.define('sms.onchange_in_keyup', function (require) {
 "use strict";
 
 var FieldChar = require('web.basic_fields').FieldChar;

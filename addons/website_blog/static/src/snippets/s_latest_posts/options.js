@@ -1,4 +1,4 @@
-flectra.define('website_blog.s_latest_posts_editor', function (require) {
+odoo.define('website_blog.s_latest_posts_editor', function (require) {
 'use strict';
 
 var sOptions = require('web_editor.snippets.options');

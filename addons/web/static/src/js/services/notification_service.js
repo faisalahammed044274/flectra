@@ -1,4 +1,4 @@
-flectra.define('web.NotificationService', function (require) {
+odoo.define('web.NotificationService', function (require) {
 'use strict';
 
 var AbstractService = require('web.AbstractService');
@@ -92,7 +92,7 @@ var NotificationService = AbstractService.extend({
 
     /**
      * @private
-     * @param {FlectraEvent} ev
+     * @param {OdooEvent} ev
      */
     _onCloseNotification: function (ev) {
         ev.stopPropagation();

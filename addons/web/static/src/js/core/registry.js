@@ -1,4 +1,4 @@
-flectra.define("web.Registry", function (require) {
+odoo.define("web.Registry", function (require) {
     "use strict";
 
     const { sortBy } = require("web.utils");

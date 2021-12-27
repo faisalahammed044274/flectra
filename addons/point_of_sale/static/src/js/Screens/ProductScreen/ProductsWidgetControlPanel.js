@@ -1,4 +1,4 @@
-flectra.define('point_of_sale.ProductsWidgetControlPanel', function(require) {
+odoo.define('point_of_sale.ProductsWidgetControlPanel', function(require) {
     'use strict';
 
     const { useRef } = owl.hooks;

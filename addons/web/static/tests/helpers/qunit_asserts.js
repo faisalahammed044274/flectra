@@ -1,4 +1,4 @@
-flectra.define('web.qunit_asserts', function (require) {
+odoo.define('web.qunit_asserts', function (require) {
     "use strict";
 
     /**

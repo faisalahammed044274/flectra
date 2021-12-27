@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<flectra><data>
+<odoo><data>
     <record id="sms_cancel" model="ir.ui.view">
         <field name="name">sms.cancel.form</field>
         <field name="model">sms.cancel</field>
@@ -24,4 +24,4 @@
         <field name="view_mode">form</field>
         <field name="target">new</field>
     </record>
-</data></flectra>
+</data></odoo>

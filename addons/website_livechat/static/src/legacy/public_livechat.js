@@ -1,4 +1,4 @@
-flectra.define('website_livechat.legacy.website_livechat.livechat_request', function (require) {
+odoo.define('website_livechat.legacy.website_livechat.livechat_request', function (require) {
 "use strict";
 
 var utils = require('web.utils');

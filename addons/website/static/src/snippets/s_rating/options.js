@@ -1,4 +1,4 @@
-flectra.define('website.s_rating_options', function (require) {
+odoo.define('website.s_rating_options', function (require) {
 'use strict';
 
 const weWidgets = require('wysiwyg.widgets');

@@ -1,4 +1,4 @@
-flectra.define('mail.emoji_mixin', function (require) {
+odoo.define('mail.emoji_mixin', function (require) {
 "use strict";
 
 var emojis = require('mail.emojis');

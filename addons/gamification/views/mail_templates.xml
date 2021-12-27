@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<flectra>
+<odoo>
     <data>
         <record id="mail_template_data_new_rank_reached" model="mail.template">
             <field name="name">User: New rank reached</field>
@@ -28,7 +28,7 @@
                     % for data in gamification_redirection_data
                         % set url = data['url']
                         % set label = data['label']
-                        <a href="${url}" style="background-color: #009EFB; padding: 8px 16px 8px 16px; text-decoration: none; color: #fff; border-radius: 5px; font-size:13px;">${label}</a>
+                        <a href="${url}" style="background-color: #875A7B; padding: 8px 16px 8px 16px; text-decoration: none; color: #fff; border-radius: 5px; font-size:13px;">${label}</a>
                     % endfor
                 </div>
             </td>
@@ -52,4 +52,4 @@
             <field name="auto_delete" eval="True"/>
         </record>
     </data>
-</flectra>
+</odoo>

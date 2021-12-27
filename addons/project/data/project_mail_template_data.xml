@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<flectra>
+<odoo>
     <data noupdate="1">
         <!-- Sample stage-related template -->
         <record id="mail_template_data_project_task" model="mail.template">
@@ -96,4 +96,4 @@
             <field name="auto_delete" eval="True"/>
         </record>
     </data>
-</flectra>
+</odoo>

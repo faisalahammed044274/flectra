@@ -1,4 +1,4 @@
-flectra.define('website_jitsi.chat_room', function (require) {
+odoo.define('website_jitsi.chat_room', function (require) {
 'use strict';
 
 const config = require("web.config");

@@ -1,4 +1,4 @@
-flectra.define('website_sale.video_field_preview', function (require) {
+odoo.define('website_sale.video_field_preview', function (require) {
 "use strict";
 
 

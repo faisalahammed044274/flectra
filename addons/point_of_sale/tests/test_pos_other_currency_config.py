@@ -1,13 +1,13 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo. See LICENSE file for full copyright and licensing details.
 
-import flectra
+import odoo
 
-from flectra import tools
-from flectra.tests.common import Form
-from flectra.addons.point_of_sale.tests.common import TestPoSCommon
+from odoo import tools
+from odoo.tests.common import Form
+from odoo.addons.point_of_sale.tests.common import TestPoSCommon
 
-@flectra.tests.tagged('post_install', '-at_install')
+@odoo.tests.tagged('post_install', '-at_install')
 class TestPoSOtherCurrencyConfig(TestPoSCommon):
     """ Test PoS with basic configuration
     """

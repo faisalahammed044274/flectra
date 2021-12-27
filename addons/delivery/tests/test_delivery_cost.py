@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
-from flectra.tests import common, Form
-from flectra.tools import float_compare
+from odoo.tests import common, Form
+from odoo.tools import float_compare
 
 
 @common.tagged('post_install', '-at_install')

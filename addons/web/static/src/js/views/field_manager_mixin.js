@@ -1,4 +1,4 @@
-flectra.define('web.FieldManagerMixin', function (require) {
+odoo.define('web.FieldManagerMixin', function (require) {
 "use strict";
 
 /**
@@ -40,7 +40,7 @@ var FieldManagerMixin = {
      *
      * @param {string} dataPointID
      * @param {Object} changes
-     * @param {FlectraEvent} event
+     * @param {OdooEvent} event
      * @returns {Promise} resolves when the change has been done, and the UI
      *   updated
      */
@@ -67,7 +67,7 @@ var FieldManagerMixin = {
      * @abstract
      * @param {string} id basicModel Id for the changed record
      * @param {string[]} fields the fields (names) that have been changed
-     * @param {FlectraEvent} event the event that triggered the change
+     * @param {OdooEvent} event the event that triggered the change
      * @returns {Promise}
      */
     _confirmChange: function (id, fields, event) {
@@ -109,7 +109,7 @@ var FieldManagerMixin = {
      * field changes.  Most of the time, it notifies the model that a change
      * just occurred, then confirm the change.
      *
-     * @param {FlectraEvent} event
+     * @param {OdooEvent} event
      */
     _onFieldChanged: function (event) {
         // in case of field changed in relational record (e.g. in the form view
@@ -128,7 +128,7 @@ var FieldManagerMixin = {
      * that, it can trigger a load event. This will then ask the model to
      * actually reload the data, then call the on_success callback.
      *
-     * @param {FlectraEvent} event
+     * @param {OdooEvent} event
      * @param {number} [event.data.limit]
      * @param {number} [event.data.offset]
      * @param {function} [event.data.on_success] callback
@@ -153,7 +153,7 @@ var FieldManagerMixin = {
     },
     /**
      * @private
-     * @param {FlectraEvent} ev
+     * @param {OdooEvent} ev
      * @param {function} ev.data.action the function to execute in the mutex
      */
     _onMutexify: function (ev) {

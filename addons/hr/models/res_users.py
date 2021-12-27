@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo. See LICENSE file for full copyright and licensing details.
 
-from flectra import api, models, fields, _, SUPERUSER_ID
-from flectra.exceptions import AccessError
+from odoo import api, models, fields, _, SUPERUSER_ID
+from odoo.exceptions import AccessError
 
 
 class User(models.Model):

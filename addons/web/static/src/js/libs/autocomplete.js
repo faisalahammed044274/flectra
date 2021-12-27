@@ -1,4 +1,4 @@
-flectra.define('web.autocomplete.extensions', function () {
+odoo.define('web.autocomplete.extensions', function () {
 'use strict';
 
 /**

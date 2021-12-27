@@ -4,12 +4,12 @@
 /**
  * QUnit Config
  *
- * The Flectra javascript test framework is based on QUnit (http://qunitjs.com/).
+ * The Odoo javascript test framework is based on QUnit (http://qunitjs.com/).
  * This file is necessary to setup Qunit and to prepare its interactions with
- * Flectra.  It has to be loaded before any tests are defined.
+ * Odoo.  It has to be loaded before any tests are defined.
  *
- * Note that it is not an Flectra module, because we want this code to be executed
- * as soon as possible, not whenever the Flectra module system feels like it.
+ * Note that it is not an Odoo module, because we want this code to be executed
+ * as soon as possible, not whenever the Odoo module system feels like it.
  */
 
 
@@ -23,7 +23,7 @@ QUnit.config.requireExpects = true;
 /**
  * not important in normal mode, but in debug=assets, the files are loaded
  * asynchroneously, which can lead to various issues with QUnit... Notice that
- * this is done outside of flectra modules, otherwise the setting would not take
+ * this is done outside of odoo modules, otherwise the setting would not take
  * effect on time.
  */
 QUnit.config.autostart = false;
@@ -81,9 +81,9 @@ async function checkModules() {
     $modulesAlert.appendTo('#qunit');
 
     // wait for the module system to end processing the JS modules
-    await flectra.__DEBUG__.didLogInfo;
+    await odoo.__DEBUG__.didLogInfo;
 
-    const info = flectra.__DEBUG__.jsModules;
+    const info = odoo.__DEBUG__.jsModules;
     if (info.missing.length || info.failed.length) {
         $('#qunit-banner').addClass('qunit-fail');
         $modulesAlert.toggleClass('alert-info alert-danger');
@@ -157,7 +157,7 @@ QUnit.moduleDone(function(result) {
  * After each test, we check that there is no leftover in the DOM. If there is
  * and the test hasn't already failed, trigger a failure
  */
-QUnit.on('FlectraAfterTestHook', function (info) {
+QUnit.on('OdooAfterTestHook', function (info) {
     const failed = info.testReport.getStatus() === 'failed';
     const toRemove = [];
     // check for leftover elements in the body

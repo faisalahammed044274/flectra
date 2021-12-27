@@ -1,4 +1,4 @@
-flectra.define('web.time_tests', function (require) {
+odoo.define('web.time_tests', function (require) {
 "use strict";
 
 const core = require('web.core');
@@ -162,4 +162,4 @@ QUnit.module('core', {}, function () {
 
 });
 
-}); 
+});

@@ -1,4 +1,4 @@
-flectra.define('website_event_track.website_event_track_reminder', function (require) {
+odoo.define('website_event_track.website_event_track_reminder', function (require) {
 'use strict';
 
 var core = require('web.core');

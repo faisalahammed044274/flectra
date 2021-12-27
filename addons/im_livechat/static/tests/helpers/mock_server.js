@@ -1,4 +1,4 @@
-flectra.define('im_livechat/static/tests/helpers/mock_server.js', function (require) {
+odoo.define('im_livechat/static/tests/helpers/mock_server.js', function (require) {
 'use strict';
 
 require('mail.MockServer'); // ensure mail overrides are applied first

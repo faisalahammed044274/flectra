@@ -1,4 +1,4 @@
-flectra.define('mrp.tests', function (require) {
+odoo.define('mrp.tests', function (require) {
 "use strict";
 
 var FormView = require('web.FormView');

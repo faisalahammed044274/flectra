@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<flectra>
+<odoo>
 <template id="snippets" groups="base.group_user">
     <form class="o_we_website_top_actions d-none">
         <button type="button" class="btn btn-primary" name="save" data-action="save" accesskey="s">Save</button>
@@ -45,7 +45,7 @@
 
 <template id="snippet_options_image_optimization_widgets">
     <div class="o_we_external_warning d-none">
-        <we-title title="Quality options are unavailable for external images. If you want to change this image's quality, please first download it from the original source and upload it in Flectra.">
+        <we-title title="Quality options are unavailable for external images. If you want to change this image's quality, please first download it from the original source and upload it in Odoo.">
             <i class="fa fa-warning" /> External Image
         </we-title>
     </div>
@@ -374,4 +374,4 @@
     </div>
 </template>
 
-</flectra>
+</odoo>

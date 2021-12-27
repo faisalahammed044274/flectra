@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<flectra>
+<odoo>
     <data>
 
         <!-- Add creditcard to res.partner -->
@@ -26,4 +26,4 @@
                 </field>
         </record>
     </data>
-</flectra>
+</odoo>

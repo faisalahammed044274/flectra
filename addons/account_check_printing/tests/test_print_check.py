@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
-from flectra.addons.account.tests.common import AccountTestInvoicingCommon
-from flectra.addons.account_check_printing.models.account_payment import INV_LINES_PER_STUB
-from flectra.tests import tagged
+from odoo.addons.account.tests.common import AccountTestInvoicingCommon
+from odoo.addons.account_check_printing.models.account_payment import INV_LINES_PER_STUB
+from odoo.tests import tagged
 
 import math
 

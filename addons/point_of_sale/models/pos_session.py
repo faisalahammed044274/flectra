@@ -1,12 +1,12 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo. See LICENSE file for full copyright and licensing details.
 
 from collections import defaultdict
 from datetime import timedelta
 
-from flectra import api, fields, models, _
-from flectra.exceptions import AccessError, UserError, ValidationError
-from flectra.tools import float_is_zero, float_compare
+from odoo import api, fields, models, _
+from odoo.exceptions import AccessError, UserError, ValidationError
+from odoo.tools import float_is_zero, float_compare
 
 
 class PosSession(models.Model):
@@ -1060,7 +1060,7 @@ class PosSession(models.Model):
         fully_reconciled_lines = reconcilable_lines.filtered(lambda aml: aml.full_reconcile_id)
         partially_reconciled_lines = reconcilable_lines - fully_reconciled_lines
 
-        cash_move_lines = self.env['account.move.line'].search([('statement_id', '=', self.cash_register_id.id)])
+        cash_move_lines = self.env['account.move.line'].search([('statement_id', 'in', self.statement_ids.ids)])
 
         ids = (non_reconcilable_lines.ids
                 + fully_reconciled_lines.mapped('full_reconcile_id').mapped('reconciled_line_ids').ids

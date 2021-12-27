@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<flectra>
+<odoo>
     <template id="assets_backend" name="mass_mailing assets" inherit_id="web.assets_backend">
         <xpath expr="." position="inside">
             <link rel="stylesheet" type="text/scss" href="/mass_mailing/static/src/scss/mass_mailing.scss"/>
@@ -51,7 +51,7 @@
     <template id="qunit_suite" inherit_id="web.qunit_suite_tests">
         <xpath expr="." position="inside">
             <script type="text/javascript">
-                flectra.define('mass_mailing.FieldHtml.test', function (require) {
+                odoo.define('mass_mailing.FieldHtml.test', function (require) {
                     'use strict';
                     var MassMailingFieldHtml = require('mass_mailing.FieldHtml');
                     MassMailingFieldHtml.include({jsLibs: []});
@@ -78,4 +78,4 @@
             }
         </style>
     </template>
-</flectra>
+</odoo>

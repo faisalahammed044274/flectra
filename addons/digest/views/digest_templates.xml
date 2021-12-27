@@ -1,4 +1,4 @@
-<flectra>
+<odoo>
     <template id="portal_digest_unsubscribed" name="Unsubscription">
         <t t-call="portal.portal_layout">
             <div class="container mt8">
@@ -13,4 +13,4 @@
             </div>
         </t>
     </template>
-</flectra> 
+</odoo>

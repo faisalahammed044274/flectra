@@ -1,4 +1,4 @@
-flectra.define('web.GroupByMenu', function (require) {
+odoo.define('web.GroupByMenu', function (require) {
     "use strict";
 
     const CustomGroupByItem = require('web.CustomGroupByItem');

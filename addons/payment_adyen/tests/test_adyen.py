@@ -2,10 +2,10 @@
 
 from lxml import objectify
 
-from flectra.addons.payment.tests.common import PaymentAcquirerCommon
-from flectra.addons.payment_adyen.controllers.main import AdyenController
+from odoo.addons.payment.tests.common import PaymentAcquirerCommon
+from odoo.addons.payment_adyen.controllers.main import AdyenController
 from werkzeug import urls
-import flectra.tests
+import odoo.tests
 
 
 class AdyenCommon(PaymentAcquirerCommon):
@@ -38,7 +38,7 @@ class AdyenCommon(PaymentAcquirerCommon):
         })
 
 
-@flectra.tests.tagged('post_install', '-at_install', 'external', '-standard')
+@odoo.tests.tagged('post_install', '-at_install', 'external', '-standard')
 class AdyenForm(AdyenCommon):
 
     def test_10_adyen_form_render(self):

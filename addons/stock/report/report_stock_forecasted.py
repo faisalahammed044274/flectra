@@ -1,10 +1,10 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo. See LICENSE file for full copyright and licensing details.
 
 from collections import defaultdict
 
-from flectra import api, models
-from flectra.tools import float_is_zero, format_datetime, format_date, float_round
+from odoo import api, models
+from odoo.tools import float_is_zero, format_datetime, format_date, float_round
 
 
 class ReplenishmentReport(models.AbstractModel):

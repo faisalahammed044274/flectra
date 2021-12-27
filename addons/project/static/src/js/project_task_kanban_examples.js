@@ -1,4 +1,4 @@
-flectra.define('project.task_kanban_examples', function (require) {
+odoo.define('project.task_kanban_examples', function (require) {
 'use strict';
 
 var core = require('web.core');
@@ -63,7 +63,7 @@ kanbanExamplesRegistry.add('project', {
     }, {
         name: _lt('Customer Feedback'),
         columns: [_lt('New'), _lt('In development'), _lt('Done'), _lt('Refused')],
-        description: escFormat(_lt('Customers propose feedbacks by email; Flectra creates tasks ' +
+        description: escFormat(_lt('Customers propose feedbacks by email; Odoo creates tasks ' +
             'automatically, and you can communicate on the task directly. Your managers decide which ' +
             'feedback is accepted %s and which feedback is moved to the %s column. %s'), greenBullet, _lt('"Refused"'), description_activities),
         bullets: [greenBullet, redBullet],

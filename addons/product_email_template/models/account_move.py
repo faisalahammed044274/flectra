@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-from flectra import api, models, SUPERUSER_ID
+from odoo import api, models, SUPERUSER_ID
 
 
 class AccountMove(models.Model):

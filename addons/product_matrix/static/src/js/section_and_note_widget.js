@@ -1,4 +1,4 @@
-flectra.define('product_matrix.section_and_note_widget', function (require) {
+odoo.define('product_matrix.section_and_note_widget', function (require) {
 
 var Dialog = require('web.Dialog');
 var core = require('web.core');
@@ -43,7 +43,7 @@ SectionAndNoteFieldOne2Many.include({
     /**
      * Catches the event asking for matrix opening
      *
-     * @param {FlectraEvent} ev various values needed to open the matrix
+     * @param {OdooEvent} ev various values needed to open the matrix
      *  {integer} data.product_template_id product.template id
      *  {list} data.editedCellAttributes list of product.template.attribute.value ids
      *  {bool} data.edit whether the line source should be deleted or not.

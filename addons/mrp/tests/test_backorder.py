@@ -1,9 +1,9 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo. See LICENSE file for full copyright and licensing details.
 
-from flectra.addons.mrp.tests.common import TestMrpCommon
-from flectra.tests import Form
-from flectra.tests.common import SavepointCase
+from odoo.addons.mrp.tests.common import TestMrpCommon
+from odoo.tests import Form
+from odoo.tests.common import SavepointCase
 
 
 class TestMrpProductionBackorder(TestMrpCommon):

@@ -1,4 +1,4 @@
-flectra.define('web_editor.snippet.editor', function (require) {
+odoo.define('web_editor.snippet.editor', function (require) {
 'use strict';
 
 var concurrency = require('web.concurrency');
@@ -828,7 +828,7 @@ var SnippetEditor = Widget.extend({
      * specific action/react to a specific event.
      *
      * @private
-     * @param {FlectraEvent} ev
+     * @param {OdooEvent} ev
      */
     _onOptionUpdate: function (ev) {
         var self = this;
@@ -875,14 +875,14 @@ var SnippetEditor = Widget.extend({
     },
     /**
      * @private
-     * @param {FlectraEvent} ev
+     * @param {OdooEvent} ev
      */
     _onSnippetOptionUpdate: async function (ev) {
         // TODO remove me in master
     },
     /**
      * @private
-     * @param {FlectraEvent} ev
+     * @param {OdooEvent} ev
      */
     _onSnippetOptionVisibilityUpdate: function (ev) {
         ev.data.show = this._toggleVisibilityStatus(ev.data.show);
@@ -1093,7 +1093,7 @@ var SnippetsMenu = Widget.extend({
             if ($oeStructure.length && !$oeStructure.children().length && this.$snippets) {
                 // If empty oe_structure, encourage using snippets in there by
                 // making them "wizz" in the panel.
-                this.$snippets.flectraBounce();
+                this.$snippets.odooBounce();
                 return;
             }
             this._activateSnippet($target);
@@ -1232,14 +1232,25 @@ var SnippetsMenu = Widget.extend({
      * - Remove the 'contentEditable' attributes
      */
     cleanForSave: async function () {
+        // First disable the snippet selection, calling options onBlur, closing
+        // widgets, etc. Then wait for full resolution of the mutex as widgets
+        // may have triggered some final edition requests that need to be
+        // processed before actual "clean for save" and saving.
         await this._activateSnippet(false);
+        await this._mutex.getUnlockedDef();
+
+        // Next, notify that we want the DOM to be cleaned (e.g. in website this
+        // may be the moment where the public widgets need to be destroyed).
         this.trigger_up('ready_to_clean_for_save');
+
+        // Then destroy all snippet editors, making them call their own
+        // "clean for save" methods (and options ones).
         await this._destroyEditors();
 
+        // Final editor cleanup
         this.getEditableArea().find('[contentEditable]')
             .removeAttr('contentEditable')
             .removeProp('contentEditable');
-
         this.getEditableArea().find('.o_we_selected_image')
             .removeClass('o_we_selected_image');
     },
@@ -2074,6 +2085,13 @@ var SnippetsMenu = Widget.extend({
                         }
                     }
 
+                    // TODO mentioning external app snippet but done as a stable fix
+                    // that will be adapted in master: if popup snippet, do not
+                    // allow to add it in another snippet
+                    if ($baseBody[0].matches('.s_popup, .o_newsletter_popup')) {
+                        $selectorChildren = $selectorChildren.not('[data-snippet] *');
+                    }
+
                     $toInsert = $baseBody.clone();
                     // Color-customize dynamic SVGs in dropped snippets with current theme colors.
                     [...$toInsert.find('img[src^="/web_editor/shape/"]')].forEach(dynamicSvg => {
@@ -2324,7 +2342,7 @@ var SnippetsMenu = Widget.extend({
      * Called when a child editor asks for insertion zones to be enabled.
      *
      * @private
-     * @param {FlectraEvent} ev
+     * @param {OdooEvent} ev
      */
     _onActivateInsertionZones: function (ev) {
         this._activateInsertionZones(ev.data.$selectorSiblings, ev.data.$selectorChildren);
@@ -2343,7 +2361,7 @@ var SnippetsMenu = Widget.extend({
      * snippet of a DOM element.
      *
      * @private
-     * @param {FlectraEvent} ev
+     * @param {OdooEvent} ev
      */
     _onCallForEachChildSnippet: function (ev) {
         const prom = this._callForEachChildSnippet(ev.data.$snippet, ev.data.callback);
@@ -2355,7 +2373,7 @@ var SnippetsMenu = Widget.extend({
      * Called when the overlay dimensions/positions should be recomputed.
      *
      * @private
-     * @param {FlectraEvent} ev
+     * @param {OdooEvent} ev
      */
     _onOverlaysCoverUpdate: function (ev) {
         this.snippetEditors.forEach(editor => {
@@ -2370,7 +2388,7 @@ var SnippetsMenu = Widget.extend({
      * call the _onClone methods if the element's editor has one.
      *
      * @private
-     * @param {FlectraEvent} ev
+     * @param {OdooEvent} ev
      */
     _onCloneSnippet: async function (ev) {
         ev.stopPropagation();
@@ -2393,7 +2411,7 @@ var SnippetsMenu = Widget.extend({
      * Called when a snippet has moved in the page.
      *
      * @private
-     * @param {FlectraEvent} ev
+     * @param {OdooEvent} ev
      */
     _onDragAndDropStop: async function (ev) {
         const $modal = ev.data.$snippet.closest('.modal');
@@ -2408,7 +2426,7 @@ var SnippetsMenu = Widget.extend({
      * parent instead.
      *
      * @private
-     * @param {FlectraEvent} ev
+     * @param {OdooEvent} ev
      */
     _onGoToParent: function (ev) {
         ev.stopPropagation();
@@ -2555,7 +2573,7 @@ var SnippetsMenu = Widget.extend({
     },
     /**
      * @private
-     * @param {FlectraEvent} ev
+     * @param {OdooEvent} ev
      */
     _onGetSnippetVersions: function (ev) {
         const snippet = this.el.querySelector(`.oe_snippet > [data-snippet="${ev.data.snippetName}"]`);
@@ -2592,7 +2610,7 @@ var SnippetsMenu = Widget.extend({
     },
     /**
      * @private
-     * @param {FlectraEvent} ev
+     * @param {OdooEvent} ev
      */
     _onRemoveSnippet: async function (ev) {
         ev.stopPropagation();
@@ -2636,13 +2654,13 @@ var SnippetsMenu = Widget.extend({
         const $els = this.getEditableArea().find('.oe_structure.oe_empty').addBack('.oe_structure.oe_empty');
         for (const el of $els) {
             if (!el.children.length) {
-                $(el).flectraBounce('o_we_snippet_area_animation');
+                $(el).odooBounce('o_we_snippet_area_animation');
             }
         }
     },
     /**
      * @private
-     * @param {FlectraEvent} ev
+     * @param {OdooEvent} ev
      * @param {Object} ev.data
      * @param {function} ev.data.exec
      */
@@ -2651,7 +2669,7 @@ var SnippetsMenu = Widget.extend({
     },
     /**
      * @private
-     * @param {FlectraEvent} ev
+     * @param {OdooEvent} ev
      */
     _onSnippetEditorDestroyed(ev) {
         ev.stopPropagation();
@@ -2691,7 +2709,7 @@ var SnippetsMenu = Widget.extend({
      * may depend on their UI status.
      *
      * @private
-     * @param {FlectraEvent} ev
+     * @param {OdooEvent} ev
      */
     _onSnippetOptionUpdate(ev) {
         ev.stopPropagation();
@@ -2704,7 +2722,7 @@ var SnippetsMenu = Widget.extend({
     },
     /**
      * @private
-     * @param {FlectraEvent} ev
+     * @param {OdooEvent} ev
      */
     _onSnippetOptionVisibilityUpdate: async function (ev) {
         if (!ev.data.show) {
@@ -2714,7 +2732,7 @@ var SnippetsMenu = Widget.extend({
     },
     /**
      * @private
-     * @param {FlectraEvent} ev
+     * @param {OdooEvent} ev
      */
     _onSnippetThumbnailURLRequest(ev) {
         const $snippet = this.$snippets.has(`[data-snippet="${ev.data.key}"]`);
@@ -2759,7 +2777,7 @@ var SnippetsMenu = Widget.extend({
     },
     /**
      * @private
-     * @param {FlectraEvent} ev
+     * @param {OdooEvent} ev
      */
     _onUpdateCustomizeElements: function (ev) {
         this._updateLeftPanelContent({

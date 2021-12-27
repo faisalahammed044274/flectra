@@ -1,4 +1,4 @@
-flectra.define('stock.ReplenishReport', function (require) {
+odoo.define('stock.ReplenishReport', function (require) {
 "use strict";
 
 const clientAction = require('report.client_action');
@@ -265,4 +265,4 @@ const ReplenishReport = clientAction.extend({
 
 core.action_registry.add('replenish_report', ReplenishReport);
 
-}); 
+});

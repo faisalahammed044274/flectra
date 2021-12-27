@@ -1,11 +1,11 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo. See LICENSE file for full copyright and licensing details.
 import base64
 
-from flectra import api, fields, models, _
-from flectra.exceptions import UserError
-from flectra.modules.module import get_module_resource
-from flectra.tools import formatLang
+from odoo import api, fields, models, _
+from odoo.exceptions import UserError
+from odoo.modules.module import get_module_resource
+from odoo.tools import formatLang
 
 
 class LunchProductCategory(models.Model):

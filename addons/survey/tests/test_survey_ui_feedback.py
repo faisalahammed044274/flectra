@@ -1,11 +1,11 @@
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo. See LICENSE file for full copyright and licensing details.
 
-import flectra.tests
+import odoo.tests
 
-from flectra.addons.base.tests.common import HttpCaseWithUserDemo
+from odoo.addons.base.tests.common import HttpCaseWithUserDemo
 
 
-@flectra.tests.common.tagged('post_install', '-at_install')
+@odoo.tests.common.tagged('post_install', '-at_install')
 class TestUiFeedback(HttpCaseWithUserDemo):
 
     def setUp(self):

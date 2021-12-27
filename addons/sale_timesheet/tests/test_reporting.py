@@ -1,9 +1,9 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
-from flectra.osv import expression
-from flectra.tools import float_is_zero, float_compare
-from flectra.addons.sale_timesheet.tests.common_reporting import TestCommonReporting
-from flectra.tests import tagged
+# Part of Odoo. See LICENSE file for full copyright and licensing details.
+from odoo.osv import expression
+from odoo.tools import float_is_zero, float_compare
+from odoo.addons.sale_timesheet.tests.common_reporting import TestCommonReporting
+from odoo.tests import tagged
 
 
 @tagged('-at_install', 'post_install')

@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-from flectra import api, models
+from odoo import api, models
 
 
 class AccountChartTemplate(models.Model):

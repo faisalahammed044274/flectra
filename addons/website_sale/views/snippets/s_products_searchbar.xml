@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<flectra>
+<odoo>
 
 <template id="s_products_searchbar_input" name="Products Search">
     <t t-call="website_sale.website_sale_products_search_box">
@@ -51,4 +51,4 @@
     </xpath>
 </template>
 
-</flectra>
+</odoo>

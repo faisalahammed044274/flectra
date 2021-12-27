@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<flectra>
+<odoo>
     <data>
         <!-- Manufacturing Order -->
         <record id="mrp_production_tree_view" model="ir.ui.view">
@@ -592,4 +592,4 @@
             <field name="view_mode">form</field>
         </record>
     </data>
-</flectra>
+</odoo>

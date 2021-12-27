@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<flectra>
+<odoo>
     <record id="website_event_meet.event_meeting_room_action" model="ir.actions.act_window">
         <field name="name">Meeting Room</field>
         <field name="res_model">event.meeting.room</field>
@@ -87,4 +87,4 @@
             </search>
         </field>
     </record>
-</flectra>
+</odoo>

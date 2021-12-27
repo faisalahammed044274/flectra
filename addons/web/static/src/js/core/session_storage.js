@@ -1,4 +1,4 @@
-flectra.define('web.sessionStorage', function (require) {
+odoo.define('web.sessionStorage', function (require) {
 'use strict';
 
 var RamStorage = require('web.RamStorage');

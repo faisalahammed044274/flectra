@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<flectra>
+<odoo>
 
     <record id="group_sale_order_template" model="res.groups">
         <field name="name">Quotation Templates</field>
@@ -13,4 +13,4 @@
             <field name="domain_force">['|', ('company_id', '=', False), ('company_id', 'in', company_ids)]</field>
         </record>
     </data>
-</flectra>
+</odoo>

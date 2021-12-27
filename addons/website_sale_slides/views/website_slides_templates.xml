@@ -1,5 +1,5 @@
 <?xml version="1.0" ?>
-<flectra><data>
+<odoo><data>
 
 <!-- LESSON -->
 <template id="lesson_content_quiz" inherit_id="website_slides.lesson_content_quiz">
@@ -163,4 +163,4 @@
     </xpath>
 </template>
 
-</data></flectra>
+</data></odoo>

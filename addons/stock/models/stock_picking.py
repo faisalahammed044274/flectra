@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo. See LICENSE file for full copyright and licensing details.
 
 import json
 import time
@@ -10,13 +10,13 @@ from itertools import groupby
 from operator import attrgetter, itemgetter
 from collections import defaultdict
 
-from flectra import SUPERUSER_ID, _, api, fields, models
-from flectra.addons.stock.models.stock_move import PROCUREMENT_PRIORITIES
-from flectra.exceptions import UserError
-from flectra.osv import expression
-from flectra.tools import DEFAULT_SERVER_DATETIME_FORMAT, format_datetime
-from flectra.tools.float_utils import float_compare, float_is_zero, float_round
-from flectra.tools.misc import format_date
+from odoo import SUPERUSER_ID, _, api, fields, models
+from odoo.addons.stock.models.stock_move import PROCUREMENT_PRIORITIES
+from odoo.exceptions import UserError
+from odoo.osv import expression
+from odoo.tools import DEFAULT_SERVER_DATETIME_FORMAT, format_datetime
+from odoo.tools.float_utils import float_compare, float_is_zero, float_round
+from odoo.tools.misc import format_date
 
 
 class PickingType(models.Model):
@@ -65,7 +65,7 @@ class PickingType(models.Model):
         help="If this checkbox is ticked, the pickings lines will represent detailed stock operations. If not, the picking lines will represent an aggregate of detailed stock operations.")
     show_reserved = fields.Boolean(
         'Pre-fill Detailed Operations', default=True,
-        help="If this checkbox is ticked, Flectra will automatically pre-fill the detailed "
+        help="If this checkbox is ticked, Odoo will automatically pre-fill the detailed "
         "operations with the corresponding products, locations and lot/serial numbers.")
 
     count_picking_draft = fields.Integer(compute='_compute_picking_count')
@@ -739,7 +739,9 @@ class Picking(models.Model):
         @return: True
         """
         self.filtered(lambda picking: picking.state == 'draft').action_confirm()
-        moves = self.mapped('move_lines').filtered(lambda move: move.state not in ('draft', 'cancel', 'done'))
+        moves = self.mapped('move_lines').filtered(lambda move: move.state not in ('draft', 'cancel', 'done')).sorted(
+            key=lambda move: (-int(move.priority), not bool(move.date_deadline), move.date_deadline, move.id)
+        )
         if not moves:
             raise UserError(_('Nothing to check the availability for.'))
         # If a package level is done when confirmed its location can be different than where it will be reserved.

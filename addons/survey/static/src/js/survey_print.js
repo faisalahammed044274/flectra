@@ -1,4 +1,4 @@
-flectra.define('survey.print', function (require) {
+odoo.define('survey.print', function (require) {
 'use strict';
 
 var publicWidget = require('web.public.widget');

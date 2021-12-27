@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<flectra>
+<odoo>
 
     <record id="tax_report" model="account.tax.report">
         <field name="name">Tax Report</field>
@@ -3047,4 +3047,4 @@ if tax > result:result=tax</field>
         <field name="children_tax_ids" eval="[(6, 0, [ref('sgst_purchase_2_5_rc'),ref('cgst_purchase_2_5_rc'),])]"/>
     </record>
 
-</flectra>
+</odoo>

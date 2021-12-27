@@ -1,4 +1,4 @@
-flectra.define('payment_stripe.stripe', function (require) {
+odoo.define('payment_stripe.stripe', function (require) {
 "use strict";
 
 var ajax = require('web.ajax');

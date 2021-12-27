@@ -1,4 +1,4 @@
-flectra.define('web_editor.wysiwyg.multizone.translate', function (require) {
+odoo.define('web_editor.wysiwyg.multizone.translate', function (require) {
 'use strict';
 
 var core = require('web.core');

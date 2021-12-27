@@ -1,15 +1,15 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo. See LICENSE file for full copyright and licensing details.
 
 import time
 from datetime import datetime
 from unittest.mock import patch
 
-from flectra import fields
-from flectra.tests import Form
-from flectra.tests.common import TransactionCase, tagged
-from flectra.addons.account.tests.common import AccountTestInvoicingCommon
-from flectra.tools import DEFAULT_SERVER_DATETIME_FORMAT
+from odoo import fields
+from odoo.tests import Form
+from odoo.tests.common import TransactionCase, tagged
+from odoo.addons.account.tests.common import AccountTestInvoicingCommon
+from odoo.tools import DEFAULT_SERVER_DATETIME_FORMAT
 
 
 class TestStockValuation(TransactionCase):
@@ -676,7 +676,7 @@ class TestStockValuationWithCOA(AccountTestInvoicingCommon):
         def _today(*args, **kwargs):
             return date_po
         patchers = [
-            patch('flectra.fields.Date.context_today', _today),
+            patch('odoo.fields.Date.context_today', _today),
         ]
 
         for p in patchers:
@@ -847,8 +847,8 @@ class TestStockValuationWithCOA(AccountTestInvoicingCommon):
             return datetime.strptime(today + ' 01:00:00', "%Y-%m-%d %H:%M:%S")
 
         patchers = [
-            patch('flectra.fields.Date.context_today', _today),
-            patch('flectra.fields.Datetime.now', _now),
+            patch('odoo.fields.Date.context_today', _today),
+            patch('odoo.fields.Datetime.now', _now),
         ]
 
         for p in patchers:
@@ -1021,8 +1021,8 @@ class TestStockValuationWithCOA(AccountTestInvoicingCommon):
             return datetime.strptime(today + ' 01:00:00', "%Y-%m-%d %H:%M:%S")
 
         patchers = [
-            patch('flectra.fields.Date.context_today', _today),
-            patch('flectra.fields.Datetime.now', _now),
+            patch('odoo.fields.Date.context_today', _today),
+            patch('odoo.fields.Datetime.now', _now),
         ]
 
         for p in patchers:

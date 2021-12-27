@@ -1,15 +1,15 @@
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo. See LICENSE file for full copyright and licensing details.
 
 import base64
 import io
 
 from PIL import Image
 
-import flectra.tests
+import odoo.tests
 
 
-@flectra.tests.common.tagged('post_install', '-at_install')
-class TestWebsiteSaleImage(flectra.tests.HttpCase):
+@odoo.tests.common.tagged('post_install', '-at_install')
+class TestWebsiteSaleImage(odoo.tests.HttpCase):
 
     # registry_test_mode = False  # uncomment to save the product to test in browser
 

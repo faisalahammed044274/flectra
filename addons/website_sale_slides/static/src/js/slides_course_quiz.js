@@ -1,4 +1,4 @@
-flectra.define('website_sale_slides.quiz', function (require) {
+odoo.define('website_sale_slides.quiz', function (require) {
 "use strict";
 
 var sAnimations = require('website.content.snippets.animation');

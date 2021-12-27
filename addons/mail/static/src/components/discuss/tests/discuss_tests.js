@@ -1,4 +1,4 @@
-flectra.define('mail/static/src/components/discuss/tests/discuss_tests.js', function (require) {
+odoo.define('mail/static/src/components/discuss/tests/discuss_tests.js', function (require) {
 'use strict';
 
 const BusService = require('bus.BusService');
@@ -4077,7 +4077,7 @@ QUnit.test('all messages in "Inbox" in "History" after marked all as read', asyn
     );
 });
 
-QUnit.test('receive new chat message: out of flectra focus (notification, channel)', async function (assert) {
+QUnit.test('receive new chat message: out of odoo focus (notification, channel)', async function (assert) {
     assert.expect(4);
 
     // channel expected to be found in the sidebar
@@ -4096,13 +4096,13 @@ QUnit.test('receive new chat message: out of flectra focus (notification, channe
                 _beep() {}, // Do nothing
                 _poll() {}, // Do nothing
                 _registerWindowUnload() {}, // Do nothing
-                isFlectraFocused: () => false,
+                isOdooFocused: () => false,
                 updateOption() {},
             }),
         },
     });
 
-    // simulate receiving a new message with flectra focused
+    // simulate receiving a new message with odoo focused
     await afterNextRender(() => {
         const messageData = {
             channel_ids: [20],
@@ -4116,7 +4116,7 @@ QUnit.test('receive new chat message: out of flectra focus (notification, channe
     assert.verifySteps(['set_title_part']);
 });
 
-QUnit.test('receive new chat message: out of flectra focus (notification, chat)', async function (assert) {
+QUnit.test('receive new chat message: out of odoo focus (notification, chat)', async function (assert) {
     assert.expect(4);
 
     // chat expected to be found in the sidebar with the proper channel_type
@@ -4135,13 +4135,13 @@ QUnit.test('receive new chat message: out of flectra focus (notification, chat)'
                 _beep() {}, // Do nothing
                 _poll() {}, // Do nothing
                 _registerWindowUnload() {}, // Do nothing
-                isFlectraFocused: () => false,
+                isOdooFocused: () => false,
                 updateOption() {},
             }),
         },
     });
 
-    // simulate receiving a new message with flectra focused
+    // simulate receiving a new message with odoo focused
     await afterNextRender(() => {
         const messageData = {
             channel_ids: [10],
@@ -4155,7 +4155,7 @@ QUnit.test('receive new chat message: out of flectra focus (notification, chat)'
     assert.verifySteps(['set_title_part']);
 });
 
-QUnit.test('receive new chat messages: out of flectra focus (tab title)', async function (assert) {
+QUnit.test('receive new chat messages: out of odoo focus (tab title)', async function (assert) {
     assert.expect(12);
 
     let step = 0;
@@ -4187,13 +4187,13 @@ QUnit.test('receive new chat messages: out of flectra focus (tab title)', async 
                 _beep() {}, // Do nothing
                 _poll() {}, // Do nothing
                 _registerWindowUnload() {}, // Do nothing
-                isFlectraFocused: () => false,
+                isOdooFocused: () => false,
                 updateOption() {},
             }),
         },
     });
 
-    // simulate receiving a new message in chat 20 with flectra focused
+    // simulate receiving a new message in chat 20 with odoo focused
     await afterNextRender(() => {
         const messageData1 = {
             channel_ids: [20],
@@ -4206,7 +4206,7 @@ QUnit.test('receive new chat messages: out of flectra focus (tab title)', async 
     });
     assert.verifySteps(['set_title_part']);
 
-    // simulate receiving a new message in chat 10 with flectra focused
+    // simulate receiving a new message in chat 10 with odoo focused
     await afterNextRender(() => {
         const messageData2 = {
             channel_ids: [10],
@@ -4219,7 +4219,7 @@ QUnit.test('receive new chat messages: out of flectra focus (tab title)', async 
     });
     assert.verifySteps(['set_title_part']);
 
-    // simulate receiving another new message in chat 10 with flectra focused
+    // simulate receiving another new message in chat 10 with odoo focused
     await afterNextRender(() => {
         const messageData3 = {
             channel_ids: [10],

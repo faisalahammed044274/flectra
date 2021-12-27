@@ -1,12 +1,12 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo. See LICENSE file for full copyright and licensing details.
 
 from datetime import datetime, timedelta
 import json
 
-from flectra import models, api, fields, _
-from flectra.exceptions import UserError
-from flectra.http import request
+from odoo import models, api, fields, _
+from odoo.exceptions import UserError
+from odoo.http import request
 
 
 class WebsiteVisitor(models.Model):

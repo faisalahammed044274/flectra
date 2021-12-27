@@ -1,4 +1,4 @@
-<flectra>
+<odoo>
     <template id="assets_backend" inherit_id="web.assets_backend"
               name="Password Policy Backend Assets">
         <xpath expr="." position="inside">
@@ -13,4 +13,4 @@
             <link rel="stylesheet" type="text/css" href="/auth_password_policy/static/src/css/password_field.css"/>
         </xpath>
     </template>
-</flectra>
+</odoo>

@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<flectra>
+<odoo>
     <data>
         <record id="res_partner_view_tree" model="ir.ui.view">
             <field name="name">view.res.partner.form.event.inherited</field>
@@ -20,4 +20,4 @@
             </field>
         </record>
     </data>
-</flectra>
+</odoo>

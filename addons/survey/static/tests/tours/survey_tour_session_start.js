@@ -1,4 +1,4 @@
-flectra.define('survey.test_survey_session_start_tour', function (require) {
+odoo.define('survey.test_survey_session_start_tour', function (require) {
 "use strict";
 
 var tour = require('web_tour.tour');

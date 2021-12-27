@@ -1,4 +1,4 @@
-flectra.define('mail.CustomFilterItem', function (require) {
+odoo.define('mail.CustomFilterItem', function (require) {
     "use strict";
 
     const CustomFilterItem = require('web.CustomFilterItem');

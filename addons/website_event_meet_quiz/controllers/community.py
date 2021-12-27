@@ -1,11 +1,11 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo. See LICENSE file for full copyright and licensing details.
 
 from werkzeug.exceptions import Forbidden
 
-from flectra import http
-from flectra.addons.website_event.controllers.community import EventCommunityController
-from flectra.http import request
+from odoo import http
+from odoo.addons.website_event.controllers.community import EventCommunityController
+from odoo.http import request
 
 
 class WebsiteEventTrackQuizMeetController(EventCommunityController):

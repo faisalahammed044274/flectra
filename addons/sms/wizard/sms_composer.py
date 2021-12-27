@@ -1,12 +1,12 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo. See LICENSE file for full copyright and licensing details.
 
 from ast import literal_eval
 
-from flectra import api, fields, models, _
-from flectra.addons.phone_validation.tools import phone_validation
-from flectra.exceptions import UserError
-from flectra.tools import html2plaintext
+from odoo import api, fields, models, _
+from odoo.addons.phone_validation.tools import phone_validation
+from odoo.exceptions import UserError
+from odoo.tools import html2plaintext
 
 
 class SendSMS(models.TransientModel):

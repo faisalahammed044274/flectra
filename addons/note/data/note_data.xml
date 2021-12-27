@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<flectra>
+<odoo>
     <data>
     <record model="note.stage" id="note_stage_00">
         <field name="name">New</field>
@@ -25,4 +25,4 @@
         <field name="user_id" ref="base.user_admin"/>
     </record>
     </data>
-</flectra>
+</odoo>

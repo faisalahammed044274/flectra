@@ -1,4 +1,4 @@
-flectra.define('website_rating_project.rating', function (require) {
+odoo.define('website_rating_project.rating', function (require) {
 'use strict';
 
 var time = require('web.time');

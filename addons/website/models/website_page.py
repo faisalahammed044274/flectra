@@ -1,9 +1,9 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo. See LICENSE file for full copyright and licensing details.
 
-from flectra.addons.http_routing.models.ir_http import slugify
-from flectra import api, fields, models
-from flectra.tools.safe_eval import safe_eval
+from odoo.addons.http_routing.models.ir_http import slugify
+from odoo import api, fields, models
+from odoo.tools.safe_eval import safe_eval
 
 
 class Page(models.Model):

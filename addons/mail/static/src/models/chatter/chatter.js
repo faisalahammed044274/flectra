@@ -1,4 +1,4 @@
-flectra.define('mail/static/src/models/chatter/chatter.js', function (require) {
+odoo.define('mail/static/src/models/chatter/chatter.js', function (require) {
 'use strict';
 
 const { registerNewModel } = require('mail/static/src/model/model_core.js');

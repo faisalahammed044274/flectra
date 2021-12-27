@@ -1,10 +1,10 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo. See LICENSE file for full copyright and licensing details.
 
 from collections import defaultdict
 
-from flectra import api, fields, models, _
-from flectra.tools.sql import column_exists, create_column
+from odoo import api, fields, models, _
+from odoo.tools.sql import column_exists, create_column
 
 
 class StockLocationRoute(models.Model):

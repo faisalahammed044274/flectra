@@ -1,4 +1,4 @@
-flectra.define('web.FavoriteMenu', function (require) {
+odoo.define('web.FavoriteMenu', function (require) {
     "use strict";
 
     const Dialog = require('web.OwlDialog');

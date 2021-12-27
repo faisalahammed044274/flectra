@@ -1,12 +1,12 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo. See LICENSE file for full copyright and licensing details.
 
 import socket
 
-from flectra.addons.test_mail.tests.common import TestMailCommon, TestRecipients
-from flectra.tests import tagged
-from flectra.tests.common import users
-from flectra.tools import formataddr
+from odoo.addons.test_mail.tests.common import TestMailCommon, TestRecipients
+from odoo.tests import tagged
+from odoo.tests.common import users
+from odoo.tools import formataddr
 
 
 @tagged('multi_company')

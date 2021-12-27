@@ -1,4 +1,4 @@
-flectra.define('web.kanban_model_tests', function (require) {
+odoo.define('web.kanban_model_tests', function (require) {
 "use strict";
 
 var KanbanModel = require('web.KanbanModel');

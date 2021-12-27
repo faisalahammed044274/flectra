@@ -1,4 +1,4 @@
-flectra.define('mail/static/src/components/follower_subtype/follower_subtype_tests.js', function (require) {
+odoo.define('mail/static/src/components/follower_subtype/follower_subtype_tests.js', function (require) {
 'use strict';
 
 const components = {

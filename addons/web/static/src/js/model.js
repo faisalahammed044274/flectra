@@ -1,4 +1,4 @@
-flectra.define("web/static/src/js/model.js", function (require) {
+odoo.define("web/static/src/js/model.js", function (require) {
     "use strict";
 
     const { groupBy, partitionBy } = require("web.utils");

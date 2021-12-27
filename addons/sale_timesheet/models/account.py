@@ -1,10 +1,10 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo. See LICENSE file for full copyright and licensing details.
 
-from flectra.exceptions import UserError, ValidationError
+from odoo.exceptions import UserError, ValidationError
 
-from flectra import api, fields, models, _
-from flectra.osv import expression
+from odoo import api, fields, models, _
+from odoo.osv import expression
 
 
 class AccountAnalyticLine(models.Model):

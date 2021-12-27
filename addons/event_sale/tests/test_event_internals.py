@@ -1,12 +1,12 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo. See LICENSE file for full copyright and licensing details.
 
 from datetime import date, datetime, timedelta
 from unittest.mock import patch
 
-from flectra.addons.event_sale.tests.common import TestEventSaleCommon
-from flectra.fields import Datetime as FieldsDatetime, Date as FieldsDate
-from flectra.tests.common import users
+from odoo.addons.event_sale.tests.common import TestEventSaleCommon
+from odoo.fields import Datetime as FieldsDatetime, Date as FieldsDate
+from odoo.tests.common import users
 
 
 class TestEventData(TestEventSaleCommon):
@@ -83,7 +83,7 @@ class TestEventTicketData(TestEventSaleCommon):
 
     def setUp(self):
         super(TestEventTicketData, self).setUp()
-        self.ticket_date_patcher = patch('flectra.addons.event.models.event_ticket.fields.Date', wraps=FieldsDate)
+        self.ticket_date_patcher = patch('odoo.addons.event.models.event_ticket.fields.Date', wraps=FieldsDate)
         self.ticket_date_patcher_mock = self.ticket_date_patcher.start()
         self.ticket_date_patcher_mock.context_today.return_value = date(2020, 1, 31)
 

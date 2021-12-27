@@ -1,4 +1,4 @@
-flectra.define('im_livechat/static/src/components/notification_list/notification_list.js', function (require) {
+odoo.define('im_livechat/static/src/components/notification_list/notification_list.js', function (require) {
 'use strict';
 
 const components = {

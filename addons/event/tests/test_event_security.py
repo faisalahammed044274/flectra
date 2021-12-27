@@ -1,19 +1,19 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo. See LICENSE file for full copyright and licensing details.
 
 from datetime import datetime
 from dateutil.relativedelta import relativedelta
 
-from flectra.addons.event.tests.common import TestEventCommon
-from flectra.exceptions import AccessError
-from flectra.tests.common import users
-from flectra.tools import mute_logger
+from odoo.addons.event.tests.common import TestEventCommon
+from odoo.exceptions import AccessError
+from odoo.tests.common import users
+from odoo.tools import mute_logger
 
 
 class TestEventSecurity(TestEventCommon):
 
     @users('user_employee')
-    @mute_logger('flectra.models.unlink', 'flectra.addons.base.models.ir_model')
+    @mute_logger('odoo.models.unlink', 'odoo.addons.base.models.ir_model')
     def test_event_access_employee(self):
         # employee can read events (sure ?)
         event = self.event_0.with_user(self.env.user)
@@ -41,7 +41,7 @@ class TestEventSecurity(TestEventCommon):
             })
 
     @users('user_eventuser')
-    @mute_logger('flectra.models.unlink', 'flectra.addons.base.models.ir_model')
+    @mute_logger('odoo.models.unlink', 'odoo.addons.base.models.ir_model')
     def test_event_access_event_user(self):
         event = self.event_0.with_user(self.env.user)
         event.read(['name', 'user_id', 'kanban_state_label'])
@@ -59,7 +59,7 @@ class TestEventSecurity(TestEventCommon):
             })
 
     @users('user_eventmanager')
-    @mute_logger('flectra.models.unlink', 'flectra.addons.base.models.ir_model')
+    @mute_logger('odoo.models.unlink', 'odoo.addons.base.models.ir_model')
     def test_event_access_event_manager(self):
         # EventManager can do about everything
         event_type = self.env['event.type'].create({

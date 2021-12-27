@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
-from flectra.tests import tagged
-from flectra.addons.payment.tests.common import PaymentAcquirerCommon
+from odoo.tests import tagged
+from odoo.addons.payment.tests.common import PaymentAcquirerCommon
 
 
 @tagged('post_install', '-at_install', '-standard', 'external')

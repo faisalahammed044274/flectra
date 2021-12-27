@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo. See LICENSE file for full copyright and licensing details.
 
-from flectra.addons.account.controllers.portal import PortalAccount
-from flectra.http import request
+from odoo.addons.account.controllers.portal import PortalAccount
+from odoo.http import request
 
 
 class PortalAccount(PortalAccount):

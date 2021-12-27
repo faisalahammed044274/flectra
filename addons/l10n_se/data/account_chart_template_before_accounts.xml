@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<flectra>
+<odoo>
     <data>
         <record id="l10nse_chart_template" model="account.chart.template">
             <field name="name">Swedish Chart of Account</field>
@@ -11,4 +11,4 @@
             <field name="complete_tax_set" eval="True"/>
         </record>
     </data>
-</flectra>
+</odoo>

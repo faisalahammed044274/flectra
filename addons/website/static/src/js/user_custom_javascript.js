@@ -1,12 +1,12 @@
 //
 // This file is meant to regroup your javascript code. You can either copy/past
 // any code that should be executed on each page loading or write your own
-// taking advantage of the Flectra framework to create new behaviors or modify
+// taking advantage of the Odoo framework to create new behaviors or modify
 // existing ones. For example, doing this will greet any visitor with a 'Hello,
 // world !' message in a popup:
 //
 /*
-flectra.define('website.user_custom_code', function (require) {
+odoo.define('website.user_custom_code', function (require) {
 'use strict';
 
 var Dialog = require('web.Dialog');

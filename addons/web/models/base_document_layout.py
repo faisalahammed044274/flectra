@@ -1,9 +1,9 @@
 # -*- coding: utf-8 -*-
 from PIL import Image
 
-from flectra import api, fields, models, tools
+from odoo import api, fields, models, tools
 
-from flectra.modules import get_resource_path
+from odoo.modules import get_resource_path
 
 try:
     import sass as libsass
@@ -253,7 +253,7 @@ class BaseDocumentLayout(models.TransientModel):
     def _compile_scss(self, scss_source):
         """
         This code will compile valid scss into css.
-        Parameters are the same from flectra/addons/base/models/assetsbundle.py
+        Parameters are the same from odoo/addons/base/models/assetsbundle.py
         Simply copied and adapted slightly
         """
 

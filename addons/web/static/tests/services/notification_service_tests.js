@@ -1,4 +1,4 @@
-flectra.define('web.notification_tests', function (require) {
+odoo.define('web.notification_tests', function (require) {
 "use strict";
 
 var AbstractView = require('web.AbstractView');

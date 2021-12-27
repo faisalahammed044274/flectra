@@ -1,4 +1,4 @@
-flectra.define('mail/static/src/components/partner_im_status_icon/partner_im_status_icon_tests.js', function (require) {
+odoo.define('mail/static/src/components/partner_im_status_icon/partner_im_status_icon_tests.js', function (require) {
 'use strict';
 
 const components = {

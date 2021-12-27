@@ -1,11 +1,11 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo. See LICENSE file for full copyright and licensing details.
 
 from ast import literal_eval
 
-from flectra.addons.mass_mailing.tests.common import MassMailCommon
-from flectra.tests.common import users, Form
-from flectra.tools import formataddr, mute_logger
+from odoo.addons.mass_mailing.tests.common import MassMailCommon
+from odoo.tests.common import users, Form
+from odoo.tools import formataddr, mute_logger
 
 class TestMassMailValues(MassMailCommon):
 
@@ -130,7 +130,7 @@ class TestMassMailFeatures(MassMailCommon):
         cls._create_mailing_list()
 
     @users('user_marketing')
-    @mute_logger('flectra.addons.mail.models.mail_mail')
+    @mute_logger('odoo.addons.mail.models.mail_mail')
     def test_channel_blacklisted_recipients(self):
         """ Posting a message on a channel should send one email to all recipients, except the blacklisted ones """
         def _join_channel(channel, partners):
@@ -174,7 +174,7 @@ class TestMassMailFeatures(MassMailCommon):
                     formataddr((test_partner.name, test_partner.email))))
 
     @users('user_marketing')
-    @mute_logger('flectra.addons.mail.models.mail_mail')
+    @mute_logger('odoo.addons.mail.models.mail_mail')
     def test_mailing_deletion(self):
         """ Test deletion in various use case, depending on reply-to """
         # 1- Keep archives and reply-to set to 'answer = new thread'
@@ -247,7 +247,7 @@ class TestMassMailFeatures(MassMailCommon):
         self.assertEqual(len(self.mailing_list_1.contact_ids.message_ids), 3)
 
     @users('user_marketing')
-    @mute_logger('flectra.addons.mail.models.mail_mail')
+    @mute_logger('odoo.addons.mail.models.mail_mail')
     def test_mailing_on_res_partner(self):
         """ Test mailing on res.partner model: ensure default recipients are
         correctly computed """
@@ -279,21 +279,21 @@ class TestMassMailFeatures(MassMailCommon):
         )
 
     @users('user_marketing')
-    @mute_logger('flectra.addons.mail.models.mail_mail')
+    @mute_logger('odoo.addons.mail.models.mail_mail')
     def test_mailing_shortener(self):
         mailing = self.env['mailing.mailing'].create({
             'name': 'TestSource',
             'subject': 'TestShortener',
             'body_html': """<div>
 Hi,
-% set url = "www.flectrahq.com"
-% set httpurl = "https://www.flectra.eu"
-Website0: <a id="url0" href="https://www.flectra.tz/my/${object.name}">https://www.flectra.tz/my/${object.name}</a>
-Website1: <a id="url1" href="https://www.flectra.be">https://www.flectra.be</a>
+% set url = "www.odoo.com"
+% set httpurl = "https://www.odoo.eu"
+Website0: <a id="url0" href="https://www.odoo.tz/my/${object.name}">https://www.odoo.tz/my/${object.name}</a>
+Website1: <a id="url1" href="https://www.odoo.be">https://www.odoo.be</a>
 Website2: <a id="url2" href="https://${url}">https://${url}</a>
 Website3: <a id="url3" href="${httpurl}">${httpurl}</a>
 External1: <a id="url4" href="https://www.example.com/foo/bar?baz=qux">Youpie</a>
-Email: <a id="url5" href="mailto:test@flectrahq.com">test@flectrahq.com</a></div>""",
+Email: <a id="url5" href="mailto:test@odoo.com">test@odoo.com</a></div>""",
             'mailing_model_id': self.env['ir.model']._get('mailing.list').id,
             'reply_to_mode': 'email',
             'reply_to': self.email_reply_to,
@@ -315,12 +315,12 @@ Email: <a id="url5" href="mailto:test@flectrahq.com">test@flectrahq.com</a></div
 
         for contact in self.mailing_list_1.contact_ids:
             new_mail = self._find_mail_mail_wrecord(contact)
-            for link_info in [('url0', 'https://www.flectra.tz/my/%s' % contact.name, True),
-                              ('url1', 'https://www.flectra.be', True),
-                              ('url2', 'https://www.flectrahq.com', True),
-                              ('url3', 'https://www.flectra.eu', True),
+            for link_info in [('url0', 'https://www.odoo.tz/my/%s' % contact.name, True),
+                              ('url1', 'https://www.odoo.be', True),
+                              ('url2', 'https://www.odoo.com', True),
+                              ('url3', 'https://www.odoo.eu', True),
                               ('url4', 'https://www.example.com/foo/bar?baz=qux', True),
-                              ('url5', 'mailto:test@flectrahq.com', False)]:
+                              ('url5', 'mailto:test@odoo.com', False)]:
                 # TDE FIXME: why going to mail message id ? mail.body_html seems to fail, check
                 link_params = {'utm_medium': 'Email', 'utm_source': mailing.name}
                 if link_info[0] == 'url4':

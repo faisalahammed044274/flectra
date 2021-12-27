@@ -1,4 +1,4 @@
-flectra.define('lunch.test_utils', function (require) {
+odoo.define('lunch.test_utils', function (require) {
 "use strict";
 
 const AbstractStorageService = require('web.AbstractStorageService');

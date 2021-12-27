@@ -1,4 +1,4 @@
-flectra.define('website_mail.follow', function (require) {
+odoo.define('website_mail.follow', function (require) {
 'use strict';
 
 var publicWidget = require('web.public.widget');

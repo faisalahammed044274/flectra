@@ -8,9 +8,9 @@ import requests
 import werkzeug
 from werkzeug import urls
 
-from flectra import http
-from flectra.addons.payment.models.payment_acquirer import ValidationError
-from flectra.http import request
+from odoo import http
+from odoo.addons.payment.models.payment_acquirer import ValidationError
+from odoo.http import request
 
 _logger = logging.getLogger(__name__)
 
@@ -62,7 +62,7 @@ class PaypalController(http.Controller):
             tx = request.env['payment.transaction'].sudo().search([('reference', '=', reference)])
         if not tx:
             # we have seemingly received a notification for a payment that did not come from
-            # flectra, acknowledge it otherwise paypal will keep trying
+            # odoo, acknowledge it otherwise paypal will keep trying
             _logger.warning('received notification for unknown payment reference')
             return False
         paypal_url = tx.acquirer_id.paypal_get_form_action_url()

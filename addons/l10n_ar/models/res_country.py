@@ -1,6 +1,6 @@
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo. See LICENSE file for full copyright and licensing details.
 
-from flectra import fields, models
+from odoo import fields, models
 
 
 class ResCountry(models.Model):

@@ -1,11 +1,11 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo. See LICENSE file for full copyright and licensing details.
 
 from itertools import groupby
 from operator import itemgetter
 from collections import defaultdict
 
-from flectra import _, api, fields, models
+from odoo import _, api, fields, models
 
 
 class StockPackageLevel(models.Model):

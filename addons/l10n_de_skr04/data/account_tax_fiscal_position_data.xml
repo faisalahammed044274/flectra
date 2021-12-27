@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<flectra>
+<odoo>
 
         <record id="tax_eu_19_purchase_skr04" model="account.tax.template">
             <field name="sequence">20</field>
@@ -3419,4 +3419,4 @@
             <field name="tax_ids" eval="[(6, 0, [ref('tax_ust_19_eu_skr04')])]"/>
             <field name="chart_template_id" ref="l10n_chart_de_skr04"/>
         </record>
-</flectra>
+</odoo>

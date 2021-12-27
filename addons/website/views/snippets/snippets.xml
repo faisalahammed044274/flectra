@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<flectra>
+<odoo>
 
 <!-- Snippets menu -->
 <template id="snippets" inherit_id="web_editor.snippets" primary="True" groups="base.group_user">
@@ -1072,7 +1072,7 @@
     <div data-js="ThemeColors" data-selector="theme-colors" data-no-check="true">
         <we-alert class="o_old_color_system_warning d-none">
             It appears your website is still using the old color system of
-            Flectra 13.0 in some places. We made sure it is still working but
+            Odoo 13.0 in some places. We made sure it is still working but
             we recommend you to try to use the new color system, which is
             still customizable.
         </we-alert>
@@ -1222,4 +1222,4 @@
         </we-row>
     </div>
 </template>
-</flectra>
+</odoo>

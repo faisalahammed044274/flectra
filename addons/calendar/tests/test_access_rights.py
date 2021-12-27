@@ -1,10 +1,10 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo. See LICENSE file for full copyright and licensing details.
 
 from datetime import datetime
 
-from flectra.tests.common import SavepointCase, new_test_user
-from flectra.exceptions import AccessError
+from odoo.tests.common import SavepointCase, new_test_user
+from odoo.exceptions import AccessError
 
 
 class TestAccessRights(SavepointCase):

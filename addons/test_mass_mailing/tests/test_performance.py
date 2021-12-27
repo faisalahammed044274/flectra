@@ -1,10 +1,10 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo. See LICENSE file for full copyright and licensing details.
 
-from flectra.addons.mail.tests.common import mail_new_test_user
-from flectra.tests.common import TransactionCase, users, warmup
-from flectra.tests import tagged
-from flectra.tools import mute_logger
+from odoo.addons.mail.tests.common import mail_new_test_user
+from odoo.tests.common import TransactionCase, users, warmup
+from odoo.tests import tagged
+from odoo.tools import mute_logger
 
 
 class TestMassMailPerformanceBase(TransactionCase):
@@ -49,7 +49,7 @@ class TestMassMailPerformance(TestMassMailPerformanceBase):
 
     @users('__system__', 'marketing')
     @warmup
-    @mute_logger('flectra.addons.mail.models.mail_mail', 'flectra.models.unlink', 'flectra.tests')
+    @mute_logger('odoo.addons.mail.models.mail_mail', 'odoo.models.unlink', 'odoo.tests')
     def test_send_mailing(self):
         mailing = self.env['mailing.mailing'].create({
             'name': 'Test',
@@ -89,7 +89,7 @@ class TestMassMailBlPerformance(TestMassMailPerformanceBase):
 
     @users('__system__', 'marketing')
     @warmup
-    @mute_logger('flectra.addons.mail.models.mail_mail', 'flectra.models.unlink', 'flectra.tests')
+    @mute_logger('odoo.addons.mail.models.mail_mail', 'odoo.models.unlink', 'odoo.tests')
     def test_send_mailing_w_bl(self):
         mailing = self.env['mailing.mailing'].create({
             'name': 'Test',

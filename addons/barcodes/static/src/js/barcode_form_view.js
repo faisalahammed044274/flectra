@@ -1,4 +1,4 @@
-flectra.define('barcodes.FormView', function (require) {
+odoo.define('barcodes.FormView', function (require) {
 "use strict";
 
 var BarcodeEvents = require('barcodes.BarcodeEvents'); // handle to trigger barcode on bus
@@ -238,7 +238,7 @@ FormController.include({
      * The barcode is activate when at least one widget trigger_up 'activeBarcode' event
      * with the widget option
      *
-     * @param {FlectraEvent} event
+     * @param {OdooEvent} event
      * @param {string} event.data.name: the current field name
      * @param {string} [event.data.fieldName] optional for x2many sub field
      * @param {boolean} [event.data.notifyChange] optional for x2many sub field

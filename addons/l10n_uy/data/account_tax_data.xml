@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<flectra>
+<odoo>
     <data>
 
         <!-- Account Tax Template -->
@@ -212,4 +212,4 @@
         </record>
 
     </data>
-</flectra> 
+</odoo>

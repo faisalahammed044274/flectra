@@ -1,4 +1,4 @@
-flectra.define('portal.PortalSidebar', function (require) {
+odoo.define('portal.PortalSidebar', function (require) {
 'use strict';
 
 var core = require('web.core');

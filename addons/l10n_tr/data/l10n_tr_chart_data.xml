@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<flectra>
+<odoo>
     <!-- Chart template of l10n_tr -->
     <record id="l10ntr_tek_duzen_hesap" model="account.chart.template">
         <field name="name">Tek Düzen Hesap Planı</field>
@@ -10,4 +10,4 @@
         <field name="currency_id" ref="base.TRY"/>
     </record>
 
-</flectra>
+</odoo>

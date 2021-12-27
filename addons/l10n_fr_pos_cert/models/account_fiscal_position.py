@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
-from flectra import _, models
-from flectra.exceptions import UserError
+from odoo import _, models
+from odoo.exceptions import UserError
 
 
 class AccountFiscalPosition(models.Model):

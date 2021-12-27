@@ -13,11 +13,11 @@ from hashlib import sha256
 
 from werkzeug import urls
 
-from flectra import models, fields, api
-from flectra.tools.float_utils import float_compare
-from flectra.tools.translate import _
-from flectra.addons.payment.models.payment_acquirer import ValidationError
-from flectra.addons.payment_sips.controllers.main import SipsController
+from odoo import models, fields, api
+from odoo.tools.float_utils import float_compare
+from odoo.tools.translate import _
+from odoo.addons.payment.models.payment_acquirer import ValidationError
+from odoo.addons.payment_sips.controllers.main import SipsController
 
 from .const import SIPS_SUPPORTED_CURRENCIES
 
@@ -161,7 +161,7 @@ class TxSips(models.Model):
                 # dateutil.parser 2.5.3 and up should handle dates formatted as
                 # '2020-04-08T05:54:18+02:00', which strptime does not
                 # (+02:00 does not work as %z expects +0200 before Python 3.7)
-                # See flectra/flectra#49160
+                # See odoo/odoo#49160
                 date = parser.parse(date).astimezone(pytz.utc).replace(tzinfo=None)
             except:
                 # fallback on now to avoid failing to register the payment

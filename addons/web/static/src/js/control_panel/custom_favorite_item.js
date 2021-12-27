@@ -1,4 +1,4 @@
-flectra.define('web.CustomFavoriteItem', function (require) {
+odoo.define('web.CustomFavoriteItem', function (require) {
     "use strict";
 
     const DropdownMenuItem = require('web.DropdownMenuItem');

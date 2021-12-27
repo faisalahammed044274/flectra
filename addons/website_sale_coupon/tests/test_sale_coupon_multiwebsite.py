@@ -1,9 +1,9 @@
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo. See LICENSE file for full copyright and licensing details.
 
-from flectra.addons.sale_coupon.tests.test_program_numbers import TestSaleCouponProgramNumbers
-from flectra.addons.website.tools import MockRequest
-from flectra.exceptions import UserError
-from flectra.tests import tagged
+from odoo.addons.sale_coupon.tests.test_program_numbers import TestSaleCouponProgramNumbers
+from odoo.addons.website.tools import MockRequest
+from odoo.exceptions import UserError
+from odoo.tests import tagged
 
 
 @tagged('-at_install', 'post_install')

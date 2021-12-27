@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo. See LICENSE file for full copyright and licensing details.
 
 import logging
 import time
@@ -7,17 +7,17 @@ import time
 import lxml.html
 from werkzeug import urls
 
-import flectra
+import odoo
 import re
 
-from flectra.addons.base.tests.common import HttpCaseWithUserDemo
+from odoo.addons.base.tests.common import HttpCaseWithUserDemo
 
 _logger = logging.getLogger(__name__)
 
 
-@flectra.tests.common.tagged('post_install', '-at_install', 'crawl')
+@odoo.tests.common.tagged('post_install', '-at_install', 'crawl')
 class Crawler(HttpCaseWithUserDemo):
-    """ Test suite crawling an Flectra CMS instance and checking that all
+    """ Test suite crawling an Odoo CMS instance and checking that all
     internal links lead to a 200 response.
 
     If a username and a password are provided, authenticates the user before

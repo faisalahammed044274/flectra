@@ -1,9 +1,9 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo. See LICENSE file for full copyright and licensing details.
 
-from flectra import tests
-from flectra.addons.hr_holidays.tests.common import TestHrHolidaysCommon
-from flectra.exceptions import AccessError, UserError
+from odoo import tests
+from odoo.addons.hr_holidays.tests.common import TestHrHolidaysCommon
+from odoo.exceptions import AccessError, UserError
 
 
 @tests.tagged('access_rights', 'post_install', '-at_install')

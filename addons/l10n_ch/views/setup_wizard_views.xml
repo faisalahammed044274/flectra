@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<flectra>
+<odoo>
     <data>
         <record id="setup_bank_account_wizard_inherit" model="ir.ui.view">
             <field name="name">account.setup.bank.manual.config.form.ch.inherit</field>
@@ -15,4 +15,4 @@
             </field>
         </record>
     </data>
-</flectra>
+</odoo>

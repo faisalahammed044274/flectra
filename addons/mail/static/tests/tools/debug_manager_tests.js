@@ -1,4 +1,4 @@
-flectra.define('mail.debugManagerTests', function (require) {
+odoo.define('mail.debugManagerTests', function (require) {
 "use strict";
 
 var testUtils = require('web.test_utils');

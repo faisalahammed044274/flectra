@@ -1,10 +1,10 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo. See LICENSE file for full copyright and licensing details.
 
 from collections import defaultdict
-from flectra import api, fields, models, _
-from flectra.osv import expression
-from flectra.exceptions import ValidationError
+from odoo import api, fields, models, _
+from odoo.osv import expression
+from odoo.exceptions import ValidationError
 
 
 class AccountAnalyticDistribution(models.Model):
@@ -162,7 +162,7 @@ class AccountAnalyticAccount(models.Model):
             domain = []
         else:
             # `partner_id` is in auto_join and the searches using ORs with auto_join fields doesn't work
-            # we have to cut the search in two searches ... https://github.com/flectra/flectra/issues/25175
+            # we have to cut the search in two searches ... https://github.com/odoo/odoo/issues/25175
             partner_ids = self.env['res.partner']._search([('name', operator, name)], limit=limit, access_rights_uid=name_get_uid)
             domain = ['|', '|', ('code', operator, name), ('name', operator, name), ('partner_id', 'in', partner_ids)]
         return self._search(expression.AND([domain, args]), limit=limit, access_rights_uid=name_get_uid)

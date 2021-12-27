@@ -1,4 +1,4 @@
-flectra.define('website.editor', function (require) {
+odoo.define('website.editor', function (require) {
 'use strict';
 
 var weWidgets = require('web_editor.widget');

@@ -1,15 +1,15 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo. See LICENSE file for full copyright and licensing details.
 
 import json
 import pytz
 
-from flectra import http
-from flectra.addons.http_routing.models.ir_http import url_for
-from flectra.http import request
-from flectra.modules.module import get_module_resource
-from flectra.tools import ustr
-from flectra.tools.translate import _
+from odoo import http
+from odoo.addons.http_routing.models.ir_http import url_for
+from odoo.http import request
+from odoo.modules.module import get_module_resource
+from odoo.tools import ustr
+from odoo.tools.translate import _
 
 
 class TrackManifest(http.Controller):
@@ -29,7 +29,7 @@ class TrackManifest(http.Controller):
             'start_url': url_for('/event'),
             'display': 'standalone',
             'background_color': '#ffffff',
-            'theme_color': '#009EFB',
+            'theme_color': '#875A7B',
         }
         icon_sizes = ['192x192', '512x512']
         manifest['icons'] = [{
@@ -54,7 +54,7 @@ class TrackManifest(http.Controller):
         if request.website.cdn_activated:
             cdn_url = request.website.cdn_url.replace('"','%22').replace('\x5c','%5C')
             js_cdn_url = '"%s"' % cdn_url
-        body = body.replace('__FLECTRA_CDN_URL__', js_cdn_url)
+        body = body.replace('__ODOO_CDN_URL__', js_cdn_url)
         response = request.make_response(body, [
             ('Content-Type', 'text/javascript'),
             ('Service-Worker-Allowed', url_for('/event')),

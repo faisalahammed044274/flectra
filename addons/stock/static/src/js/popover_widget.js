@@ -1,4 +1,4 @@
-flectra.define('stock.popover_widget', function (require) {
+odoo.define('stock.popover_widget', function (require) {
 'use strict';
 
 var AbstractField = require('web.AbstractField');

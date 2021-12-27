@@ -1,4 +1,4 @@
-flectra.define('stock.StockOrderpointListController', function (require) {
+odoo.define('stock.StockOrderpointListController', function (require) {
 "use strict";
 
 var core = require('web.core');

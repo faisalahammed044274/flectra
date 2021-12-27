@@ -2,8 +2,8 @@
 
 import re
 
-from flectra import api, fields, models, _
-from flectra.exceptions import UserError, ValidationError
+from odoo import api, fields, models, _
+from odoo.exceptions import UserError, ValidationError
 
 
 def normalize_iban(iban):

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<flectra>
+<odoo>
         <!-- Chart template -->
         <record id="l10nbe_chart_template" model="account.chart.template">
             <field name="name">Belgian PCMN</field>
@@ -9,4 +9,4 @@
             <field name="currency_id" ref="base.EUR"/>
             <field name="spoken_languages" eval="'nl_BE;nl_NL;fr_FR;fr_BE;de_DE'"/>
         </record>
-</flectra>
+</odoo>

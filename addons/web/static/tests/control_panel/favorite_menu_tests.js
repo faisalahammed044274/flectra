@@ -1,4 +1,4 @@
-flectra.define('web.favorite_menu_tests', function (require) {
+odoo.define('web.favorite_menu_tests', function (require) {
     "use strict";
 
     const FormView = require('web.FormView');

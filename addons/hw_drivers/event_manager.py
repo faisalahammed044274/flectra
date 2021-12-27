@@ -1,11 +1,11 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo. See LICENSE file for full copyright and licensing details.
 
 import json
 from threading import Event
 import time
 
-from flectra.http import request
+from odoo.http import request
 
 class EventManager(object):
     def __init__(self):

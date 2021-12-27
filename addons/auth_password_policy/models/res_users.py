@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
-from flectra import api, models, _
-from flectra.exceptions import UserError
+from odoo import api, models, _
+from odoo.exceptions import UserError
 
 
 class ResUsers(models.Model):

@@ -3,9 +3,9 @@ import pprint
 import logging
 from werkzeug import urls, utils
 
-from flectra import http, _
-from flectra.http import request
-from flectra.exceptions import ValidationError, UserError
+from odoo import http, _
+from odoo.http import request
+from odoo.exceptions import ValidationError, UserError
 
 _logger = logging.getLogger(__name__)
 

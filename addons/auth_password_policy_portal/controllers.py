@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
-from flectra.http import request
-from flectra.addons.portal.controllers.portal import CustomerPortal
+from odoo.http import request
+from odoo.addons.portal.controllers.portal import CustomerPortal
 
 class CustomerPortalPasswordPolicy(CustomerPortal):
     def _prepare_portal_layout_values(self):

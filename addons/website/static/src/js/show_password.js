@@ -4,7 +4,7 @@
 // On mouse down, we see the password in clear text
 // On mouse up, we hide it again.
 //
-flectra.define('website.show_password', function (require) {
+odoo.define('website.show_password', function (require) {
 'use strict';
 
 var publicWidget = require('web.public.widget');

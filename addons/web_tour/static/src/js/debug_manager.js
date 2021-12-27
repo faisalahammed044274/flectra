@@ -1,4 +1,4 @@
-flectra.define('web_tour.DebugManager.Backend', function (require) {
+odoo.define('web_tour.DebugManager.Backend', function (require) {
 "use strict";
 
 var core = require("web.core");

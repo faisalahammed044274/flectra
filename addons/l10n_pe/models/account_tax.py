@@ -1,5 +1,5 @@
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
-from flectra import fields, models
+# Part of Odoo. See LICENSE file for full copyright and licensing details.
+from odoo import fields, models
 
 
 class AccountTax(models.Model):

@@ -1,4 +1,4 @@
-flectra.define('project.project_rating_reporting', function (require) {
+odoo.define('project.project_rating_reporting', function (require) {
 'use strict';
 
 const core = require('web.core');

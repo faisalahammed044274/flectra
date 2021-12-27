@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<flectra>
+<odoo>
 
 <template name="Badge" id="s_badge">
     <span class="s_badge badge badge-secondary o_animable" data-name="Badge">
@@ -29,4 +29,4 @@
     </xpath>
 </template>
 
-</flectra>
+</odoo>

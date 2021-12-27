@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<flectra>
+<odoo>
 
     <record id="tax_report" model="account.tax.report">
         <field name="name">Tax Report</field>
@@ -101,4 +101,4 @@
         <field name="parent_id" ref="account_tax_report_line_ec_exd_vat"/>
     </record>
 
-</flectra> 
+</odoo>

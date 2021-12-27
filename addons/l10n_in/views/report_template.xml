@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<flectra>
+<odoo>
     <!-- get vat from journal_id for all layout -->
     <template id="l10n_in_external_layout" inherit_id="web.external_layout">
         <xpath expr="//t[@t-if='company.external_report_layout_id']" position="before">
@@ -35,4 +35,4 @@
             <li t-if="vat or company.vat" class="list-inline-item"><i class="fa fa-building-o" role="img" aria-label="Fiscal number"/><t t-esc="company.country_id.vat_label or 'Tax ID'"/>: <span t-esc="vat or company.vat"/></li>
         </xpath>
     </template>
-</flectra> 
+</odoo>

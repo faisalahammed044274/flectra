@@ -1,10 +1,10 @@
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo. See LICENSE file for full copyright and licensing details.
 
 import base64
 
-from flectra.addons.base.tests.common import HttpCaseWithUserDemo, HttpCaseWithUserPortal
-from flectra.modules.module import get_module_resource
-from flectra.tests import tagged
+from odoo.addons.base.tests.common import HttpCaseWithUserDemo, HttpCaseWithUserPortal
+from odoo.modules.module import get_module_resource
+from odoo.tests import tagged
 
 @tagged('post_install', '-at_install')
 class TestUi(HttpCaseWithUserDemo, HttpCaseWithUserPortal):

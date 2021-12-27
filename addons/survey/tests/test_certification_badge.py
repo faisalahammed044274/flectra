@@ -1,10 +1,10 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo. See LICENSE file for full copyright and licensing details.
 
-from flectra.addons.survey.tests import common
+from odoo.addons.survey.tests import common
 from psycopg2 import IntegrityError
-from flectra.exceptions import AccessError
-from flectra.tools import mute_logger
+from odoo.exceptions import AccessError
+from odoo.tools import mute_logger
 
 
 class TestCertificationBadge(common.TestSurveyCommon):
@@ -66,7 +66,7 @@ class TestCertificationBadge(common.TestSurveyCommon):
         self.assertTrue(self.certification_badge.active)
 
     def test_give_badge_without_badge(self):
-        with mute_logger('flectra.sql_db'):
+        with mute_logger('odoo.sql_db'):
             with self.assertRaises(IntegrityError):
                 self.certification_survey.write({'certification_give_badge': True})
                 self.certification_survey.flush(['certification_give_badge'])
@@ -76,7 +76,7 @@ class TestCertificationBadge(common.TestSurveyCommon):
             'certification_give_badge': True,
             'certification_badge_id': self.certification_badge.id
         })
-        with mute_logger('flectra.sql_db'):
+        with mute_logger('odoo.sql_db'):
             with self.assertRaises(IntegrityError):
                 self.certification_survey.write({'certification_badge_id': None})
                 self.certification_survey.flush(['certification_badge_id'])
@@ -94,7 +94,7 @@ class TestCertificationBadge(common.TestSurveyCommon):
             self.certification_survey.id,
             self.certification_survey_2.id
         ])
-        with mute_logger('flectra.sql_db'):
+        with mute_logger('odoo.sql_db'):
             with self.assertRaises(IntegrityError):
                 surveys.write({'certification_badge_id': None})
                 surveys.flush(['certification_badge_id'])
@@ -105,7 +105,7 @@ class TestCertificationBadge(common.TestSurveyCommon):
             'certification_badge_id': self.certification_badge.id
         })
         # set the same badge on another survey should fail:
-        with mute_logger('flectra.sql_db'):
+        with mute_logger('odoo.sql_db'):
             with self.assertRaises(IntegrityError):
                 self.certification_survey_2.write({
                     'certification_give_badge': True,

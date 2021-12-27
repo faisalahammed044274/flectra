@@ -1,12 +1,12 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo. See LICENSE file for full copyright and licensing details.
 
 import re
 from dateutil.relativedelta import relativedelta
 
-from flectra import api, fields, models
+from odoo import api, fields, models
 
-from flectra.addons.google_calendar.utils.google_calendar import GoogleCalendarService
+from odoo.addons.google_calendar.utils.google_calendar import GoogleCalendarService
 
 
 class RecurrenceRule(models.Model):
@@ -74,12 +74,12 @@ class RecurrenceRule(models.Model):
 
     def _write_from_google(self, gevent, vals):
         current_rrule = self.rrule
-        # event_tz is written on event in Google but on recurrence in Flectra
+        # event_tz is written on event in Google but on recurrence in Odoo
         vals['event_tz'] = gevent.start.get('timeZone')
         super()._write_from_google(gevent, vals)
 
         base_event_time_fields = ['start', 'stop', 'allday']
-        new_event_values = self.env["calendar.event"]._flectra_values(gevent)
+        new_event_values = self.env["calendar.event"]._odoo_values(gevent)
         old_event_values = self.base_event_id and self.base_event_id.read(base_event_time_fields)[0]
         if old_event_values and any(new_event_values[key] != old_event_values[key] for key in base_event_time_fields):
             # we need to recreate the recurrence, time_fields were modified.
@@ -116,10 +116,10 @@ class RecurrenceRule(models.Model):
     def _create_from_google(self, gevents, vals_list):
         for gevent, vals in zip(gevents, vals_list):
             base_values = dict(
-                self.env['calendar.event']._flectra_values(gevent),  # FIXME default reminders
+                self.env['calendar.event']._odoo_values(gevent),  # FIXME default reminders
                 need_sync=False,
             )
-            # If we convert a single event into a recurrency on Google, we should reuse this event on Flectra
+            # If we convert a single event into a recurrency on Google, we should reuse this event on Odoo
             # Google reuse the event google_id to identify the recurrence in that case
             base_event = self.env['calendar.event'].search([('google_id', '=', vals['google_id'])])
             if not base_event:
@@ -130,7 +130,7 @@ class RecurrenceRule(models.Model):
                 base_event.write(dict(base_values, google_id=False))
             vals['base_event_id'] = base_event.id
             vals['calendar_event_ids'] = [(4, base_event.id)]
-            # event_tz is written on event in Google but on recurrence in Flectra
+            # event_tz is written on event in Google but on recurrence in Odoo
             vals['event_tz'] = gevent.start.get('timeZone')
         recurrence = super(RecurrenceRule, self.with_context(dont_notify=True))._create_from_google(gevents, vals_list)
         recurrence.with_context(dont_notify=True)._apply_recurrence()
@@ -142,7 +142,7 @@ class RecurrenceRule(models.Model):
         return [('calendar_event_ids.user_id', '=', self.env.user.id)]
 
     @api.model
-    def _flectra_values(self, google_recurrence, default_reminders=()):
+    def _odoo_values(self, google_recurrence, default_reminders=()):
         return {
             'rrule': google_recurrence.rrule,
             'google_id': google_recurrence.id,
@@ -171,7 +171,7 @@ class RecurrenceRule(models.Model):
         property_location = 'shared' if event.user_id else 'private'
         values['extendedProperties'] = {
             property_location: {
-                '%s_flectra_id' % self.env.cr.dbname: self.id,
+                '%s_odoo_id' % self.env.cr.dbname: self.id,
             },
         }
         return values

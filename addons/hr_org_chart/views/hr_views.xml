@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<flectra>
+<odoo>
     <record id="hr_employee_view_form_inherit_org_chart" model="ir.ui.view">
         <field name="name">hr.employee.view.form.inherit.org_chart</field>
         <field name="model">hr.employee</field>
@@ -8,7 +8,7 @@
             <div id="o_work_employee_main" position="after">
                 <div id="o_employee_right">
                     <h4 class="o_org_chart_title mb16 mt0">Organization Chart</h4>
-                    <field name="child_ids" widget="hr_org_chart"/>
+                    <field name="child_ids" widget="hr_org_chart" readonly="1"/>
                 </div>
             </div>
         </field>
@@ -22,7 +22,7 @@
             <xpath expr="//div[@id='o_work_employee_main']" position="after">
                 <div id="o_employee_right">
                     <h4 class="o_org_chart_title mb16 mt0">Organization Chart</h4>
-                    <field name="child_ids" widget="hr_org_chart"/>
+                    <field name="child_ids" widget="hr_org_chart" readonly="1"/>
                 </div>
             </xpath>
         </field>
@@ -42,4 +42,4 @@
             </div>
         </field>
     </record>
-</flectra>
+</odoo>

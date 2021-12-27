@@ -1,4 +1,4 @@
-flectra.define('sale_timesheet.project_overview', function (require) {
+odoo.define('sale_timesheet.project_overview', function (require) {
     "use strict";
 
     var qweb = require('web.qweb');

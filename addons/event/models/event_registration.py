@@ -1,11 +1,11 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo. See LICENSE file for full copyright and licensing details.
 
 from dateutil.relativedelta import relativedelta
 
-from flectra import _, api, fields, models, SUPERUSER_ID
-from flectra.tools import format_datetime
-from flectra.exceptions import AccessError, ValidationError
+from odoo import _, api, fields, models, SUPERUSER_ID
+from odoo.tools import format_datetime
+from odoo.exceptions import AccessError, ValidationError
 
 
 class EventRegistration(models.Model):

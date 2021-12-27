@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<flectra>
+<odoo>
     <template id="http_error">
         <t t-call="web.frontend_layout">
             <div id="wrap">
@@ -181,4 +181,4 @@
             </body>
         </html>
     </template>
-</flectra>
+</odoo>

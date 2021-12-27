@@ -1,12 +1,12 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo. See LICENSE file for full copyright and licensing details.
 from datetime import datetime, timedelta
 
-from flectra import fields
-from flectra.tests import Form
-from flectra.addons.mrp.tests.common import TestMrpCommon
-from flectra.exceptions import UserError
-from flectra.tools import mute_logger
+from odoo import fields
+from odoo.tests import Form
+from odoo.addons.mrp.tests.common import TestMrpCommon
+from odoo.exceptions import UserError
+from odoo.tools import mute_logger
 
 
 class TestProcurement(TestMrpCommon):
@@ -206,7 +206,7 @@ class TestProcurement(TestMrpCommon):
             'product_max_qty': 200,
         })
 
-        with mute_logger('flectra.addons.stock.models.procurement'):
+        with mute_logger('odoo.addons.stock.models.procurement'):
             self.env['procurement.group'].run_scheduler()
 
         production_A = self.env['mrp.production'].search([

@@ -1,5 +1,5 @@
 <?xml version="1.0" ?>
-<flectra>
+<odoo>
     <data noupdate="1">
         <record id="sms_template_data_hr_presence" model="sms.template">
             <field name="name">Employee: Presence Reminder</field>
@@ -9,4 +9,4 @@ Please, take appropriate measures in order to carry out this work absence.
 Do not hesitate to contact your manager or the human resource department.</field>
         </record>
     </data>
-</flectra>
+</odoo>

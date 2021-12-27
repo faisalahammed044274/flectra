@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<flectra>
+<odoo>
 
     <record id="mail_activity_view_form_popup" model="ir.ui.view">
         <field name="name">mail.activity.form.inherit.calendar</field>
@@ -34,4 +34,4 @@
         </field>
     </record>
 
-</flectra>
+</odoo>

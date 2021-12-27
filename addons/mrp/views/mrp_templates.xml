@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<flectra>
+<odoo>
     <template id="assets_backend" name="mrp assets" inherit_id="web.assets_backend">
         <xpath expr="." position="inside">
             <link rel="stylesheet" type="text/scss" href="/mrp/static/src/scss/mrp_workorder_kanban.scss" />
@@ -66,4 +66,4 @@
         </div>
     </template>
 
-</flectra>
+</odoo>

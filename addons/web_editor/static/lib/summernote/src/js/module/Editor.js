@@ -28,10 +28,10 @@ define([
     var typing = new Typing();
     var bullet = new Bullet();
 
-    this.style = style;   // FLECTRA: allow access for override
-    this.table = table;   // FLECTRA: allow access for override
-    this.typing = typing; // FLECTRA: allow access for override
-    this.bullet = bullet; // FLECTRA: allow access for override
+    this.style = style;   // ODOO: allow access for override
+    this.table = table;   // ODOO: allow access for override
+    this.typing = typing; // ODOO: allow access for override
+    this.bullet = bullet; // ODOO: allow access for override
 
     /**
      * @method createRange
@@ -55,13 +55,13 @@ define([
      * @param {Boolean} [thenCollapse=false]
      */
     this.saveRange = function ($editable, thenCollapse) {
-      // FLECTRA: scroll to top when click on input in editable m (start_modification
+      // ODOO: scroll to top when click on input in editable m (start_modification
       // this.focus($editable);
       var r = range.create();
       if (!r || ($editable[0] !== r.sc && !$.contains($editable[0], r.sc))) {
         $editable.focus();
       }
-      // FLECTRA: end_modication)
+      // ODOO: end_modication)
       $editable.data('range', range.create());
       if (thenCollapse) {
         range.create().collapse().select();
@@ -631,7 +631,7 @@ define([
       }
 
       var anchors = [];
-      // FLECTRA: adding this branch to modify existing anchor if it fully contains the range
+      // ODOO: adding this branch to modify existing anchor if it fully contains the range
       var ancestor_anchor = dom.ancestor(rng.sc, pred);
       if (ancestor_anchor && ancestor_anchor === dom.ancestor(rng.ec, pred)) {
           anchors.push($(ancestor_anchor).html(linkText).get(0));
@@ -651,8 +651,8 @@ define([
         if (!linkInfo.isButton) {
           $(anchor).attr('href', linkUrl);
         }
-        $(anchor).attr('class', linkInfo.className || null); // FLECTRA: addition
-        $(anchor).css(linkInfo.style || {}); // FLECTRA: addition
+        $(anchor).attr('class', linkInfo.className || null); // ODOO: addition
+        $(anchor).css(linkInfo.style || {}); // ODOO: addition
         if (isNewWindow) {
           $(anchor).attr('target', '_blank');
         } else {
@@ -687,7 +687,7 @@ define([
      * @return {String} [return.url=""]
      */
     this.getLinkInfo = function ($editable) {
-      // FLECTRA MODIFICATION START
+      // ODOO MODIFICATION START
       var selection;
       var currentSelection = null;
       if (document.getSelection) {
@@ -696,11 +696,11 @@ define([
           currentSelection = selection.getRangeAt(0);
         }
       }
-      // FLECTRA MODIFICATION END
+      // ODOO MODIFICATION END
 
       this.focus($editable);
 
-      // FLECTRA MODIFICATION START
+      // ODOO MODIFICATION START
       if (currentSelection && document.getSelection) {
         selection = document.getSelection();
         if (!selection || selection.rangeCount === 0) {
@@ -708,7 +708,7 @@ define([
           selection.addRange(currentSelection);
         }
       }
-      // FLECTRA MODIFICATION END
+      // ODOO MODIFICATION END
 
       var rng = range.create().expand(dom.isAnchor);
 

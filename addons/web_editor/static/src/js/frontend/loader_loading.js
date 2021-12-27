@@ -5,7 +5,7 @@
  * This file makes sure textarea elements with a specific editor class are
  * tweaked as soon as the DOM is ready so that they appear to be loading.
  *
- * They must then be loaded using standard Flectra modules system. In particular,
+ * They must then be loaded using standard Odoo modules system. In particular,
  * @see web_editor.loader
  */
 

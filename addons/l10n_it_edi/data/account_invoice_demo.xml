@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<flectra>
+<odoo>
     <data noupdate="1">
         <!-- add VAT, codice fiscal and tax system for main company -->
         <record id="l10n_it.demo_company_it" model="res.company">
@@ -30,4 +30,4 @@
         </record>
 
     </data>
-</flectra>
+</odoo>

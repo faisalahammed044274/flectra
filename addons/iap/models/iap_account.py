@@ -1,16 +1,16 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo. See LICENSE file for full copyright and licensing details.
 
 import logging
 import uuid
 import werkzeug.urls
 
-from flectra import api, fields, models
-from flectra.addons.iap.tools import iap_tools
+from odoo import api, fields, models
+from odoo.addons.iap.tools import iap_tools
 
 _logger = logging.getLogger(__name__)
 
-DEFAULT_ENDPOINT = 'https://iap.flectrahq.com'
+DEFAULT_ENDPOINT = 'https://iap.odoo.com'
 
 
 class IapAccount(models.Model):

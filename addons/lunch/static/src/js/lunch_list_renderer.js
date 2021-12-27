@@ -1,4 +1,4 @@
-flectra.define('lunch.LunchListRenderer', function (require) {
+odoo.define('lunch.LunchListRenderer', function (require) {
 "use strict";
 
 /**

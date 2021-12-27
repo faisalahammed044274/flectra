@@ -1,4 +1,4 @@
-flectra.define('hr_holidays.LeaveStatsWidget', function (require) {
+odoo.define('hr_holidays.LeaveStatsWidget', function (require) {
     "use strict";
 
     var time = require('web.time');

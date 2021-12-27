@@ -1,16 +1,16 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo. See LICENSE file for full copyright and licensing details.
 
 import math
 import pytz
 
 from datetime import datetime, time
 
-from flectra import api, fields, models
-from flectra.osv import expression
-from flectra.tools import float_round
+from odoo import api, fields, models
+from odoo.osv import expression
+from odoo.tools import float_round
 
-from flectra.addons.base.models.res_partner import _tz_get
+from odoo.addons.base.models.res_partner import _tz_get
 
 
 WEEKDAY_TO_NAME = ['monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday', 'sunday']

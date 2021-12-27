@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<flectra>
+<odoo>
     <!--
         Rating widget static: show 5 stars (full or empty) regarding the given rating_avg and rating_count
     -->
@@ -51,4 +51,4 @@
             t-att-data-link_btn_classes="_link_btn_classes">
         </div>
     </template>
-</flectra>
+</odoo>

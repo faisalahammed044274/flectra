@@ -1,4 +1,4 @@
-<flectra>
+<odoo>
 
     <record model="ir.actions.act_window" id="action_hr_job_new_application">
         <field name="name">New Application</field>
@@ -123,4 +123,4 @@
         </field>
     </record>
     <menuitem name="By Job Positions" parent="menu_crm_case_categ0_act_job" id="menu_hr_job_position" action="action_hr_job" sequence="1"/>
-</flectra>
+</odoo>

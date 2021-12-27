@@ -1,4 +1,4 @@
-flectra.define('web.menu_tests', function (require) {
+odoo.define('web.menu_tests', function (require) {
     "use strict";
 
     const testUtils = require('web.test_utils');

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<flectra>
+<odoo>
 
 <!-- This contains the tour assets. They are included during testing. -->
 <template id="assets_tests" name="Point Of Sale Assets Tests" inherit_id="web.assets_tests">
@@ -31,7 +31,7 @@
 <template id="point_of_sale.index" name="POS Index">&lt;!DOCTYPE html&gt;
 <html>
     <head>
-        <title>Flectra POS</title>
+        <title>Odoo POS</title>
 
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
         <meta http-equiv="content-type" content="text/html, charset=utf-8" />
@@ -52,7 +52,7 @@
         <link rel="shortcut icon" href="/web/static/src/img/favicon.ico" type="image/x-icon"/>
 
         <script type="text/javascript">
-            var flectra = <t t-raw="json.dumps({
+            var odoo = <t t-raw="json.dumps({
                 'csrf_token': request.csrf_token(None),
                 'session_info': session_info,
                 'login_number': login_number,
@@ -69,4 +69,4 @@
 </html>
 </template>
 
-</flectra>
+</odoo>

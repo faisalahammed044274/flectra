@@ -1,9 +1,9 @@
 # -*- coding: utf-8 -*-
 
-from flectra.addons.stock.tests.common2 import TestStockCommon
-from flectra.tests import Form
-from flectra.exceptions import AccessError
-from flectra.tools import mute_logger
+from odoo.addons.stock.tests.common2 import TestStockCommon
+from odoo.tests import Form
+from odoo.exceptions import AccessError
+from odoo.tools import mute_logger
 
 
 class TestWarehouse(TestStockCommon):

@@ -1,4 +1,4 @@
-flectra.define('pos_restaurant.PosResPaymentScreen', function (require) {
+odoo.define('pos_restaurant.PosResPaymentScreen', function (require) {
     'use strict';
 
     const PaymentScreen = require('point_of_sale.PaymentScreen');

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<flectra>
+<odoo>
 
 <template id="track_edit_options" inherit_id="website.user_navbar" name="Edit Track Options">
     <xpath expr="//li[@id='edit-page-menu']" position="after">
@@ -7,4 +7,4 @@
     </xpath>
 </template>
 
-</flectra>
+</odoo>

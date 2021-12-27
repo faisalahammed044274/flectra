@@ -1,4 +1,4 @@
-flectra.define('web.SessionStorageService', function (require) {
+odoo.define('web.SessionStorageService', function (require) {
 'use strict';
 
 /**

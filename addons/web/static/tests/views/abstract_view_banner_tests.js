@@ -1,4 +1,4 @@
-flectra.define('web.abstract_view_banner_tests', function (require) {
+odoo.define('web.abstract_view_banner_tests', function (require) {
 "use strict";
 
 var AbstractRenderer = require('web.AbstractRenderer');

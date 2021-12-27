@@ -1,17 +1,17 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo. See LICENSE file for full copyright and licensing details.
 
 import base64
 from collections import OrderedDict
 from datetime import datetime
 
-from flectra import http
-from flectra.exceptions import AccessError, MissingError
-from flectra.http import request, Response
-from flectra.tools import image_process
-from flectra.tools.translate import _
-from flectra.addons.portal.controllers.portal import pager as portal_pager, CustomerPortal
-from flectra.addons.web.controllers.main import Binary
+from odoo import http
+from odoo.exceptions import AccessError, MissingError
+from odoo.http import request, Response
+from odoo.tools import image_process
+from odoo.tools.translate import _
+from odoo.addons.portal.controllers.portal import pager as portal_pager, CustomerPortal
+from odoo.addons.web.controllers.main import Binary
 
 
 class CustomerPortal(CustomerPortal):

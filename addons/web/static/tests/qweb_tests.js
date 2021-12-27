@@ -1,4 +1,4 @@
-flectra.define('web.qweb_tests', function (require) {
+odoo.define('web.qweb_tests', function (require) {
 "use strict";
 
 var qwebPath = '/web/static/lib/qweb/';

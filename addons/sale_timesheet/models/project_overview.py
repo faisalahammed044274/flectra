@@ -4,12 +4,12 @@ from dateutil.relativedelta import relativedelta
 import itertools
 import json
 
-from flectra import fields, _, models
-from flectra.osv import expression
-from flectra.tools import float_round
-from flectra.tools.misc import get_lang
+from odoo import fields, _, models
+from odoo.osv import expression
+from odoo.tools import float_round
+from odoo.tools.misc import get_lang
 
-from flectra.addons.web.controllers.main import clean_action
+from odoo.addons.web.controllers.main import clean_action
 from datetime import date
 
 DEFAULT_MONTH_RANGE = 3

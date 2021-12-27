@@ -1,4 +1,4 @@
-flectra.define('website.seo', function (require) {
+odoo.define('website.seo', function (require) {
 'use strict';
 
 var core = require('web.core');
@@ -581,7 +581,7 @@ var MetaImageSelector = Widget.extend({
         this.activeMetaImg = data.metaImg;
         this.serverUrl = data.htmlpage.url();
         const imgField = data.hasSocialDefaultImage ? 'social_default_image' : 'logo';
-        data.pageImages.unshift(_.str.sprintf('/web/image/website/%s/%s', flectra.session_info.website_id, imgField));
+        data.pageImages.unshift(_.str.sprintf('/web/image/website/%s/%s', odoo.session_info.website_id, imgField));
         this.images = _.uniq(data.pageImages);
         this.customImgUrl = _.contains(
             data.pageImages.map((img)=>  new URL(img, window.location.origin).pathname),

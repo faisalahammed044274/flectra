@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<flectra>
+<odoo>
     <data>
         <template id="slide_content_detailed" inherit_id="website_slides.slide_content_detailed">
             <xpath expr="//div[hasclass('o_wslides_lesson_content_type')]" position="inside">
@@ -20,4 +20,4 @@
             </xpath>
         </template>
     </data>
-</flectra>
+</odoo>

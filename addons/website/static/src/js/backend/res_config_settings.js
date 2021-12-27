@@ -1,4 +1,4 @@
-flectra.define('website.settings', function (require) {
+odoo.define('website.settings', function (require) {
 
 const BaseSettingController = require('base.settings').Controller;
 const core = require('web.core');

@@ -1,4 +1,4 @@
-flectra.define('web.Session', function (require) {
+odoo.define('web.Session', function (require) {
 "use strict";
 
 var ajax = require('web.ajax');
@@ -28,7 +28,7 @@ var Session = core.Class.extend(mixins.EventDispatcherMixin, {
         mixins.EventDispatcherMixin.init.call(this);
         this.setParent(parent);
         options = options || {};
-        this.module_list = (options.modules && options.modules.slice()) || (window.flectra._modules && window.flectra._modules.slice()) || [];
+        this.module_list = (options.modules && options.modules.slice()) || (window.odoo._modules && window.odoo._modules.slice()) || [];
         this.server = null;
         this.avoid_recursion = false;
         this.use_cors = options.use_cors || false;
@@ -184,7 +184,7 @@ var Session = core.Class.extend(mixins.EventDispatcherMixin, {
      */
     load_modules: function () {
         var self = this;
-        var modules = flectra._modules;
+        var modules = odoo._modules;
         var all_modules = _.uniq(self.module_list.concat(modules));
         var to_load = _.difference(modules, self.module_list).join(',');
         this.module_list = all_modules;
@@ -275,7 +275,7 @@ var Session = core.Class.extend(mixins.EventDispatcherMixin, {
      * @returns {Promise} promise indicating the session is done reloading
      */
     session_reload: function () {
-        var result = _.extend({}, window.flectra.session_info);
+        var result = _.extend({}, window.odoo.session_info);
         _.extend(this, result);
         return Promise.resolve();
     },

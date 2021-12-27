@@ -1,4 +1,4 @@
-flectra.define('web.Colorpicker', function (require) {
+odoo.define('web.Colorpicker', function (require) {
 'use strict';
 
 var core = require('web.core');

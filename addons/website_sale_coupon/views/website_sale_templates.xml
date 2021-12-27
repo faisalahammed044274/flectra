@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<flectra>
+<odoo>
 
 <template id="assets_tests" name="Website Sale Coupon Assets Tests" inherit_id="web.assets_tests">
     <xpath expr="." position="inside">
@@ -118,4 +118,4 @@
         <attribute name="t-att-style">'display: None;' if free_shipping_lines and line in free_shipping_lines else ''</attribute>
     </xpath>
 </template>
-</flectra>
+</odoo>

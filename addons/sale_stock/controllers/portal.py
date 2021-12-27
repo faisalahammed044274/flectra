@@ -1,10 +1,10 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo. See LICENSE file for full copyright and licensing details.
 
-from flectra import exceptions
-from flectra.addons.sale.controllers.portal import CustomerPortal
-from flectra.http import request, route
-from flectra.tools import consteq
+from odoo import exceptions
+from odoo.addons.sale.controllers.portal import CustomerPortal
+from odoo.http import request, route
+from odoo.tools import consteq
 
 
 class SaleStockPortal(CustomerPortal):

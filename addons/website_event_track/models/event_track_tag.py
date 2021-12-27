@@ -1,9 +1,9 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo. See LICENSE file for full copyright and licensing details.
 
 from random import randint
 
-from flectra import fields, models
+from odoo import fields, models
 
 
 class TrackTag(models.Model):

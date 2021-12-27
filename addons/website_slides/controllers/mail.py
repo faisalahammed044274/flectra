@@ -1,14 +1,14 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo. See LICENSE file for full copyright and licensing details.
 
 import werkzeug
 
 from werkzeug.exceptions import NotFound, Forbidden
 
-from flectra import http
-from flectra.http import request
-from flectra.addons.portal.controllers.mail import _check_special_access, PortalChatter
-from flectra.tools import plaintext2html, html2plaintext
+from odoo import http
+from odoo.http import request
+from odoo.addons.portal.controllers.mail import _check_special_access, PortalChatter
+from odoo.tools import plaintext2html, html2plaintext
 
 
 class SlidesPortalChatter(PortalChatter):

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<flectra>
+<odoo>
     <template id="assets_backend" name="im assets" inherit_id="web.assets_backend">
         <xpath expr="." position="inside">
             <script type="text/javascript" src="/bus/static/src/js/longpolling_bus.js"></script>
@@ -27,4 +27,4 @@
             <script type="text/javascript" src="/bus/static/tests/bus_tests_tour.js"></script>
         </xpath>
     </template>
-</flectra>
+</odoo>

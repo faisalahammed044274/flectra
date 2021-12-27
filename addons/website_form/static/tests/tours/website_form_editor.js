@@ -1,4 +1,4 @@
-flectra.define('website_form_editor.tour', function (require) {
+odoo.define('website_form_editor.tour', function (require) {
     'use strict';
 
     const rpc = require('web.rpc');

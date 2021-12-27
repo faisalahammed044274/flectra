@@ -1,4 +1,4 @@
-flectra.define('calendar.systray.ActivityMenu', function (require) {
+odoo.define('calendar.systray.ActivityMenu', function (require) {
 "use strict";
 
 var ActivityMenu = require('mail.systray.ActivityMenu');

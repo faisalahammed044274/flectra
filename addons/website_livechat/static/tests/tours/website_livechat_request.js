@@ -1,4 +1,4 @@
-flectra.define('website_livechat.chat_request_tour', function(require) {
+odoo.define('website_livechat.chat_request_tour', function(require) {
 'use strict';
 
 var commonSteps = require("website_livechat.tour_common");

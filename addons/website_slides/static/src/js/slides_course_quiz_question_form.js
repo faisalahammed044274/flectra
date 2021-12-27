@@ -1,4 +1,4 @@
-flectra.define('website_slides.quiz.question.form', function (require) {
+odoo.define('website_slides.quiz.question.form', function (require) {
 'use strict';
 
 var publicWidget = require('web.public.widget');

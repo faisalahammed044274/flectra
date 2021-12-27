@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<flectra noupdate="1">
+<odoo noupdate="1">
 
     <template id="default_acquirer_button">
         <input type="hidden" name="data_set" t-att-data-action-url="tx_url"/>
@@ -12,11 +12,11 @@
         <input type="hidden" name="currency" t-att-value="currency.name"/>
     </template>
 
-    <record id="payment_acquirer_flectra_by_adyen" model="payment.acquirer">
-        <field name="name">Flectra Payments by Adyen</field>
-        <field name="display_as">Credit Card (powered by Flectra Payments)</field>
+    <record id="payment_acquirer_odoo_by_adyen" model="payment.acquirer">
+        <field name="name">Odoo Payments by Adyen</field>
+        <field name="display_as">Credit Card (powered by Odoo Payments)</field>
         <field name="view_template_id" ref="default_acquirer_button"/>
-        <field name="image_128" type="base64" file="payment_odoo_by_adyen/static/src/img/flectra_icon.png"/>
+        <field name="image_128" type="base64" file="payment_odoo_by_adyen/static/src/img/odoo_icon.png"/>
         <field name="module_id" ref="base.module_payment_odoo_by_adyen"/>
         <field name="sequence">1</field>
         <field name="description" type="html">
@@ -321,4 +321,4 @@
         </field>
     </record>
 
-</flectra>
+</odoo>

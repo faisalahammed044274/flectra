@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<flectra>
+<odoo>
     <!-- Theme "Basic" template -->
     <template id="theme_basic_template">
         <div class="o_mail_no_options">
@@ -32,4 +32,4 @@
         <t t-snippet-call="mass_mailing.s_mail_block_title_text" />
         <t t-snippet-call="mass_mailing.s_mail_block_footer_social_left"/>
     </template>
-</flectra>
+</odoo>

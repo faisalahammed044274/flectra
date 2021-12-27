@@ -1,4 +1,4 @@
-flectra.define('web.FormController', function (require) {
+odoo.define('web.FormController', function (require) {
 "use strict";
 
 var BasicController = require('web.BasicController');
@@ -444,7 +444,7 @@ var FormController = BasicController.extend({
 
     /**
      * @private
-     * @param {FlectraEvent} ev
+     * @param {OdooEvent} ev
      */
     _onButtonClicked: function (ev) {
         // stop the event's propagation as a form controller might have other
@@ -550,7 +550,7 @@ var FormController = BasicController.extend({
      * in a x2many list view
      *
      * @private
-     * @param {FlectraEvent} ev
+     * @param {OdooEvent} ev
      * @param {integer} ev.id of the list to freeze while editing a line
      */
     _onEditedList: function (ev) {
@@ -564,7 +564,7 @@ var FormController = BasicController.extend({
      * Set the focus on the first primary button of the controller (likely Edit)
      *
      * @private
-     * @param {FlectraEvent} event
+     * @param {OdooEvent} event
      */
     _onFocusControlButton:function(e) {
         if (this.$buttons) {
@@ -576,7 +576,7 @@ var FormController = BasicController.extend({
      * Reset the focus on the control that openned a Dialog after it was closed
      *
      * @private
-     * @param {FlectraEvent} event
+     * @param {OdooEvent} event
      */
     _onFormDialogDiscarded: function(ev) {
         ev.stopPropagation();
@@ -595,7 +595,7 @@ var FormController = BasicController.extend({
      * with the one of the form view.
      *
      * @private
-     * @param {FlectraEvent} ev
+     * @param {OdooEvent} ev
      */
     _onOpenOne2ManyRecord: async function (ev) {
         ev.stopPropagation();
@@ -629,7 +629,7 @@ var FormController = BasicController.extend({
      * Open an existing record in a form view dialog
      *
      * @private
-     * @param {FlectraEvent} ev
+     * @param {OdooEvent} ev
      */
     _onOpenRecord: function (ev) {
         ev.stopPropagation();
@@ -663,7 +663,7 @@ var FormController = BasicController.extend({
      * in a x2many list view
      *
      * @private
-     * @param {FlectraEvent} ev
+     * @param {OdooEvent} ev
      */
     _onToggleColumnOrder: function (ev) {
         ev.stopPropagation();

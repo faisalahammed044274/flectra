@@ -1,10 +1,10 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo. See LICENSE file for full copyright and licensing details.
 
 import time
 
-from flectra.tests.common import TransactionCase, Form
-from flectra.tools import mute_logger
+from odoo.tests.common import TransactionCase, Form
+from odoo.tools import mute_logger
 
 
 class TestSaleMrpProcurement(TransactionCase):
@@ -15,7 +15,7 @@ class TestSaleMrpProcurement(TransactionCase):
         # In order to test the sale_mrp module in OpenERP, I start by creating a new product 'Slider Mobile'
         # I define product category Mobile Products Sellable.
 
-        with mute_logger('flectra.tests.common.onchange'):
+        with mute_logger('odoo.tests.common.onchange'):
             # Suppress warning on "Changing your cost method" when creating a
             # product category
             pc = Form(self.env['product.category'])

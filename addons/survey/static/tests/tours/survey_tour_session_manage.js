@@ -1,4 +1,4 @@
-flectra.define('survey.test_survey_session_manage_tour', function (require) {
+odoo.define('survey.test_survey_session_manage_tour', function (require) {
 "use strict";
 
 var tour = require('web_tour.tour');
@@ -12,7 +12,7 @@ var surveySessionTools = require('survey.session_tour_tools');
  */
 var getChartData = function () {
     var chartData = [];
-    var rootWidget = flectra.__DEBUG__.services['root.widget'];
+    var rootWidget = odoo.__DEBUG__.services['root.widget'];
     var surveyManagePublicWidget = rootWidget.publicWidgets.find(function (widget) {
         return widget.$el.hasClass('o_survey_session_manage');
     });

@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-from flectra import fields, models
+from odoo import fields, models
 
 
 class AccountMove(models.Model):

@@ -1,4 +1,4 @@
-flectra.define("web.public_env", function (require) {
+odoo.define("web.public_env", function (require) {
     "use strict";
 
     /**

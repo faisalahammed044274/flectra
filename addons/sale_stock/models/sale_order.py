@@ -1,16 +1,16 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo. See LICENSE file for full copyright and licensing details.
 
 import json
 import logging
 from datetime import datetime, timedelta
 from collections import defaultdict
 
-from flectra import api, fields, models, _
-from flectra.tools import DEFAULT_SERVER_DATETIME_FORMAT, float_compare, float_round
-from flectra.tools.float_utils import float_repr
-from flectra.tools.misc import format_date
-from flectra.exceptions import UserError
+from odoo import api, fields, models, _
+from odoo.tools import DEFAULT_SERVER_DATETIME_FORMAT, float_compare, float_round
+from odoo.tools.float_utils import float_repr
+from odoo.tools.misc import format_date
+from odoo.exceptions import UserError
 
 
 _logger = logging.getLogger(__name__)
@@ -207,10 +207,7 @@ class SaleOrder(models.Model):
         action['context'] = dict(self._context, default_partner_id=self.partner_id.id, default_picking_type_id=picking_id.picking_type_id.id, default_origin=self.name, default_group_id=picking_id.group_id.id)
         return action
 
-    def action_cancel(self):
-        res = super(SaleOrder, self).action_cancel()
-        if(isinstance(res, dict)):
-            return res
+    def _action_cancel(self):
         documents = None
         for sale_order in self:
             if sale_order.state == 'sale' and sale_order.order_line:
@@ -225,7 +222,7 @@ class SaleOrder(models.Model):
                         continue
                 filtered_documents[(parent, responsible)] = rendering_context
             self._log_decrease_ordered_quantity(filtered_documents, cancel=True)
-        return res
+        return super()._action_cancel()
 
     def _prepare_invoice(self):
         invoice_vals = super(SaleOrder, self)._prepare_invoice()
@@ -499,6 +496,8 @@ class SaleOrderLine(models.Model):
                 'message' : _('You are decreasing the ordered quantity! Do not forget to manually update the delivery order if needed.'),
             }
             return {'warning': warning_mess}
+        if self.product_packaging:
+            return self._check_package()
         return {}
 
     def _prepare_procurement_values(self, group_id=False):

@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
-from flectra import models
-from flectra.http import request
+from odoo import models
+from odoo.http import request
 
 class IrHttp(models.AbstractModel):
     _inherit = 'ir.http'

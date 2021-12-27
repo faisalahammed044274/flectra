@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<flectra>
+<odoo>
         <!--  MAILING !-->
         <record model="ir.ui.view" id="view_mail_mass_mailing_search">
             <field name="name">mailing.mailing.search</field>
@@ -430,7 +430,7 @@
                 Create a new mailing
               </p><p>
                 You don't need to import your mailing lists, you can easily
-                send emails<br/> to any contact saved in other Flectra apps.
+                send emails<br/> to any contact saved in other Odoo apps.
               </p>
             </field>
         </record>
@@ -452,7 +452,7 @@
                 Create a new mailing
               </p><p>
                 You don't need to import your mailing lists, you can easily
-                send emails<br/> to any contact saved in other Flectra apps.
+                send emails<br/> to any contact saved in other Odoo apps.
               </p>
             </field>
         </record>
@@ -473,7 +473,7 @@
                 Create a new mailing
               </p><p>
                 You don't need to import your mailing lists, you can easily
-                send emails<br/> to any contact saved in other Flectra apps.
+                send emails<br/> to any contact saved in other Odoo apps.
               </p>
             </field>
         </record>
@@ -484,4 +484,4 @@
             action="mailing_mailing_action_mail"
             groups="mass_mailing.group_mass_mailing_user"/>
 
-</flectra>
+</odoo>

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<flectra>
+<odoo>
     <data>
         <record id="efaktur_tree_view" model="ir.ui.view">
             <field name="name">l10n_id_efaktur.efaktur.range.tree.view</field>
@@ -38,4 +38,4 @@
             action="efaktur_invoice_action" sequence="111"/>
 
     </data>
-</flectra>
+</odoo>

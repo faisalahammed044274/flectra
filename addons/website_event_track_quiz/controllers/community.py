@@ -1,12 +1,12 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo. See LICENSE file for full copyright and licensing details.
 
 import math
 
-from flectra import http
-from flectra.addons.http_routing.models.ir_http import slug
-from flectra.addons.website_event.controllers.community import EventCommunityController
-from flectra.http import request
+from odoo import http
+from odoo.addons.http_routing.models.ir_http import slug
+from odoo.addons.website_event.controllers.community import EventCommunityController
+from odoo.http import request
 
 
 class WebsiteEventTrackQuizCommunityController(EventCommunityController):

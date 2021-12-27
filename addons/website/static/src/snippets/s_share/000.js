@@ -1,4 +1,4 @@
-flectra.define('website.s_share', function (require) {
+odoo.define('website.s_share', function (require) {
 'use strict';
 
 const publicWidget = require('web.public.widget');

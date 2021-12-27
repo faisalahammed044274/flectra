@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<flectra>
+<odoo>
     <data>
         <!--
     Resource: res.partner.title
@@ -30,4 +30,4 @@
             <field name="shortcut">Ing.</field>
         </record>
     </data>
-</flectra>
+</odoo>

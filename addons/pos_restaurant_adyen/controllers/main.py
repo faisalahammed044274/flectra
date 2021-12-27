@@ -1,11 +1,11 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo. See LICENSE file for full copyright and licensing details.
 
 import logging
 
-from flectra import http
-from flectra.http import request
-from flectra.addons.payment_adyen.controllers.main import AdyenController
+from odoo import http
+from odoo.http import request
+from odoo.addons.payment_adyen.controllers.main import AdyenController
 
 _logger = logging.getLogger(__name__)
 

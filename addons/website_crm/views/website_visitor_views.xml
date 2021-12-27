@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<flectra><data>
+<odoo><data>
     <!--Website visitor actions-->
     <record id="website_crm.website_visitor_crm_lead_action" model="ir.actions.act_window">
         <field name="name">Leads</field>
@@ -70,4 +70,4 @@
             </xpath>
         </field>
     </record>
-</data></flectra>
+</data></odoo>

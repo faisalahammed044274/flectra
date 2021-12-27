@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo. See LICENSE file for full copyright and licensing details.
 
 import json
 import datetime
@@ -11,12 +11,12 @@ from collections import defaultdict
 from dateutil.relativedelta import relativedelta
 from itertools import groupby
 
-from flectra import api, fields, models, _
-from flectra.exceptions import AccessError, UserError
-from flectra.tools import float_compare, float_round, float_is_zero, format_datetime
-from flectra.tools.misc import format_date
+from odoo import api, fields, models, _
+from odoo.exceptions import AccessError, UserError
+from odoo.tools import float_compare, float_round, float_is_zero, format_datetime
+from odoo.tools.misc import format_date
 
-from flectra.addons.stock.models.stock_move import PROCUREMENT_PRIORITIES
+from odoo.addons.stock.models.stock_move import PROCUREMENT_PRIORITIES
 
 SIZE_BACK_ORDER_NUMERING = 3
 

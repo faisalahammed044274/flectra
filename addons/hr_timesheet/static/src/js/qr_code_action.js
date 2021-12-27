@@ -1,4 +1,4 @@
-flectra.define('hr_timesheet.qr_code_action', function (require) {
+odoo.define('hr_timesheet.qr_code_action', function (require) {
     "use strict";
 
 const AbstractAction = require('web.AbstractAction');

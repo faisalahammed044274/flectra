@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo. See LICENSE file for full copyright and licensing details.
 
 import base64
 import datetime
@@ -13,12 +13,12 @@ from dateutil.relativedelta import relativedelta
 from PIL import Image
 from werkzeug import urls
 
-from flectra import api, fields, models, _
-from flectra.addons.http_routing.models.ir_http import slug
-from flectra.exceptions import UserError, AccessError
-from flectra.http import request
-from flectra.addons.http_routing.models.ir_http import url_for
-from flectra.tools import sql
+from odoo import api, fields, models, _
+from odoo.addons.http_routing.models.ir_http import slug
+from odoo.exceptions import UserError, AccessError
+from odoo.http import request
+from odoo.addons.http_routing.models.ir_http import url_for
+from odoo.tools import sql
 
 
 class SlidePartnerRelation(models.Model):

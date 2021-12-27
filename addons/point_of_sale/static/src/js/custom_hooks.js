@@ -1,4 +1,4 @@
-flectra.define('point_of_sale.custom_hooks', function (require) {
+odoo.define('point_of_sale.custom_hooks', function (require) {
     'use strict';
 
     const { Component } = owl;

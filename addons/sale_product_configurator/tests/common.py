@@ -1,8 +1,8 @@
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo. See LICENSE file for full copyright and licensing details.
 import base64
 
-from flectra.tests.common import SavepointCase
-from flectra.modules.module import get_module_resource
+from odoo.tests.common import SavepointCase
+from odoo.modules.module import get_module_resource
 
 
 class TestProductConfiguratorCommon(SavepointCase):

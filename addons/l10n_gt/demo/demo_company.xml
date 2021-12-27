@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<flectra>
+<odoo>
     <record id="partner_demo_company_gt" model="res.partner">
         <field name="name">GT Company</field>
         <field name="vat">48291</field>
@@ -31,4 +31,4 @@
         <value eval="[ref('l10n_gt.cuentas_plantilla')]"/>
         <value model="res.company" eval="obj().env.ref('l10n_gt.demo_company_gt')"/>
     </function>
-</flectra>
+</odoo>

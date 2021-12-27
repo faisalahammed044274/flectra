@@ -1,10 +1,10 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo. See LICENSE file for full copyright and licensing details.
 from lxml import objectify
 from werkzeug import urls
 
-from flectra.addons.payment.tests.common import PaymentAcquirerCommon
-from flectra.tests import tagged
+from odoo.addons.payment.tests.common import PaymentAcquirerCommon
+from odoo.tests import tagged
 
 
 class PayUlatamCommon(PaymentAcquirerCommon):

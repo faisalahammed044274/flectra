@@ -1,4 +1,4 @@
-flectra.define('website_event.display_timer_widget', function (require) {
+odoo.define('website_event.display_timer_widget', function (require) {
 'use strict';
 
 var core = require('web.core');

@@ -1,4 +1,4 @@
-flectra.define('lunch.LunchKanbanRenderer', function (require) {
+odoo.define('lunch.LunchKanbanRenderer', function (require) {
 "use strict";
 
 /**

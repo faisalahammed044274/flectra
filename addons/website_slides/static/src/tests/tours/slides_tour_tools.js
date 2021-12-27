@@ -1,4 +1,4 @@
-flectra.define('website_slides.tour.tools', function (require) {
+odoo.define('website_slides.tour.tools', function (require) {
 'use strict';
 
 /*

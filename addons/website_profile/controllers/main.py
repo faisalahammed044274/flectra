@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo. See LICENSE file for full copyright and licensing details.
 
 import base64
 import werkzeug
@@ -11,9 +11,9 @@ import math
 from dateutil.relativedelta import relativedelta
 from operator import itemgetter
 
-from flectra import fields, http, modules, tools
-from flectra.http import request
-from flectra.osv import expression
+from odoo import fields, http, modules, tools
+from odoo.http import request
+from odoo.osv import expression
 
 
 class WebsiteProfile(http.Controller):

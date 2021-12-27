@@ -1,10 +1,10 @@
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo. See LICENSE file for full copyright and licensing details.
 
-from flectra import models, fields, api, _
-from flectra.exceptions import UserError, ValidationError
+from odoo import models, fields, api, _
+from odoo.exceptions import UserError, ValidationError
 import re
-from flectra.tools.misc import formatLang
-from flectra.tools.sql import column_exists, create_column
+from odoo.tools.misc import formatLang
+from odoo.tools.sql import column_exists, create_column
 
 
 class AccountMove(models.Model):

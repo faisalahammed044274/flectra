@@ -1,4 +1,4 @@
-flectra.define('web.test_utils_kanban', function (require) {
+odoo.define('web.test_utils_kanban', function (require) {
 "use strict";
 
 /**

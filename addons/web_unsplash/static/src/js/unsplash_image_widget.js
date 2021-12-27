@@ -1,4 +1,4 @@
-flectra.define('web_unsplash.image_widgets', function (require) {
+odoo.define('web_unsplash.image_widgets', function (require) {
 'use strict';
 
 var core = require('web.core');

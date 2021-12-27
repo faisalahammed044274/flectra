@@ -1,4 +1,4 @@
-flectra.define('pos_restaurant.FloorScreen', function (require) {
+odoo.define('pos_restaurant.FloorScreen', function (require) {
     'use strict';
 
     const { debounce } = owl.utils;

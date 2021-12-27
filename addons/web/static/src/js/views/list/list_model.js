@@ -1,4 +1,4 @@
-flectra.define('web.ListModel', function (require) {
+odoo.define('web.ListModel', function (require) {
     "use strict";
 
     var BasicModel = require('web.BasicModel');

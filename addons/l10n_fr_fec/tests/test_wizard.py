@@ -1,12 +1,12 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo. See LICENSE file for full copyright and licensing details.
 
 import base64
 from datetime import timedelta
 
-from flectra.addons.account.tests.common import AccountTestInvoicingCommon
-from flectra.tests import tagged
-from flectra import fields
+from odoo.addons.account.tests.common import AccountTestInvoicingCommon
+from odoo.tests import tagged
+from odoo import fields
 
 
 @tagged('post_install', '-at_install')

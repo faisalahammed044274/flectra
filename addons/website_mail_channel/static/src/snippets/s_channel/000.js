@@ -1,4 +1,4 @@
-flectra.define('website_mail_channel.s_channel', function (require) {
+odoo.define('website_mail_channel.s_channel', function (require) {
 'use strict';
 
 var publicWidget = require('web.public.widget');

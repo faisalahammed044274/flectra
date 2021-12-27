@@ -1,4 +1,4 @@
-flectra.define('mail/static/src/components/chatter_topbar/chatter_topbar_tests.js', function (require) {
+odoo.define('mail/static/src/components/chatter_topbar/chatter_topbar_tests.js', function (require) {
 'use strict';
 
 const components = {

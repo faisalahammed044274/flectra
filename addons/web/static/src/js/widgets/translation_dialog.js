@@ -1,4 +1,4 @@
-flectra.define('web.TranslationDialog', function (require) {
+odoo.define('web.TranslationDialog', function (require) {
     'use strict';
 
     var core = require('web.core');

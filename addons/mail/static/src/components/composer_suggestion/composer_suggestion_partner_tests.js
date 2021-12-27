@@ -1,4 +1,4 @@
-flectra.define('mail/static/src/components/composer_suggestion/composer_suggestion_partner_tests.js', function (require) {
+odoo.define('mail/static/src/components/composer_suggestion/composer_suggestion_partner_tests.js', function (require) {
 'use strict';
 
 const components = {
@@ -76,7 +76,7 @@ QUnit.test('partner mention suggestion correct data', async function (assert) {
         model: 'mail.channel',
     });
     const partner = this.env.models['mail.partner'].create({
-        email: "demo_user@flectrahq.com",
+        email: "demo_user@odoo.com",
         id: 7,
         im_status: 'online',
         name: "Demo User",
@@ -115,7 +115,7 @@ QUnit.test('partner mention suggestion correct data', async function (assert) {
     );
     assert.strictEqual(
         document.querySelector(`.o_ComposerSuggestion_part2`).textContent,
-        "(demo_user@flectrahq.com)",
+        "(demo_user@odoo.com)",
         "Partner's email should be displayed"
     );
 });

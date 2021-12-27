@@ -1,9 +1,9 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo. See LICENSE file for full copyright and licensing details.
 
-from flectra.tests import common
-from flectra.addons.hr.tests.common import TestHrCommon
-from flectra.modules.module import get_module_resource
+from odoo.tests import common
+from odoo.addons.hr.tests.common import TestHrCommon
+from odoo.modules.module import get_module_resource
 
 
 class TestRecruitmentProcess(TestHrCommon):

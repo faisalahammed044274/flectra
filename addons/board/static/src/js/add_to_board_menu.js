@@ -1,4 +1,4 @@
-flectra.define('board.AddToBoardMenu', function (require) {
+odoo.define('board.AddToBoardMenu', function (require) {
     "use strict";
 
     const Context = require('web.Context');

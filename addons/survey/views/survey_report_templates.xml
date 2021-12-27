@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<flectra>
+<odoo>
     <data>
         <template id="certification_report_view_modern">
             <!-- Style classes to be applyed to '#o_survey_certification': [no class](purple), gold, blue  -->
@@ -86,4 +86,4 @@
             </t>
         </template>
     </data>
-</flectra>
+</odoo>

@@ -1,4 +1,4 @@
-flectra.define('web.testUtilsTests', function (require) {
+odoo.define('web.testUtilsTests', function (require) {
 "use strict";
 
 var testUtils = require('web.test_utils');
@@ -33,4 +33,4 @@ QUnit.test('new moment', function (assert) {
 
 });
 });
-}); 
+});

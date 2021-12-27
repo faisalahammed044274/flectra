@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<flectra>
+<odoo>
     <template id="web_unsplash_assets" inherit_id="web_editor.assets_wysiwyg" name="Unsplash Images Editor Assets">
         <xpath expr="." position="inside">
             <link rel="stylesheet" type="text/scss" href="/web_unsplash/static/src/scss/unsplash.scss"/>
@@ -12,4 +12,4 @@
             <script type="text/javascript" src="/web_unsplash/static/src/js/unsplash_beacon.js"></script>
         </xpath>
     </template>
-</flectra>
+</odoo>

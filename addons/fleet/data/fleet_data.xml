@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<flectra>
+<odoo>
     <data noupdate="1">
         <record forcecreate="True" id="ir_cron_contract_costs_generator" model="ir.cron">
             <field name="name">Fleet: Generate contracts costs based on costs frequency</field>
@@ -33,4 +33,4 @@
             <field name="sequence">8</field>
         </record>
     </data>
-</flectra>
+</odoo>

@@ -1,4 +1,4 @@
-flectra.define('mail_bot/static/src/models/messaging_initializer/messaging_initializer_tests.js', function (require) {
+odoo.define('mail_bot/static/src/models/messaging_initializer/messaging_initializer_tests.js', function (require) {
 "use strict";
 
 const { afterEach, beforeEach, start } = require('mail/static/src/utils/test_utils.js');
@@ -24,28 +24,28 @@ QUnit.module('messaging_initializer_tests.js', {
 });
 
 
-QUnit.test('FlectraBot initialized at init', async function (assert) {
+QUnit.test('OdooBot initialized at init', async function (assert) {
     // TODO this test should be completed in combination with
-    // implementing _mockMailChannelInitFlectraBot task-2300480
+    // implementing _mockMailChannelInitOdooBot task-2300480
     assert.expect(2);
 
     await this.start({
         env: {
             session: {
-                flectrabot_initialized: false,
+                odoobot_initialized: false,
             },
         },
         async mockRPC(route, args) {
-            if (args.method === 'init_flectrabot') {
-                assert.step('init_flectrabot');
+            if (args.method === 'init_odoobot') {
+                assert.step('init_odoobot');
             }
             return this._super(...arguments);
         },
     });
 
     assert.verifySteps(
-        ['init_flectrabot'],
-        "should have initialized FlectraBot at init"
+        ['init_odoobot'],
+        "should have initialized OdooBot at init"
     );
 });
 

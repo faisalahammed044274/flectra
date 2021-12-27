@@ -1,5 +1,5 @@
 <?xml version="1.0" ?>
-<flectra><data>
+<odoo><data>
 
 <!-- Channels sub-template: header -->
 <template id="course_nav" name="Course Navigation Header">
@@ -845,4 +845,4 @@
     <i t-if="slide.slide_type == 'quiz'" t-att-class="'fa fa-question-circle %s' % icon_class"></i>
 </template>
 
-</data></flectra>
+</data></odoo>

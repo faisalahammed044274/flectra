@@ -1,9 +1,9 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo. See LICENSE file for full copyright and licensing details.
 
-from flectra.addons.crm.tests.common import TestLeadConvertMassCommon
-from flectra.fields import Datetime
-from flectra.tests.common import tagged, users
+from odoo.addons.crm.tests.common import TestLeadConvertMassCommon
+from odoo.fields import Datetime
+from odoo.tests.common import tagged, users
 
 
 @tagged('lead_manage')

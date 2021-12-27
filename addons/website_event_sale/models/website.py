@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-from flectra import models
+from odoo import models
 
 
 class Website(models.Model):

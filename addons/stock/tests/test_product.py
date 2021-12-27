@@ -1,11 +1,11 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo. See LICENSE file for full copyright and licensing details.
 
 # Author: Leonardo Pistone
 # Copyright 2015 Camptocamp SA
 
-from flectra.addons.stock.tests.common2 import TestStockCommon
-from flectra.tests.common import Form
+from odoo.addons.stock.tests.common2 import TestStockCommon
+from odoo.tests.common import Form
 
 
 class TestVirtualAvailable(TestStockCommon):

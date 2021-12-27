@@ -1,9 +1,9 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo. See LICENSE file for full copyright and licensing details.
 
-from flectra.tools import float_is_zero
+from odoo.tools import float_is_zero
 from .common import TestSaleCommon
-from flectra.tests import Form, tagged
+from odoo.tests import Form, tagged
 
 
 @tagged('-at_install', 'post_install')

@@ -1,4 +1,4 @@
-flectra.define('adyen_platforms.account_views', function (require) {
+odoo.define('adyen_platforms.account_views', function (require) {
 "use strict";
 
 var core = require('web.core');

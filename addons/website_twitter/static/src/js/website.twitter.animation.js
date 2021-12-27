@@ -1,4 +1,4 @@
-flectra.define('website_twitter.animation', function (require) {
+odoo.define('website_twitter.animation', function (require) {
 'use strict';
 
 var core = require('web.core');

@@ -1,11 +1,11 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo. See LICENSE file for full copyright and licensing details.
 
 from datetime import datetime, timedelta
 
-from flectra.addons.mail.tests.common import mail_new_test_user
-from flectra.tests import HttpCase, tagged
-from flectra.tools import mute_logger
+from odoo.addons.mail.tests.common import mail_new_test_user
+from odoo.tests import HttpCase, tagged
+from odoo.tools import mute_logger
 
 
 @tagged('post_install', '-at_install')
@@ -58,7 +58,7 @@ class TestWebsiteEventAccess(HttpCase):
 
     def test_events_access_2(self):
         """Access to an unpublished event with public user."""
-        with mute_logger('flectra.addons.http_routing.models.ir_http'):
+        with mute_logger('odoo.addons.http_routing.models.ir_http'):
             unpublished_events = self.events.filtered(lambda event: not event.website_published)
             resp = self.url_open('/event/%i' % unpublished_events[0].id)
             self.assertEqual(resp.status_code, 403, 'We must not have access to unpublished event')
@@ -100,7 +100,7 @@ class TestWebsiteEventAccess(HttpCase):
 
     def test_events_access_8(self):
         """Access to an unpublished event with portal user."""
-        with mute_logger('flectra.addons.http_routing.models.ir_http'):
+        with mute_logger('odoo.addons.http_routing.models.ir_http'):
             self.authenticate('user_portal', 'user_portal')
             unpublished_events = self.events.filtered(lambda event: not event.website_published)
             resp = self.url_open('/event/%i' % unpublished_events[0].id)

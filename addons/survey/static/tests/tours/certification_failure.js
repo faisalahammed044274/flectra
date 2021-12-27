@@ -1,4 +1,4 @@
-flectra.define('survey.tour_test_certification_failure', function (require) {
+odoo.define('survey.tour_test_certification_failure', function (require) {
 'use strict';
 
 var SurveyFormWidget = require('survey.form');

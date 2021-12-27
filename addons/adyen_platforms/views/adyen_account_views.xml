@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<flectra>
+<odoo>
     <record id="adyen_account_view_form" model="ir.ui.view">
         <field name="name">adyen.account.view.form</field>
         <field name="model">adyen.account</field>
@@ -240,4 +240,4 @@
         <field name="res_model">adyen.account</field>
         <field name="view_mode">form</field>
     </record>
-</flectra>
+</odoo>

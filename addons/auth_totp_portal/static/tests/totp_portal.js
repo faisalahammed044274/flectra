@@ -1,4 +1,4 @@
-flectra.define('auth_totp_portal.tours', function(require) {
+odoo.define('auth_totp_portal.tours', function(require) {
 "use strict";
 
 const tour = require('web_tour.tour');

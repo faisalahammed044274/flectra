@@ -1,9 +1,9 @@
 # -*- coding: utf-8 -*-
 
-from flectra import _, api, fields, models
+from odoo import _, api, fields, models
 
 import ast
-from flectra.osv import expression
+from odoo.osv import expression
 
 
 class CouponGenerate(models.TransientModel):

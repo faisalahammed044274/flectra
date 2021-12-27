@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo. See LICENSE file for full copyright and licensing details.
 
 from datetime import timedelta
 import math
@@ -7,15 +7,15 @@ import babel.dates
 import logging
 import pytz
 
-from flectra import api, fields, models
-from flectra import tools
-from flectra.addons.base.models.res_partner import _tz_get
-from flectra.addons.calendar.models.calendar_attendee import Attendee
-from flectra.addons.calendar.models.calendar_recurrence import weekday_to_field, RRULE_TYPE_SELECTION, END_TYPE_SELECTION, MONTH_BY_SELECTION, WEEKDAY_SELECTION, BYDAY_SELECTION
-from flectra.tools.translate import _
-from flectra.tools.misc import get_lang
-from flectra.tools import pycompat
-from flectra.exceptions import UserError, ValidationError, AccessError
+from odoo import api, fields, models
+from odoo import tools
+from odoo.addons.base.models.res_partner import _tz_get
+from odoo.addons.calendar.models.calendar_attendee import Attendee
+from odoo.addons.calendar.models.calendar_recurrence import weekday_to_field, RRULE_TYPE_SELECTION, END_TYPE_SELECTION, MONTH_BY_SELECTION, WEEKDAY_SELECTION, BYDAY_SELECTION
+from odoo.tools.translate import _
+from odoo.tools.misc import get_lang
+from odoo.tools import pycompat
+from odoo.exceptions import UserError, ValidationError, AccessError
 
 _logger = logging.getLogger(__name__)
 
@@ -452,7 +452,7 @@ class Meeting(models.Model):
                     elif interval == 'minutes':
                         delta = timedelta(minutes=duration)
                     trigger.value = delta
-                    valarm.add('DESCRIPTION').value = alarm.name or u'Flectra'
+                    valarm.add('DESCRIPTION').value = alarm.name or u'Odoo'
             for attendee in meeting.attendee_ids:
                 attendee_add = event.add('attendee')
                 attendee_add.value = u'MAILTO:' + (attendee.email or u'')
@@ -707,8 +707,12 @@ class Meeting(models.Model):
                                 activity_vals['user_id'] = user_id
                             values['activity_ids'] = [(0, 0, activity_vals)]
 
+        # Add commands to create attendees from partners (if present) if no attendee command
+        # is already given (coming from Google event for example).
         vals_list = [
-            dict(vals, attendee_ids=self._attendees_values(vals['partner_ids'])) if 'partner_ids' in vals else vals
+            dict(vals, attendee_ids=self._attendees_values(vals['partner_ids']))
+            if 'partner_ids' in vals and 'attendee_ids' not in vals
+            else vals
             for vals in vals_list
         ]
         recurrence_fields = self._get_recurrent_fields()

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<flectra>
+<odoo>
 <template id="iframe_css_assets_edit" name="CSS assets for wysiwyg iframe content for popup" groups="base.group_user">
     <t t-call-assets="web.assets_common" t-js="false"/>
     <t t-call-assets="web.assets_frontend" t-js="false"/>
@@ -132,4 +132,4 @@
     </xpath>
 </template>
 
-</flectra>
+</odoo>

@@ -1,4 +1,4 @@
-flectra.define('pos_hr.tour.PosHrTourMethods', function (require) {
+odoo.define('pos_hr.tour.PosHrTourMethods', function (require) {
     'use strict';
 
     const { createTourMethods } = require('point_of_sale.tour.utils');

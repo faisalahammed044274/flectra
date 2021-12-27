@@ -1,11 +1,11 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo. See LICENSE file for full copyright and licensing details.
 
 from datetime import timedelta
 
-from flectra.exceptions import UserError
-from flectra.fields import Datetime
-from flectra.tests.common import Form, SavepointCase
+from odoo.exceptions import UserError
+from odoo.fields import Datetime
+from odoo.tests.common import Form, SavepointCase
 
 
 def _create_accounting_data(env):

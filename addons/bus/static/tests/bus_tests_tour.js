@@ -1,4 +1,4 @@
-flectra.define("bus.tour", function (require) {
+odoo.define("bus.tour", function (require) {
     "use strict";
 
     const tour = require("web_tour.tour");
@@ -9,7 +9,7 @@ flectra.define("bus.tour", function (require) {
     }, [{
             trigger: '.o_web_client',
             run() {
-                const webClient = flectra.__DEBUG__.services['web.web_client'];
+                const webClient = odoo.__DEBUG__.services['web.web_client'];
                 const _delayFn = webClient._getBundleNotificationDelay;
                 webClient._getBundleNotificationDelay = () => 0;
                 this.call('bus_service', 'trigger',

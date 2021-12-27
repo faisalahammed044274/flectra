@@ -1,4 +1,4 @@
-flectra.define('survey.slide_category_one2many', function (require){
+odoo.define('survey.slide_category_one2many', function (require){
 "use strict";
 
 var Context = require('web.Context');
@@ -179,4 +179,4 @@ var SectionFieldOne2Many = FieldOne2Many.extend({
 });
 
 FieldRegistry.add('slide_category_one2many', SectionFieldOne2Many);
-}); 
+});

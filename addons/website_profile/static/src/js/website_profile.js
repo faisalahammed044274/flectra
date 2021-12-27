@@ -1,4 +1,4 @@
-flectra.define('website_profile.website_profile', function (require) {
+odoo.define('website_profile.website_profile', function (require) {
 'use strict';
 
 var publicWidget = require('web.public.widget');

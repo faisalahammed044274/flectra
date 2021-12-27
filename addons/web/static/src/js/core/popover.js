@@ -1,4 +1,4 @@
-flectra.define('web.Popover', function (require) {
+odoo.define('web.Popover', function (require) {
     'use strict';
 
     const patchMixin = require('web.patchMixin');

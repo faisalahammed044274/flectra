@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<flectra>
+<odoo>
     <template id="assets_backend" name="utm assets" inherit_id="web.assets_backend">
         <xpath expr="." position="inside">
             <script type="text/javascript" src="/utm/static/src/js/utm_campaign_kanban_examples.js"></script>
@@ -8,4 +8,4 @@
             <link rel="stylesheet" type="text/scss" href="/utm/static/src/scss/utm_views.scss"/>
         </xpath>
     </template>
-</flectra>
+</odoo>

@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<flectra>
+<odoo>
     <data>
         <!-- FORUM ACTIONS -->
         <record id="action_forum_favorites" model="ir.actions.act_window">
@@ -383,4 +383,4 @@
         <menuitem id="menu_forum_badges" parent="menu_website_forum_global" name="Badges" action="gamification.badge_list_action" sequence="40"/>
         <menuitem id="menu_forum_post_reasons" parent="menu_website_forum_global" name="Close Reasons" action="forum_post_reasons_action" sequence="50"/>
     </data>
-</flectra>
+</odoo>

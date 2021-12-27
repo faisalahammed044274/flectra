@@ -1,4 +1,4 @@
-flectra.define('web.clickEverywhere', function (require) {
+odoo.define('web.clickEverywhere', function (require) {
     "use strict";
     var ajax = require('web.ajax');
     function startClickEverywhere(xmlId, appsMenusOnly) {

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<flectra>
+<odoo>
 
 <t t-extend="website_event_track_live.website_event_track_suggestion">
     <t t-jquery="a.owevent_track_suggestion_replay" t-operation="before">
@@ -11,4 +11,4 @@
     </t>
 </t>
 
-</flectra>
+</odoo>

@@ -1,4 +1,4 @@
-flectra.define('lunch.LunchPaymentDialog', function (require) {
+odoo.define('lunch.LunchPaymentDialog', function (require) {
 "use strict";
 
 var Dialog = require('web.Dialog');

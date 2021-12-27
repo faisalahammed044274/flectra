@@ -1,8 +1,8 @@
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo. See LICENSE file for full copyright and licensing details.
 
-from flectra.tests.common import HttpSavepointCase
-from flectra.addons.sale_product_configurator.tests.common import TestProductConfiguratorCommon
-from flectra.tests import tagged
+from odoo.tests.common import HttpSavepointCase
+from odoo.addons.sale_product_configurator.tests.common import TestProductConfiguratorCommon
+from odoo.tests import tagged
 
 
 @tagged('post_install', '-at_install')

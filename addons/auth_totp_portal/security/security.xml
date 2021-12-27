@@ -1,4 +1,4 @@
-<flectra>
+<odoo>
     <!-- copies ACL for portal users -->
     <record model="ir.model.access" id="access_auth_totp_portal_wizard">
         <field name="name">auth_totp_portal wizard access rules</field>
@@ -13,4 +13,4 @@
     <record model="ir.rule" id="auth_totp.rule_auth_totp_wizard">
         <field name="groups" eval="[(4, ref('base.group_portal'))]"/>
     </record>
-</flectra>
+</odoo>

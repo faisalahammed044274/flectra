@@ -1,4 +1,4 @@
-flectra.define('website.set_view_track', function (require) {
+odoo.define('website.set_view_track', function (require) {
 "use strict";
 
 var CustomizeMenu = require('website.customizeMenu');

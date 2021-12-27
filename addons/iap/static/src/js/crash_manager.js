@@ -1,4 +1,4 @@
-flectra.define('iap.CrashManager', function (require) {
+odoo.define('iap.CrashManager', function (require) {
 "use strict";
 
 var ajax = require('web.ajax');
@@ -19,15 +19,15 @@ CrashManager.include({
      * @private
      */
     _getButtonMessage: function (isTrial){
-        var isEnterprise = _.last(flectra.session_info.server_version_info) === 'e';
-        return isTrial && isEnterprise ? _t('Start a Trial at Flectra') : _t('Buy credits');
+        var isEnterprise = _.last(odoo.session_info.server_version_info) === 'e';
+        return isTrial && isEnterprise ? _t('Start a Trial at Odoo') : _t('Buy credits');
     },
     /**
      * @override
      */
     rpc_error: function (error) {
         var self = this;
-        if (error.data.name === "flectra.addons.iap.tools.iap_tools.InsufficientCreditError") {
+        if (error.data.name === "odoo.addons.iap.tools.iap_tools.InsufficientCreditError") {
             var error_data = JSON.parse(error.data.message);
             ajax.jsonRpc('/web/dataset/call_kw', 'call', {
                 model:  'iap.account',
@@ -40,7 +40,7 @@ CrashManager.include({
                     trial: error_data.trial
                 }
             }).then(function (url) {
-                var content = $(QWeb.render('iap.redirect_to_flectra_credit', {
+                var content = $(QWeb.render('iap.redirect_to_odoo_credit', {
                         data: error_data,
                     }));
                 if (error_data.body) {

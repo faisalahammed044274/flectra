@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<flectra>
+<odoo>
     <record id="view_immediate_production" model="ir.ui.view">
         <field name="name">mrp.immediate.production.view.form</field>
         <field name="model">mrp.immediate.production</field>
         <field name="arch" type="xml">
             <form string="Immediate production?">
                 <group>
-                    <p>You have not recorded <i>produced</i> quantities yet, by clicking on <i>apply</i> Flectra will produce all the finished products and consume all components.</p>
+                    <p>You have not recorded <i>produced</i> quantities yet, by clicking on <i>apply</i> Odoo will produce all the finished products and consume all components.</p>
                 </group>
 
                 <field name="show_productions" invisible="1"/>
@@ -24,4 +24,4 @@
             </form>
         </field>
     </record>
-</flectra>
+</odoo>

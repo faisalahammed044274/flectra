@@ -1,10 +1,10 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo. See LICENSE file for full copyright and licensing details.
 
-from flectra.addons.stock_account.tests.test_anglo_saxon_valuation_reconciliation_common import ValuationReconciliationTestCommon
+from odoo.addons.stock_account.tests.test_anglo_saxon_valuation_reconciliation_common import ValuationReconciliationTestCommon
 from datetime import timedelta
-from flectra import fields
-from flectra.tests import common, tagged
+from odoo import fields
+from odoo.tests import common, tagged
 
 
 @tagged('post_install', '-at_install')
@@ -90,7 +90,7 @@ class TestSaleExpectedDate(ValuationReconciliationTestCommon):
 
     def test_sale_order_commitment_date(self):
 
-        # In order to test the Commitment Date feature in Sales Orders in Flectra,
+        # In order to test the Commitment Date feature in Sales Orders in Odoo,
         # I copy a demo Sales Order with committed Date on 2010-07-12
         new_order = self.env['sale.order'].create({
             'partner_id': self.env['res.partner'].create({'name': 'A Partner'}).id,

@@ -1,4 +1,4 @@
-flectra.define('mail/static/src/models/message_seen_indicator/message_seen_indicator.js', function (require) {
+odoo.define('mail/static/src/models/message_seen_indicator/message_seen_indicator.js', function (require) {
 'use strict';
 
 const { registerNewModel } = require('mail/static/src/model/model_core.js');

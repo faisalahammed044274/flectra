@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo. See LICENSE file for full copyright and licensing details.
 
-from flectra.addons.event.tests.common import TestEventCommon
-from flectra.tests import Form
+from odoo.addons.event.tests.common import TestEventCommon
+from odoo.tests import Form
 
 
 class TestWebsiteEventMeet(TestEventCommon):
@@ -38,9 +38,9 @@ class TestWebsiteEventMeet(TestEventCommon):
             "target_audience": "dev",
             "room_max_capacity": "20",
         })
-        self.assertEqual(meeting_room_1.room_name, 'flectra-room-test-meeting-room')
+        self.assertEqual(meeting_room_1.room_name, 'odoo-room-test-meeting-room')
         meeting_room_2 = meeting_room_1.copy()
-        self.assertEqual(meeting_room_2.room_name, 'flectra-room-test-meeting-room-1')
+        self.assertEqual(meeting_room_2.room_name, 'odoo-room-test-meeting-room-1')
 
         chat_room_1 = meeting_room_1.chat_room_id
         chat_room_2 = meeting_room_2.chat_room_id
@@ -53,7 +53,7 @@ class TestWebsiteEventMeet(TestEventCommon):
         self.assertEqual(chat_room_2.max_capacity, "20", "Must copy the max capacity")
 
         meeting_room_3 = meeting_room_1.copy()
-        self.assertEqual(meeting_room_3.room_name, 'flectra-room-test-meeting-room-2')
+        self.assertEqual(meeting_room_3.room_name, 'odoo-room-test-meeting-room-2')
 
     def test_meeting_room_unlink(self):
         """Test the duplication of the meeting room."""

@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<flectra>
+<odoo>
 
     <!-- Calendar Events Types : Views and Actions -->
     <record id="view_calendar_event_type_tree" model="ir.ui.view">
@@ -365,4 +365,4 @@
         <field name="view_id" ref="view_calendar_event_form"/>
     </record>
 
-</flectra>
+</odoo>

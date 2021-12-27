@@ -1,4 +1,4 @@
-flectra.define('calendar.Activity', function (require) {
+odoo.define('calendar.Activity', function (require) {
 "use strict";
 
 var Activity = require('mail.Activity');

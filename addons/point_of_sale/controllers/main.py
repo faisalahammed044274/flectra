@@ -3,10 +3,10 @@ import json
 import logging
 import werkzeug.utils
 
-from flectra import http
-from flectra.http import request
-from flectra.osv.expression import AND
-from flectra.tools import convert
+from odoo import http
+from odoo.http import request
+from odoo.osv.expression import AND
+from odoo.tools import convert
 
 _logger = logging.getLogger(__name__)
 

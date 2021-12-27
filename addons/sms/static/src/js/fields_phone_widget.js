@@ -1,4 +1,4 @@
-flectra.define('sms.fields', function (require) {
+odoo.define('sms.fields', function (require) {
 "use strict";
 
 var basic_fields = require('web.basic_fields');

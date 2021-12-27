@@ -1,4 +1,4 @@
-flectra.define('adyen_platforms.transactions', function (require) {
+odoo.define('adyen_platforms.transactions', function (require) {
 "use strict";
 
 var ListController = require('web.ListController');

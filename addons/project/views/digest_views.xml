@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='utf-8'?>
-<flectra>
+<odoo>
     <record id="digest_digest_view_form" model="ir.ui.view">
         <field name="name">digest.digest.view.form.inherit.project.task</field>
         <field name="model">digest.digest</field>
@@ -12,4 +12,4 @@
             </xpath>
         </field>
     </record>
-</flectra>
+</odoo>

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<flectra>
+<odoo>
     <data noupdate="1">
         <record id="stock_location_14" model="stock.location">
             <field name="name">Shelf 2</field>
@@ -16,4 +16,4 @@
                 eval="obj().env.ref('stock.warehouse0').lot_stock_id.id"/>
         </record>
     </data>
-</flectra>
+</odoo>

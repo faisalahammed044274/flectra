@@ -1,4 +1,4 @@
-flectra.define('pos_six.payment', function (require) {
+odoo.define('pos_six.payment', function (require) {
 "use strict";
 
 const { Gui } = require('point_of_sale.Gui');

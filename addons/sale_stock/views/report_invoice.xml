@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<flectra>
+<odoo>
     <template id="sale_stock_report_invoice_document" inherit_id="account.report_invoice_document">
         <xpath expr="//div[@id='total']" position="after">
             <t t-set="lot_values" t-value="o._get_invoiced_lot_values()"/>
@@ -29,4 +29,4 @@
             </t>
         </xpath>
     </template>
-</flectra>
+</odoo>

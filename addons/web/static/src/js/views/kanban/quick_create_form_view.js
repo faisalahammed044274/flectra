@@ -1,4 +1,4 @@
-flectra.define('web.QuickCreateFormView', function (require) {
+odoo.define('web.QuickCreateFormView', function (require) {
 "use strict";
 
 /**
@@ -40,7 +40,7 @@ var QuickCreateFormRenderer = FormRenderer.extend({
     /**
      * @override
      * @private
-     * @param {FlectraEvent} ev
+     * @param {OdooEvent} ev
      */
     _onNavigationMove: function (ev) {
         var direction = ev.data.direction;

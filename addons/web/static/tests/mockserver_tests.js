@@ -1,4 +1,4 @@
-flectra.define('web.mockserver_tests', function (require) {
+odoo.define('web.mockserver_tests', function (require) {
 "use strict";
 
 const MockServer = require("web.MockServer");

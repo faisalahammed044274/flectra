@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo. See LICENSE file for full copyright and licensing details.
 
-from flectra.addons.test_mail_full.tests.common import TestMailFullCommon, TestRecipients
+from odoo.addons.test_mail_full.tests.common import TestMailFullCommon, TestRecipients
 
 
 class TestPhoneBlacklist(TestMailFullCommon, TestRecipients):

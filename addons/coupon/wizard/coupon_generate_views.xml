@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<flectra>
+<odoo>
     <record id="coupon_generate_view_form" model="ir.ui.view">
         <field name="name">coupon.generate.wizard.form</field>
         <field name="model">coupon.generate.wizard</field>
@@ -29,4 +29,4 @@
         <field name="target">new</field>
         <field name="view_id" ref="coupon_generate_view_form"/>
     </record>
-</flectra>
+</odoo>

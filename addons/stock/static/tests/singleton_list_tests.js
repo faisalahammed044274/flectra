@@ -1,4 +1,4 @@
-flectra.define('web.singleton_list_tests', function (require) {
+odoo.define('web.singleton_list_tests', function (require) {
 "use strict";
 
 var SingletonListView = require('stock.SingletonListView');

@@ -1,4 +1,4 @@
-flectra.define('web.ProgressBar', function (require) {
+odoo.define('web.ProgressBar', function (require) {
 'use strict';
 
 const { _t } = require('web.core');

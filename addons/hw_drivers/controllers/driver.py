@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo. See LICENSE file for full copyright and licensing details.
 
 from base64 import b64decode
 import json
@@ -8,13 +8,13 @@ import os
 import subprocess
 import time
 
-from flectra import http, tools
-from flectra.http import send_file
-from flectra.modules.module import get_resource_path
+from odoo import http, tools
+from odoo.http import send_file
+from odoo.modules.module import get_resource_path
 
-from flectra.addons.hw_drivers.event_manager import event_manager
-from flectra.addons.hw_drivers.main import iot_devices, manager
-from flectra.addons.hw_drivers.tools import helpers
+from odoo.addons.hw_drivers.event_manager import event_manager
+from odoo.addons.hw_drivers.main import iot_devices, manager
+from odoo.addons.hw_drivers.tools import helpers
 
 _logger = logging.getLogger(__name__)
 
@@ -69,12 +69,12 @@ class DriverController(http.Controller):
     @http.route('/hw_drivers/box/connect', type='http', auth='none', cors='*', csrf=False, save_session=False)
     def connect_box(self, token):
         """
-        This route is called when we want that a IoT Box will be connected to a Flectra DB
+        This route is called when we want that a IoT Box will be connected to a Odoo DB
         token is a base 64 encoded string and have 2 argument separate by |
-        1 - url of flectra DB
-        2 - token. This token will be compared to the token of Flectra. He have 1 hour lifetime
+        1 - url of odoo DB
+        2 - token. This token will be compared to the token of Odoo. He have 1 hour lifetime
         """
-        server = helpers.get_flectra_server_url()
+        server = helpers.get_odoo_server_url()
         image = get_resource_path('hw_drivers', 'static/img', 'False.jpg')
         if not server:
             credential = b64decode(token).decode('utf-8').split('|')
@@ -89,7 +89,7 @@ class DriverController(http.Controller):
                 subprocess.check_call([get_resource_path('point_of_sale', 'tools/posbox/configuration/connect_to_server.sh'), url, '', token, 'noreboot'])
                 manager.send_alldevices()
                 image = get_resource_path('hw_drivers', 'static/img', 'True.jpg')
-                helpers.flectra_restart(3)
+                helpers.odoo_restart(3)
             except subprocess.CalledProcessError as e:
                 _logger.error('A error encountered : %s ' % e.output)
         if os.path.isfile(image):

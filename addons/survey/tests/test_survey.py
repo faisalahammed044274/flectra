@@ -1,9 +1,9 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo. See LICENSE file for full copyright and licensing details.
 
-from flectra import _
-from flectra.addons.survey.tests import common
-from flectra.tests.common import users
+from odoo import _
+from odoo.addons.survey.tests import common
+from odoo.tests.common import users
 
 
 class TestSurveyInternals(common.TestSurveyCommon):

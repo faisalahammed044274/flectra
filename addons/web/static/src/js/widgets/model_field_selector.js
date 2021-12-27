@@ -1,4 +1,4 @@
-flectra.define("web.ModelFieldSelector", function (require) {
+odoo.define("web.ModelFieldSelector", function (require) {
 "use strict";
 
 var core = require("web.core");

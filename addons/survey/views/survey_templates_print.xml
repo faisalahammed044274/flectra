@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<flectra>
+<odoo>
 <data>
     <!-- Survey: printable page view (all pages) -->
     <template id="survey_page_print" name="Survey: print page">
@@ -54,4 +54,4 @@
         </t>
     </template>
 </data>
-</flectra>
+</odoo>

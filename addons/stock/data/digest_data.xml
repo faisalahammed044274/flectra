@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='utf-8'?>
-<flectra>
+<odoo>
     <data>
         <record id="digest_tip_stock_0" model="digest.tip">
             <field name="name">Tip: Speed up inventory operations with barcodes</field>
@@ -13,7 +13,7 @@
             <img src="/stock/static/src/img/barcode.gif" class="tip_twocol_img" />
         </div>
         <div style="float: left; width: 55%;">
-            <p class="tip_content" style="margin: 0;">Enjoy a quick-paced experience with the Flectra barcode app. It is blazing fast and works even without a stable internet connection. It supports all flows: inventory adjustments, batch picking, moving lots or pallets, low inventory checks, etc. Go to the "Apps" menu to activate the barcode interface.</p>
+            <p class="tip_content" style="margin: 0;">Enjoy a quick-paced experience with the Odoo barcode app. It is blazing fast and works even without a stable internet connection. It supports all flows: inventory adjustments, batch picking, moving lots or pallets, low inventory checks, etc. Go to the "Apps" menu to activate the barcode interface.</p>
         </div>
     </div>
     <div style="clear: both;" />
@@ -21,4 +21,4 @@
             </field>
         </record>
     </data>
-</flectra>
+</odoo>

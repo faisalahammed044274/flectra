@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
 from datetime import datetime
 
-from flectra.tests import tagged
-from flectra import fields
+from odoo.tests import tagged
+from odoo import fields
 from .common import TestEsEdiCommon
 
 

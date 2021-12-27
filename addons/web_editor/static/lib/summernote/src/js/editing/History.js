@@ -1,4 +1,4 @@
-define(['summernote/core/range', 'summernote/core/dom'], function (range, dom) { // FLECTRA: suggest upstream
+define(['summernote/core/range', 'summernote/core/dom'], function (range, dom) { // ODOO: suggest upstream
   /**
    * @class editing.History
    *
@@ -16,7 +16,7 @@ define(['summernote/core/range', 'summernote/core/dom'], function (range, dom) {
       return {
         contents: $editable.html(),
         bookmark: (rng && dom.ancestor(rng.sc, dom.isEditable) ? rng.bookmark(editable) : emptyBookmark)
-        // FLECTRA: suggest upstream added " && dom.ancestor(rng.sc, dom.isEditable) "
+        // ODOO: suggest upstream added " && dom.ancestor(rng.sc, dom.isEditable) "
       };
     };
 
@@ -44,7 +44,7 @@ define(['summernote/core/range', 'summernote/core/dom'], function (range, dom) {
       }
     };
 
-    /* FLECTRA: to suggest upstream */
+    /* ODOO: to suggest upstream */
     this.hasUndo = function () {
         return 0 < stackOffset;
     };
@@ -59,17 +59,17 @@ define(['summernote/core/range', 'summernote/core/dom'], function (range, dom) {
       }
     };
 
-    /* FLECTRA: to suggest upstream */
+    /* ODOO: to suggest upstream */
     this.hasRedo = function () {
         return stack.length - 1 > stackOffset;
     };
 
-    var last; // FLECTRA: to suggest upstream (since we may have several editor)
+    var last; // ODOO: to suggest upstream (since we may have several editor)
     /**
      * recorded undo
      */
     this.recordUndo = function () {
-      // FLECTRA: method totally rewritten
+      // ODOO: method totally rewritten
       // test event for firefox: remove stack of history because event doesn't exists
       var key = typeof event !== 'undefined' ? event : false;
       if (key && !event.metaKey && !event.ctrlKey && !event.altKey && event.type === "keydown") {
@@ -97,12 +97,12 @@ define(['summernote/core/range', 'summernote/core/dom'], function (range, dom) {
       stack.push(makeSnapshot());
     };
 
-    /* FLECTRA: to suggest upstream */
+    /* ODOO: to suggest upstream */
     this.splitNext = function () {
         last = false;
     };
 
-    /* FLECTRA: to suggest upstream */
+    /* ODOO: to suggest upstream */
     this.reset = function () {
         last = false;
         stack = [];

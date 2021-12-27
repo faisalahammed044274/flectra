@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<flectra>
+<odoo>
   <data noupdate="1">
 
     <record id="base.user_demo" model="res.users">
@@ -462,4 +462,4 @@
     </record>
 
   </data>
-</flectra>
+</odoo>

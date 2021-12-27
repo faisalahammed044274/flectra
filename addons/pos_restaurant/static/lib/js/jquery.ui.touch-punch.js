@@ -13,7 +13,7 @@
     // Detect touch support
     $.support.touch = (
       'ontouchend' in document || // Default check
-      // Flectra fix for Chrome
+      // Odoo fix for Chrome
       // See: https://github.com/furf/jquery-ui-touch-punch/issues/309
       'ontouchstart' in document ||
       'ontouchstart' in window ||
@@ -185,4 +185,4 @@
       _mouseDestroy.call(self);
     };
   
-  })(jQuery); 
+  })(jQuery);

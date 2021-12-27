@@ -10,12 +10,12 @@
     var testedMenus;
     var blackListedMenus = ['base.menu_theme_store', 'base.menu_third_party', 'account.menu_action_account_bank_journal_form', 'pos_adyen.menu_pos_adyen_account'];
     var appsMenusOnly = false;
-    let isEnterprise = flectra.session_info.server_version_info[5] === 'e';
+    let isEnterprise = odoo.session_info.server_version_info[5] === 'e';
 
     function createWebClientHooks() {
-        var AbstractController = flectra.__DEBUG__.services['web.AbstractController'];
-        var DiscussWidget = flectra.__DEBUG__.services['mail/static/src/widgets/discuss/discuss.js'];
-        var WebClient = flectra.__DEBUG__.services["web.WebClient"];
+        var AbstractController = odoo.__DEBUG__.services['web.AbstractController'];
+        var DiscussWidget = odoo.__DEBUG__.services['mail/static/src/widgets/discuss/discuss.js'];
+        var WebClient = odoo.__DEBUG__.services["web.WebClient"];
 
         WebClient.include({
             current_action_updated : function (action, controller) {
@@ -65,13 +65,13 @@
         // finding applications menus
         let appMenuItems;
         if (isEnterprise) {
-            console.log("Flectra flavor: Enterprise");
+            console.log("Odoo flavor: Enterprise");
             appMenuItems = document.querySelectorAll(xmlId ?
                 `a.o_app.o_menuitem[data-menu-xmlid="${xmlId}"]` :
                 'a.o_app.o_menuitem'
             );
         } else {
-            console.log("Flectra flavor: Community");
+            console.log("Odoo flavor: Community");
             appMenuItems = document.querySelectorAll(xmlId ?
                 `a.o_app[data-menu-xmlid="${xmlId}"]` :
                 'a.o_app'

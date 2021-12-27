@@ -1,9 +1,9 @@
 # -*- coding: utf-8 -*-
 
-from flectra import api, models, fields, tools, _
-from flectra.tools import DEFAULT_SERVER_DATE_FORMAT, float_repr, str2bool
-from flectra.tests.common import Form
-from flectra.exceptions import UserError
+from odoo import api, models, fields, tools, _
+from odoo.tools import DEFAULT_SERVER_DATE_FORMAT, float_repr, str2bool
+from odoo.tests.common import Form
+from odoo.exceptions import UserError
 
 from datetime import datetime
 from lxml import etree
@@ -58,7 +58,7 @@ class AccountEdiFormat(models.Model):
         if not edi_document.attachment_id:
             return
 
-        pdf_writer.embed_flectra_attachment(edi_document.attachment_id)
+        pdf_writer.embed_odoo_attachment(edi_document.attachment_id, subtype='application/xml')
         if not pdf_writer.is_pdfa and str2bool(self.env['ir.config_parameter'].sudo().get_param('edi.use_pdfa', 'False')):
             try:
                 pdf_writer.convert_to_pdfa()
@@ -137,7 +137,7 @@ class AccountEdiFormat(models.Model):
         return self.env['ir.attachment'].create({
             'name': 'factur-x.xml',
             'datas': base64.encodebytes(xml_content),
-            'mimetype': '/application#2Fxml'
+            'mimetype': 'application/xml'
         })
 
     def _is_facturx(self, filename, tree):

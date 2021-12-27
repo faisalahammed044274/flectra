@@ -1,10 +1,10 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo. See LICENSE file for full copyright and licensing details.
 
-from flectra.addons.mail.tests.common import mail_new_test_user
-from flectra.addons.project.tests.test_project_base import TestProjectCommon
-from flectra.exceptions import AccessError, ValidationError
-from flectra.tests.common import users
+from odoo.addons.mail.tests.common import mail_new_test_user
+from odoo.addons.project.tests.test_project_base import TestProjectCommon
+from odoo.exceptions import AccessError, ValidationError
+from odoo.tests.common import users
 
 
 class TestAccessRights(TestProjectCommon):

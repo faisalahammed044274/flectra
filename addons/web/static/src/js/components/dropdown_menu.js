@@ -1,4 +1,4 @@
-flectra.define('web.DropdownMenu', function (require) {
+odoo.define('web.DropdownMenu', function (require) {
     "use strict";
 
     const DropdownMenuItem = require('web.DropdownMenuItem');

@@ -1,4 +1,4 @@
-flectra.define('rating.portal.composer', function (require) {
+odoo.define('rating.portal.composer', function (require) {
 'use strict';
 
 var core = require('web.core');

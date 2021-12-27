@@ -1,10 +1,10 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo. See LICENSE file for full copyright and licensing details.
 
-from flectra import http
-from flectra.http import request
-from flectra.addons.http_routing.models.ir_http import unslug
-from flectra.addons.portal.controllers.portal import CustomerPortal
+from odoo import http
+from odoo.http import request
+from odoo.addons.http_routing.models.ir_http import unslug
+from odoo.addons.portal.controllers.portal import CustomerPortal
 
 
 class CustomerPortal(CustomerPortal):

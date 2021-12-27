@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<flectra>
+<odoo>
     <menuitem id="account_reports_do_statements_menu" name="Dominican Republic" parent="account.menu_finance_reports" sequence="0" groups="account.group_account_readonly"/>
 
     <!-- Chart of Accounts Template -->
@@ -11,4 +11,4 @@
         <field name="transfer_account_code_prefix">11010100</field>
         <field name="currency_id" ref="base.DOP"/>
     </record>
-</flectra>
+</odoo>

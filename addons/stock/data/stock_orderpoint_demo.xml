@@ -1,4 +1,4 @@
-<flectra>
+<odoo>
     <data noupdate="1">
 
         <!-- Resource: stock.warehouse.orderpoint -->
@@ -32,4 +32,4 @@
         </record>
 
     </data>
-</flectra> 
+</odoo>

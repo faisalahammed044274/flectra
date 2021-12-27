@@ -1,9 +1,9 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo. See LICENSE file for full copyright and licensing details.
 
 from lxml.builder import E
 
-from flectra import api, models, tools, _
+from odoo import api, models, tools, _
 
 
 class BaseModel(models.AbstractModel):
@@ -206,5 +206,5 @@ class BaseModel(models.AbstractModel):
 
     def _notify_email_header_dict(self):
         return {
-            'X-Flectra-Objects': "%s-%s" % (self._name, self.id),
+            'X-Odoo-Objects': "%s-%s" % (self._name, self.id),
         }

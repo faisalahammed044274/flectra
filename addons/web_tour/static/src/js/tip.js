@@ -1,4 +1,4 @@
-flectra.define('web_tour.Tip', function (require) {
+odoo.define('web_tour.Tip', function (require) {
 "use strict";
 
 var config = require('web.config');

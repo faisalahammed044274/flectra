@@ -1,4 +1,4 @@
-from flectra import api, models, fields
+from odoo import api, models, fields
 
 
 class Users(models.Model):

@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
-from flectra.modules.module import get_module_resource
-from flectra.addons.account.tests.common import AccountTestInvoicingCommon
+# Part of Odoo. See LICENSE file for full copyright and licensing details.
+from odoo.modules.module import get_module_resource
+from odoo.addons.account.tests.common import AccountTestInvoicingCommon
 
 from contextlib import contextmanager
 from unittest.mock import patch

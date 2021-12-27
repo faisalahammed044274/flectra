@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<flectra>
+<odoo>
     <!-- Chart Template -->
     <record id="account_arabic_coa_general" model="account.chart.template">
         <field name="property_account_receivable_id" ref="account_receivable"/>
@@ -12,4 +12,4 @@
         <field name="expense_currency_exchange_account_id" ref="base_miscexpense"/>
         <field name="default_pos_receivable_account_id" ref="account_receivable_pos" />
     </record>
-</flectra>
+</odoo>

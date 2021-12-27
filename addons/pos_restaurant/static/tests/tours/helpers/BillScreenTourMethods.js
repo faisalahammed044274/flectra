@@ -1,4 +1,4 @@
-flectra.define('pos_restaurant.tour.BillScreenTourMethods', function (require) {
+odoo.define('pos_restaurant.tour.BillScreenTourMethods', function (require) {
     'use strict';
 
     const { createTourMethods } = require('point_of_sale.tour.utils');

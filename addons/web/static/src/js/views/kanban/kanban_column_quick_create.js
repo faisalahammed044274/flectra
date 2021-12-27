@@ -1,4 +1,4 @@
-flectra.define('web.kanban_column_quick_create', function (require) {
+odoo.define('web.kanban_column_quick_create', function (require) {
 "use strict";
 
 /**

@@ -1,4 +1,4 @@
-flectra.define('web.test_utils_create', function (require) {
+odoo.define('web.test_utils_create', function (require) {
     "use strict";
 
     /**
@@ -490,7 +490,7 @@ flectra.define('web.test_utils_create', function (require) {
      * to intercept custom or DOM events.
      *
      * @param {boolean} [debug=false] if true, the widget will be appended in
-     *      the DOM. Also, RPCs and uncaught FlectraEvent will be logged
+     *      the DOM. Also, RPCs and uncaught OdooEvent will be logged
      * @returns {HTMLElement}
      */
     function prepareTarget(debug = false) {

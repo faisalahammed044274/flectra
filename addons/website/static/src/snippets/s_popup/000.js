@@ -1,4 +1,4 @@
-flectra.define('website.s_popup', function (require) {
+odoo.define('website.s_popup', function (require) {
 'use strict';
 
 const config = require('web.config');

@@ -1,10 +1,10 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo. See LICENSE file for full copyright and licensing details.
 
 import werkzeug
 
-from flectra.addons.mass_mailing.tests.common import MassMailCommon
-from flectra.tests.common import HttpCase
+from odoo.addons.mass_mailing.tests.common import MassMailCommon
+from odoo.tests.common import HttpCase
 
 
 class TestMassMailingControllers(MassMailCommon, HttpCase):

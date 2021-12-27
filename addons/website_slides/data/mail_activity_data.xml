@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<flectra>
+<odoo>
     <data noupdate="1">
         <record id="mail_activity_data_access_request" model="mail.activity.type">
             <field name="name">Access Request</field>
@@ -8,4 +8,4 @@
             <field name="res_model_id" ref="website_slides.model_slide_channel"/>
         </record>
     </data>
-</flectra>
+</odoo>

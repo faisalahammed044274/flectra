@@ -1,4 +1,4 @@
-flectra.define('barcodes.barcode_mobile_tests', function () {
+odoo.define('barcodes.barcode_mobile_tests', function () {
     "use strict";
 
     QUnit.module('Barcodes', {}, function () {
@@ -9,7 +9,7 @@ flectra.define('barcodes.barcode_mobile_tests', function () {
             assert.expect(10);
 
             // Mock Chrome mobile environment
-            var barcodeEvents = flectra.__DEBUG__.services["barcodes.BarcodeEvents"].BarcodeEvents;
+            var barcodeEvents = odoo.__DEBUG__.services["barcodes.BarcodeEvents"].BarcodeEvents;
             var __isChromeMobile = barcodeEvents.isChromeMobile;
             barcodeEvents.isChromeMobile = true;
             // Rebind keyboard events

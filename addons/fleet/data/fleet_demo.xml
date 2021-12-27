@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<flectra noupdate="1">
+<odoo noupdate="1">
       <!--Users-->
       <record id="base.user_demo" model="res.users">
         <field name="groups_id" eval="[(4, ref('fleet.fleet_group_manager'))]" />
@@ -860,4 +860,4 @@
         <field name="user_id" ref="base.user_admin"/>
         <field eval="[(6,0,[ref('fleet.type_contract_omnium'),ref('fleet.type_service_service_3'),ref('fleet.type_service_service_2')])]" name="service_ids"/>
       </record>
-</flectra>
+</odoo>

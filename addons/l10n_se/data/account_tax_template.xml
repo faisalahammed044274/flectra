@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<flectra>
+<odoo>
     <data noupdate="1">
         <record id="sale_tax_25_goods" model="account.tax.template">
             <field name="chart_template_id" ref="l10nse_chart_template"/>
@@ -1144,4 +1144,4 @@
                 })]"/>
         </record>
     </data>
-</flectra>
+</odoo>

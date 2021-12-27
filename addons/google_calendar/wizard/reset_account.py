@@ -1,10 +1,10 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo. See LICENSE file for full copyright and licensing details.
 
-from flectra import fields, models
+from odoo import fields, models
 
-from flectra.addons.google_calendar.models.google_sync import google_calendar_token
-from flectra.addons.google_calendar.utils.google_calendar import GoogleCalendarService
+from odoo.addons.google_calendar.models.google_sync import google_calendar_token
+from odoo.addons.google_calendar.utils.google_calendar import GoogleCalendarService
 
 
 class ResetGoogleAccount(models.TransientModel):
@@ -15,7 +15,7 @@ class ResetGoogleAccount(models.TransientModel):
     delete_policy = fields.Selection(
         [('dont_delete', "Leave them untouched"),
          ('delete_google', "Delete from the current Google Calendar account"),
-         ('delete_flectra', "Delete from Flectra"),
+         ('delete_odoo', "Delete from Odoo"),
          ('delete_both', "Delete from both"),
         ], string="User's Existing Events", required=True, default='dont_delete',
         help="This will only affect events for which the user is the owner")
@@ -35,7 +35,7 @@ class ResetGoogleAccount(models.TransientModel):
                 for event in events:
                     google.delete(event.google_id, token=token)
 
-        if self.delete_policy in ('delete_flectra', 'delete_both'):
+        if self.delete_policy in ('delete_odoo', 'delete_both'):
             events.google_id = False
             events.unlink()
 

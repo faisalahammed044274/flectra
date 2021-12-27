@@ -1,4 +1,4 @@
-flectra.define('pos_restaurant.multiprint', function (require) {
+odoo.define('pos_restaurant.multiprint', function (require) {
 "use strict";
 
 var models = require('point_of_sale.models');
@@ -14,7 +14,7 @@ models.PosModel = models.PosModel.extend({
             url = window.location.protocol + '//' + url;
         }
         if(url.indexOf(':', url.indexOf('//') + 2) < 0 && window.location.protocol !== 'https:') {
-            url = url + ':7073';
+            url = url + ':8069';
         }
         return new Printer(url, this);
     },

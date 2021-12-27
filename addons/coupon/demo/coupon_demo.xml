@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<flectra>
+<odoo>
     <data noupdate="1">
         <record id="product_product_10_percent_discount" model="product.product">
             <field name="name">10.0% discount on total amount</field>
@@ -57,4 +57,4 @@
             <field name="program_type">coupon_program</field>
         </record>
     </data>
-</flectra>
+</odoo>

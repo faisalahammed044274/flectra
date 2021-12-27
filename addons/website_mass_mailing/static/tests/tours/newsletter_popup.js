@@ -1,4 +1,4 @@
-flectra.define("website_mass_mailing.tour.newsletter_popup_edition", function (require) {
+odoo.define("website_mass_mailing.tour.newsletter_popup_edition", function (require) {
 "use strict";
 
 const tour = require('web_tour.tour');
@@ -37,7 +37,7 @@ tour.register('newsletter_popup_edition', {
 ]);
 });
 
-flectra.define("website_mass_mailing.tour.newsletter_popup_use", function (require) {
+odoo.define("website_mass_mailing.tour.newsletter_popup_use", function (require) {
 "use strict";
 
 const tour = require('web_tour.tour');

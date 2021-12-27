@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo. See LICENSE file for full copyright and licensing details.
 
 import decimal
 import logging
@@ -8,9 +8,9 @@ import uuid
 from hashlib import md5
 from werkzeug import urls
 
-from flectra import api, fields, models, _
-from flectra.addons.payment.models.payment_acquirer import ValidationError
-from flectra.tools.float_utils import float_compare
+from odoo import api, fields, models, _
+from odoo.addons.payment.models.payment_acquirer import ValidationError
+from odoo.tools.float_utils import float_compare
 
 
 _logger = logging.getLogger(__name__)

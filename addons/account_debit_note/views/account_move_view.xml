@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<flectra>
+<odoo>
     <record id="view_move_form_debit" model="ir.ui.view">
         <field name="name">account.move.form.debit</field>
         <field name="model">account.move</field>
@@ -25,4 +25,4 @@
             </field>
         </field>
     </record>
-</flectra>
+</odoo>

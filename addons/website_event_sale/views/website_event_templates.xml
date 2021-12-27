@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<flectra>
+<odoo>
 
 <template id="registration_template" inherit_id="website_event.registration_template">
     <!-- Add price information on tickets (multi tickets, aka in collapse) -->
@@ -40,4 +40,4 @@
     </xpath>
 </template>
 
-</flectra>
+</odoo>

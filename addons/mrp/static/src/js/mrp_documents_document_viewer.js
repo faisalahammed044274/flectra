@@ -1,4 +1,4 @@
-flectra.define('mrp.MrpDocumentViewer', function (require) {
+odoo.define('mrp.MrpDocumentViewer', function (require) {
 "use strict";
 
 const DocumentViewer = require('mail.DocumentViewer');

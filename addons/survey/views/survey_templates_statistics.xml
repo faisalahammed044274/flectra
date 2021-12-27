@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<flectra>
+<odoo>
 <data>
     <template id="survey_page_statistics" name="Survey: result statistics page">
         <t t-call="survey.layout">
@@ -418,4 +418,4 @@
         </ul>
     </template>
 </data>
-</flectra>
+</odoo>

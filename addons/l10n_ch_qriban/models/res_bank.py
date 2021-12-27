@@ -1,10 +1,10 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo. See LICENSE file for full copyright and licensing details.
 
-from flectra import api, fields, models, _
-from flectra.addons.base_iban.models.res_partner_bank import normalize_iban, pretty_iban, validate_iban
-from flectra.addons.base.models.res_bank import sanitize_account_number
-from flectra.exceptions import ValidationError
+from odoo import api, fields, models, _
+from odoo.addons.base_iban.models.res_partner_bank import normalize_iban, pretty_iban, validate_iban
+from odoo.addons.base.models.res_bank import sanitize_account_number
+from odoo.exceptions import ValidationError
 
 class ResPartnerBank(models.Model):
     _inherit = 'res.partner.bank'

@@ -1,4 +1,4 @@
-flectra.define('portal.rating.composer', function (require) {
+odoo.define('portal.rating.composer', function (require) {
 'use strict';
 
 var publicWidget = require('web.public.widget');
@@ -33,7 +33,7 @@ var RatingPopupComposer = publicWidget.Widget.extend({
             'pid': 0,
             'display_composer': options['disable_composer'] ? false : !session.is_website_user,
             'display_rating': true,
-            'csrf_token': flectra.csrf_token,
+            'csrf_token': odoo.csrf_token,
             'user_id': session.user_id,
         });
     },

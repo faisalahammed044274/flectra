@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<flectra>
+<odoo>
     <data noupdate="0">
         <record id="ua_psbp_6412" model="account.account.template">
             <field name="tag_ids" eval="[(6,0,[ref('l10n_ua.acc_tag_vat')])]"/>
@@ -1242,4 +1242,4 @@
             <field name="type_tax_use">purchase</field>
         </record>
     </data>
-</flectra>
+</odoo>

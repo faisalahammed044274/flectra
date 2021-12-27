@@ -1,4 +1,4 @@
-flectra.define('mail.chatter_tests', function (require) {
+odoo.define('mail.chatter_tests', function (require) {
 "use strict";
 
 const { afterEach, beforeEach, start } = require('mail/static/src/utils/test_utils.js');

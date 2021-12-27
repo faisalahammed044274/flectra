@@ -1,4 +1,4 @@
-flectra.define('web.action_manager_tests', function (require) {
+odoo.define('web.action_manager_tests', function (require) {
 "use strict";
 
 var ActionManager = require('web.ActionManager');

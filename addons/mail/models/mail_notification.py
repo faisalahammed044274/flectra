@@ -1,11 +1,11 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo. See LICENSE file for full copyright and licensing details.
 
 from dateutil.relativedelta import relativedelta
 
-from flectra import api, fields, models
-from flectra.exceptions import AccessError
-from flectra.tools.translate import _
+from odoo import api, fields, models
+from odoo.exceptions import AccessError
+from odoo.tools.translate import _
 
 
 class MailNotification(models.Model):

@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo. See LICENSE file for full copyright and licensing details.
 
-from flectra.tests import common
+from odoo.tests import common
 from datetime import datetime
 
 
@@ -23,7 +23,7 @@ class TestSaleMargin(common.TransactionCase):
         self.pricelist = self.env.ref('product.list0')
 
     def test_sale_margin(self):
-        """ Test the sale_margin module in Flectra. """
+        """ Test the sale_margin module in Odoo. """
         self.pricelist.currency_id = self.env.company.currency_id
         self.product.standard_price = 700.0
         sale_order_so11 = self.SaleOrder.create({

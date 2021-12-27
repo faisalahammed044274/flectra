@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<flectra>
+<odoo>
     <data>
 
         <!-- Account Tax Group -->
@@ -46,4 +46,4 @@
             <field name="name">ITBIS -100%</field>
         </record>
     </data>
-</flectra> 
+</odoo>

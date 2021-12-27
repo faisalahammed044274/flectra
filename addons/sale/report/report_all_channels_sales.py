@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo. See LICENSE file for full copyright and licensing details.
 
-from flectra import api, fields, models, tools
+from odoo import api, fields, models, tools
 
 
 class PosSaleReport(models.Model):
@@ -59,7 +59,7 @@ class PosSaleReport(models.Model):
     def _from(self):
         return """(%s)""" % (self._so())
 
-    def get_main_request(self):
+    def _get_main_request(self):
         request = """
             CREATE or REPLACE VIEW %s AS
                 SELECT id AS id,
@@ -84,4 +84,4 @@ class PosSaleReport(models.Model):
 
     def init(self):
         tools.drop_view_if_exists(self.env.cr, self._table)
-        self.env.cr.execute(self.get_main_request())
+        self.env.cr.execute(self._get_main_request())

@@ -1,4 +1,4 @@
-flectra.define('website_crm.form', function (require) {
+odoo.define('website_crm.form', function (require) {
 'use strict';
 
 var core = require('web.core');

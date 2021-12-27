@@ -9,11 +9,11 @@ import tempfile
 import zipfile
 from os.path import join as opj
 
-import flectra
-from flectra import api, fields, models, _
-from flectra.exceptions import UserError
-from flectra.modules import load_information_from_description_file
-from flectra.tools import convert_file, exception_to_unicode
+import odoo
+from odoo import api, fields, models, _
+from odoo.exceptions import UserError
+from odoo.modules import load_information_from_description_file
+from odoo.tools import convert_file, exception_to_unicode
 
 _logger = logging.getLogger(__name__)
 
@@ -56,7 +56,7 @@ class IrModule(models.Model):
                 )
             raise UserError(err)
         elif 'web_studio' not in installed_mods and _is_studio_custom(path):
-            raise UserError(_("Studio customizations require the Flectra Studio app."))
+            raise UserError(_("Studio customizations require the Odoo Studio app."))
 
         mod = known_mods_names.get(module)
         if mod:
@@ -124,9 +124,9 @@ class IrModule(models.Model):
                     raise UserError(_("File '%s' exceed maximum allowed file size", zf.filename))
 
             with tempfile.TemporaryDirectory() as module_dir:
-                import flectra.modules.module as module
+                import odoo.modules.module as module
                 try:
-                    flectra.addons.__path__.append(module_dir)
+                    odoo.addons.__path__.append(module_dir)
                     z.extractall(module_dir)
                     dirs = [d for d in os.listdir(module_dir) if os.path.isdir(opj(module_dir, d))]
                     for mod_name in dirs:
@@ -140,7 +140,7 @@ class IrModule(models.Model):
                             _logger.exception('Error while importing module')
                             errors[mod_name] = exception_to_unicode(e)
                 finally:
-                    flectra.addons.__path__.remove(module_dir)
+                    odoo.addons.__path__.remove(module_dir)
         r = ["Successfully imported module '%s'" % mod for mod in success]
         for mod, error in errors.items():
             r.append("Error while importing module '%s'.\n\n %s \n Make sure those modules are installed and try again." % (mod, error))

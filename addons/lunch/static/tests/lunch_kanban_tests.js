@@ -1,4 +1,4 @@
-flectra.define('lunch.lunchKanbanTests', function (require) {
+odoo.define('lunch.lunchKanbanTests', function (require) {
 "use strict";
 
 const LunchKanbanView = require('lunch.LunchKanbanView');

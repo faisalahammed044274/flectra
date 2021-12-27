@@ -1,4 +1,4 @@
-flectra.define('pos_epson_printer.pos_epson_printer', function (require) {
+odoo.define('pos_epson_printer.pos_epson_printer', function (require) {
 "use strict";
 
 var models = require('point_of_sale.models');

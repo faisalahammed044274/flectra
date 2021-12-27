@@ -1,5 +1,5 @@
 # coding: utf-8
-from flectra.tests import common, HttpCase, tagged
+from odoo.tests import common, HttpCase, tagged
 
 
 @tagged('-at_install', 'post_install')

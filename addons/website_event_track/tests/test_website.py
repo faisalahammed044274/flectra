@@ -1,8 +1,8 @@
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo. See LICENSE file for full copyright and licensing details.
 # -*- coding: utf-8 -*-
 
-from flectra.tests import tagged
-from flectra.tests.common import TransactionCase
+from odoo.tests import tagged
+from odoo.tests.common import TransactionCase
 
 
 @tagged('post_install','-at_install')

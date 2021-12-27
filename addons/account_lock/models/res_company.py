@@ -3,8 +3,8 @@
 import calendar
 from dateutil.relativedelta import relativedelta
 
-from flectra import fields, models, api, _
-from flectra.exceptions import UserError
+from odoo import fields, models, api, _
+from odoo.exceptions import UserError
 
 
 class ResCompany(models.Model):

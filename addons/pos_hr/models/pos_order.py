@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-from flectra import models, fields, api
+from odoo import models, fields, api
 
 
 class PosOrder(models.Model):

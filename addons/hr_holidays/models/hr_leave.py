@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo. See LICENSE file for full copyright and licensing details.
 
 # Copyright (c) 2005-2006 Axelor SARL. (http://www.axelor.com)
 
@@ -12,14 +12,14 @@ from datetime import datetime, date, timedelta, time
 from dateutil.rrule import rrule, DAILY
 from pytz import timezone, UTC
 
-from flectra import api, fields, models, SUPERUSER_ID, tools
-from flectra.addons.base.models.res_partner import _tz_get
-from flectra.addons.resource.models.resource import float_to_time, HOURS_PER_DAY
-from flectra.exceptions import AccessError, UserError, ValidationError
-from flectra.tools import float_compare
-from flectra.tools.float_utils import float_round
-from flectra.tools.translate import _
-from flectra.osv import expression
+from odoo import api, fields, models, SUPERUSER_ID, tools
+from odoo.addons.base.models.res_partner import _tz_get
+from odoo.addons.resource.models.resource import float_to_time, HOURS_PER_DAY
+from odoo.exceptions import AccessError, UserError, ValidationError
+from odoo.tools import float_compare
+from odoo.tools.float_utils import float_round
+from odoo.tools.translate import _
+from odoo.osv import expression
 
 _logger = logging.getLogger(__name__)
 
@@ -787,7 +787,7 @@ class HolidaysRequest(models.Model):
                     # Automatic validation should be done in sudo, because user might not have the rights to do it by himself
                     holiday_sudo.action_validate()
                     holiday_sudo.message_subscribe(partner_ids=[holiday._get_responsible_for_approval().partner_id.id])
-                    holiday_sudo.message_post(body=_("The time off has been automatically approved"), subtype_xmlid="mail.mt_comment") # Message from FlectraBot (sudo)
+                    holiday_sudo.message_post(body=_("The time off has been automatically approved"), subtype_xmlid="mail.mt_comment") # Message from OdooBot (sudo)
                 elif not self._context.get('import_file'):
                     holiday_sudo.activity_update()
         return holidays

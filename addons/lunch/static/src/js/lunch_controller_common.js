@@ -1,4 +1,4 @@
-flectra.define('lunch.LunchControllerCommon', function (require) {
+odoo.define('lunch.LunchControllerCommon', function (require) {
 "use strict";
 
 /**

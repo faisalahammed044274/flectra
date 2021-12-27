@@ -1,4 +1,4 @@
-flectra.define('web.web_client', function (require) {
+odoo.define('web.web_client', function (require) {
     // this module is required by the test
     const { bus } = require('web.core');
     const WebClient = require('web.AbstractWebClient');

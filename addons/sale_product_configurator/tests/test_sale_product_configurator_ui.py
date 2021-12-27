@@ -1,12 +1,12 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo. See LICENSE file for full copyright and licensing details.
 
-import flectra.tests
+import odoo.tests
 from .common import TestProductConfiguratorCommon
 
 
-@flectra.tests.tagged('post_install', '-at_install')
-class TestUi(flectra.tests.HttpSavepointCase, TestProductConfiguratorCommon):
+@odoo.tests.tagged('post_install', '-at_install')
+class TestUi(odoo.tests.HttpSavepointCase, TestProductConfiguratorCommon):
 
     def setUp(self):
         super(TestUi, self).setUp()

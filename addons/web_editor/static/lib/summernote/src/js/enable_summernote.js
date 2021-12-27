@@ -1,1 +1,1 @@
-flectra.__enable_summernote__ = true;
+odoo.__enable_summernote__ = true;

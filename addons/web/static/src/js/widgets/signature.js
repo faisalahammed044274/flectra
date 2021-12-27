@@ -1,4 +1,4 @@
-flectra.define('web.signature_widget', function (require) {
+odoo.define('web.signature_widget', function (require) {
 "use strict";
 
 const framework = require('web.framework');

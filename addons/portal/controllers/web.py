@@ -1,9 +1,9 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo. See LICENSE file for full copyright and licensing details.
 
-from flectra import http
-from flectra.addons.web.controllers.main import Home
-from flectra.http import request
+from odoo import http
+from odoo.addons.web.controllers.main import Home
+from odoo.http import request
 
 
 class Home(Home):

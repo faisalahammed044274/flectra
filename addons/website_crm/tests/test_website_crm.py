@@ -1,11 +1,11 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo. See LICENSE file for full copyright and licensing details.
 
-import flectra.tests
+import odoo.tests
 
 
-@flectra.tests.tagged('post_install', '-at_install')
-class TestWebsiteCrm(flectra.tests.HttpCase):
+@odoo.tests.tagged('post_install', '-at_install')
+class TestWebsiteCrm(odoo.tests.HttpCase):
 
     def test_tour(self):
         self.start_tour("/", 'website_crm_tour')
@@ -15,4 +15,4 @@ class TestWebsiteCrm(flectra.tests.HttpCase):
         self.assertEqual(len(record), 1)
         self.assertEqual(record.contact_name, 'John Smith')
         self.assertEqual(record.email_from, 'john@smith.com')
-        self.assertEqual(record.partner_name, 'FlectraHQ Inc., Odoo S.A.')
+        self.assertEqual(record.partner_name, 'Odoo S.A.')

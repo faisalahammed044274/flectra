@@ -1,4 +1,4 @@
-flectra.define('sale_product_configurator.OptionalProductsModal', function (require) {
+odoo.define('sale_product_configurator.OptionalProductsModal', function (require) {
     "use strict";
 
 var ajax = require('web.ajax');

@@ -1,4 +1,4 @@
-flectra.define('point_of_sale.DebugWidget', function (require) {
+odoo.define('point_of_sale.DebugWidget', function (require) {
     'use strict';
 
     const { useState } = owl;

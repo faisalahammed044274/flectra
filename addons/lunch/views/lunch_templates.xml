@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<flectra>
+<odoo>
     <template id="assets_backend" name="lunch assets" inherit_id="web.assets_backend">
         <xpath expr="." position="inside">
             <link rel="stylesheet" type="text/scss" href="/lunch/static/src/scss/lunch_view.scss"/>
@@ -39,4 +39,4 @@
     <template id="lunch_payment_dialog" name="Lunch Payment Dialog">
         To add some money to your wallet, please contact your lunch manager.
     </template>
-</flectra>
+</odoo>

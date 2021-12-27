@@ -1,4 +1,4 @@
-flectra.define('web.RainbowMan_tests', function (require) {
+odoo.define('web.RainbowMan_tests', function (require) {
 "use strict";
 
 var RainbowMan = require('web.RainbowMan');

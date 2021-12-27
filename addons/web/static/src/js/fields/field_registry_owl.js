@@ -1,4 +1,4 @@
-flectra.define('web.field_registry_owl', function (require) {
+odoo.define('web.field_registry_owl', function (require) {
     "use strict";
 
     const Registry = require('web.Registry');
@@ -9,7 +9,7 @@ flectra.define('web.field_registry_owl', function (require) {
     );
 });
 
-flectra.define('web._field_registry_owl', function (require) {
+odoo.define('web._field_registry_owl', function (require) {
     "use strict";
 
     /**

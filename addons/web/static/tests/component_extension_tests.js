@@ -1,4 +1,4 @@
-flectra.define('web.component_extension_tests', function (require) {
+odoo.define('web.component_extension_tests', function (require) {
     "use strict";
 
     const makeTestEnvironment = require("web.test_env");

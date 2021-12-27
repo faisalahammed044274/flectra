@@ -1,4 +1,4 @@
-flectra.define('mail/static/src/components/discuss_sidebar/discuss_sidebar.js', function (require) {
+odoo.define('mail/static/src/components/discuss_sidebar/discuss_sidebar.js', function (require) {
 'use strict';
 
 const components = {

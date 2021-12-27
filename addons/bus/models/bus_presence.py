@@ -4,11 +4,11 @@ import time
 
 from psycopg2 import OperationalError
 
-from flectra import api, fields, models
-from flectra import tools
-from flectra.addons.bus.models.bus import TIMEOUT
-from flectra.service.model import PG_CONCURRENCY_ERRORS_TO_RETRY
-from flectra.tools.misc import DEFAULT_SERVER_DATETIME_FORMAT
+from odoo import api, fields, models
+from odoo import tools
+from odoo.addons.bus.models.bus import TIMEOUT
+from odoo.service.model import PG_CONCURRENCY_ERRORS_TO_RETRY
+from odoo.tools.misc import DEFAULT_SERVER_DATETIME_FORMAT
 
 DISCONNECTION_TIMER = TIMEOUT + 5
 AWAY_TIMER = 1800  # 30 minutes
@@ -66,6 +66,6 @@ class BusPresence(models.Model):
             if presence.last_presence < last_presence:
                 values['last_presence'] = last_presence
             # Hide transaction serialization errors, which can be ignored, the presence update is not essential
-            with tools.mute_logger('flectra.sql_db'):
+            with tools.mute_logger('odoo.sql_db'):
                 presence.write(values)
                 presence.flush()

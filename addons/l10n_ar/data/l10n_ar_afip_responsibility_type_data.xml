@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<flectra>
+<odoo>
     <record model='l10n_ar.afip.responsibility.type' id='res_IVARI'>
         <field name='code'>1</field>
         <field name='name'>IVA Responsable Inscripto</field>
@@ -69,4 +69,4 @@
         <field name='code'>99</field>
         <field name='name'>IVA No Alcanzado</field>
     </record>
-</flectra>
+</odoo>

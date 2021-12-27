@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<flectra noupdate="True">
+<odoo noupdate="True">
 
     <!-- Create draft refund for invoice 3 -->
     <record id="demo_sup_refund_invoice_3" model="account.move.reversal">
@@ -21,4 +21,4 @@
 
     <function model="account.move.reversal" name="reverse_moves" eval="[ref('demo_sup_refund_invoice_4')]"/>
 
-</flectra>
+</odoo>

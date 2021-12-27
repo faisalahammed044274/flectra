@@ -1,4 +1,4 @@
-flectra.define('web.CustomFilterItem', function (require) {
+odoo.define('web.CustomFilterItem', function (require) {
     "use strict";
 
     const { DatePicker, DateTimePicker } = require('web.DatePickerOwl');

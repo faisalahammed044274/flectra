@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<flectra>
+<odoo>
 <data>
     <template id="assets_tests" name="Website Event Questions Assets Tests" inherit_id="web.assets_tests">
         <xpath expr="." position="inside">
@@ -7,4 +7,4 @@
         </xpath>
     </template>
 </data>
-</flectra>
+</odoo>

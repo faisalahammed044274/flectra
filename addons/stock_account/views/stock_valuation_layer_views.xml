@@ -1,4 +1,4 @@
-<flectra>
+<odoo>
     <record id="stock_valuation_layer_form" model="ir.ui.view">
         <field name="name">stock.valuation.layer.form</field>
         <field name="model">stock.valuation.layer</field>
@@ -107,4 +107,4 @@
         </field>
     </record>
     
-</flectra>
+</odoo>

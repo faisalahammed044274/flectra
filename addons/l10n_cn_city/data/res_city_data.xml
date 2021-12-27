@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<flectra>
+<odoo>
     <data noupdate="1">
         <record id="china_city_330105" model="res.city">
             <field name="state_id" ref="base.state_cn_ZJ" />
@@ -18800,4 +18800,4 @@
             <field name="name">海北藏族自治州门源回族自治县</field>
         </record>
     </data>
-</flectra> 
+</odoo>

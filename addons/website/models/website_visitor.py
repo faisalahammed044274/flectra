@@ -1,16 +1,16 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo. See LICENSE file for full copyright and licensing details.
 
 from datetime import datetime, timedelta
 import uuid
 import pytz
 
-from flectra import fields, models, api, _
-from flectra.addons.base.models.res_partner import _tz_get
-from flectra.exceptions import UserError
-from flectra.tools.misc import _format_time_ago
-from flectra.http import request
-from flectra.osv import expression
+from odoo import fields, models, api, _
+from odoo.addons.base.models.res_partner import _tz_get
+from odoo.exceptions import UserError
+from odoo.tools.misc import _format_time_ago
+from odoo.http import request
+from odoo.osv import expression
 
 
 class WebsiteTrack(models.Model):

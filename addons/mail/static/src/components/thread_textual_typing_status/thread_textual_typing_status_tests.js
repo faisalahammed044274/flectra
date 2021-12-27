@@ -1,4 +1,4 @@
-flectra.define('mail/static/src/components/thread_textual_typing_status/thread_textual_typing_status_tests.js', function (require) {
+odoo.define('mail/static/src/components/thread_textual_typing_status/thread_textual_typing_status_tests.js', function (require) {
 'use strict';
 
 const components = {

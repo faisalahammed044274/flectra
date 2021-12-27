@@ -29,8 +29,8 @@
                 <cbc:Name>The best supplier</cbc:Name>
             </cac:PartyName>
             <cac:PostalAddress>
-                <cbc:StreetName>Chemin de Flectra 34</cbc:StreetName>
-                <cbc:CityName>Flectra Ville</cbc:CityName>
+                <cbc:StreetName>Chemin de Odoo 34</cbc:StreetName>
+                <cbc:CityName>Odoo Ville</cbc:CityName>
                 <cbc:PostalZone>7777</cbc:PostalZone>
                 <cac:Country>
                     <cbc:IdentificationCode>BE</cbc:IdentificationCode>

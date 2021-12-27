@@ -1,4 +1,4 @@
-flectra.define('hr_expense.expenses.tree', function (require) {
+odoo.define('hr_expense.expenses.tree', function (require) {
 "use strict";
     var DocumentUploadMixin = require('hr_expense.documents.upload.mixin');
     var KanbanController = require('web.KanbanController');
@@ -28,13 +28,13 @@ flectra.define('hr_expense.expenses.tree', function (require) {
         async _renderView() {
             const self = this;
             await this._super(...arguments);
-            const google_url = "https://play.google.com/store/apps/details?id=com.flectra.flectrahq";
-            const apple_url = "https://apps.apple.com/be/app/flectra/id1561830563";
+            const google_url = "https://play.google.com/store/apps/details?id=com.odoo.mobile";
+            const apple_url = "https://apps.apple.com/be/app/odoo/id1272543640";
             const action_desktop = {
                 name: 'Download our App',
                 type: 'ir.actions.client',
                 tag: 'expense_qr_code_modal',
-                params: {'url': "https://apps.apple.com/be/app/flectra/id1561830563"},
+                params: {'url': "https://apps.apple.com/be/app/odoo/id1272543640"},
                 target: 'new',
             };
             this.$el.find('img.o_expense_apple_store').on('click', function(event) {

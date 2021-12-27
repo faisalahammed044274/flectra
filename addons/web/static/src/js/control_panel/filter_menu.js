@@ -1,4 +1,4 @@
-flectra.define('web.FilterMenu', function (require) {
+odoo.define('web.FilterMenu', function (require) {
     "use strict";
 
     const CustomFilterItem = require('web.CustomFilterItem');

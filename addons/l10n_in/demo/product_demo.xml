@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<flectra noupdate="1">
+<odoo noupdate="1">
     <record id="product.product_product_1" model="product.product">
         <field name="l10n_in_hsn_code">998391</field>
         <field name="l10n_in_hsn_description">Specialty Design Services Including Interior Design, Fashion Design, Industrial Design And Other Specialty Design Services</field>
@@ -129,4 +129,4 @@
         <field name="l10n_in_hsn_code">9403</field>
         <field name="l10n_in_hsn_description">Other furniture and parts thereof.</field>
     </record>
-</flectra>
+</odoo>

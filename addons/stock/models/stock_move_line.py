@@ -1,12 +1,12 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo. See LICENSE file for full copyright and licensing details.
 
 from collections import Counter, defaultdict
 
-from flectra import _, api, fields, tools, models
-from flectra.exceptions import UserError, ValidationError
-from flectra.tools import OrderedSet
-from flectra.tools.float_utils import float_compare, float_is_zero, float_round
+from odoo import _, api, fields, tools, models
+from odoo.exceptions import UserError, ValidationError
+from odoo.tools import OrderedSet
+from odoo.tools.float_utils import float_compare, float_is_zero, float_round
 
 
 class StockMoveLine(models.Model):
@@ -79,7 +79,7 @@ class StockMoveLine(models.Model):
             else:
                 line.lots_visible = line.product_id.tracking != 'none'
 
-    @api.depends('product_id', 'product_uom_id', 'product_uom_qty')
+    @api.depends('product_id', 'product_id.uom_id', 'product_uom_id', 'product_uom_qty')
     def _compute_product_qty(self):
         for line in self:
             line.product_qty = line.product_uom_id._compute_quantity(line.product_uom_qty, line.product_id.uom_id, rounding_method='HALF-UP')

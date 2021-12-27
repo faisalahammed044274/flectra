@@ -1,4 +1,4 @@
-flectra.define('event.event_configurator_tour', function (require) {
+odoo.define('event.event_configurator_tour', function (require) {
 "use strict";
 
 var tour = require('web_tour.tour');

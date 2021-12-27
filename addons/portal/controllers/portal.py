@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo. See LICENSE file for full copyright and licensing details.
 
 import base64
 import functools
@@ -10,10 +10,10 @@ import re
 
 from werkzeug import urls
 
-from flectra import fields as flectra_fields, http, tools, _, SUPERUSER_ID
-from flectra.exceptions import ValidationError, AccessError, MissingError, UserError, AccessDenied
-from flectra.http import content_disposition, Controller, request, route
-from flectra.tools import consteq
+from odoo import fields as odoo_fields, http, tools, _, SUPERUSER_ID
+from odoo.exceptions import ValidationError, AccessError, MissingError, UserError, AccessDenied
+from odoo.http import content_disposition, Controller, request, route
+from odoo.tools import consteq
 
 # --------------------------------------------------
 # Misc tools

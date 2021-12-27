@@ -1,4 +1,4 @@
-<flectra>
+<odoo>
     <template id="auth_totp_frontend" name="TOTP frontend (portal)" inherit_id="portal.assets_frontend">
         <xpath expr="." position="inside">
             <script type="application/javascript"
@@ -71,4 +71,4 @@
             </section>
         </xpath>
     </template>
-</flectra>
+</odoo>

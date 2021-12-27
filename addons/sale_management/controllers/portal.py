@@ -1,13 +1,13 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo. See LICENSE file for full copyright and licensing details.
 
 from functools import partial
 
-from flectra import http
-from flectra.tools import formatLang
-from flectra.exceptions import AccessError, MissingError
-from flectra.http import request
-from flectra.addons.sale.controllers.portal import CustomerPortal
+from odoo import http
+from odoo.tools import formatLang
+from odoo.exceptions import AccessError, MissingError
+from odoo.http import request
+from odoo.addons.sale.controllers.portal import CustomerPortal
 
 
 class CustomerPortal(CustomerPortal):

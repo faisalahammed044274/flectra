@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<flectra>
+<odoo>
 
         <!-- Top menu item -->
         <menuitem name="Project"
@@ -1152,4 +1152,4 @@
             groups="project.group_project_rating"
             sequence="40"/>
 
-</flectra>
+</odoo>

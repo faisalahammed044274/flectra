@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<flectra>
+<odoo>
 
     <template id="sale_order_portal_content_inherit_sale_quotation_builder" name="Order Design" inherit_id="sale.sale_order_portal_content">
         <xpath expr="//div[@id='informations']" position="after">
@@ -86,11 +86,11 @@
         <xpath expr="//t[@t-call='web.brand_promotion_message']" position="replace">
             <t t-call="web.brand_promotion_message">
                 <t t-set="_message">
-                    An awesome <a target="_blank" href="https://www.flectrahq.com/page/crm?utm_source=db&amp;utm_medium=portal">Open Source CRM</a>
+                    An awesome <a target="_blank" href="https://www.odoo.com/page/crm?utm_source=db&amp;utm_medium=portal">Open Source CRM</a>
                 </t>
                 <t t-set="_utm_medium" t-valuef="portal"/>
             </t>
         </xpath>
     </template>
 
-</flectra>
+</odoo>

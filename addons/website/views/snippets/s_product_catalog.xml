@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<flectra>
+<odoo>
 
 <template id="s_product_catalog" name="Pricelist">
     <section class="s_product_catalog oe_img_bg oe_custom_bg pt48 pb32"
@@ -83,4 +83,4 @@
     </xpath>
 </template>
 
-</flectra>
+</odoo>

@@ -1,4 +1,4 @@
-flectra.define("website.tour_utils", function (require) {
+odoo.define("website.tour_utils", function (require) {
 "use strict";
 
 const core = require("web.core");
@@ -204,7 +204,9 @@ function dragNDrop(snippet, position = "bottom") {
         moveTrigger: '.oe_drop_zone',
         content: _.str.sprintf(_t("Drag the <b>%s</b> building block and drop it at the bottom of the page."), snippet.name),
         position: position,
-        run: "drag_and_drop #wrap",
+        // Normally no main snippet can be dropped in the default footer but
+        // targeting it allows to force "dropping at the end of the page".
+        run: "drag_and_drop #wrapwrap > footer",
     };
 }
 

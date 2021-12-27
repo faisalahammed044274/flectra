@@ -1,15 +1,15 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo. See LICENSE file for full copyright and licensing details.
 
-from flectra.addons.test_mass_mailing.tests.common import TestMassMailCommon
-from flectra.tests.common import users
-from flectra.tools import mute_logger
+from odoo.addons.test_mass_mailing.tests.common import TestMassMailCommon
+from odoo.tests.common import users
+from odoo.tools import mute_logger
 
 
 class TestMailingTest(TestMassMailCommon):
 
     @users('user_marketing')
-    @mute_logger('flectra.addons.mail.models.mail_render_mixin')
+    @mute_logger('odoo.addons.mail.models.mail_render_mixin')
     def test_mailing_test_button(self):
         mailing = self.env['mailing.mailing'].create({
             'name': 'TestButton',

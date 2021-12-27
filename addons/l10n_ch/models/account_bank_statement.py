@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo. See LICENSE file for full copyright and licensing details.
 
-from flectra import models, fields, api, _
-from flectra.addons.l10n_ch.models.res_bank import _is_l10n_ch_postal
+from odoo import models, fields, api, _
+from odoo.addons.l10n_ch.models.res_bank import _is_l10n_ch_postal
 
 class AccountBankStatementLine(models.Model):
 
@@ -22,4 +22,4 @@ class AccountBankStatementLine(models.Model):
                 })
             return bank_account
         else:
-            super(AccountBankStatementLine, self)._find_or_create_bank_account() 
+            super(AccountBankStatementLine, self)._find_or_create_bank_account()

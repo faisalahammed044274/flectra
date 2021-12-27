@@ -1,4 +1,4 @@
-flectra.define('web.AbstractRenderer', function (require) {
+odoo.define('web.AbstractRenderer', function (require) {
 "use strict";
 
 /**

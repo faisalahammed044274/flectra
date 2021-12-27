@@ -1,12 +1,12 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo. See LICENSE file for full copyright and licensing details.
 
 from collections import OrderedDict
 from itertools import chain
 
-from flectra.addons.hr.tests.common import TestHrCommon
-from flectra.tests import new_test_user, tagged, Form
-from flectra.exceptions import AccessError
+from odoo.addons.hr.tests.common import TestHrCommon
+from odoo.tests import new_test_user, tagged, Form
+from odoo.exceptions import AccessError
 
 @tagged('post_install', '-at_install')
 class TestSelfAccessProfile(TestHrCommon):

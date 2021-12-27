@@ -1,14 +1,14 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo. See LICENSE file for full copyright and licensing details.
 
 import datetime
 
 from dateutil.relativedelta import relativedelta
 
-from flectra.addons.event.tests.common import TestEventCommon
-from flectra.exceptions import ValidationError
-from flectra.tests.common import Form
-from flectra.tools import mute_logger
+from odoo.addons.event.tests.common import TestEventCommon
+from odoo.exceptions import ValidationError
+from odoo.tests.common import Form
+from odoo.tools import mute_logger
 
 
 class TestEventUI(TestEventCommon):
@@ -65,7 +65,7 @@ class TestEventUI(TestEventCommon):
 
 class TestEventFlow(TestEventCommon):
 
-    @mute_logger('flectra.addons.base.models.ir_model', 'flectra.models')
+    @mute_logger('odoo.addons.base.models.ir_model', 'odoo.models')
     def test_event_auto_confirm(self):
         """ Basic event management with auto confirmation """
         # EventUser creates a new event: ok
@@ -108,7 +108,7 @@ class TestEventFlow(TestEventCommon):
         self.assertEqual(test_reg1.state, 'done', 'Event: wrong state of attended registration')
         self.assertEqual(test_event.seats_used, 2, 'Event: incorrect number of attendees after closing registration')
 
-    @mute_logger('flectra.addons.base.models.ir_model', 'flectra.models')
+    @mute_logger('odoo.addons.base.models.ir_model', 'odoo.models')
     def test_event_flow(self):
         """ Advanced event flow: no auto confirmation, manage minimum / maximum
         seats, ... """

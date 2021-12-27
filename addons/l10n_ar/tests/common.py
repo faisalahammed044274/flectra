@@ -1,7 +1,7 @@
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
-from flectra import fields
-from flectra.tests.common import Form
-from flectra.addons.account.tests.common import AccountTestInvoicingCommon
+# Part of Odoo. See LICENSE file for full copyright and licensing details.
+from odoo import fields
+from odoo.tests.common import Form
+from odoo.addons.account.tests.common import AccountTestInvoicingCommon
 import random
 import logging
 import time
@@ -36,7 +36,7 @@ class TestAr(AccountTestInvoicingCommon):
             "country_id": cls.env.ref("base.ar").id,
             "state_id": cls.env.ref("base.state_ar_s").id,
             "zip": '2000',
-            "phone": '+1 555 123 7073',
+            "phone": '+1 555 123 8069',
             "email": 'info@example.com',
             "website": 'www.example.com',
         })
@@ -61,7 +61,7 @@ class TestAr(AccountTestInvoicingCommon):
             "country_id": cls.env.ref("base.ar").id,
             "state_id": cls.env.ref("base.state_ar_s").id,
             "zip": '2000',
-            "phone": '+1 555 123 7073',
+            "phone": '+1 555 123 8069',
             "email": 'info@example.com',
             "website": 'www.example.com',
         })
@@ -248,7 +248,7 @@ class TestAr(AccountTestInvoicingCommon):
         })
         cls.product_iva_exento = cls.env['product.product'].create({
             # demo product_product_exento
-            'name': 'Book: Development in Flectra (VAT Exempt)',
+            'name': 'Book: Development in Odoo (VAT Exempt)',
             'uom_id': uom_unit.id,
             'uom_po_id': uom_unit.id,
             "list_price": 80.0,

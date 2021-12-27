@@ -1,11 +1,11 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
-import flectra.tests
-from flectra.osv import expression
+# Part of Odoo. See LICENSE file for full copyright and licensing details.
+import odoo.tests
+from odoo.osv import expression
 
 
-@flectra.tests.tagged('post_install', '-at_install', 'assets_bundle')
-class BusWebTests(flectra.tests.HttpCase):
+@odoo.tests.tagged('post_install', '-at_install', 'assets_bundle')
+class BusWebTests(odoo.tests.HttpCase):
 
     def test_bundle_sends_bus(self):
         """

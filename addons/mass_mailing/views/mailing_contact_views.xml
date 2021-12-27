@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<flectra>
+<odoo>
     <!--  MAILING CONTACT SUBSCRIPTION -->
     <record model="ir.ui.view" id="mailing_contact_subscription_view_form">
         <field name="name">mailing.contact.subscription.view.form</field>
@@ -235,4 +235,4 @@
     <menuitem name="Mailing List Contacts" id="menu_email_mass_mailing_contacts"
         parent="mass_mailing_mailing_list_menu" sequence="4"
         action="action_view_mass_mailing_contacts"/>
-</flectra>
+</odoo>

@@ -1,12 +1,12 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo. See LICENSE file for full copyright and licensing details.
 
 import logging
 
 from ast import literal_eval
-from flectra import fields, models, _, api
-from flectra.exceptions import UserError
-from flectra.fields import Datetime
+from odoo import fields, models, _, api
+from odoo.exceptions import UserError
+from odoo.fields import Datetime
 
 _logger = logging.getLogger(__name__)
 

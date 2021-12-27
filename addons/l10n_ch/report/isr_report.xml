@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<flectra>
+<odoo>
     <data>
 
         <record id="paperformat_euro_no_margin" model="report.paperformat">
@@ -160,4 +160,4 @@
             </t>
         </template>
     </data>
-</flectra>
+</odoo>

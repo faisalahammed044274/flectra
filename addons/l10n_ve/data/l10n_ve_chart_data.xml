@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<flectra>
+<odoo>
   <data>
     <record id="ve_chart_template_amd" model="account.chart.template">
         <field name="name">Venezuelan - Account</field>
@@ -10,4 +10,4 @@
         <field name="currency_id" ref="base.VEF"/>
     </record>
   </data>
-</flectra>
+</odoo>

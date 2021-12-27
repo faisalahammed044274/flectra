@@ -1,12 +1,12 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo. See LICENSE file for full copyright and licensing details.
 import base64
 
 import werkzeug
 
-from flectra import _, exceptions, http, tools
-from flectra.http import request
-from flectra.tools import consteq
+from odoo import _, exceptions, http, tools
+from odoo.http import request
+from odoo.tools import consteq
 from werkzeug.exceptions import BadRequest
 
 

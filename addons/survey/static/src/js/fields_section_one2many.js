@@ -1,4 +1,4 @@
-flectra.define('survey.question_page_one2many', function (require) {
+odoo.define('survey.question_page_one2many', function (require) {
 "use strict";
 
 var Context = require('web.Context');

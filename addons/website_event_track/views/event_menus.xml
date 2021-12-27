@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<flectra><data>
+<odoo><data>
 
     <!-- MAIN ITEMS -->
     <menuitem id="menu_event_track"
@@ -53,4 +53,4 @@
         groups="base.group_no_one"
         sequence="40"/>
 
-</data></flectra>
+</data></odoo>

@@ -1,4 +1,4 @@
-flectra.define('point_of_sale.ReceiptScreen', function (require) {
+odoo.define('point_of_sale.ReceiptScreen', function (require) {
     'use strict';
 
     const { Printer } = require('point_of_sale.Printer');

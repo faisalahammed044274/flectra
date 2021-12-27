@@ -12,13 +12,13 @@ from collections import defaultdict
 from datetime import datetime, timedelta
 from dateutil.relativedelta import relativedelta
 
-from flectra import fields, http, _
-from flectra.addons.http_routing.models.ir_http import slug
-from flectra.addons.website.controllers.main import QueryURL
-from flectra.addons.event.controllers.main import EventController
-from flectra.http import request
-from flectra.osv import expression
-from flectra.tools.misc import get_lang, format_date
+from odoo import fields, http, _
+from odoo.addons.http_routing.models.ir_http import slug
+from odoo.addons.website.controllers.main import QueryURL
+from odoo.addons.event.controllers.main import EventController
+from odoo.http import request
+from odoo.osv import expression
+from odoo.tools.misc import get_lang, format_date
 
 
 class WebsiteEventController(http.Controller):

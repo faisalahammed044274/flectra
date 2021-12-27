@@ -1,4 +1,4 @@
-flectra.define('web.IFrameWidget', function (require) {
+odoo.define('web.IFrameWidget', function (require) {
 "use strict";
 
 var Widget = require('web.Widget');

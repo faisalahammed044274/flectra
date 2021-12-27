@@ -1,4 +1,4 @@
-flectra.define("crm.crm_form", function (require) {
+odoo.define("crm.crm_form", function (require) {
     "use strict";
 
     /**
@@ -41,7 +41,7 @@ flectra.define("crm.crm_form", function (require) {
          *
          * @param {string} dataPointID
          * @param {Object} changes
-         * @param {FlectraEvent} event
+         * @param {OdooEvent} event
          * @override
          * @private
          */

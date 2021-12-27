@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<flectra><data>
+<odoo><data>
 	<record id="base.menu_email" model="ir.ui.menu">
         <field name="sequence">3</field>
 	</record>
@@ -8,4 +8,4 @@
         id="mail_menu_technical"
         parent="base.menu_custom"
         sequence="1"/>
-</data></flectra>
+</data></odoo>

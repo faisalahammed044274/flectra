@@ -1,9 +1,9 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo. See LICENSE file for full copyright and licensing details.
 
 
-from flectra.tests.common import SavepointCase
-from flectra.exceptions import AccessError, UserError
+from odoo.tests.common import SavepointCase
+from odoo.exceptions import AccessError, UserError
 
 
 class TestMailSecurity(SavepointCase):

@@ -1,4 +1,4 @@
-flectra.define('web_editor.rte', function (require) {
+odoo.define('web_editor.rte', function (require) {
 'use strict';
 
 var fonts = require('wysiwyg.fonts');
@@ -323,7 +323,7 @@ var RTEWidget = Widget.extend({
         .each(function () {
             var $node = $(this);
 
-            // fallback for firefox iframe display:none see https://github.com/flectra/flectra/pull/22610
+            // fallback for firefox iframe display:none see https://github.com/odoo/odoo/pull/22610
             var computedStyles = window.getComputedStyle(this) || window.parent.getComputedStyle(this);
             // add class to display inline-block for empty t-field
             if (computedStyles.display === 'inline' && $node.data('oe-type') !== 'image') {
@@ -595,7 +595,7 @@ var RTEWidget = Widget.extend({
             ],
             'styleWithSpan': false,
             'inlinemedia' : ['p'],
-            'lang': 'flectra',
+            'lang': 'odoo',
             'onChange': function (html, $editable) {
                 $editable.trigger('content_changed');
             },
@@ -799,7 +799,7 @@ return {
 };
 });
 
-flectra.define('web_editor.rte.summernote_custom_colors', function (require) {
+odoo.define('web_editor.rte.summernote_custom_colors', function (require) {
 'use strict';
 
 // These colors are already normalized as per normalizeCSSColor in web.Colorpicker

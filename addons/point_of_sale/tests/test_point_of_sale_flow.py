@@ -1,16 +1,16 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo. See LICENSE file for full copyright and licensing details.
 
 import time
 
-import flectra
-from flectra import fields, tools
-from flectra.tools import float_compare, mute_logger, test_reports
-from flectra.tests.common import Form
-from flectra.addons.point_of_sale.tests.common import TestPointOfSaleCommon
+import odoo
+from odoo import fields, tools
+from odoo.tools import float_compare, mute_logger, test_reports
+from odoo.tests.common import Form
+from odoo.addons.point_of_sale.tests.common import TestPointOfSaleCommon
 
 
-@flectra.tests.tagged('post_install', '-at_install')
+@odoo.tests.tagged('post_install', '-at_install')
 class TestPointOfSaleFlow(TestPointOfSaleCommon):
 
     def compute_tax(self, product, price, qty=1, taxes=None):
@@ -726,7 +726,7 @@ class TestPointOfSaleFlow(TestPointOfSaleCommon):
         self.assertFalse(self.pos_config.current_session_id, "Current session not properly recomputed")
 
         # I keep selling after the session is closed
-        with mute_logger('flectra.addons.point_of_sale.models.pos_order'):
+        with mute_logger('odoo.addons.point_of_sale.models.pos_order'):
             self.PosOrder.create_from_ui([zucchini_order, newspaper_rack_order])
         rescue_session = self.PosSession.search([
             ('config_id', '=', self.pos_config.id),

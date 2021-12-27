@@ -1,10 +1,10 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo. See LICENSE file for full copyright and licensing details.
 
-from flectra.addons.crm.models.crm_lead import PARTNER_FIELDS_TO_SYNC, PARTNER_ADDRESS_FIELDS_TO_SYNC
-from flectra.addons.crm.tests.common import TestCrmCommon, INCOMING_EMAIL
-from flectra.addons.phone_validation.tools.phone_validation import phone_format
-from flectra.tests.common import Form, users
+from odoo.addons.crm.models.crm_lead import PARTNER_FIELDS_TO_SYNC, PARTNER_ADDRESS_FIELDS_TO_SYNC
+from odoo.addons.crm.tests.common import TestCrmCommon, INCOMING_EMAIL
+from odoo.addons.phone_validation.tools.phone_validation import phone_format
+from odoo.tests.common import Form, users
 
 
 class TestCRMLead(TestCrmCommon):
@@ -121,7 +121,7 @@ class TestCRMLead(TestCrmCommon):
             'street': 'My street',
             'street2': 'My street',
             'city': 'My city',
-            'zip': 'test@flectrahq.com',
+            'zip': 'test@odoo.com',
             'state_id': self.env['res.country.state'].create({
                 'name': 'My state',
                 'country_id': self.country_ref.id,

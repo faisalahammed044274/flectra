@@ -1,4 +1,4 @@
-flectra.define('board.ActionManager', function (require) {
+odoo.define('board.ActionManager', function (require) {
 "use strict";
 
 /**

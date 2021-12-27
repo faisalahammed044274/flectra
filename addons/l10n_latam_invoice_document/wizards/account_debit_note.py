@@ -1,4 +1,4 @@
-from flectra import models
+from odoo import models
 
 
 class AccountDebitNote(models.TransientModel):

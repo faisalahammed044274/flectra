@@ -1,17 +1,17 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo. See LICENSE file for full copyright and licensing details.
 
 import logging
 import requests
-from flectra.addons.google_calendar.models.google_sync import google_calendar_token
+from odoo.addons.google_calendar.models.google_sync import google_calendar_token
 from datetime import timedelta
 
 
-from flectra import api, fields, models, _
-from flectra.exceptions import UserError
-from flectra.loglevels import exception_to_unicode
-from flectra.addons.google_account.models.google_service import GOOGLE_TOKEN_ENDPOINT
-from flectra.addons.google_calendar.utils.google_calendar import GoogleCalendarService, InvalidSyncToken
+from odoo import api, fields, models, _
+from odoo.exceptions import UserError
+from odoo.loglevels import exception_to_unicode
+from odoo.addons.google_account.models.google_service import GOOGLE_TOKEN_ENDPOINT
+from odoo.addons.google_calendar.utils.google_calendar import GoogleCalendarService, InvalidSyncToken
 
 _logger = logging.getLogger(__name__)
 
@@ -22,7 +22,7 @@ class User(models.Model):
     google_calendar_token = fields.Char('User token', copy=False, groups="base.group_system")
     google_calendar_token_validity = fields.Datetime('Token Validity', copy=False)
     google_calendar_sync_token = fields.Char('Next Sync Token', copy=False)
-    google_calendar_cal_id = fields.Char('Calendar ID', copy=False, help='Last Calendar ID who has been synchronized. If it is changed, we remove all links between GoogleID and Flectra Google Internal ID')
+    google_calendar_cal_id = fields.Char('Calendar ID', copy=False, help='Last Calendar ID who has been synchronized. If it is changed, we remove all links between GoogleID and Odoo Google Internal ID')
 
     def _set_auth_tokens(self, access_token, refresh_token, ttl):
         self.write({
@@ -89,19 +89,19 @@ class User(models.Model):
                 full_sync = True
         self.google_calendar_sync_token = next_sync_token
 
-        # Google -> Flectra
+        # Google -> Odoo
         events.clear_type_ambiguity(self.env)
         recurrences = events.filter(lambda e: e.is_recurrence())
-        synced_recurrences = self.env['calendar.recurrence']._sync_google2flectra(recurrences)
-        synced_events = self.env['calendar.event']._sync_google2flectra(events - recurrences, default_reminders=default_reminders)
+        synced_recurrences = self.env['calendar.recurrence']._sync_google2odoo(recurrences)
+        synced_events = self.env['calendar.event']._sync_google2odoo(events - recurrences, default_reminders=default_reminders)
 
-        # Flectra -> Google
+        # Odoo -> Google
         recurrences = self.env['calendar.recurrence']._get_records_to_sync(full_sync=full_sync)
         recurrences -= synced_recurrences
-        recurrences._sync_flectra2google(calendar_service)
+        recurrences._sync_odoo2google(calendar_service)
         synced_events |= recurrences.calendar_event_ids - recurrences._get_outliers()
         events = self.env['calendar.event']._get_records_to_sync(full_sync=full_sync)
-        (events - synced_events)._sync_flectra2google(calendar_service)
+        (events - synced_events)._sync_odoo2google(calendar_service)
 
         return bool(events | synced_events) or bool(recurrences | synced_recurrences)
 

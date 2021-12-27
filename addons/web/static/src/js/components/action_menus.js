@@ -1,4 +1,4 @@
-flectra.define('web.ActionMenus', function (require) {
+odoo.define('web.ActionMenus', function (require) {
     "use strict";
 
     const Context = require('web.Context');

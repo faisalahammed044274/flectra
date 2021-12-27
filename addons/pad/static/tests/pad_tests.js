@@ -1,4 +1,4 @@
-flectra.define('pad.pad_tests', function (require) {
+odoo.define('pad.pad_tests', function (require) {
 "use strict";
 
 var FieldPad = require('pad.pad');
@@ -17,14 +17,14 @@ QUnit.module('pad widget', {
                 },
                 records: [
                     {id: 1, description: false},
-                    {id: 2, description: "https://pad.flectra.pad/p/test-03AK6RCJT"},
+                    {id: 2, description: "https://pad.odoo.pad/p/test-03AK6RCJT"},
                 ],
                 pad_is_configured: function () {
                     return true;
                 },
                 pad_generate_url: function (route, args) {
                     return {
-                        url:'https://pad.flectra.pad/p/test/' + args.context.object_id
+                        url:'https://pad.odoo.pad/p/test/' + args.context.object_id
                     };
                 },
                 pad_get_content: function () {
@@ -86,7 +86,7 @@ QUnit.module('pad widget', {
                 '</form>',
             res_id: 1,
             mockRPC: function (route, args) {
-                if (route === 'https://pad.flectra.pad/p/test/1?showChat=false&userName=batman') {
+                if (route === 'https://pad.odoo.pad/p/test/1?showChat=false&userName=batman') {
                     assert.ok(true, "should have an iframe with correct src");
                     return Promise.resolve(true);
                 }
@@ -295,7 +295,7 @@ QUnit.module('pad widget', {
                 }
                 if (args.method === "write") {
                     assert.strictEqual(args.args[1].description,
-                        "https://pad.flectra.pad/p/test-03AK6RCJT");
+                        "https://pad.odoo.pad/p/test-03AK6RCJT");
                 }
                 return this._super.apply(this, arguments);
             },

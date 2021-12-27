@@ -1,4 +1,4 @@
-flectra.define('web.bootstrap.extensions', function () {
+odoo.define('web.bootstrap.extensions', function () {
 'use strict';
 
 /**

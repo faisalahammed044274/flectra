@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<flectra>
+<odoo>
     <data>
     <record id="account_group_1" model="account.group.template">
         <field name="chart_template_id" ref="account_chart_template_common"/>
@@ -4652,4 +4652,4 @@
         <field name="name">Transferencia por deterioro de ajustes valorativos negativos previos, empresas asociadas</field>
     </record>
     </data>
-</flectra>
+</odoo>

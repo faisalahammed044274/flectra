@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<flectra>
+<odoo>
     <template id="website.test_bundle">
         <script type="text/javascript" src="/web/static/lib/qweb/qweb2.js"></script>
         <script type="text/javascript" src="http://test.external.link/javascript1.js"></script>
@@ -33,4 +33,4 @@
 </html>
     </template>
 
-</flectra> 
+</odoo>

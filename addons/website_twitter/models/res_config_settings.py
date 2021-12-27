@@ -1,12 +1,12 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo. See LICENSE file for full copyright and licensing details.
 
 import logging
 
 import requests
 
-from flectra import api, fields, models, _, _lt
-from flectra.exceptions import UserError
+from odoo import api, fields, models, _, _lt
+from odoo.exceptions import UserError
 
 _logger = logging.getLogger(__name__)
 
@@ -79,6 +79,6 @@ class ResConfigSettings(models.TransientModel):
         res = super(ResConfigSettings, self).get_values()
         Params = self.env['ir.config_parameter'].sudo()
         res.update({
-            'twitter_server_uri': '%s/' % Params.get_param('web.base.url', default='http://yourcompany.flectrahq.com'),
+            'twitter_server_uri': '%s/' % Params.get_param('web.base.url', default='http://yourcompany.odoo.com'),
         })
         return res

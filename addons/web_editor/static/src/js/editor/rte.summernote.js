@@ -1,4 +1,4 @@
-flectra.define('web_editor.rte.summernote', function (require) {
+odoo.define('web_editor.rte.summernote', function (require) {
 'use strict';
 
 var Class = require('web.Class');
@@ -8,7 +8,7 @@ var core = require('web.core');
 // instead of being confined to an iframe. This means that the event triggered on
 // the bus by summernote in an iframe will be caught by the wysiwyg's SummernoteManager
 // outside the iframe.
-const topBus = window.top.flectra.__DEBUG__.services['web.core'].bus;
+const topBus = window.top.odoo.__DEBUG__.services['web.core'].bus;
 const {ColorpickerWidget} = require('web.Colorpicker');
 var ColorPaletteWidget = require('web_editor.ColorPalette').ColorPaletteWidget;
 var mixins = require('web.mixins');
@@ -30,7 +30,7 @@ var renderer = $.summernote.renderer;
 // some problems by making the DOM and style easier to understand for the
 // base function for the duration of their executions. This won't obviously
 // solves all problems but this is an improvement while waiting for the new
-// Flectra editor coming in future versions.
+// Odoo editor coming in future versions.
 function protectCommand(callback) {
     return function () {
         var rng = range.create();
@@ -73,7 +73,7 @@ const processAndApplyColor = function (target, eventName, color, preview) {
 renderer.createPalette = function ($container, options) {
     const $dropdownContent = $container.find(".colorPalette");
     // The editor's root widget can be website or web's root widget and cannot be properly retrieved...
-    const parent = flectra.__DEBUG__.services['root.widget'];
+    const parent = odoo.__DEBUG__.services['root.widget'];
     _.each($dropdownContent, elem => {
         const eventName = elem.dataset.eventName;
         let colorpicker = null;
@@ -1009,8 +1009,8 @@ eventHandler.detach = function (oLayoutInfo, options) {
     $(document).off("keyup", reRangeSelectKey);
 };
 
-// Translation for flectra
-$.summernote.lang.flectra = {
+// Translation for odoo
+$.summernote.lang.odoo = {
     font: {
       bold: _t('Bold'),
       italic: _t('Italic'),

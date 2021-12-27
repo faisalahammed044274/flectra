@@ -1,4 +1,4 @@
-flectra.define('point_of_sale.tour.pricelist', function (require) {
+odoo.define('point_of_sale.tour.pricelist', function (require) {
     "use strict";
 
     var Tour = require('web_tour.tour');
@@ -219,7 +219,7 @@ flectra.define('point_of_sale.tour.pricelist', function (require) {
     Tour.register('pos_pricelist', { test: true, url: '/pos/ui' }, steps);
 });
 
-flectra.define('point_of_sale.tour.acceptance', function (require) {
+odoo.define('point_of_sale.tour.acceptance', function (require) {
     "use strict";
 
     var Tour = require("web_tour.tour");

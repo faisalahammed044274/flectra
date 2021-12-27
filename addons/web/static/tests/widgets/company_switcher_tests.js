@@ -1,4 +1,4 @@
-flectra.define('web.SwitchCompanyMenu_tests', function (require) {
+odoo.define('web.SwitchCompanyMenu_tests', function (require) {
 "use strict";
 
 var SwitchCompanyMenu = require('web.SwitchCompanyMenu');

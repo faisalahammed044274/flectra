@@ -1,12 +1,12 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo. See LICENSE file for full copyright and licensing details.
 from unittest.mock import patch
 
-from flectra.addons.base.tests.common import TransactionCaseWithUserDemo, HttpCaseWithUserPortal
-from flectra.addons.website.tools import MockRequest
-from flectra.tests import tagged
-from flectra.tests.common import HttpCase, TransactionCase
-from flectra.tools import DotDict
+from odoo.addons.base.tests.common import TransactionCaseWithUserDemo, HttpCaseWithUserPortal
+from odoo.addons.website.tools import MockRequest
+from odoo.tests import tagged
+from odoo.tests.common import HttpCase, TransactionCase
+from odoo.tools import DotDict
 
 ''' /!\/!\
 Calling `get_pricelist_available` after setting `property_product_pricelist` on
@@ -106,7 +106,7 @@ class TestWebsitePriceList(TransactionCase):
             'show': False,
             'current_pl': False,
         }
-        patcher = patch('flectra.addons.website_sale.models.website.Website.get_pricelist_available', wraps=self._get_pricelist_available)
+        patcher = patch('odoo.addons.website_sale.models.website.Website.get_pricelist_available', wraps=self._get_pricelist_available)
         patcher.start()
         self.addCleanup(patcher.stop)
 
@@ -284,7 +284,7 @@ def simulate_frontend_context(self, website_id=1):
     # Mock this method will be enough to simulate frontend context in most methods
     def get_request_website():
         return self.env['website'].browse(website_id)
-    patcher = patch('flectra.addons.website.models.ir_http.get_request_website', wraps=get_request_website)
+    patcher = patch('odoo.addons.website.models.ir_http.get_request_website', wraps=get_request_website)
     patcher.start()
     self.addCleanup(patcher.stop)
 

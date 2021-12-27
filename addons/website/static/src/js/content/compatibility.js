@@ -1,4 +1,4 @@
-flectra.define('website.content.compatibility', function (require) {
+odoo.define('website.content.compatibility', function (require) {
 'use strict';
 
 /**

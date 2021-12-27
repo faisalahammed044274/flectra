@@ -1,13 +1,13 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo. See LICENSE file for full copyright and licensing details.
 import hashlib
 import hmac
 
 from werkzeug import urls
 
-from flectra import api, fields, models, _
-from flectra.exceptions import ValidationError
-from flectra.tools import ustr, consteq, float_compare
+from odoo import api, fields, models, _
+from odoo.exceptions import ValidationError
+from odoo.tools import ustr, consteq, float_compare
 
 
 class PaymentLinkWizard(models.TransientModel):
@@ -91,4 +91,4 @@ class PaymentLinkWizard(models.TransientModel):
         correct_token = hmac.new(secret.encode('utf-8'), token_str.encode('utf-8'), hashlib.sha256).hexdigest()
         if consteq(ustr(access_token), correct_token):
             return True
-        return False 
+        return False

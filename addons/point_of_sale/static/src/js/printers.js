@@ -1,4 +1,4 @@
-flectra.define('point_of_sale.Printer', function (require) {
+odoo.define('point_of_sale.Printer', function (require) {
 "use strict";
 
 var Session = require('web.Session');
@@ -133,7 +133,7 @@ var Printer = core.Class.extend(PrinterMixin, {
         PrinterMixin.init.call(this, arguments);
         this.pos = pos;
         this.htmlToImgLetterRendering = pos.htmlToImgLetterRendering();
-        this.connection = new Session(undefined, url || 'http://localhost:7073', { use_cors: true});
+        this.connection = new Session(undefined, url || 'http://localhost:8069', { use_cors: true});
     },
 
     /**

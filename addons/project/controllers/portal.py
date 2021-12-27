@@ -1,16 +1,16 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo. See LICENSE file for full copyright and licensing details.
 
 from collections import OrderedDict
 from operator import itemgetter
 
-from flectra import http, _
-from flectra.exceptions import AccessError, MissingError
-from flectra.http import request
-from flectra.addons.portal.controllers.portal import CustomerPortal, pager as portal_pager
-from flectra.tools import groupby as groupbyelem
+from odoo import http, _
+from odoo.exceptions import AccessError, MissingError
+from odoo.http import request
+from odoo.addons.portal.controllers.portal import CustomerPortal, pager as portal_pager
+from odoo.tools import groupby as groupbyelem
 
-from flectra.osv.expression import OR
+from odoo.osv.expression import OR
 
 
 class CustomerPortal(CustomerPortal):

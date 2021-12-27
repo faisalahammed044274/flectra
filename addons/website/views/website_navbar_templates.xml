@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<flectra>
+<odoo>
     <!-- publish/unpublish button -->
     <template id="website_publisher" name="Website Publisher">
         <t groups="website.group_website_publisher" t-if="'website_published' in main_object.fields_get() and ('can_publish' not in main_object.fields_get() or main_object.can_publish)">
@@ -209,4 +209,4 @@
             </nav>
         </xpath>
     </template>
-</flectra>
+</odoo>

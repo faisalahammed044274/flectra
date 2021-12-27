@@ -2,8 +2,8 @@ import os
 from PIL import Image
 from functools import partial
 
-from flectra.tests import TransactionCase, tagged, Form
-from flectra.tools import frozendict, image_to_base64, hex_to_rgb
+from odoo.tests import TransactionCase, tagged, Form
+from odoo.tools import frozendict, image_to_base64, hex_to_rgb
 
 
 dir_path = os.path.dirname(os.path.realpath(__file__))
@@ -46,7 +46,7 @@ class TestBaseDocumentLayoutHelpers(TransactionCase):
             self.assertAlmostEqual(color1[i], color2[i], delta=self.css_color_error)
 
     def _get_images_for_test(self):
-        return ['sweden.png', 'flectra.png']
+        return ['sweden.png', 'odoo.png']
 
     def _set_images(self):
         for fname in self._get_images_for_test():
@@ -144,8 +144,8 @@ class TestBaseDocumentLayout(TestBaseDocumentLayoutHelpers):
 
         with Form(self.env['base.document.layout']) as doc_layout:
             self.assertColors(doc_layout, self.company)
-            doc_layout.logo = self.company_imgs['flectra']['img']
-            self.assertColors(doc_layout, self.company_imgs['flectra']['colors'])
+            doc_layout.logo = self.company_imgs['odoo']['img']
+            self.assertColors(doc_layout, self.company_imgs['odoo']['colors'])
 
     def test_company_colors_change_logo(self):
         """changes of the logo implies displaying the new computed colors"""
@@ -158,8 +158,8 @@ class TestBaseDocumentLayout(TestBaseDocumentLayoutHelpers):
 
         with Form(self.env['base.document.layout']) as doc_layout:
             self.assertColors(doc_layout, self.company)
-            doc_layout.logo = self.company_imgs['flectra']['img']
-            self.assertColors(doc_layout, self.company_imgs['flectra']['colors'])
+            doc_layout.logo = self.company_imgs['odoo']['img']
+            self.assertColors(doc_layout, self.company_imgs['odoo']['colors'])
 
     def test_company_colors_and_logo_change_logo(self):
         """The colors of the company may differ from the one the logo computes
@@ -174,8 +174,8 @@ class TestBaseDocumentLayout(TestBaseDocumentLayoutHelpers):
 
         with Form(self.env['base.document.layout']) as doc_layout:
             self.assertColors(doc_layout, self.company)
-            doc_layout.logo = self.company_imgs['flectra']['img']
-            self.assertColors(doc_layout, self.company_imgs['flectra']['colors'])
+            doc_layout.logo = self.company_imgs['odoo']['img']
+            self.assertColors(doc_layout, self.company_imgs['odoo']['colors'])
 
     # Layout change tests
     def test_company_colors_reset_colors(self):

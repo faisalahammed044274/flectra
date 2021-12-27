@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<flectra>
+<odoo>
     <data noupdate="1">
         <template id="paypal_form">
             <div>
                 <input type="hidden" name="data_set" t-att-data-action-url="tx_url" data-remove-me=""/>
                 <input type="hidden" name="cmd" t-att-value="cmd"/>
                 <input type="hidden" name="business" t-att-value="business"/>
-                <input type="hidden" name="bn" value="FlectraInc_SP" />
+                <input type="hidden" name="bn" value="OdooInc_SP" />
                 <input type="hidden" name="item_name" t-att-value="item_name"/>
                 <input type="hidden" name="item_number" t-att-value="item_number"/>
                 <input type="hidden" name="amount" t-att-value="amount"/>
@@ -37,4 +37,4 @@
             </div>
         </template>
     </data>
-</flectra>
+</odoo>

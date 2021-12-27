@@ -1,4 +1,4 @@
-flectra.define('hr.employee_language', function (require) {
+odoo.define('hr.employee_language', function (require) {
 'use strict';
 
 var FormController = require('web.FormController');

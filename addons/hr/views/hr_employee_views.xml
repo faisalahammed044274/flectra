@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<flectra>
+<odoo>
     <data>
 
         <record id="view_employee_filter" model="ir.ui.view">
@@ -336,7 +336,7 @@
              <p class="o_view_nocontent_smiling_face">
                Add a new employee
              </p><p>
-               With just a quick glance on the Flectra employee screen, you
+               With just a quick glance on the Odoo employee screen, you
                can easily find all the information you need for each person;
                contact data, job position, availability, etc.
              </p>
@@ -392,7 +392,7 @@
               <p class="o_view_nocontent_smiling_face">
                 Add a new employee
               </p><p>
-                With just a quick glance on the Flectra employee screen, you
+                With just a quick glance on the Odoo employee screen, you
                 can easily find all the information you need for each person;
                 contact data, job position, availability, etc.
               </p>
@@ -400,4 +400,4 @@
         </record>
 
     </data>
-</flectra>
+</odoo>

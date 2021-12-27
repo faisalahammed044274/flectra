@@ -1,4 +1,4 @@
-flectra.define('website_forum.test_error', function (require) {
+odoo.define('website_forum.test_error', function (require) {
 'use strict';
 
 var publicWidget = require('web.public.widget');

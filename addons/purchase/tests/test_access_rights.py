@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
-from flectra.addons.account.tests.common import AccountTestInvoicingCommon
-from flectra.tests import Form, tagged
-from flectra.exceptions import AccessError
+# Part of Odoo. See LICENSE file for full copyright and licensing details.
+from odoo.addons.account.tests.common import AccountTestInvoicingCommon
+from odoo.tests import Form, tagged
+from odoo.exceptions import AccessError
 
 
 @tagged('post_install', '-at_install')
@@ -22,7 +22,7 @@ class TestPurchaseInvoice(AccountTestInvoicingCommon):
         ).create({
             'name': 'Purchase user',
             'login': 'purchaseUser',
-            'email': 'pu@flectrahq.com',
+            'email': 'pu@odoo.com',
             'groups_id': [(6, 0, [group_purchase_user.id, group_employee.id, group_partner_manager.id])],
         })
 
@@ -73,7 +73,7 @@ class TestPurchaseInvoice(AccountTestInvoicingCommon):
         purchase_user_2 = self.purchase_user.copy({
             'name': 'Purchase user 2',
             'login': 'purchaseUser2',
-            'email': 'pu2@flectrahq.com',
+            'email': 'pu2@odoo.com',
         })
 
         purchase_order_form = Form(self.env['purchase.order'].with_user(purchase_user_2))
@@ -110,7 +110,7 @@ class TestPurchaseInvoice(AccountTestInvoicingCommon):
         purchase_user_2 = self.purchase_user.copy({
             'name': 'Purchase user 2',
             'login': 'purchaseUser2',
-            'email': 'pu2@flectrahq.com',
+            'email': 'pu2@odoo.com',
         })
 
         purchase_order_form = Form(self.env['purchase.order'].with_user(purchase_user_2))

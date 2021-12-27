@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<flectra>
+<odoo>
     <template id="portal_my_task" inherit_id="project.portal_my_task" priority="40">
 
         <!-- add a button to the right of the 'description' title according to the mode (edit/read) -->
@@ -31,4 +31,4 @@
             </t>
         </xpath>
     </template>
-</flectra>
+</odoo>

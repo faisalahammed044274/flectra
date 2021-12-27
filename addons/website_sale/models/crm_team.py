@@ -1,11 +1,11 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo. See LICENSE file for full copyright and licensing details.
 
 from datetime import datetime
 from dateutil.relativedelta import relativedelta
 
-from flectra import fields,api, models, _
-from flectra.exceptions import UserError, ValidationError
+from odoo import fields,api, models, _
+from odoo.exceptions import UserError, ValidationError
 
 
 class CrmTeam(models.Model):

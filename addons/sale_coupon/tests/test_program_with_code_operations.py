@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo. See LICENSE file for full copyright and licensing details.
 
-from flectra.addons.sale_coupon.tests.common import TestSaleCouponCommon
-from flectra.exceptions import UserError
+from odoo.addons.sale_coupon.tests.common import TestSaleCouponCommon
+from odoo.exceptions import UserError
 
 
 class TestProgramWithCodeOperations(TestSaleCouponCommon):

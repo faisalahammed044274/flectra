@@ -1,13 +1,13 @@
 # -*- coding: utf-8 -*-
 
-from flectra import fields
-from flectra.addons.payment.models.payment_acquirer import ValidationError
-from flectra.addons.payment.tests.common import PaymentAcquirerCommon
-from flectra.addons.payment_paypal.controllers.main import PaypalController
+from odoo import fields
+from odoo.addons.payment.models.payment_acquirer import ValidationError
+from odoo.addons.payment.tests.common import PaymentAcquirerCommon
+from odoo.addons.payment_paypal.controllers.main import PaypalController
 from werkzeug import urls
 
-from flectra.tools import mute_logger
-from flectra.tests import tagged
+from odoo.tools import mute_logger
+from odoo.tests import tagged
 
 from lxml import objectify
 
@@ -43,7 +43,7 @@ class PaypalForm(PaypalCommon):
     def test_10_paypal_form_render(self):
         base_url = self.env['ir.config_parameter'].get_param('web.base.url')
         # be sure not to do stupid things
-        self.paypal.write({'paypal_email_account': 'tde+paypal-facilitator@flectrahq.com', 'fees_active': False})
+        self.paypal.write({'paypal_email_account': 'tde+paypal-facilitator@odoo.com', 'fees_active': False})
         self.assertEqual(self.paypal.state, 'test', 'test without test environment')
 
         # ----------------------------------------
@@ -57,13 +57,13 @@ class PaypalForm(PaypalCommon):
 
         form_values = {
             'cmd': '_xclick',
-            'business': 'tde+paypal-facilitator@flectrahq.com',
+            'business': 'tde+paypal-facilitator@odoo.com',
             'item_name': '%s: test_ref0' % (self.paypal.company_id.name),
             'item_number': 'test_ref0',
             'first_name': 'Norbert',
             'last_name': 'Buyer',
             'amount': '0.01',
-            'bn': 'FlectraInc_SP',
+            'bn': 'OdooInc_SP',
             'currency_code': 'EUR',
             'address1': 'Huge Street 2/543',
             'city': 'Sin City',
@@ -123,7 +123,7 @@ class PaypalForm(PaypalCommon):
                 self.assertEqual(form_input.get('value'), '1.57', 'paypal: wrong computed fees')
         self.assertTrue(handling_found, 'paypal: fees_active did not add handling input in rendered form')
 
-    @mute_logger('flectra.addons.payment_paypal.models.payment', 'ValidationError')
+    @mute_logger('odoo.addons.payment_paypal.models.payment', 'ValidationError')
     def test_20_paypal_form_management(self):
         # be sure not to do stupid things
         self.assertEqual(self.paypal.state, 'test', 'test without test environment')
@@ -165,7 +165,7 @@ class PaypalForm(PaypalCommon):
             'address_status': u'unconfirmed',
             'mc_currency': u'EUR',
             'shipping': u'0.00',
-            'payer_email': u'tde+buyer@flectrahq.com',
+            'payer_email': u'tde+buyer@odoo.com',
             'payment_type': u'instant',
             'mc_gross': u'1.95',
             'ipn_track_id': u'866df2ccd444b',

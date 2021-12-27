@@ -1,14 +1,14 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo. See LICENSE file for full copyright and licensing details.
 
 import pytz
 
 from datetime import datetime
 from unittest.mock import patch
 
-from flectra import fields
+from odoo import fields
 
-from flectra.addons.lunch.tests.common import TestsCommon
+from odoo.addons.lunch.tests.common import TestsCommon
 
 
 class TestSupplier(TestsCommon):

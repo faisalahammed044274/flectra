@@ -1,6 +1,6 @@
 /**
  *------------------------------------------------------------------------------
- * Flectra Web Boostrap Code
+ * Odoo Web Boostrap Code
  *------------------------------------------------------------------------------
  *
  * Each module can return a promise. In that case, the module is marked as loaded
@@ -38,19 +38,19 @@
     var commentRegExp = /(\/\*([\s\S]*?)\*\/|([^:]|^)\/\/(.*)$)/mg;
     var cjsRequireRegExp = /[^.]\s*require\s*\(\s*["']([^'"\s]+)["']\s*\)/g;
 
-    if (!window.flectra) {
-        window.flectra = {};
+    if (!window.odoo) {
+        window.odoo = {};
     }
-    var flectra = window.flectra;
+    var odoo = window.odoo;
 
     var didLogInfoResolve;
     var didLogInfoPromise = new Promise(function (resolve) {
         didLogInfoResolve = resolve;
     });
 
-    flectra.testing = typeof QUnit === 'object';
-    flectra.remainingJobs = jobs;
-    flectra.__DEBUG__ = {
+    odoo.testing = typeof QUnit === 'object';
+    odoo.remainingJobs = jobs;
+    odoo.__DEBUG__ = {
         didLogInfo: didLogInfoPromise,
         getDependencies: function (name, transitive) {
             var deps = name instanceof Array ? name : [name];
@@ -107,9 +107,9 @@
         factories: factories,
         services: services,
     };
-    flectra.define = function () {
+    odoo.define = function () {
         var args = Array.prototype.slice.call(arguments);
-        var name = typeof args[0] === 'string' ? args.shift() : ('__flectra_job' + (jobUID++));
+        var name = typeof args[0] === 'string' ? args.shift() : ('__odoo_job' + (jobUID++));
         var factory = args[args.length - 1];
         var deps;
         if (args[0] instanceof Array) {
@@ -123,7 +123,7 @@
                 });
         }
 
-        if (flectra.debug) {
+        if (odoo.debug) {
             if (!(deps instanceof Array)) {
                 throw new Error('Dependencies should be defined by an array', deps);
             }
@@ -153,7 +153,7 @@
 
         this.processJobs(jobs, services);
     };
-    flectra.log = function () {
+    odoo.log = function () {
         var missing = [];
         var failed = [];
 
@@ -167,7 +167,7 @@
             for (var k = 0; k < jobs.length; k++) {
                 debugJobs[jobs[k].name] = job = {
                     dependencies: jobs[k].deps,
-                    dependents: flectra.__DEBUG__.getDependents(jobs[k].name),
+                    dependents: odoo.__DEBUG__.getDependents(jobs[k].name),
                     name: jobs[k].name
                 };
                 if (jobs[k].error) {
@@ -177,7 +177,7 @@
                     job.rejected = jobs[k].rejected;
                     rejected.push(job.name);
                 }
-                var deps = flectra.__DEBUG__.getDependencies(job.name);
+                var deps = odoo.__DEBUG__.getDependencies(job.name);
                 for (var i = 0; i < deps.length; i++) {
                     if (job.name !== deps[i] && !(deps[i] in services)) {
                         jobdep = debugJobs[deps[i]];
@@ -204,8 +204,8 @@
                     }
                 }
             }
-            missing = flectra.__DEBUG__.getMissingJobs();
-            failed = flectra.__DEBUG__.getFailedJobs();
+            missing = odoo.__DEBUG__.getMissingJobs();
+            failed = odoo.__DEBUG__.getFailedJobs();
             var unloaded = Object.keys(debugJobs) // Object.values is not supported
                 .map(function (key) {
                     return debugJobs[key];
@@ -213,7 +213,7 @@
                     return job.missing;
                 });
 
-            if (flectra.debug || failed.length || unloaded.length) {
+            if (odoo.debug || failed.length || unloaded.length) {
                 var log = window.console[!failed.length || !unloaded.length ? 'info' : 'error'].bind(window.console);
                 log((failed.length ? 'error' : (unloaded.length ? 'warning' : 'info')) + ': Some modules could not be started');
                 if (missing.length) {
@@ -235,12 +235,12 @@
                         return unload.name;
                     }));
                 }
-                if (flectra.debug && Object.keys(debugJobs).length) {
+                if (odoo.debug && Object.keys(debugJobs).length) {
                     log('Debug:                   ', debugJobs);
                 }
             }
         }
-        flectra.__DEBUG__.jsModules = {
+        odoo.__DEBUG__.jsModules = {
             missing: missing,
             failed: failed.map(function (fail) {
                 return fail.name;
@@ -248,7 +248,7 @@
         };
         didLogInfoResolve();
     };
-    flectra.processJobs = function (jobs, services) {
+    odoo.processJobs = function (jobs, services) {
         var job;
 
         function processJob(job) {
@@ -268,7 +268,7 @@
                         function (data) {
                             services[job.name] = data;
                             resolve();
-                            flectra.processJobs(jobs, services);
+                            odoo.processJobs(jobs, services);
                         }).guardedCatch(function (e) {
                             job.rejected = e || true;
                             jobs.push(job);
@@ -325,7 +325,7 @@
             var len = jobPromises.length;
             Promise.all(jobPromises).then(function () {
                 if (len === jobPromises.length) {
-                    flectra.log();
+                    odoo.log();
                 } else {
                     logWhenLoaded();
                 }

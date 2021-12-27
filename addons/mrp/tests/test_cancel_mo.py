@@ -1,12 +1,12 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo. See LICENSE file for full copyright and licensing details.
 
-from flectra.tests import Form
+from odoo.tests import Form
 from datetime import datetime, timedelta
 
-from flectra.fields import Datetime as Dt
-from flectra.exceptions import UserError
-from flectra.addons.mrp.tests.common import TestMrpCommon
+from odoo.fields import Datetime as Dt
+from odoo.exceptions import UserError
+from odoo.addons.mrp.tests.common import TestMrpCommon
 
 
 class TestMrpCancelMO(TestMrpCommon):

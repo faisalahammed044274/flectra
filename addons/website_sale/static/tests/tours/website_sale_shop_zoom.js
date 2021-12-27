@@ -1,4 +1,4 @@
-flectra.define('website_sale.tour_shop_zoom', function (require) {
+odoo.define('website_sale.tour_shop_zoom', function (require) {
 'use strict';
 
 var tour = require('web_tour.tour');
@@ -24,7 +24,7 @@ tour.register('shop_zoom', {
     },
     {
         content: "check there is no zoom on that small image",
-        trigger: 'body:not(:has(.zoomflectra-flyout img))',
+        trigger: 'body:not(:has(.zoomodoo-flyout img))',
     },
     {
         content: "change variant",
@@ -42,7 +42,7 @@ tour.register('shop_zoom', {
     },
     {
         content: "check there is a zoom on that big image",
-        trigger: '.zoomflectra-flyout img',
+        trigger: '.zoomodoo-flyout img',
     },
 ]);
 });

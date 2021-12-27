@@ -1,4 +1,4 @@
-flectra.define('mail_bot/static/src/models/messaging_initializer/messaging_initializer.js', function (require) {
+odoo.define('mail_bot/static/src/models/messaging_initializer/messaging_initializer.js', function (require) {
 'use strict';
 
 const { registerInstancePatchModel } = require('mail/static/src/model/model_core.js');
@@ -11,15 +11,15 @@ registerInstancePatchModel('mail.messaging_initializer', 'mail_bot/static/src/mo
     /**
      * @private
      */
-    async _initializeFlectraBot() {
+    async _initializeOdooBot() {
         const data = await this.async(() => this.env.services.rpc({
             model: 'mail.channel',
-            method: 'init_flectrabot',
+            method: 'init_odoobot',
         }));
         if (!data) {
             return;
         }
-        this.env.session.flectrabot_initialized = true;
+        this.env.session.odoobot_initialized = true;
     },
 
     /**
@@ -28,8 +28,8 @@ registerInstancePatchModel('mail.messaging_initializer', 'mail_bot/static/src/mo
     async start() {
         await this.async(() => this._super());
 
-        if ('flectrabot_initialized' in this.env.session && !this.env.session.flectrabot_initialized) {
-            this._initializeFlectraBot();
+        if ('odoobot_initialized' in this.env.session && !this.env.session.odoobot_initialized) {
+            this._initializeOdooBot();
         }
     },
 });

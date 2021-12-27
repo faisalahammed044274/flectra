@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<flectra>
+<odoo>
     <data noupdate="1">
 
         <record id="lunch_location_main" model="lunch.location">
@@ -436,4 +436,4 @@
             <field name="supplier_id" ref="supplier_pizza_inn"/>
         </record>
     </data>
-</flectra>
+</odoo>

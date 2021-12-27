@@ -1,16 +1,16 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo. See LICENSE file for full copyright and licensing details.
 
 import logging
 from collections import defaultdict, namedtuple
 
 from dateutil.relativedelta import relativedelta
 
-from flectra import SUPERUSER_ID, _, api, fields, models, registry
-from flectra.exceptions import UserError
-from flectra.osv import expression
-from flectra.tools import float_compare, float_is_zero, html_escape
-from flectra.tools.misc import split_every
+from odoo import SUPERUSER_ID, _, api, fields, models, registry
+from odoo.exceptions import UserError
+from odoo.osv import expression
+from odoo.tools import float_compare, float_is_zero, html_escape
+from odoo.tools.misc import split_every
 
 _logger = logging.getLogger(__name__)
 
@@ -327,7 +327,7 @@ class StockRule(models.Model):
         procurement going through the rules in `self`.
 
         :param product: the product of the procurement
-        :type product: :class:`~flectra.addons.product.models.product.ProductProduct`
+        :type product: :class:`~odoo.addons.product.models.product.ProductProduct`
         :return: the cumulative delay and cumulative delay's description
         :rtype: tuple
         """
@@ -389,7 +389,7 @@ class ProcurementGroup(models.Model):
         type of documents).
 
         :param procurements: the description of the procurement
-        :type list: list of `~flectra.addons.stock.models.stock_rule.ProcurementGroup.Procurement`
+        :type list: list of `~odoo.addons.stock.models.stock_rule.ProcurementGroup.Procurement`
         :param raise_user_error: will raise either an UserError or a ProcurementException
         :type raise_user_error: boolan, optional
         :raises UserError: if `raise_user_error` is True and a procurement isn't fulfillable

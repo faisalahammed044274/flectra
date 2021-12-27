@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo. See LICENSE file for full copyright and licensing details.
 
 import hashlib
 import hmac
@@ -14,9 +14,9 @@ from datetime import datetime
 from dateutil.relativedelta import relativedelta
 from werkzeug.urls import url_join
 
-from flectra import api, fields, models, tools, _
-from flectra.exceptions import UserError
-from flectra.osv import expression
+from odoo import api, fields, models, tools, _
+from odoo.exceptions import UserError
+from odoo.osv import expression
 
 _logger = logging.getLogger(__name__)
 
@@ -117,7 +117,7 @@ class MassMailing(models.Model):
         readonly=False, store=True)
     mail_server_id = fields.Many2one('ir.mail_server', string='Mail Server',
         default=_get_default_mail_server_id,
-        help="Use a specific mail server in priority. Otherwise Flectra relies on the first outgoing mail server available (based on their sequencing) as it does for normal mails.")
+        help="Use a specific mail server in priority. Otherwise Odoo relies on the first outgoing mail server available (based on their sequencing) as it does for normal mails.")
     contact_list_ids = fields.Many2many('mailing.list', 'mail_mass_mailing_list_rel', string='Mailing Lists')
     contact_ab_pc = fields.Integer(string='A/B Testing percentage',
         help='Percentage of the contacts that will be mailed. Recipients will be taken randomly.', default=100)

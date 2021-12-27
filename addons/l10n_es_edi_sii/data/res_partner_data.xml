@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<flectra>
+<odoo>
     <record id="partner_simplified" model="res.partner">
         <field name="name">Simplified Invoice Partner (ES)</field>
     </record>
-</flectra>
+</odoo>

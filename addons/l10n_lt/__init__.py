@@ -1,4 +1,4 @@
-from flectra import api, SUPERUSER_ID
+from odoo import api, SUPERUSER_ID
 
 
 def load_translations(cr, registry):

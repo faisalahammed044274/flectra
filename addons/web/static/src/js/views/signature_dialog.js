@@ -1,4 +1,4 @@
-flectra.define('web.signature_dialog', function (require) {
+odoo.define('web.signature_dialog', function (require) {
 "use strict";
 
 var core = require('web.core');

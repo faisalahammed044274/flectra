@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<flectra>
+<odoo>
     <data>
         <record id="res_partner_tax_form_view" model="ir.ui.view">
             <field name="name">res.partner.tax.form.view</field>
@@ -25,4 +25,4 @@
             </field>
         </record>
     </data>
-</flectra>
+</odoo>

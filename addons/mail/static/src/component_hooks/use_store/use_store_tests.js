@@ -1,4 +1,4 @@
-flectra.define('mail/static/src/component_hooks/use_store/use_store_tests.js', function (require) {
+odoo.define('mail/static/src/component_hooks/use_store/use_store_tests.js', function (require) {
 'use strict';
 
 const useStore = require('mail/static/src/component_hooks/use_store/use_store.js');

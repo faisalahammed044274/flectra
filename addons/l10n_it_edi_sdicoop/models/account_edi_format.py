@@ -1,9 +1,9 @@
 # -*- coding:utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo. See LICENSE file for full copyright and licensing details.
 
-from flectra import models, _, _lt
-from flectra.exceptions import UserError
-from flectra.addons.account_edi_proxy_client.models.account_edi_proxy_user import AccountEdiProxyError, SERVER_URL
+from odoo import models, _, _lt
+from odoo.exceptions import UserError
+from odoo.addons.account_edi_proxy_client.models.account_edi_proxy_user import AccountEdiProxyError, SERVER_URL
 
 from lxml import etree
 import base64
@@ -130,7 +130,7 @@ class AccountEdiFormat(models.Model):
 
             if len(invoice.commercial_partner_id.l10n_it_pa_index or '') == 6:
                 invoice.message_post(
-                    body=(_("Invoices for PA are not managed by Flectra, you can download the document and send it on your own."))
+                    body=(_("Invoices for PA are not managed by Odoo, you can download the document and send it on your own."))
                 )
                 to_return[invoice] = {'attachment': attachment}
             else:

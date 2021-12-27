@@ -1,14 +1,14 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo. See LICENSE file for full copyright and licensing details.
 
 import datetime
 import random
 import re
 import werkzeug
 
-from flectra.addons.link_tracker.tests.common import MockLinkTracker
-from flectra.addons.mail.tests.common import MailCase, MailCommon, mail_new_test_user
-from flectra import tools
+from odoo.addons.link_tracker.tests.common import MockLinkTracker
+from odoo.addons.mail.tests.common import MailCase, MailCommon, mail_new_test_user
+from odoo import tools
 
 class MassMailCase(MailCase, MockLinkTracker):
 
@@ -172,7 +172,7 @@ class MassMailCase(MailCase, MockLinkTracker):
         email = self._find_sent_mail_wemail(trace.email)
         self.assertTrue(bool(email))
         for (_url_href, link_url, _dummy, label) in re.findall(tools.HTML_TAG_URL_REGEX, email['body']):
-            if label == click_label and '/r/' in link_url:  # shortened link, like 'http://localhost:7073/r/LBG/m/53'
+            if label == click_label and '/r/' in link_url:  # shortened link, like 'http://localhost:8069/r/LBG/m/53'
                 parsed_url = werkzeug.urls.url_parse(link_url)
                 path_items = parsed_url.path.split('/')
                 code, trace_id = path_items[2], int(path_items[4])

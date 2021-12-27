@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<flectra>
+<odoo>
     <data>
 
     <record id="view_repair_order_tree" model="ir.ui.view">
@@ -395,4 +395,4 @@
 
         <menuitem id="repair_menu_tag" name="Repair Orders Tags" parent="repair_menu_config" action="action_repair_order_tag"/>
     </data>
-</flectra>
+</odoo>

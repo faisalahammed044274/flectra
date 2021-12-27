@@ -1,4 +1,4 @@
-flectra.define('lunch.LunchModel', function (require) {
+odoo.define('lunch.LunchModel', function (require) {
 "use strict";
 
 /**

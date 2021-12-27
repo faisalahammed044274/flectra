@@ -1,4 +1,4 @@
-flectra.define('point_of_sale.OrderManagementScreen', function (require) {
+odoo.define('point_of_sale.OrderManagementScreen', function (require) {
     'use strict';
 
     const { useContext } = owl.hooks;

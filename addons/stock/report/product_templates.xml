@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<flectra>
+<odoo>
     <data>
         <template id="label_product_template_view">
             <t t-foreach="docs" t-as="product">
@@ -95,4 +95,4 @@
             </t>
         </template>
     </data>
-</flectra>
+</odoo>

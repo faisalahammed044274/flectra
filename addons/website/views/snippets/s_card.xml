@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<flectra>
+<odoo>
 
 <template id="s_card" name="Card">
     <div class="s_card card bg-white w-100">
@@ -19,4 +19,4 @@
     </xpath>
 </template>
 
-</flectra>
+</odoo>

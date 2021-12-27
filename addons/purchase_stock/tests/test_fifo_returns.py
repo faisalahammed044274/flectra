@@ -2,8 +2,8 @@
 
 import time
 
-from flectra.tests import tagged, Form
-from flectra.addons.stock_account.tests.test_anglo_saxon_valuation_reconciliation_common import ValuationReconciliationTestCommon
+from odoo.tests import tagged, Form
+from odoo.addons.stock_account.tests.test_anglo_saxon_valuation_reconciliation_common import ValuationReconciliationTestCommon
 
 
 @tagged('-at_install', 'post_install')

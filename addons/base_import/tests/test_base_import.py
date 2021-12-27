@@ -1,14 +1,14 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo. See LICENSE file for full copyright and licensing details.
 import base64
 import difflib
 import io
 import pprint
 import unittest
 
-from flectra.tests.common import TransactionCase, can_import
-from flectra.modules.module import get_module_resource
-from flectra.tools import mute_logger, pycompat
+from odoo.tests.common import TransactionCase, can_import
+from odoo.modules.module import get_module_resource
+from odoo.tools import mute_logger, pycompat
 
 ID_FIELD = {
     'id': 'id',
@@ -250,7 +250,7 @@ class TestPreview(TransactionCase):
         })
         return import_wizard
 
-    @mute_logger('flectra.addons.base_import.models.base_import')
+    @mute_logger('odoo.addons.base_import.models.base_import')
     def test_encoding(self):
         import_wizard = self.make_import()
         result = import_wizard.parse_preview({
@@ -259,7 +259,7 @@ class TestPreview(TransactionCase):
         })
         self.assertFalse('error' in result)
 
-    @mute_logger('flectra.addons.base_import.models.base_import')
+    @mute_logger('odoo.addons.base_import.models.base_import')
     def test_csv_errors(self):
         import_wizard = self.make_import()
 

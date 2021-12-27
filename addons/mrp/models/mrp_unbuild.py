@@ -1,10 +1,10 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo. See LICENSE file for full copyright and licensing details.
 
-from flectra import api, fields, models, _
-from flectra.exceptions import AccessError, UserError
-from flectra.tools import float_compare
-from flectra.osv import expression
+from odoo import api, fields, models, _
+from odoo.exceptions import AccessError, UserError
+from odoo.tools import float_compare
+from odoo.osv import expression
 
 
 class MrpUnbuild(models.Model):

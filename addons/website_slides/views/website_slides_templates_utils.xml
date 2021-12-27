@@ -1,5 +1,5 @@
 <?xml version="1.0" ?>
-<flectra><data>
+<odoo><data>
 
 <!-- Share on social networks -->
 <template id='slide_share_social' name="Slides Media Share">
@@ -81,4 +81,4 @@
     </a> to download resources
 </template>
 
-</data></flectra>
+</data></odoo>

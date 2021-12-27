@@ -1,10 +1,10 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo. See LICENSE file for full copyright and licensing details.
 
-from flectra import fields
+from odoo import fields
 
-from flectra.tests.common import Form
-from flectra.addons.stock_account.tests.test_stockvaluationlayer import TestStockValuationCommon
+from odoo.tests.common import Form
+from odoo.addons.stock_account.tests.test_stockvaluationlayer import TestStockValuationCommon
 
 
 class TestSaleStockMargin(TestStockValuationCommon):

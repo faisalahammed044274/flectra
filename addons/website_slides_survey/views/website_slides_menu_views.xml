@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<flectra>
+<odoo>
     <menuitem name="Certifications"
         id="website_slides_menu_courses_certification"
         parent="website_slides.website_slides_menu_courses"
@@ -11,4 +11,4 @@
         parent="website_slides.website_slides_menu_report"
         sequence="40"
         action="survey_survey_action_slides_report"/>
-</flectra>
+</odoo>

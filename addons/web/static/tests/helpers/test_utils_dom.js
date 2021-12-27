@@ -1,4 +1,4 @@
-flectra.define('web.test_utils_dom', function (require) {
+odoo.define('web.test_utils_dom', function (require) {
     "use strict";
 
     const concurrency = require('web.concurrency');

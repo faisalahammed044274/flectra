@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<flectra>
+<odoo>
     <!-- no update so users can freely customize/delete the template -->
     <data noupdate="1">
         <record id="sale_order_template_default" model="sale.order.template">
@@ -61,7 +61,7 @@
                 </section>
                 <section data-snippet-id="text-block">
                     <p>
-                        You can <strong>set a description per product</strong>. Flectra will
+                        You can <strong>set a description per product</strong>. Odoo will
                         automatically create a quotation using the descriptions
                         of all products in the proposal. The table of content
                         on the left is generated automatically using the styles you
@@ -78,4 +78,4 @@
 
         <function model="res.company" name="_set_default_sale_order_template_id_if_empty"/>
     </data>
-</flectra>
+</odoo>

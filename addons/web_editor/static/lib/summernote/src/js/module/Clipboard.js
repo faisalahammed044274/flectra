@@ -5,8 +5,8 @@ define([
     'summernote/core/agent',
     'summernote/core/range'
 ], function (list, dom, key, agent, range) {
-    // FLECTRA override: use 0.8.10 version of this, adapted for the old summernote
-    // version flectra is using
+    // ODOO override: use 0.8.10 version of this, adapted for the old summernote
+    // version odoo is using
     var Clipboard = function (handler) {
         /**
          * paste by clipboard event
@@ -15,7 +15,7 @@ define([
          */
         var pasteByEvent = function (event) {
             if (["INPUT", "TEXTAREA"].indexOf(event.target.tagName) !== -1) {
-                // FLECTRA override: from old summernote version
+                // ODOO override: from old summernote version
                 return;
             }
 

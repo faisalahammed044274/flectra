@@ -1,4 +1,4 @@
-flectra.define('mail/static/src/models/composer/composer.js', function (require) {
+odoo.define('mail/static/src/models/composer/composer.js', function (require) {
 'use strict';
 
 const emojis = require('mail.emojis');

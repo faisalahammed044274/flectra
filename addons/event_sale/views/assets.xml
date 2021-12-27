@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<flectra>
+<odoo>
 <template id="assets_backend" inherit_id="web.assets_backend" name="event_sale assets backend">
     <xpath expr="script[last()]" position="after">
         <script type="text/javascript" src="/event_sale/static/src/js/event_configurator_controller.js"></script>
@@ -17,4 +17,4 @@
         <script type="text/javascript" src="/event_sale/static/tests/event_configurator.test.js"></script>
     </xpath>
 </template>
-</flectra>
+</odoo>

@@ -1,4 +1,4 @@
-flectra.define('calendar.CalendarView', function (require) {
+odoo.define('calendar.CalendarView', function (require) {
 "use strict";
 
 var CalendarController = require('calendar.CalendarController');

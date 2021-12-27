@@ -1,9 +1,9 @@
-flectra.define("web.commonEnv", function (require) {
+odoo.define("web.commonEnv", function (require) {
     "use strict";
 
     /**
      * This file defines the common environment, which contains everything that
-     * is needed in the env for both the backend and the frontend (Flectra
+     * is needed in the env for both the backend and the frontend (Odoo
      * terminology). This module shouldn't be used as is. It should only be
      * imported by the module defining the final env to use (in the frontend or
      * in the backend). For instance, module 'web.env' imports it, adds stuff to
@@ -14,7 +14,7 @@ flectra.define("web.commonEnv", function (require) {
      * will allow an easier testing of components. See [1] for more information
      * on environments.
      *
-     * [1] https://github.com/flectra/owl/blob/master/doc/reference/environment.md#content-of-an-environment
+     * [1] https://github.com/odoo/owl/blob/master/doc/reference/environment.md#content-of-an-environment
      */
 
     const { jsonRpc } = require("web.ajax");

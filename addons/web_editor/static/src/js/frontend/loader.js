@@ -1,4 +1,4 @@
-flectra.define('web_editor.loader', function (require) {
+odoo.define('web_editor.loader', function (require) {
 'use strict';
 
 var Wysiwyg = require('web_editor.wysiwyg.root');

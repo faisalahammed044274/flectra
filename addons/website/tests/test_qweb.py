@@ -1,14 +1,14 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo. See LICENSE file for full copyright and licensing details.
 
 from lxml import etree
 import re
 
-from flectra import http, tools
-from flectra.addons.base.tests.common import TransactionCaseWithUserDemo
-from flectra.addons.website.tools import MockRequest
-from flectra.modules.module import get_module_resource
-from flectra.tests.common import TransactionCase
+from odoo import http, tools
+from odoo.addons.base.tests.common import TransactionCaseWithUserDemo
+from odoo.addons.website.tools import MockRequest
+from odoo.modules.module import get_module_resource
+from odoo.tests.common import TransactionCase
 
 
 class TestQweb(TransactionCaseWithUserDemo):

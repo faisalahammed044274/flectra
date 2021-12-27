@@ -1,4 +1,4 @@
-flectra.define('snailmail/static/src/components/message/message.js', function (require) {
+odoo.define('snailmail/static/src/components/message/message.js', function (require) {
 'use strict';
 
 const components = {

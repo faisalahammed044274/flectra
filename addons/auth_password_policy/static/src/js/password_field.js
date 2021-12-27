@@ -4,7 +4,7 @@
  * policy & the 2word16 password policy recommended by Shay (2016) "Designing
  * Password Policies for Strength and Usability".
  */
-flectra.define('auth_password_policy.PasswordField', function (require) {
+odoo.define('auth_password_policy.PasswordField', function (require) {
 "use strict";
 var fields = require('web.basic_fields');
 var registry = require('web.field_registry');

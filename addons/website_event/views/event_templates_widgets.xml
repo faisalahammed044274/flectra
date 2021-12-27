@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<flectra>
+<odoo>
 
 <!-- Search Box -->
 <template id="events_search_box" inherit_id="website.website_search_box" primary="True">
@@ -78,4 +78,4 @@
     </div>
 </template>
 
-</flectra>
+</odoo>

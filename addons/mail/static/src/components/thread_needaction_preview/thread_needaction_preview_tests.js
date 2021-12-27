@@ -1,4 +1,4 @@
-flectra.define('mail/static/src/components/thread_needaction_preview/thread_needaction_preview_tests.js', function (require) {
+odoo.define('mail/static/src/components/thread_needaction_preview/thread_needaction_preview_tests.js', function (require) {
 'use strict';
 
 const components = {

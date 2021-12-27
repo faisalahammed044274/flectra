@@ -1,4 +1,4 @@
-flectra.define('web.CalendarQuickCreate', function (require) {
+odoo.define('web.CalendarQuickCreate', function (require) {
 "use strict";
 
 var core = require('web.core');

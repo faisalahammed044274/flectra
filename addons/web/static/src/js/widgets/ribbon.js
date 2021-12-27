@@ -1,4 +1,4 @@
-flectra.define('web.ribbon', function (require) {
+odoo.define('web.ribbon', function (require) {
     'use strict';
 
     /**

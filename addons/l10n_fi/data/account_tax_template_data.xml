@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<flectra>
+<odoo>
     <!-- # Domestic -->
     <!-- ## Domestic:sales -->
     <!-- ### Domestic:sales:goods -->
@@ -1293,4 +1293,4 @@
         ]"/>
     </record>
 
-</flectra>
+</odoo>

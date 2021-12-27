@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<flectra noupdate="1">
+<odoo noupdate="1">
     <!-- Tags for accounts -->
     <record id="account_tag_development_costs" model="account.account.tag">
         <field name="name">Tase: Kehittämismenot</field>
@@ -545,4 +545,4 @@
         <field name="name">Tulos: Muut välittömät verot</field>
         <field name="applicability">accounts</field>
     </record>
-</flectra>
+</odoo>

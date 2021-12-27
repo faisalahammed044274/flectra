@@ -1,4 +1,4 @@
-flectra.define('calendar.CalendarModel', function (require) {
+odoo.define('calendar.CalendarModel', function (require) {
     "use strict";
 
     const Model = require('web.CalendarModel');
@@ -7,7 +7,7 @@ flectra.define('calendar.CalendarModel', function (require) {
 
         /**
          * @override
-         * Transform fullcalendar event object to flectra Data object
+         * Transform fullcalendar event object to odoo Data object
          */
         calendarEventToRecord(event) {
             const data = this._super(event);

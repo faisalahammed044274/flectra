@@ -1,4 +1,4 @@
-flectra.define('mass_mailing.ListKanbanView', function (require) {
+odoo.define('mass_mailing.ListKanbanView', function (require) {
 "use strict";
 
 var MassMailingListKanbanRenderer = require('mass_mailing.ListKanbanRenderer');

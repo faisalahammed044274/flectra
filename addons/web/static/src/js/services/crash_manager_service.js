@@ -1,4 +1,4 @@
-flectra.define('crash_manager.service', function (require) {
+odoo.define('crash_manager.service', function (require) {
 'use strict';
 
 const core = require('web.core');

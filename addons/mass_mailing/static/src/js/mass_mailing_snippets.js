@@ -1,4 +1,4 @@
-flectra.define('mass_mailing.snippets.options', function (require) {
+odoo.define('mass_mailing.snippets.options', function (require) {
 "use strict";
 
 var options = require('web_editor.snippets.options');

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<flectra>
+<odoo>
     <data>
         <record id="report_product_label" model="ir.actions.report">
             <field name="name">Product Label (PDF)</field>
@@ -64,4 +64,4 @@
             <field name="report_file">product.report_pricelist</field>
         </record>
     </data>
-</flectra>
+</odoo>

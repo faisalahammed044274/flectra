@@ -1,4 +1,4 @@
-flectra.define('survey.session_leaderboard', function (require) {
+odoo.define('survey.session_leaderboard', function (require) {
 'use strict';
 
 var publicWidget = require('web.public.widget');

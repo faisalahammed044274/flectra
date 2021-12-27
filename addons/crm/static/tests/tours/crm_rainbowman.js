@@ -1,4 +1,4 @@
-flectra.define('crm.tour_crm_rainbowman', function (require) {
+odoo.define('crm.tour_crm_rainbowman', function (require) {
     "use strict";
 
     var tour = require('web_tour.tour');

@@ -1,10 +1,10 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo. See LICENSE file for full copyright and licensing details.
 
-from flectra.addons.mail.tests.common import mail_new_test_user
-from flectra.addons.test_mail.tests.common import TestMailCommon
-from flectra.tests import tagged
-from flectra.tools import mute_logger
+from odoo.addons.mail.tests.common import mail_new_test_user
+from odoo.addons.test_mail.tests.common import TestMailCommon
+from odoo.tests import tagged
+from odoo.tools import mute_logger
 
 
 @tagged('mail_wizards')
@@ -30,7 +30,7 @@ class TestMailResend(TestMailCommon):
         cls.partners = cls.env['res.partner'].concat(cls.user1.partner_id, cls.user2.partner_id, cls.partner1, cls.partner2)
         cls.invalid_email_partners = cls.env['res.partner'].concat(cls.user1.partner_id, cls.partner1)
 
-    # @mute_logger('flectra.addons.mail.models.mail_mail')
+    # @mute_logger('odoo.addons.mail.models.mail_mail')
     def test_mail_resend_workflow(self):
         with self.assertSinglePostNotifications(
                 [{'partner': partner, 'type': 'email', 'status': 'exception'} for partner in self.partners],
@@ -76,7 +76,7 @@ class TestMailResend(TestMailCommon):
              'notif': [{'partner': partner, 'type': 'email', 'status': 'sent', 'check_send': partner == self.partner1} for partner in self.partners]}]
         )
 
-    @mute_logger('flectra.addons.mail.models.mail_mail')
+    @mute_logger('odoo.addons.mail.models.mail_mail')
     def test_remove_mail_become_canceled(self):
         # two failure sent on bus, one for each mail
         self._reset_bus()
@@ -100,7 +100,7 @@ class TestMailResend(TestMailCommon):
                         'status': (partner == self.user1.partner_id and 'exception') or (partner == self.partner1 and 'canceled') or 'sent'} for partner in self.partners]}]
         )
 
-    @mute_logger('flectra.addons.mail.models.mail_mail')
+    @mute_logger('odoo.addons.mail.models.mail_mail')
     def test_cancel_all(self):
         self._reset_bus()
         with self.mock_mail_gateway(), self.assertBus([(self.cr.dbname, 'res.partner', self.partner_admin.id)] * 2):

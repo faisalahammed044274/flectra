@@ -1,4 +1,4 @@
-flectra.define('pos_restaurant.OrderlineNoteButton', function(require) {
+odoo.define('pos_restaurant.OrderlineNoteButton', function(require) {
     'use strict';
 
     const PosComponent = require('point_of_sale.PosComponent');

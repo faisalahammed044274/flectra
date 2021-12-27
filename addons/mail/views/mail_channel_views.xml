@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<flectra>
+<odoo>
     <data>
 
         <!-- mail.channel.partner -->
@@ -224,4 +224,4 @@
     </record>
 
     </data>
-</flectra>
+</odoo>

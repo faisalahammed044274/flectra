@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<flectra>
+<odoo>
 
 <!-- MAIN: REMOVE HEADER/FOOTER IF WIDESCREEN -->
 <template id="event_track_main" inherit_id="website_event_track.event_track_main">
@@ -57,4 +57,4 @@
     </xpath>
 </template>
 
-</flectra>
+</odoo>

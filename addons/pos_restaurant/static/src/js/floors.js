@@ -1,4 +1,4 @@
-flectra.define('pos_restaurant.floors', function (require) {
+odoo.define('pos_restaurant.floors', function (require) {
 "use strict";
 
 var models = require('point_of_sale.models');

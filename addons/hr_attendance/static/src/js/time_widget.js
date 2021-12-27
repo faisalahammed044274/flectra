@@ -1,4 +1,4 @@
-flectra.define('hr_attendance.widget', function (require) {
+odoo.define('hr_attendance.widget', function (require) {
     "use strict";
 
     var basic_fields = require('web.basic_fields');
@@ -16,4 +16,4 @@ flectra.define('hr_attendance.widget', function (require) {
     field_registry.add('relative_time', RelativeTime);
 
     return RelativeTime;
-}); 
+});

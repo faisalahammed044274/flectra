@@ -1,4 +1,4 @@
-flectra.define('web.framework', function (require) {
+odoo.define('web.framework', function (require) {
 "use strict";
 
 var core = require('web.core');

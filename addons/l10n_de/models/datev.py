@@ -1,6 +1,6 @@
-from flectra import api, fields, models
-from flectra.exceptions import UserError
-from flectra.tools.translate import _
+from odoo import api, fields, models
+from odoo.exceptions import UserError
+from odoo.tools.translate import _
 
 class AccountTaxTemplate(models.Model):
     _inherit = 'account.tax.template'

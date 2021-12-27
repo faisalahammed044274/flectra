@@ -1,4 +1,4 @@
-flectra.define('stock.PopoverStockPicking', function (require) {
+odoo.define('stock.PopoverStockPicking', function (require) {
 "use strict";
 
 var core = require('web.core');

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<flectra>
+<odoo>
     <data>
         <record id="report_coupon_code" model="ir.actions.report">
             <field name="name">Coupon Code</field>
@@ -11,4 +11,4 @@
             <field name="binding_type">report</field>
         </record>
     </data>
-</flectra>
+</odoo>

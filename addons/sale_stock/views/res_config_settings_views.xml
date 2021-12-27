@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<flectra>
+<odoo>
 
     <record id="res_config_settings_view_form_sale" model="ir.ui.view">
         <field name="name">res.config.settings.view.form.inherit.sale.stock.sale</field>
@@ -83,7 +83,7 @@
                     </div>
                     <div class="o_setting_right_pane">
                         <label for="use_security_lead"/>
-                        <a href="https://doc.flectrahq.com/2.0/applications/inventory_and_mrp/inventory/management/planning/scheduled_dates.html" title="Documentation" class="mr-2 o_doc_link" target="_blank"></a>
+                        <a href="https://www.odoo.com/documentation/14.0/applications/inventory_and_mrp/inventory/management/planning/scheduled_dates.html" title="Documentation" class="mr-2 o_doc_link" target="_blank"></a>
                         <span class="fa fa-lg fa-building-o" title="Values set here are company-specific." role="img" aria-label="Values set here are company-specific." groups="base.group_multi_company"/>
                         <div class="text-muted">
                             Schedule deliveries earlier to avoid delays
@@ -99,4 +99,4 @@
         </field>
     </record>
 
-</flectra>
+</odoo>

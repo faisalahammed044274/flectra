@@ -1,4 +1,4 @@
-flectra.define('website_sale.validate', function (require) {
+odoo.define('website_sale.validate', function (require) {
 'use strict';
 
 var publicWidget = require('web.public.widget');

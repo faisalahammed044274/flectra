@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo. See LICENSE file for full copyright and licensing details.
 
 import logging
 import pytz
@@ -8,10 +8,10 @@ from datetime import datetime, date
 from dateutil.relativedelta import relativedelta
 from werkzeug.urls import url_join
 
-from flectra import api, fields, models, tools, _
-from flectra.addons.base.models.ir_mail_server import MailDeliveryException
-from flectra.exceptions import AccessError
-from flectra.tools.float_utils import float_round
+from odoo import api, fields, models, tools, _
+from odoo.addons.base.models.ir_mail_server import MailDeliveryException
+from odoo.exceptions import AccessError
+from odoo.tools.float_utils import float_round
 
 _logger = logging.getLogger(__name__)
 
@@ -258,13 +258,13 @@ class Digest(models.Model):
         if self._context.get('digest_slowdown'):
             preferences.append(_("We have noticed you did not connect these last few days so we've automatically switched your preference to weekly Digests."))
         elif self.periodicity == 'daily' and user.has_group('base.group_erp_manager'):
-            preferences.append('<p>%s<br /><a href="/digest/%s/set_periodicity?periodicity=weekly" target="_blank" style="color:#009EFB; font-weight: bold;">%s</a></p>' % (
+            preferences.append('<p>%s<br /><a href="/digest/%s/set_periodicity?periodicity=weekly" target="_blank" style="color:#875A7B; font-weight: bold;">%s</a></p>' % (
                 _('Prefer a broader overview ?'),
                 self.id,
                 _('Switch to weekly Digests')
             ))
         if user.has_group('base.group_erp_manager'):
-            preferences.append('<p>%s<br /><a href="/web#view_type=form&amp;model=%s&amp;id=%s" target="_blank" style="color:#009EFB; font-weight: bold;">%s</a></p>' % (
+            preferences.append('<p>%s<br /><a href="/web#view_type=form&amp;model=%s&amp;id=%s" target="_blank" style="color:#875A7B; font-weight: bold;">%s</a></p>' % (
                 _('Want to customize this email?'),
                 self._name,
                 self.id,

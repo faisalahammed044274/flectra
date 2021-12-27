@@ -1,16 +1,16 @@
 /**
  * This file allows introducing new JS modules without contaminating other files.
  * This is useful when bug fixing requires adding such JS modules in stable
- * versions of Flectra. Any module that is defined in this file should be isolated
+ * versions of Odoo. Any module that is defined in this file should be isolated
  * in its own file in master.
  */
-flectra.define('hr_holidays/static/src/bugfix/bugfix.js', function (require) {
+odoo.define('hr_holidays/static/src/bugfix/bugfix.js', function (require) {
 'use strict';
 
 });
 
 // FIXME move me in hr_holidays/static/src/models/partner/partner.js
-flectra.define('hr_holidays/static/src/models/partner/partner.js', function (require) {
+odoo.define('hr_holidays/static/src/models/partner/partner.js', function (require) {
 'use strict';
 
 const {
@@ -69,7 +69,7 @@ registerFieldPatchModel('mail.partner', 'hr/static/src/models/partner/partner.js
     }),
     /**
      * Date of end of the out of office period of the partner as string.
-     * String is expected to use Flectra's datetime string format
+     * String is expected to use Odoo's datetime string format
      * (examples: '2011-12-01 15:12:35.832' or '2011-12-01 15:12:35').
      */
     outOfOfficeDateEnd: attr(),

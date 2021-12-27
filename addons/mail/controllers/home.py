@@ -1,14 +1,14 @@
 # -*- coding: utf-8 -*-
 import ipaddress
 
-from flectra import _, SUPERUSER_ID
-from flectra.http import request
-from flectra.addons.web.controllers import main as web
+from odoo import _, SUPERUSER_ID
+from odoo.http import request
+from odoo.addons.web.controllers import main as web
 
 def _admin_password_warn(uid):
     """ Admin still has `admin` password, flash a message via chatter.
 
-    Uses a private mail.channel from the system (/ flectrabot) to the user, as
+    Uses a private mail.channel from the system (/ odoobot) to the user, as
     using a more generic mail.thread could send an email which is undesirable
 
     Uses mail.channel directly because using mail.thread might send an email instead.

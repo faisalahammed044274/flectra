@@ -1,4 +1,4 @@
-<flectra>
+<odoo>
     <record id="local_peru" model="account.fiscal.position.template">
         <field name="name">LOCAL PERU</field>
         <field name="chart_template_id" ref="pe_chart_template"/>
@@ -22,4 +22,4 @@
         <field name="tax_src_id" ref="sale_tax_igv_18_included"/>
         <field name="tax_dest_id" ref="sale_tax_exp"/>
     </record>
-</flectra>
+</odoo>

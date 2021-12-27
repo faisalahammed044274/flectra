@@ -3,9 +3,9 @@ import base64
 from pytz import timezone
 from datetime import datetime
 
-from flectra.tools import misc, float_compare
-from flectra.modules import module as modules
-from flectra.addons.account_edi.tests.common import AccountEdiTestCommon
+from odoo.tools import misc, float_compare
+from odoo.modules import module as modules
+from odoo.addons.account_edi.tests.common import AccountEdiTestCommon
 
 
 class TestEsEdiCommon(AccountEdiTestCommon):

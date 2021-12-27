@@ -1,21 +1,21 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo. See LICENSE file for full copyright and licensing details.
 
 import time
 from datetime import datetime
 from dateutil.relativedelta import relativedelta
 from psycopg2 import IntegrityError
 
-from flectra import fields
-from flectra.exceptions import AccessError, ValidationError, UserError
-from flectra.tools import mute_logger, test_reports
+from odoo import fields
+from odoo.exceptions import AccessError, ValidationError, UserError
+from odoo.tools import mute_logger, test_reports
 
-from flectra.addons.hr_holidays.tests.common import TestHrHolidaysCommon
+from odoo.addons.hr_holidays.tests.common import TestHrHolidaysCommon
 
 
 class TestHolidaysFlow(TestHrHolidaysCommon):
 
-    @mute_logger('flectra.addons.base.models.ir_model', 'flectra.models')
+    @mute_logger('odoo.addons.base.models.ir_model', 'odoo.models')
     def test_00_leave_request_flow_unlimited(self):
         """ Testing leave request flow: unlimited type of leave request """
         Requests = self.env['hr.leave']
@@ -77,7 +77,7 @@ class TestHolidaysFlow(TestHrHolidaysCommon):
         self.assertEqual(hol1_user_group.state, 'validate', 'hr_holidays: validates leave request should be in validate state')
 
 
-    @mute_logger('flectra.addons.base.models.ir_model', 'flectra.models')
+    @mute_logger('odoo.addons.base.models.ir_model', 'odoo.models')
     def test_01_leave_request_flow_limited(self):
         """ Testing leave request flow: limited type of leave request """
         Requests = self.env['hr.leave']
@@ -265,7 +265,7 @@ class TestHolidaysFlow(TestHrHolidaysCommon):
             'employee_id': self.ref('hr.employee_admin'),
             'number_of_days': 1,
         }
-        with mute_logger('flectra.sql_db'):
+        with mute_logger('odoo.sql_db'):
             with self.assertRaises(IntegrityError):
                 with self.cr.savepoint():
                     self.env['hr.leave'].create(leave_vals)
@@ -279,7 +279,7 @@ class TestHolidaysFlow(TestHrHolidaysCommon):
             'number_of_days': 1,
         }
         leave = self.env['hr.leave'].create(leave_vals)
-        with mute_logger('flectra.sql_db'):
+        with mute_logger('odoo.sql_db'):
             with self.assertRaises(IntegrityError):  # No ValidationError
                 with self.cr.savepoint():
                     leave.write({

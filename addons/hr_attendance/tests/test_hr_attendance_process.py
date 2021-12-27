@@ -4,9 +4,9 @@ import pytz
 from datetime import datetime
 from unittest.mock import patch
 
-from flectra import fields
-from flectra.tests import new_test_user
-from flectra.tests.common import TransactionCase
+from odoo import fields
+from odoo.tests import new_test_user
+from odoo.tests.common import TransactionCase
 
 
 class TestHrAttendance(TransactionCase):

@@ -1,5 +1,5 @@
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details
-from flectra import fields, models
+# Part of Odoo. See LICENSE file for full copyright and licensing details
+from odoo import fields, models
 
 
 class ResPartner(models.Model):
@@ -7,4 +7,4 @@ class ResPartner(models.Model):
 
     l10n_pe_district = fields.Many2one(
         'l10n_pe.res.city.district', string='District',
-        help='Districts are part of a province or city.') 
+        help='Districts are part of a province or city.')

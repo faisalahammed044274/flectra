@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<flectra>
+<odoo>
     <record id="partner_demo_company_th" model="res.partner">
         <field name="name">TH Company</field>
         <field name="vat"></field>
@@ -31,4 +31,4 @@
         <value eval="[ref('l10n_th.chart')]"/>
         <value model="res.company" eval="obj().env.ref('l10n_th.demo_company_th')"/>
     </function>
-</flectra>
+</odoo>

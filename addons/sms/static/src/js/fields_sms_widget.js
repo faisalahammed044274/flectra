@@ -1,4 +1,4 @@
-flectra.define('sms.sms_widget', function (require) {
+odoo.define('sms.sms_widget', function (require) {
 "use strict";
 
 var core = require('web.core');
@@ -112,7 +112,7 @@ var SmsWidget = FieldTextEmojis.extend({
      */
     _renderIAPButton: function () {
         return $('<a>', {
-            'href': 'https://iap-services.flectrahq.com/iap/sms/pricing',
+            'href': 'https://iap-services.odoo.com/iap/sms/pricing',
             'target': '_blank',
             'title': _t('SMS Pricing'),
             'aria-label': _t('SMS Pricing'),

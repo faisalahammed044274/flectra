@@ -1,4 +1,4 @@
-flectra.define('web.test_utils_mock', function (require) {
+odoo.define('web.test_utils_mock', function (require) {
 "use strict";
 
 /**
@@ -189,7 +189,7 @@ function _mockGlobalObjects(params) {
             Object.assign(config.device, params.config.device);
         }
         if ('debug' in params.config) {
-            flectra.debug = params.config.debug;
+            odoo.debug = params.config.debug;
         }
     }
 
@@ -265,7 +265,7 @@ function fieldsViewGet(server, params) {
  * It will not be propagated further, and even the handlers on the target will
  * not fire.
  *
- * @param {Widget} widget the target widget (any Flectra widget)
+ * @param {Widget} widget the target widget (any Odoo widget)
  * @param {string} eventName description of the event
  * @param {function} fn callback executed when the even is intercepted
  * @param {boolean} [propagate=false]
@@ -434,7 +434,7 @@ async function addMockEnvironmentOwl(Component, params, mockServer) {
         core.bus.trigger('clear_cache');
 
         $('body').off('DOMNodeInserted.removeSRC');
-        $('.blockUI').remove(); // fixme: move to qunit_config in FlectraAfterTestHook?
+        $('.blockUI').remove(); // fixme: move to qunit_config in OdooAfterTestHook?
 
         restoreMockedGlobalObjects();
 
@@ -465,8 +465,8 @@ async function addMockEnvironmentOwl(Component, params, mockServer) {
  * @param {string} [params.currentDate] a string representation of the current
  *   date. It is given to the mock server.
  * @param {Object} params.data the data given to the created mock server. It is
- *   used to generate mock answers for every kind of routes supported by flectra
- * @param {number} [params.debug] if set to true, logs RPCs and uncaught Flectra
+ *   used to generate mock answers for every kind of routes supported by odoo
+ * @param {number} [params.debug] if set to true, logs RPCs and uncaught Odoo
  *   events.
  * @param {Object} [params.bus] the instance of Bus that will be used (in the env)
  * @param {function} [params.mockFetch] a function that will be used to override
@@ -572,7 +572,7 @@ async function addMockEnvironment(widget, params) {
         ev.data.on_success(filters);
     });
 
-    // make sure all other Flectra events bubbling up are intercepted
+    // make sure all other Odoo events bubbling up are intercepted
     Object.keys(params.intercepts || {}).forEach(function (name) {
         intercept(widget, name, params.intercepts[name]);
     });

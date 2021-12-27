@@ -1,8 +1,8 @@
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo. See LICENSE file for full copyright and licensing details.
 
-from flectra import models, api, _
-from flectra.exceptions import UserError
-from flectra.http import request
+from odoo import models, api, _
+from odoo.exceptions import UserError
+from odoo.http import request
 
 
 class AccountChartTemplate(models.Model):

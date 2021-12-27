@@ -1,4 +1,4 @@
-flectra.define('web.local_storage', function (require) {
+odoo.define('web.local_storage', function (require) {
 'use strict';
 
 var RamStorage = require('web.RamStorage');

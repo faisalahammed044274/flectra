@@ -1,4 +1,4 @@
-flectra.define('web.crash_manager_tests', function (require) {
+odoo.define('web.crash_manager_tests', function (require) {
     "use strict";
     const CrashManager = require('web.CrashManager').CrashManager;
     const Bus = require('web.Bus');
@@ -37,7 +37,7 @@ QUnit.module('Services', {}, function() {
         actionManager.call('crash_manager', 'rpc_error', {
             code: 200,
             data: {
-                name: "flectra.exceptions.RedirectWarning",
+                name: "odoo.exceptions.RedirectWarning",
                 arguments: [
                     "crash_manager_tests_warning_modal_text",
                     dummy_action_name,

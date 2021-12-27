@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<flectra>
+<odoo>
 
 <template id="registration_attendee_details_questions" inherit_id="website_event.registration_attendee_details" name="Registration Attendee Details with questions">
     <!-- Attendee specific questions -->
@@ -44,4 +44,4 @@
     </t>
 </template>
 
-</flectra>
+</odoo>

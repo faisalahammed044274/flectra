@@ -1,4 +1,4 @@
-flectra.define('survey.timer', function (require) {
+odoo.define('survey.timer', function (require) {
 'use strict';
 
 var publicWidget = require('web.public.widget');

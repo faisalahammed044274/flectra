@@ -4,11 +4,11 @@ import logging
 
 from werkzeug import urls
 
-from flectra import api, fields, models, _
-from flectra.addons.payment.models.payment_acquirer import ValidationError
-from flectra.addons.payment_buckaroo.controllers.main import BuckarooController
+from odoo import api, fields, models, _
+from odoo.addons.payment.models.payment_acquirer import ValidationError
+from odoo.addons.payment_buckaroo.controllers.main import BuckarooController
 
-from flectra.tools.float_utils import float_compare
+from odoo.tools.float_utils import float_compare
 
 _logger = logging.getLogger(__name__)
 
@@ -49,8 +49,8 @@ class AcquirerBuckaroo(models.Model):
 
         :param browse acquirer: the payment.acquirer browse record. It should
                                 have a shakey in shaky out
-        :param string inout: 'in' (flectra contacting buckaroo) or 'out' (buckaroo
-                             contacting flectra).
+        :param string inout: 'in' (odoo contacting buckaroo) or 'out' (buckaroo
+                             contacting odoo).
         :param dict values: transaction values
 
         :return string: shasign

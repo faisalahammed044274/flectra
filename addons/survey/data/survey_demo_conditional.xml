@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<flectra><data noupdate="0">
+<odoo><data noupdate="0">
 
     <record id="survey_demo_burger_quiz" model="survey.survey">
         <field name="title">Burger Quiz</field>
@@ -471,4 +471,4 @@
             <field name="value">I actually don't like thinking. I think people think I like to think a lot. And I don't. I do not like to think at all.</field> <!-- Kanye West -->
         </record>
 
-</data></flectra>
+</data></odoo>

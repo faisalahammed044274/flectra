@@ -1,17 +1,17 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo. See LICENSE file for full copyright and licensing details.
 
 import werkzeug
 from werkzeug import urls
 from werkzeug.exceptions import NotFound, Forbidden
 
-from flectra import http, _
-from flectra.http import request
-from flectra.osv import expression
-from flectra.tools import consteq, plaintext2html
-from flectra.addons.mail.controllers.main import MailController
-from flectra.addons.portal.controllers.portal import CustomerPortal
-from flectra.exceptions import AccessError, MissingError, UserError
+from odoo import http, _
+from odoo.http import request
+from odoo.osv import expression
+from odoo.tools import consteq, plaintext2html
+from odoo.addons.mail.controllers.main import MailController
+from odoo.addons.portal.controllers.portal import CustomerPortal
+from odoo.exceptions import AccessError, MissingError, UserError
 
 
 def _check_special_access(res_model, res_id, token='', _hash='', pid=False):

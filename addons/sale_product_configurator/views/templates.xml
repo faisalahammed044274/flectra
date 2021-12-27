@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<flectra>
+<odoo>
     <template id="optional_products_modal" name="Optional Products">
         <main class="modal-body">
             <t t-call="sale_product_configurator.configure_optional_products" />
@@ -217,4 +217,4 @@
             </t>
         </t>
     </template>
-</flectra>
+</odoo>

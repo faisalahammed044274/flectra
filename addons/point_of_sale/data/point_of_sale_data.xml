@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<flectra>
+<odoo>
     <data noupdate="1">
         <!-- After closing the PoS, open the dashboard menu -->
         <record id="action_client_pos_menu" model="ir.actions.client">
@@ -48,4 +48,4 @@
         </record>
         <function model="pos.config" name="post_install_pos_localisation" />
     </data>
-</flectra>
+</odoo>

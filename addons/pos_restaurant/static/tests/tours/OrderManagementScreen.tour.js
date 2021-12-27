@@ -1,4 +1,4 @@
-flectra.define('pos_restaurant.tour.OrderManagementScreen', function (require) {
+odoo.define('pos_restaurant.tour.OrderManagementScreen', function (require) {
     'use strict';
 
     // This tour tests the integration of OrderManagementScreen

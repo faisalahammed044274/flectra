@@ -1,4 +1,4 @@
-<flectra>
+<odoo>
     <template id="report_shipping2" inherit_id="stock.report_picking">
         <xpath expr="//div[@name='div_sched_date']" position="after">
             <div t-if="o.picking_type_id.code == 'outgoing' and o.carrier_id" class="col-auto">
@@ -13,4 +13,4 @@
             </div>
         </xpath>
     </template>
-</flectra>
+</odoo>

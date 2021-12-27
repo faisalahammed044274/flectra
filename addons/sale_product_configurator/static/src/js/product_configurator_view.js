@@ -1,4 +1,4 @@
-flectra.define('sale_product_configurator.ProductConfiguratorFormView', function (require) {
+odoo.define('sale_product_configurator.ProductConfiguratorFormView', function (require) {
 "use strict";
 
 var ProductConfiguratorFormController = require('sale_product_configurator.ProductConfiguratorFormController');

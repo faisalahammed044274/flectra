@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo. See LICENSE file for full copyright and licensing details.
 
 import werkzeug
 import itertools
@@ -7,15 +7,15 @@ import pytz
 import babel.dates
 from collections import OrderedDict
 
-from flectra import http, fields
-from flectra.addons.http_routing.models.ir_http import slug, unslug
-from flectra.addons.website.controllers.main import QueryURL
-from flectra.addons.portal.controllers.portal import _build_url_w_params
-from flectra.http import request
-from flectra.osv import expression
-from flectra.tools import html2plaintext
-from flectra.tools.misc import get_lang
-from flectra.tools import sql
+from odoo import http, fields
+from odoo.addons.http_routing.models.ir_http import slug, unslug
+from odoo.addons.website.controllers.main import QueryURL
+from odoo.addons.portal.controllers.portal import _build_url_w_params
+from odoo.http import request
+from odoo.osv import expression
+from odoo.tools import html2plaintext
+from odoo.tools.misc import get_lang
+from odoo.tools import sql
 
 
 class WebsiteBlog(http.Controller):

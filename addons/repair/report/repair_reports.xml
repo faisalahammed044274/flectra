@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<flectra>
+<odoo>
     <data>
         <record id="action_report_repair_order" model="ir.actions.report">
             <field name="name">Quotation / Order</field>
@@ -14,4 +14,4 @@
             <field name="binding_type">report</field>
         </record>
     </data>
-</flectra>
+</odoo>

@@ -1,4 +1,4 @@
-flectra.define('website.backend.dashboard', function (require) {
+odoo.define('website.backend.dashboard', function (require) {
 'use strict';
 
 var AbstractAction = require('web.AbstractAction');

@@ -1,13 +1,13 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo. See LICENSE file for full copyright and licensing details.
 
 import time
 from psycopg2 import IntegrityError
 
-from flectra.exceptions import UserError, ValidationError
-from flectra.tests import tagged
-from flectra.tests.common import SavepointCase
-from flectra.tools import mute_logger
+from odoo.exceptions import UserError, ValidationError
+from odoo.tests import tagged
+from odoo.tests.common import SavepointCase
+from odoo.tools import mute_logger
 
 
 class TestProductAttributeValueCommon(SavepointCase):
@@ -642,7 +642,7 @@ class TestProductAttributeValueConfig(TestProductAttributeValueCommon):
         with self.assertRaises(UserError, msg="can't change the product of a product template attribute value"):
             self.computer_ram_attribute_lines.product_template_value_ids[0].product_tmpl_id = self.computer_case.id
 
-        with mute_logger('flectra.sql_db'), self.assertRaises(IntegrityError, msg="can't have two values with the same name for the same attribute"):
+        with mute_logger('odoo.sql_db'), self.assertRaises(IntegrityError, msg="can't have two values with the same name for the same attribute"):
             self.env['product.attribute.value'].create({
                 'name': '32 GB',
                 'attribute_id': self.ram_attribute.id,

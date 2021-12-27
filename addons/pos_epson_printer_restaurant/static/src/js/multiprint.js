@@ -1,4 +1,4 @@
-flectra.define('pos_epson_printer_restaurant.multiprint', function (require) {
+odoo.define('pos_epson_printer_restaurant.multiprint', function (require) {
 "use strict";
 
 var models = require('point_of_sale.models');

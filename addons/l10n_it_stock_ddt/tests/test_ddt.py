@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
-from flectra.addons.sale.tests.common import TestSaleCommon
-from flectra.tests import tagged, Form
+# Part of Odoo. See LICENSE file for full copyright and licensing details.
+from odoo.addons.sale.tests.common import TestSaleCommon
+from odoo.tests import tagged, Form
 
 
 @tagged('post_install', '-at_install')

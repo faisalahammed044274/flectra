@@ -1,4 +1,4 @@
-flectra.define('im_livechat/static/src/components/discuss/discuss.js', function (require) {
+odoo.define('im_livechat/static/src/components/discuss/discuss.js', function (require) {
 'use strict';
 
 const components = {

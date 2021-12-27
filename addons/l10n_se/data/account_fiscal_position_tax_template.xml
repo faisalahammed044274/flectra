@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<flectra>
+<odoo>
     <data noupdate="1">
         <!-- Fiscal Position Purchase Eurozone -->
         <record id="fpp_euro_25_services" model="account.fiscal.position.tax.template">
@@ -126,4 +126,4 @@
             <field name="tax_dest_id" ref="sale_tax_goods_NEC" />
         </record>
     </data>
-</flectra>
+</odoo>

@@ -1,4 +1,4 @@
-flectra.define('web.custom_hooks', function () {
+odoo.define('web.custom_hooks', function () {
     "use strict";
 
     const { Component, hooks } = owl;

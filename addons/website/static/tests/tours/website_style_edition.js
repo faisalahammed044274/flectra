@@ -1,4 +1,4 @@
-flectra.define("website.tour.website_style_edition", function (require) {
+odoo.define("website.tour.website_style_edition", function (require) {
 "use strict";
 
 const tour = require("web_tour.tour");

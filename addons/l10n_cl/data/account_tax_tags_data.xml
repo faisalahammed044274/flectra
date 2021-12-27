@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<flectra>
+<odoo>
     <data>
 
         <record id="tag_cl_sale_mnt_iva" model="account.account.tag">
@@ -185,4 +185,4 @@
         </record>
 
     </data>
-</flectra> 
+</odoo>

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<flectra><data noupdate="0">
+<odoo><data noupdate="0">
 
     <record model="survey.survey" id="survey_feedback">
         <field name="title">Feedback Form</field>
@@ -219,4 +219,4 @@
         <field name="state">in_progress</field>
     </record>
 
-</data></flectra>
+</data></odoo>

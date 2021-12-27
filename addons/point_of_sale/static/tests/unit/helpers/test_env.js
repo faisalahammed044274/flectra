@@ -1,4 +1,4 @@
-flectra.define('point_of_sale.test_env', async function (require) {
+odoo.define('point_of_sale.test_env', async function (require) {
     'use strict';
 
     /**

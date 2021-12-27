@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<flectra>
+<odoo>
     <data>
 
         <record id="account_edi.action_open_payment_edi_documents" model="ir.actions.act_window">
@@ -57,4 +57,4 @@
             </field>
         </record>
     </data>
-</flectra>
+</odoo>

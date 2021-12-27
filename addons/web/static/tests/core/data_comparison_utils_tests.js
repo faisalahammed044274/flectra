@@ -1,4 +1,4 @@
-flectra.define('web.data_comparison_utils_tests', function(require) {
+odoo.define('web.data_comparison_utils_tests', function(require) {
 "use strict";
 
 var dataComparisonUtils = require('web.dataComparisonUtils');

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<flectra>
+<odoo>
 
     <menuitem id="account_reports_mn_statements_menu" name="Mongolia" parent="account.menu_finance_reports" sequence="0" groups="account.group_account_readonly"/>
 
@@ -13,4 +13,4 @@
         <field name="use_anglo_saxon" eval="True"/>
     </record>
 
-</flectra>
+</odoo>

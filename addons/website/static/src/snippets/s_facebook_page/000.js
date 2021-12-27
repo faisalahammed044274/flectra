@@ -1,4 +1,4 @@
-flectra.define('website.s_facebook_page', function (require) {
+odoo.define('website.s_facebook_page', function (require) {
 'use strict';
 
 var publicWidget = require('web.public.widget');

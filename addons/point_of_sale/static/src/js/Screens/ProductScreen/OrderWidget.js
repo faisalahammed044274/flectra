@@ -1,4 +1,4 @@
-flectra.define('point_of_sale.OrderWidget', function(require) {
+odoo.define('point_of_sale.OrderWidget', function(require) {
     'use strict';
 
     const { useState, useRef, onPatched } = owl.hooks;

@@ -1,10 +1,10 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo. See LICENSE file for full copyright and licensing details.
 
 from datetime import date, datetime, timedelta
 
-from flectra.tests.common import Form, TransactionCase
-from flectra.tools import mute_logger
+from odoo.tests.common import Form, TransactionCase
+from odoo.tools import mute_logger
 
 
 class TestProcRule(TransactionCase):
@@ -65,7 +65,7 @@ class TestProcRule(TransactionCase):
         # to the purchase demo data. As we update the stock module to run this test, the
         # method won't be an attribute of stock.procurement at this moment. For that reason
         # we mute the logger when running the scheduler.
-        with mute_logger('flectra.addons.stock.models.procurement'):
+        with mute_logger('odoo.addons.stock.models.procurement'):
             self.env['procurement.group'].run_scheduler()
 
         # Check that a picking was created from stock to output.

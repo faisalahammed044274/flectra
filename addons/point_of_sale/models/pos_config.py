@@ -1,12 +1,12 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo. See LICENSE file for full copyright and licensing details.
 
 from datetime import datetime
 from uuid import uuid4
 import pytz
 
-from flectra import api, fields, models, tools, _
-from flectra.exceptions import ValidationError, UserError
+from odoo import api, fields, models, tools, _
+from odoo.exceptions import ValidationError, UserError
 
 
 class AccountBankStmtCashWizard(models.Model):
@@ -153,10 +153,10 @@ class PosConfig(models.Model):
     uuid = fields.Char(readonly=True, default=lambda self: str(uuid4()), copy=False,
         help='A globally unique identifier for this pos configuration, used to prevent conflicts in client-generated data.')
     sequence_id = fields.Many2one('ir.sequence', string='Order IDs Sequence', readonly=True,
-        help="This sequence is automatically created by Flectra but you can change it "
+        help="This sequence is automatically created by Odoo but you can change it "
         "to customize the reference numbers of your orders.", copy=False, ondelete='restrict')
     sequence_line_id = fields.Many2one('ir.sequence', string='Order Line IDs Sequence', readonly=True,
-        help="This sequence is automatically created by Flectra but you can change it "
+        help="This sequence is automatically created by Odoo but you can change it "
         "to customize the reference numbers of your orders lines.", copy=False)
     session_ids = fields.One2many('pos.session', 'config_id', string='Sessions')
     current_session_id = fields.Many2one('pos.session', compute='_compute_current_session', string="Current Session")

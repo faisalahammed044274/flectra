@@ -1,4 +1,4 @@
-flectra.define('payment_authorize.payment_form', function (require) {
+odoo.define('payment_authorize.payment_form', function (require) {
 "use strict";
 
 var ajax = require('web.ajax');

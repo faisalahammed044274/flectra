@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<flectra>
+<odoo>
 
     <!-- Common form view between the coupon programs and the promotion programs -->
     <record id="coupon_program_view_form_common" model="ir.ui.view">
@@ -277,4 +277,4 @@
              </p>
         </field>
     </record>
-</flectra>
+</odoo>

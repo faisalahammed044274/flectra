@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<flectra>
+<odoo>
     <data>
         <!-- Menu items -->
         <menuitem name="Website"
@@ -479,4 +479,4 @@
             action="website.ir_actions_server_website_google_analytics"/>
 
     </data>
-</flectra>
+</odoo>

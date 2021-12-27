@@ -1,4 +1,4 @@
-flectra.define('stock.forecast_widget', function (require) {
+odoo.define('stock.forecast_widget', function (require) {
 'use strict';
 
 const AbstractField = require('web.AbstractField');

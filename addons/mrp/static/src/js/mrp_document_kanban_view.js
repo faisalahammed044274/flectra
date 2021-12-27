@@ -1,4 +1,4 @@
-flectra.define('mrp.MrpDocumentsKanbanView', function (require) {
+odoo.define('mrp.MrpDocumentsKanbanView', function (require) {
 "use strict";
 
 const KanbanView = require('web.KanbanView');

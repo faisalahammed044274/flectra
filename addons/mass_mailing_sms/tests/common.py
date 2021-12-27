@@ -3,9 +3,9 @@
 import re
 import werkzeug
 
-from flectra import tools
-from flectra.addons.mass_mailing.tests.common import MassMailCommon
-from flectra.addons.sms.tests.common import SMSCase, SMSCommon
+from odoo import tools
+from odoo.addons.mass_mailing.tests.common import MassMailCommon
+from odoo.addons.sms.tests.common import SMSCase, SMSCommon
 
 
 class MassSMSCase(SMSCase):
@@ -139,7 +139,7 @@ class MassSMSCase(SMSCase):
         easy information in body, only body. We currently click on all found
         shortened links. """
         for url in re.findall(tools.TEXT_URL_REGEX, sms_sent['body']):
-            if '/r/' in url:  # shortened link, like 'http://localhost:7073/r/LBG/s/53'
+            if '/r/' in url:  # shortened link, like 'http://localhost:8069/r/LBG/s/53'
                 parsed_url = werkzeug.urls.url_parse(url)
                 path_items = parsed_url.path.split('/')
                 code, sms_sms_id = path_items[2], int(path_items[4])

@@ -1,4 +1,4 @@
-flectra.define('survey.session_manage_test', function (require) {
+odoo.define('survey.session_manage_test', function (require) {
 "use strict";
 
 var SessionManager = require('survey.session_manage');

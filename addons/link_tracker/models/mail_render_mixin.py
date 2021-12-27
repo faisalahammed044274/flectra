@@ -1,11 +1,11 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo. See LICENSE file for full copyright and licensing details.
 
 import re
 
 from werkzeug import urls, utils
 
-from flectra import api, models, tools
+from odoo import api, models, tools
 
 
 class MailRenderMixin(models.AbstractModel):
@@ -18,7 +18,7 @@ class MailRenderMixin(models.AbstractModel):
     @api.model
     def _shorten_links(self, html, link_tracker_vals, blacklist=None, base_url=None):
         """ Shorten links in an html content. It uses the '/r' short URL routing
-        introduced in this module. Using the standard Flectra regex local links are
+        introduced in this module. Using the standard Odoo regex local links are
         found and replaced by global URLs (not including mailto, tel, sms).
 
         TDE FIXME: could be great to have a record to enable website-based URLs

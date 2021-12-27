@@ -1,4 +1,4 @@
-flectra.define('pos_hr.CashierName', function (require) {
+odoo.define('pos_hr.CashierName', function (require) {
     'use strict';
 
     const CashierName = require('point_of_sale.CashierName');

@@ -1,4 +1,4 @@
-flectra.define('mail/static/src/models/notification_group_manager/notification_group_manager.js', function (require) {
+odoo.define('mail/static/src/models/notification_group_manager/notification_group_manager.js', function (require) {
 'use strict';
 
 const { registerNewModel } = require('mail/static/src/model/model_core.js');

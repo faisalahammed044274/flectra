@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<flectra>
+<odoo>
 
     <template id="gst_report_saleorder_document_inherit" inherit_id="sale.report_saleorder_document">
         <xpath expr="//span[@t-field='line.name']" position="after">
@@ -7,4 +7,4 @@
         </xpath>
     </template>
 
-</flectra>
+</odoo>

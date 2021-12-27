@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo. See LICENSE file for full copyright and licensing details.
 
-from flectra.tests.common import Form, SavepointCase
+from odoo.tests.common import Form, SavepointCase
 
 class TestMrpSubcontractingCommon(SavepointCase):
 

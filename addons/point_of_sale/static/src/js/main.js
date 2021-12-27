@@ -1,4 +1,4 @@
-flectra.define('web.web_client', function (require) {
+odoo.define('web.web_client', function (require) {
     'use strict';
 
     const AbstractService = require('web.AbstractService');

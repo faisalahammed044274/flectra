@@ -1,4 +1,4 @@
-flectra.define('web.math_utils_tests', function(require) {
+odoo.define('web.math_utils_tests', function(require) {
 "use strict";
 
 var mathUtils = require('web.mathUtils');

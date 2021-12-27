@@ -1,4 +1,4 @@
-flectra.define('point_of_sale.Registries', function(require) {
+odoo.define('point_of_sale.Registries', function(require) {
     'use strict';
 
     /**

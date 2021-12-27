@@ -1,7 +1,7 @@
 /**
  * This file adds a 'guardedCatch' function to the Promise API. This function
  * has to be used when we don't want to swallow real errors (crashes), like
- * 'catch' does (i.e. basically all the time in Flectra). We only execute the
+ * 'catch' does (i.e. basically all the time in Odoo). We only execute the
  * 'onRejected' handler if the rejection's reason is not an Error, and we always
  * return a rejected Promise to let the rejection bubble up (and trigger the
  * 'unhandledrejection' event).

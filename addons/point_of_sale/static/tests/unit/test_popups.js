@@ -1,4 +1,4 @@
-flectra.define('point_of_sale.test_popups', function(require) {
+odoo.define('point_of_sale.test_popups', function(require) {
     'use strict';
 
     const Registries = require('point_of_sale.Registries');

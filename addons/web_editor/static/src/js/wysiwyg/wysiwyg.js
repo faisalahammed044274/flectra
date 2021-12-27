@@ -1,4 +1,4 @@
-flectra.define('web_editor.wysiwyg', function (require) {
+odoo.define('web_editor.wysiwyg', function (require) {
 'use strict';
 var Widget = require('web.Widget');
 var SummernoteManager = require('web_editor.rte.summernote');
@@ -24,7 +24,7 @@ var Wysiwyg = Widget.extend({
         ],
         'styleWithSpan': false,
         'inlinemedia': ['p'],
-        'lang': 'flectra',
+        'lang': 'odoo',
         'colors': summernoteCustomColors,
         recordInfo: {
             context: {},
@@ -68,7 +68,7 @@ var Wysiwyg = Widget.extend({
      * @override
      */
     start: function () {
-        this.$target.wrap('<flectra-wysiwyg-container>');
+        this.$target.wrap('<odoo-wysiwyg-container>');
         this.$el = this.$target.parent();
         var options = this._editorOptions();
         this.$target.summernote(options);
@@ -264,7 +264,7 @@ Wysiwyg.setRangeFromNode = function (node, options) {
 };
 return Wysiwyg;
 });
-flectra.define('web_editor.widget', function (require) {
+odoo.define('web_editor.widget', function (require) {
 'use strict';
     return {
         Dialog: require('wysiwyg.widgets.Dialog'),

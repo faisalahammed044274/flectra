@@ -1,4 +1,4 @@
-flectra.define('web.datepicker', function (require) {
+odoo.define('web.datepicker', function (require) {
 "use strict";
 
 var core = require('web.core');

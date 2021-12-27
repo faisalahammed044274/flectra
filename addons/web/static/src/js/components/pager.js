@@ -1,4 +1,4 @@
-flectra.define('web.Pager', function (require) {
+odoo.define('web.Pager', function (require) {
     "use strict";
 
     const { useAutofocus } = require('web.custom_hooks');

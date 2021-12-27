@@ -253,7 +253,7 @@ function getViewerConfiguration() {
 
 function webViewerLoad() {
   var config = getViewerConfiguration();
-  // Start Flectra patch
+  // Start Odoo patch
   // Source https://github.com/mozilla/pdf.js/pull/11246 (Detect Android and iOS)
   const userAgent = (typeof navigator !== 'undefined' && navigator.userAgent) || '';
   const platform = (typeof navigator !== 'undefined' && navigator.platform) || '';
@@ -271,7 +271,7 @@ function webViewerLoad() {
     config.toolbar.print.setAttribute('hidden', 'true');
     config.secondaryToolbar.printButton.setAttribute('hidden', 'true');
   }
-  // End Flectra patch
+  // End Odoo patch
   window.PDFViewerApplication = pdfjsWebApp.PDFViewerApplication;
   window.PDFViewerApplicationOptions = pdfjsWebAppOptions.AppOptions;
   var event = document.createEvent('CustomEvent');
@@ -5096,7 +5096,7 @@ function () {
         return;
       }
 
-      // Flectra: This change is needed here as we can't change this parameter in an iframe.
+      // Odoo: This change is needed here as we can't change this parameter in an iframe.
       // pass forceOpen argument to false to restrict opening of sidebar forcefully when
       // pdf viewer opens initially.
       if (!this._switchView(view, false)) {
@@ -13932,7 +13932,7 @@ function getDefaultPreferences() {
       "disablePageLabels": false,
       "enablePrintAutoRotate": false,
       "enableWebGL": false,
-      // Flectra: This change is needed here as we can't change this parameter in an iframe.
+      // Odoo: This change is needed here as we can't change this parameter in an iframe.
       "eventBusDispatchToDOM": true, 
       "externalLinkTarget": 0,
       "historyUpdateUrl": false,
@@ -15681,4 +15681,4 @@ _app.PDFPrintServiceFactory.instance = {
 
 /***/ })
 /******/ ]);
-//# sourceMappingURL=viewer.js.map 
+//# sourceMappingURL=viewer.js.map

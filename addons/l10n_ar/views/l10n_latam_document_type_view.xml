@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<flectra>
+<odoo>
 
     <record id="view_document_type_form" model="ir.ui.view">
         <field name="name">l10n_latam.document.type.form</field>
@@ -48,4 +48,4 @@
 
     <menuitem action="action_document_type_argentina" id="menu_document_type_argentina" sequence="5" parent="menu_afip_config"/>
 
-</flectra>
+</odoo>

@@ -1,4 +1,4 @@
-flectra.define('web.ControlPanel', function (require) {
+odoo.define('web.ControlPanel', function (require) {
     "use strict";
 
     const ActionMenus = require('web.ActionMenus');

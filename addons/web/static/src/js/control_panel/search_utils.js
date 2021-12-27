@@ -1,4 +1,4 @@
-flectra.define('web.searchUtils', function (require) {
+odoo.define('web.searchUtils', function (require) {
     "use strict";
 
     const { _lt, _t } = require('web.core');

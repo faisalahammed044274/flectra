@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
-from flectra.tests import common
-from flectra.tests.common import Form, SavepointCase
+# Part of Odoo. See LICENSE file for full copyright and licensing details.
+from odoo.tests import common
+from odoo.tests.common import Form, SavepointCase
 
 
 CH_ISR_ISSUER = '01-162-8'

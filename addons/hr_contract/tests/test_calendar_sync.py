@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo. See LICENSE file for full copyright and licensing details.
 
-from flectra.fields import Datetime, Date
-from flectra.addons.hr_contract.tests.common import TestContractCommon
+from odoo.fields import Datetime, Date
+from odoo.addons.hr_contract.tests.common import TestContractCommon
 
 
 class TestContractCalendars(TestContractCommon):
@@ -66,4 +66,4 @@ class TestContractCalendars(TestContractCommon):
         # Transfer global leaves
         self.calendar_richard.transfer_leaves_to(self.calendar_35h, resources=None, from_date=Date.to_date('2015-11-21'))
 
-        self.assertEqual(leave3.calendar_id, self.calendar_35h, "Global leave should be transfered") 
+        self.assertEqual(leave3.calendar_id, self.calendar_35h, "Global leave should be transfered")

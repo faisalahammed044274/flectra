@@ -1,4 +1,4 @@
-flectra.define('sale.tour_sale_signature', function (require) {
+odoo.define('sale.tour_sale_signature', function (require) {
 'use strict';
 
 var tour = require('web_tour.tour');

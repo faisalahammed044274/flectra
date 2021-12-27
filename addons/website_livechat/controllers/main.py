@@ -1,9 +1,9 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo. See LICENSE file for full copyright and licensing details.
 
-from flectra import http, _
-from flectra.http import request
-from flectra.addons.im_livechat.controllers.main import LivechatController
+from odoo import http, _
+from odoo.http import request
+from odoo.addons.im_livechat.controllers.main import LivechatController
 
 
 class WebsiteLivechat(LivechatController):

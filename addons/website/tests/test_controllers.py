@@ -1,16 +1,16 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo. See LICENSE file for full copyright and licensing details.
 
 import json
 
-from flectra import tests
-from flectra.tools import mute_logger
+from odoo import tests
+from odoo.tools import mute_logger
 
 
 @tests.tagged('post_install', '-at_install')
 class TestControllers(tests.HttpCase):
 
-    @mute_logger('flectra.addons.http_routing.models.ir_http', 'flectra.http')
+    @mute_logger('odoo.addons.http_routing.models.ir_http', 'odoo.http')
     def test_last_created_pages_autocompletion(self):
         self.authenticate("admin", "admin")
         Page = self.env['website.page']

@@ -1,4 +1,4 @@
-flectra.define('web.public.Notification', function (require) {
+odoo.define('web.public.Notification', function (require) {
 'use strict';
 
 var Notification = require('web.Notification');

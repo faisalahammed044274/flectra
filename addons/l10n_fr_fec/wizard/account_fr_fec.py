@@ -1,15 +1,15 @@
 #-*- coding:utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo. See LICENSE file for full copyright and licensing details.
 
 # Copyright (C) 2013-2015 Akretion (http://www.akretion.com)
 
 import base64
 import io
 
-from flectra import api, fields, models, _
-from flectra.exceptions import UserError
-from flectra.tools import float_is_zero, pycompat
-from flectra.tools.misc import get_lang
+from odoo import api, fields, models, _
+from odoo.exceptions import UserError, AccessDenied
+from odoo.tools import float_is_zero, pycompat
+from odoo.tools.misc import get_lang
 
 
 class AccountFrFec(models.TransientModel):
@@ -31,7 +31,7 @@ class AccountFrFec(models.TransientModel):
         if not self.test_file:
             self.export_type = 'official'
 
-    def do_query_unaffected_earnings(self):
+    def _do_query_unaffected_earnings(self):
         ''' Compute the sum of ending balances for all accounts that are of a type that does not bring forward the balance in new fiscal years.
             This is needed because we have to display only one line for the initial balance of all expense/revenue accounts in the FEC.
         '''
@@ -104,10 +104,12 @@ class AccountFrFec(models.TransientModel):
 
     def generate_fec(self):
         self.ensure_one()
+        if not (self.env.is_admin() or self.env.user.has_group('account.group_account_user')):
+            raise AccessDenied()
         # We choose to implement the flat file instead of the XML
         # file for 2 reasons :
         # 1) the XSD file impose to have the label on the account.move
-        # but Flectra has the label on the account.move.line, so that's a
+        # but Odoo has the label on the account.move.line, so that's a
         # problem !
         # 2) CSV files are easier to read/use for a regular accountant.
         # So it will be easier for the accountant to check the file before
@@ -148,7 +150,7 @@ class AccountFrFec(models.TransientModel):
         unaffected_earnings_line = True  # used to make sure that we add the unaffected earning initial balance only once
         if unaffected_earnings_xml_ref:
             #compute the benefit/loss of last year to add in the initial balance of the current year earnings account
-            unaffected_earnings_results = self.do_query_unaffected_earnings()
+            unaffected_earnings_results = self._do_query_unaffected_earnings()
             unaffected_earnings_line = False
 
         sql_query = '''

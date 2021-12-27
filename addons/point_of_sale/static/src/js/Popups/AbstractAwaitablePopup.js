@@ -1,4 +1,4 @@
-flectra.define('point_of_sale.AbstractAwaitablePopup', function (require) {
+odoo.define('point_of_sale.AbstractAwaitablePopup', function (require) {
     'use strict';
 
     const { useExternalListener } = owl.hooks;

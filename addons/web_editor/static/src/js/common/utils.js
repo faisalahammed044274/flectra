@@ -1,4 +1,4 @@
-flectra.define('web_editor.utils', function (require) {
+odoo.define('web_editor.utils', function (require) {
 'use strict';
 
 const {ColorpickerWidget} = require('web.Colorpicker');

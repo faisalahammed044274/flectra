@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<flectra>
+<odoo>
 <data>
     <record id="event_registration_0_0_registration_answer_0" model="event.registration.answer">
         <field name="value_answer_id" ref="website_event_questions.event_0_question_0_answer_0" />
@@ -38,4 +38,4 @@ Nuts</field>
         <field name="registration_id" ref="event.event_registration_0_2" />
     </record>
 </data>
-</flectra>
+</odoo>

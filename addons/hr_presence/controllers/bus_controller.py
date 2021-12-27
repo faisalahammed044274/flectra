@@ -1,10 +1,10 @@
 # -*- coding: utf-8 -*-
 
-from flectra import registry, SUPERUSER_ID
-from flectra.api import Environment
-from flectra.addons.bus.controllers.main import BusController
-from flectra.fields import Datetime
-from flectra.http import Controller, request, route
+from odoo import registry, SUPERUSER_ID
+from odoo.api import Environment
+from odoo.addons.bus.controllers.main import BusController
+from odoo.fields import Datetime
+from odoo.http import Controller, request, route
 
 
 class BusController(BusController):

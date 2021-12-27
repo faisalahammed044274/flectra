@@ -1,4 +1,4 @@
-flectra.define('web.AbstractStorageService', function (require) {
+odoo.define('web.AbstractStorageService', function (require) {
 'use strict';
 
 /**

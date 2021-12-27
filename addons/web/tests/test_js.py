@@ -1,14 +1,14 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo. See LICENSE file for full copyright and licensing details.
 
 import re
-import flectra.tests
+import odoo.tests
 
 RE_ONLY = re.compile('QUnit\.only\(')
 
 
-@flectra.tests.tagged('post_install', '-at_install')
-class WebSuite(flectra.tests.HttpCase):
+@odoo.tests.tagged('post_install', '-at_install')
+class WebSuite(odoo.tests.HttpCase):
 
     def test_js(self):
         # webclient desktop test suite
@@ -33,8 +33,8 @@ class WebSuite(flectra.tests.HttpCase):
                     self.fail("`QUnit.only()` used in file %r" % asset['url'])
 
 
-@flectra.tests.tagged('post_install', '-at_install')
-class MobileWebSuite(flectra.tests.HttpCase):
+@odoo.tests.tagged('post_install', '-at_install')
+class MobileWebSuite(odoo.tests.HttpCase):
     browser_size = '375x667'
 
     def test_mobile_js(self):

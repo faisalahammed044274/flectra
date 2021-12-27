@@ -1,4 +1,4 @@
-flectra.define('website_hr_recruitment.tour', function(require) {
+odoo.define('website_hr_recruitment.tour', function(require) {
     'use strict';
 
     var tour = require("web_tour.tour");

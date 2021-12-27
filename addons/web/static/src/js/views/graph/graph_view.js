@@ -1,4 +1,4 @@
-flectra.define('web.GraphView', function (require) {
+odoo.define('web.GraphView', function (require) {
 "use strict";
 
 /**

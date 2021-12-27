@@ -1,4 +1,4 @@
-flectra.define('im_livechat/static/src/components/thread_preview/thread_preview.js', function (require) {
+odoo.define('im_livechat/static/src/components/thread_preview/thread_preview.js', function (require) {
 'use strict';
 
 const components = {

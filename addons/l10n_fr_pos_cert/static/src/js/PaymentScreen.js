@@ -1,4 +1,4 @@
-flectra.define('l10n_fr_pos_cert.PaymentScreen', function(require) {
+odoo.define('l10n_fr_pos_cert.PaymentScreen', function(require) {
 
     const PaymentScreen = require('point_of_sale.PaymentScreen');
     const Registries = require('point_of_sale.Registries');

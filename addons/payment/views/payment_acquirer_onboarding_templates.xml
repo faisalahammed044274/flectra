@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<flectra>
+<odoo>
     <!-- onboarding step -->
     <template id="onboarding_payment_acquirer_step">
         <t t-call="base.onboarding_step">
@@ -37,7 +37,7 @@
                                     <span>Start selling directly without an account; an email will be sent by Paypal to create your new account and collect your payments.</span>
                                 </p>
                                 <p attrs="{'invisible': [('paypal_user_type', '=', 'new_user')]}">
-                                    <a href="https://doc.flectrahq.com/2.0/applications/general/payment_acquirers/paypal.html" target="_blank">
+                                    <a href="https://www.odoo.com/documentation/14.0/applications/general/payment_acquirers/paypal.html" target="_blank">
                                         <span class="fa fa-arrow-right"> How to configure your PayPal account</span>
                                     </a>
                                 </p>
@@ -89,4 +89,4 @@
         <field name="view_id" ref="payment.payment_acquirer_onboarding_wizard_form" />
         <field name="target">new</field>
     </record>
-</flectra>
+</odoo>

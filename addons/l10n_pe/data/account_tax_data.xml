@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<flectra>
+<odoo>
 <!--    Detraction can be understood here:-->
 <!--    http://orientacion.sunat.gob.pe/index.php/empresas-menu/regimen-de-detracciones-del-igv-empresas/como-funcionan-las-detracciones/3141-02-en-la-venta-de-bienes-empresas-->
     <!-- ACCOUNT TAX GROUP -->
@@ -446,4 +446,4 @@
             }),
         ]"/>
     </record>
-</flectra>
+</odoo>

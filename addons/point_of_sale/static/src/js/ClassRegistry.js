@@ -1,4 +1,4 @@
-flectra.define('point_of_sale.ClassRegistry', function (require) {
+odoo.define('point_of_sale.ClassRegistry', function (require) {
     'use strict';
 
     /**

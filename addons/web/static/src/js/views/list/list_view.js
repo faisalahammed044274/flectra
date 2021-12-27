@@ -1,4 +1,4 @@
-flectra.define('web.ListView', function (require) {
+odoo.define('web.ListView', function (require) {
 "use strict";
 
 /**

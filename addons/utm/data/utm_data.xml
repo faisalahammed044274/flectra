@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<flectra>
+<odoo>
         <!-- UTM Stage -->
         <!-- This one is kept in data instead of demo to avoid crashing if the user starts creating campaigns
         before stages have been created, as they are mandatory -->
@@ -74,4 +74,4 @@
             <field name="name">Marketing</field>
             <field name="color" eval="1"/>
         </record>
-</flectra>
+</odoo>

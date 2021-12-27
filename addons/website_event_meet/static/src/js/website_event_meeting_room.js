@@ -1,4 +1,4 @@
-flectra.define('website_event_meet.website_event_meet_meeting_room', function (require) {
+odoo.define('website_event_meet.website_event_meet_meeting_room', function (require) {
 'use strict';
 
 const publicWidget = require('web.public.widget');

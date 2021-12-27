@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo. See LICENSE file for full copyright and licensing details.
 import json
 import lxml
 import requests
@@ -10,13 +10,13 @@ import werkzeug.wrappers
 
 from datetime import datetime
 
-from flectra import http, tools, _
-from flectra.addons.http_routing.models.ir_http import slug
-from flectra.addons.website.models.ir_http import sitemap_qs2dom
-from flectra.addons.website_profile.controllers.main import WebsiteProfile
-from flectra.addons.portal.controllers.portal import _build_url_w_params
+from odoo import http, tools, _
+from odoo.addons.http_routing.models.ir_http import slug
+from odoo.addons.website.models.ir_http import sitemap_qs2dom
+from odoo.addons.website_profile.controllers.main import WebsiteProfile
+from odoo.addons.portal.controllers.portal import _build_url_w_params
 
-from flectra.http import request
+from odoo.http import request
 
 _logger = logging.getLogger(__name__)
 

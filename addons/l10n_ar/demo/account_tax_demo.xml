@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<flectra>
+<odoo>
 
     <record id="ri_tax_other_taxes_ventas" model="account.tax">
         <field name="name">Other Tax</field>
@@ -99,4 +99,4 @@
         <value eval="{'amount': 0.1, 'active': True}"/>
     </function>
 
-</flectra>
+</odoo>

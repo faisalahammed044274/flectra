@@ -1,4 +1,4 @@
-flectra.define('report.client_action', function (require) {
+odoo.define('report.client_action', function (require) {
 'use strict';
 
 var AbstractAction = require('web.AbstractAction');

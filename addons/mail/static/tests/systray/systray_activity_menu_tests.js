@@ -1,4 +1,4 @@
-flectra.define('mail.systray.ActivityMenuTests', function (require) {
+odoo.define('mail.systray.ActivityMenuTests', function (require) {
 "use strict";
 
 const {

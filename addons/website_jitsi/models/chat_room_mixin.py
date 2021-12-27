@@ -1,10 +1,10 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo. See LICENSE file for full copyright and licensing details.
 
 import re
 
-from flectra import api, fields, models
-from flectra.tools import remove_accents
+from odoo import api, fields, models
+from odoo.tools import remove_accents
 
 class ChatRoomMixin(models.AbstractModel):
     """Add the chat room configuration (`chat.room`) on the needed models.

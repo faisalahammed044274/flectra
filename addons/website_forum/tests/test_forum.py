@@ -1,9 +1,9 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo. See LICENSE file for full copyright and licensing details.
 
 from .common import KARMA, TestForumCommon
-from flectra.exceptions import UserError, AccessError
-from flectra.tools import mute_logger
+from odoo.exceptions import UserError, AccessError
+from odoo.tools import mute_logger
 from psycopg2 import IntegrityError
 
 
@@ -91,7 +91,7 @@ class TestForum(TestForumCommon):
                 'vote': '1',
             })
 
-        with mute_logger('flectra.sql_db'):
+        with mute_logger('odoo.sql_db'):
             with self.assertRaises(IntegrityError):
                 with self.cr.savepoint():
                     # One should not be able to vote more than once on a same post
@@ -122,7 +122,7 @@ class TestForum(TestForumCommon):
         })
         self.assertEqual(new_portal_vote.user_id, self.user_portal, 'Creating a vote for someone else should not be allowed. It should create it for yourself instead')
 
-    @mute_logger('flectra.addons.base.models.ir_model', 'flectra.models')
+    @mute_logger('odoo.addons.base.models.ir_model', 'odoo.models')
     def test_ask(self):
         Post = self.env['forum.post']
 
@@ -158,7 +158,7 @@ class TestForum(TestForumCommon):
         })
         self.assertEqual(self.user_portal.karma, KARMA['post'] + KARMA['gen_que_new'], 'website_forum: wrong karma generation when asking question')
 
-    @mute_logger('flectra.addons.base.models.ir_model', 'flectra.models')
+    @mute_logger('odoo.addons.base.models.ir_model', 'odoo.models')
     def test_answer(self):
         Post = self.env['forum.post']
 
@@ -179,7 +179,7 @@ class TestForum(TestForumCommon):
         })
         self.assertEqual(self.user_employee.karma, KARMA['ans'], 'website_forum: wrong karma generation when answering question')
 
-    @mute_logger('flectra.addons.base.models.ir_model', 'flectra.models')
+    @mute_logger('odoo.addons.base.models.ir_model', 'odoo.models')
     def test_vote_crash(self):
         Post = self.env['forum.post']
         self.user_employee.karma = KARMA['ans']
@@ -202,7 +202,7 @@ class TestForum(TestForumCommon):
         self.post.with_user(self.user_portal).vote(upvote=True)
         self.assertEqual(self.post.create_uid.karma, KARMA['ask'] + KARMA['gen_que_upv'], 'website_forum: wrong karma generation of upvoted question author')
 
-    @mute_logger('flectra.addons.base.models.ir_model', 'flectra.models')
+    @mute_logger('odoo.addons.base.models.ir_model', 'odoo.models')
     def test_downvote_crash(self):
         Post = self.env['forum.post']
         self.user_employee.karma = KARMA['ans']

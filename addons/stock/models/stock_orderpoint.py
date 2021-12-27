@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo. See LICENSE file for full copyright and licensing details.
 
 import logging
 from collections import defaultdict
@@ -9,11 +9,11 @@ from itertools import groupby
 from json import dumps
 from psycopg2 import OperationalError
 
-from flectra import SUPERUSER_ID, _, api, fields, models, registry
-from flectra.addons.stock.models.stock_rule import ProcurementException
-from flectra.exceptions import UserError, ValidationError
-from flectra.osv import expression
-from flectra.tools import add, float_compare, frozendict, split_every, format_date
+from odoo import SUPERUSER_ID, _, api, fields, models, registry
+from odoo.addons.stock.models.stock_rule import ProcurementException
+from odoo.exceptions import UserError, ValidationError
+from odoo.osv import expression
+from odoo.tools import add, float_compare, frozendict, split_every, format_date
 
 _logger = logging.getLogger(__name__)
 
@@ -73,11 +73,11 @@ class StockWarehouseOrderpoint(models.Model):
     product_uom_name = fields.Char(string='Product unit of measure label', related='product_uom.display_name', readonly=True)
     product_min_qty = fields.Float(
         'Min Quantity', digits='Product Unit of Measure', required=True, default=0.0,
-        help="When the virtual stock equals to or goes below the Min Quantity specified for this field, Flectra generates "
+        help="When the virtual stock equals to or goes below the Min Quantity specified for this field, Odoo generates "
              "a procurement to bring the forecasted quantity to the Max Quantity.")
     product_max_qty = fields.Float(
         'Max Quantity', digits='Product Unit of Measure', required=True, default=0.0,
-        help="When the virtual stock goes below the Min Quantity, Flectra generates "
+        help="When the virtual stock goes below the Min Quantity, Odoo generates "
              "a procurement to bring the forecasted quantity to the Quantity specified as Max Quantity.")
     qty_multiple = fields.Float(
         'Multiple Quantity', digits='Product Unit of Measure',

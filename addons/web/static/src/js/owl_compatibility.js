@@ -1,8 +1,8 @@
-flectra.define('web.OwlCompatibility', function () {
+odoo.define('web.OwlCompatibility', function () {
     "use strict";
 
     /**
-     * This file defines the necessary tools for the transition phase where Flectra
+     * This file defines the necessary tools for the transition phase where Odoo
      * legacy widgets and Owl components will coexist. There are two possible
      * scenarios:
      *  1) An Owl component has to instantiate legacy widgets
@@ -13,7 +13,7 @@ flectra.define('web.OwlCompatibility', function () {
     const { useRef, useSubEnv } = hooks;
     const { xml } = tags;
 
-    const widgetSymbol = flectra.widgetSymbol;
+    const widgetSymbol = odoo.widgetSymbol;
     const children = new WeakMap(); // associates legacy widgets with their Owl children
 
     /**
@@ -21,8 +21,8 @@ flectra.define('web.OwlCompatibility', function () {
      * ----------------------------------------------------------
      *
      * The ComponentAdapter is an Owl component meant to be used as universal
-     * adapter for Owl components that embed Flectra legacy widgets (or dynamically
-     * both Owl components and Flectra legacy widgets), e.g.:
+     * adapter for Owl components that embed Odoo legacy widgets (or dynamically
+     * both Owl components and Odoo legacy widgets), e.g.:
      *
      *                           Owl Component
      *                                 |
@@ -224,10 +224,10 @@ flectra.define('web.OwlCompatibility', function () {
         }
 
         /**
-         * Mocks _trigger_up to redirect Flectra legacy events to OWL events.
+         * Mocks _trigger_up to redirect Odoo legacy events to OWL events.
          *
          * @private
-         * @param {FlectraEvent} ev
+         * @param {OdooEvent} ev
          */
         _trigger_up(ev) {
             const evType = ev.name;
@@ -271,7 +271,7 @@ flectra.define('web.OwlCompatibility', function () {
      * ---------------------------------------------------------
      *
      * The WidgetAdapterMixin and the ComponentWrapper are meant to be used
-     * together when an Flectra legacy widget needs to instantiate Owl components.
+     * together when an Odoo legacy widget needs to instantiate Owl components.
      * In this case, the widgets/components hierarchy would look like:
      *
      *             Legacy Widget + WidgetAdapterMixin
@@ -479,7 +479,7 @@ flectra.define('web.OwlCompatibility', function () {
 
         /**
          * Adds an event handler that will redirect the given Owl event to an
-         * Flectra legacy event. This function is called just before the event is
+         * Odoo legacy event. This function is called just before the event is
          * actually triggered.
          *
          * @private

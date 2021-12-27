@@ -1,4 +1,4 @@
-flectra.define('mail/static/src/components/follower_list_menu/follower_list_menu.js', function (require) {
+odoo.define('mail/static/src/components/follower_list_menu/follower_list_menu.js', function (require) {
 'use strict';
 
 const components = {

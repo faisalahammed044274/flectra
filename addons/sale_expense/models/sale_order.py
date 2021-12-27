@@ -1,9 +1,9 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo. See LICENSE file for full copyright and licensing details.
 
-from flectra import api, fields, models
-from flectra import SUPERUSER_ID
-from flectra.osv import expression
+from odoo import api, fields, models
+from odoo import SUPERUSER_ID
+from odoo.osv import expression
 
 
 class SaleOrder(models.Model):

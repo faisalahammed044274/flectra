@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
-from flectra import tests
-from flectra.addons.account.tests.common import AccountTestInvoicingCommon
-from flectra.tools import mute_logger
+from odoo import tests
+from odoo.addons.account.tests.common import AccountTestInvoicingCommon
+from odoo.tools import mute_logger
 
 
 @tests.tagged('post_install', '-at_install')
@@ -55,7 +55,7 @@ class TestSaleTransaction(AccountTestInvoicingCommon):
         # modify order total
         self.order.order_line[0].price_unit = 200.0
         self.transaction._set_transaction_done()
-        with mute_logger('flectra.addons.sale.models.payment'):
+        with mute_logger('odoo.addons.sale.models.payment'):
             self.transaction._post_process_after_done()
         self.assertEqual(self.order.state, 'draft', 'a transaction for an incorrect amount should not validate a quote')
 
@@ -69,6 +69,6 @@ class TestSaleTransaction(AccountTestInvoicingCommon):
         # invoicing policy is based on delivered quantity
         self.product_a.invoice_policy = 'delivery'
         self.transaction._set_transaction_done()
-        with mute_logger('flectra.addons.sale.models.payment'):
+        with mute_logger('odoo.addons.sale.models.payment'):
             self.transaction.sudo()._post_process_after_done()
         self.assertEqual(self.order.state, 'draft', 'a partial transaction with automatic invoice and invoice_policy = delivery should not validate a quote')

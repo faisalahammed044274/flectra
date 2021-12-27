@@ -1,12 +1,12 @@
 # # -*- coding: utf-8 -*-
-# # Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# # Part of Odoo. See LICENSE file for full copyright and licensing details.
 
 from unittest.mock import patch
 import sys
 
-from flectra.addons.base.tests.common import TransactionCaseWithUserDemo
-from flectra.tests import common, tagged
-from flectra.exceptions import AccessError
+from odoo.addons.base.tests.common import TransactionCaseWithUserDemo
+from odoo.tests import common, tagged
+from odoo.exceptions import AccessError
 
 
 @tagged('post_install', '-at_install')
@@ -216,8 +216,8 @@ record['name'] = record.name + 'X'""",
             send_mail_count += 1
 
         patchers = [
-            patch('flectra.addons.base_automation.models.base_automation.BaseAutomation._get_actions', _patched_get_actions),
-            patch('flectra.addons.mail.models.mail_template.MailTemplate.send_mail', _patched_send_mail),
+            patch('odoo.addons.base_automation.models.base_automation.BaseAutomation._get_actions', _patched_get_actions),
+            patch('odoo.addons.mail.models.mail_template.MailTemplate.send_mail', _patched_send_mail),
         ]
 
         patchers[0].start()

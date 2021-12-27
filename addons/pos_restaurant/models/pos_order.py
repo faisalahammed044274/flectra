@@ -1,10 +1,10 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo. See LICENSE file for full copyright and licensing details.
 from itertools import groupby
 from re import search
 from functools import partial
 
-from flectra import api, fields, models
+from odoo import api, fields, models
 
 
 class PosOrderLine(models.Model):

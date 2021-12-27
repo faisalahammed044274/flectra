@@ -1,11 +1,11 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo. See LICENSE file for full copyright and licensing details.
 import base64
 
-from flectra.addons.base.tests.common import TransactionCaseWithUserDemo
-from flectra.tests.common import users, warmup
-from flectra.tests import tagged
-from flectra.tools import mute_logger, formataddr
+from odoo.addons.base.tests.common import TransactionCaseWithUserDemo
+from odoo.tests.common import users, warmup
+from odoo.tests import tagged
+from odoo.tools import mute_logger, formataddr
 
 
 @tagged('mail_performance')
@@ -229,7 +229,7 @@ class TestMailAPIPerformance(BaseMailPerformance):
 
     @users('__system__', 'emp')
     @warmup
-    @mute_logger('flectra.models.unlink')
+    @mute_logger('odoo.models.unlink')
     def test_adv_activity_full(self):
         record = self.env['mail.test.activity'].create({'name': 'Test'})
         MailActivity = self.env['mail.activity'].with_context({
@@ -251,7 +251,7 @@ class TestMailAPIPerformance(BaseMailPerformance):
 
     @users('__system__', 'emp')
     @warmup
-    @mute_logger('flectra.models.unlink')
+    @mute_logger('odoo.models.unlink')
     def test_adv_activity_mixin(self):
         record = self.env['mail.test.activity'].create({'name': 'Test'})
 
@@ -270,7 +270,7 @@ class TestMailAPIPerformance(BaseMailPerformance):
 
     @users('__system__', 'emp')
     @warmup
-    @mute_logger('flectra.tests', 'flectra.addons.mail.models.mail_mail')
+    @mute_logger('odoo.tests', 'odoo.addons.mail.models.mail_mail')
     def test_mail_composer(self):
         self._create_test_records()
         test_record = self.env['mail.test.ticket'].browse(self.test_record_full.id)
@@ -290,7 +290,7 @@ class TestMailAPIPerformance(BaseMailPerformance):
 
     @users('__system__', 'emp')
     @warmup
-    @mute_logger('flectra.tests', 'flectra.addons.mail.models.mail_mail')
+    @mute_logger('odoo.tests', 'odoo.addons.mail.models.mail_mail')
     def test_mail_composer_nodelete(self):
         self._create_test_records()
         test_record = self.env['mail.test.ticket'].browse(self.test_record_full.id)
@@ -311,7 +311,7 @@ class TestMailAPIPerformance(BaseMailPerformance):
 
     @users('__system__', 'emp')
     @warmup
-    @mute_logger('flectra.tests', 'flectra.addons.mail.models.mail_mail', 'flectra.models.unlink')
+    @mute_logger('odoo.tests', 'odoo.addons.mail.models.mail_mail', 'odoo.models.unlink')
     def test_mail_composer_w_template(self):
         self._create_test_records()
         test_record = self.env['mail.test.ticket'].browse(self.test_record_full.id)
@@ -332,7 +332,7 @@ class TestMailAPIPerformance(BaseMailPerformance):
         # remove created partner to ensure tests are the same each run
         self.env['res.partner'].sudo().search([('email', '=', 'nopartner.test@example.com')]).unlink()
 
-    @mute_logger('flectra.tests', 'flectra.addons.mail.models.mail_mail', 'flectra.models.unlink')
+    @mute_logger('odoo.tests', 'odoo.addons.mail.models.mail_mail', 'odoo.models.unlink')
     @users('__system__', 'emp')
     @warmup
     def test_message_assignation_email(self):
@@ -385,7 +385,7 @@ class TestMailAPIPerformance(BaseMailPerformance):
                 message_type='comment',
                 subtype_xmlid='mail.mt_comment')
 
-    @mute_logger('flectra.tests', 'flectra.addons.mail.models.mail_mail', 'flectra.models.unlink')
+    @mute_logger('odoo.tests', 'odoo.addons.mail.models.mail_mail', 'odoo.models.unlink')
     @users('__system__', 'emp')
     @warmup
     def test_message_post_one_email_notification(self):
@@ -410,7 +410,7 @@ class TestMailAPIPerformance(BaseMailPerformance):
                 message_type='comment',
                 subtype_xmlid='mail.mt_comment')
 
-    @mute_logger('flectra.models.unlink')
+    @mute_logger('odoo.models.unlink')
     @users('__system__', 'emp')
     @warmup
     def test_message_subscribe_default(self):
@@ -422,7 +422,7 @@ class TestMailAPIPerformance(BaseMailPerformance):
         with self.assertQueryCount(__system__=3, emp=3):
             record.message_subscribe(partner_ids=self.user_test.partner_id.ids)
 
-    @mute_logger('flectra.models.unlink')
+    @mute_logger('odoo.models.unlink')
     @users('__system__', 'emp')
     @warmup
     def test_message_subscribe_subtypes(self):
@@ -435,7 +435,7 @@ class TestMailAPIPerformance(BaseMailPerformance):
         with self.assertQueryCount(__system__=2, emp=2):
             record.message_subscribe(partner_ids=self.user_test.partner_id.ids, subtype_ids=subtype_ids)
 
-    @mute_logger('flectra.models.unlink')
+    @mute_logger('odoo.models.unlink')
     @users('__system__', 'emp')
     @warmup
     def test_message_track(self):
@@ -524,7 +524,7 @@ class TestMailComplexPerformance(BaseMailPerformance):
         # `test_complex_mail_mail_send`
         self.container.flush()
 
-    @mute_logger('flectra.tests', 'flectra.addons.mail.models.mail_mail', 'flectra.models.unlink')
+    @mute_logger('odoo.tests', 'odoo.addons.mail.models.mail_mail', 'odoo.models.unlink')
     @users('__system__', 'emp')
     @warmup
     def test_complex_mail_mail_send(self):
@@ -548,7 +548,7 @@ class TestMailComplexPerformance(BaseMailPerformance):
         self.assertEqual(mail.body_html, '<p>Test</p>')
         self.assertEqual(mail.reply_to, formataddr(('%s %s' % (self.env.company.name, self.container.name), 'test-alias@example.com')))
 
-    @mute_logger('flectra.tests', 'flectra.addons.mail.models.mail_mail', 'flectra.models.unlink')
+    @mute_logger('odoo.tests', 'odoo.addons.mail.models.mail_mail', 'odoo.models.unlink')
     @users('__system__', 'emp')
     @warmup
     def test_complex_message_post(self):
@@ -564,7 +564,7 @@ class TestMailComplexPerformance(BaseMailPerformance):
         self.assertEqual(record.message_ids[0].body, '<p>Test Post Performances</p>')
         self.assertEqual(record.message_ids[0].notified_partner_ids, self.partners | self.user_portal.partner_id)
 
-    @mute_logger('flectra.tests', 'flectra.addons.mail.models.mail_mail', 'flectra.models.unlink')
+    @mute_logger('odoo.tests', 'odoo.addons.mail.models.mail_mail', 'odoo.models.unlink')
     @users('__system__', 'emp')
     @warmup
     def test_complex_message_post_template(self):
@@ -578,7 +578,7 @@ class TestMailComplexPerformance(BaseMailPerformance):
         self.assertEqual(record.message_ids[0].body, '<p>Adding stuff on %s</p>' % record.name)
         self.assertEqual(record.message_ids[0].notified_partner_ids, self.partners | self.user_portal.partner_id | self.customer)
 
-    @mute_logger('flectra.tests', 'flectra.addons.mail.models.mail_mail', 'flectra.models.unlink')
+    @mute_logger('odoo.tests', 'odoo.addons.mail.models.mail_mail', 'odoo.models.unlink')
     @users('__system__', 'emp')
     @warmup
     def test_complex_message_subscribe(self):
@@ -630,7 +630,7 @@ class TestMailComplexPerformance(BaseMailPerformance):
         self.assertEqual(rec1.message_partner_ids, self.env.user.partner_id | self.user_portal.partner_id | self.partners)
         self.assertEqual(rec1.message_channel_ids, self.channel)
 
-    @mute_logger('flectra.tests', 'flectra.addons.mail.models.mail_mail', 'flectra.models.unlink')
+    @mute_logger('odoo.tests', 'odoo.addons.mail.models.mail_mail', 'odoo.models.unlink')
     @users('__system__', 'emp')
     @warmup
     def test_complex_tracking_assignation(self):
@@ -654,7 +654,7 @@ class TestMailComplexPerformance(BaseMailPerformance):
         self.assertEqual(rec1.message_ids[1].notified_partner_ids, self.partners)
         self.assertEqual(len(rec1.message_ids), 2)
 
-    @mute_logger('flectra.tests', 'flectra.addons.mail.models.mail_mail', 'flectra.models.unlink')
+    @mute_logger('odoo.tests', 'odoo.addons.mail.models.mail_mail', 'odoo.models.unlink')
     @users('__system__', 'emp')
     @warmup
     def test_complex_tracking_subscription_create(self):
@@ -678,7 +678,7 @@ class TestMailComplexPerformance(BaseMailPerformance):
         self.assertEqual(rec1.message_ids[0].notified_partner_ids, self.partners | self.user_portal.partner_id)
         self.assertEqual(len(rec1.message_ids), 1)
 
-    @mute_logger('flectra.tests', 'flectra.addons.mail.models.mail_mail', 'flectra.models.unlink')
+    @mute_logger('odoo.tests', 'odoo.addons.mail.models.mail_mail', 'odoo.models.unlink')
     @users('__system__', 'emp')
     @warmup
     def test_complex_tracking_subscription_subtype(self):
@@ -707,7 +707,7 @@ class TestMailComplexPerformance(BaseMailPerformance):
         self.assertEqual(rec1.message_ids[1].notified_partner_ids, self.env['res.partner'])
         self.assertEqual(len(rec1.message_ids), 2)
 
-    @mute_logger('flectra.tests', 'flectra.addons.mail.models.mail_mail', 'flectra.models.unlink')
+    @mute_logger('odoo.tests', 'odoo.addons.mail.models.mail_mail', 'odoo.models.unlink')
     @users('__system__', 'emp')
     @warmup
     def test_complex_tracking_subscription_write(self):
@@ -745,7 +745,7 @@ class TestMailComplexPerformance(BaseMailPerformance):
         self.assertEqual(rec1.message_ids[1].notified_partner_ids, self.user_portal.partner_id)
         self.assertEqual(len(rec1.message_ids), 2)
 
-    @mute_logger('flectra.tests', 'flectra.addons.mail.models.mail_mail', 'flectra.models.unlink')
+    @mute_logger('odoo.tests', 'odoo.addons.mail.models.mail_mail', 'odoo.models.unlink')
     @users('__system__', 'emp')
     @warmup
     def test_complex_tracking_template(self):
@@ -780,7 +780,7 @@ class TestMailComplexPerformance(BaseMailPerformance):
         self.assertEqual(rec1.message_ids[2].notified_partner_ids, self.partners | self.user_portal.partner_id)
         self.assertEqual(len(rec1.message_ids), 3)
 
-    @mute_logger('flectra.tests', 'flectra.addons.mail.models.mail_mail', 'flectra.models.unlink')
+    @mute_logger('odoo.tests', 'odoo.addons.mail.models.mail_mail', 'odoo.models.unlink')
     @users('emp')
     @warmup
     def test_message_format(self):
@@ -893,7 +893,7 @@ class TestMailComplexPerformance(BaseMailPerformance):
             for message in res:
                 self.assertEqual(len(message['attachment_ids']), 2)
 
-    @mute_logger('flectra.tests', 'flectra.addons.mail.models.mail_mail', 'flectra.models.unlink')
+    @mute_logger('odoo.tests', 'odoo.addons.mail.models.mail_mail', 'odoo.models.unlink')
     @users('emp')
     @warmup
     def test_message_format_group_thread_name_by_model(self):
@@ -1025,7 +1025,7 @@ class TestMailHeavyPerformancePost(BaseMailPerformance):
 
         self.patch(self.env.registry, 'ready', True)
 
-    @mute_logger('flectra.tests', 'flectra.addons.mail.models.mail_mail', 'flectra.models.unlink')
+    @mute_logger('odoo.tests', 'odoo.addons.mail.models.mail_mail', 'odoo.models.unlink')
     @users('emp')
     @warmup
     def test_complete_message_post(self):

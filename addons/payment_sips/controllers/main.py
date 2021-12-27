@@ -7,8 +7,8 @@ import logging
 import pprint
 import werkzeug
 
-from flectra import http
-from flectra.http import request
+from odoo import http
+from odoo.http import request
 
 _logger = logging.getLogger(__name__)
 
@@ -42,7 +42,7 @@ class SipsController(http.Controller):
     @http.route('/payment/sips/dpn', type='http', auth="public", methods=['POST'], csrf=False, save_session=False)
     def sips_dpn(self, **post):
         """ Sips DPN
-        The session cookie created by Flectra has not the attribute SameSite. Most of browsers will force this attribute
+        The session cookie created by Odoo has not the attribute SameSite. Most of browsers will force this attribute
         with the value 'Lax'. After the payment, Sips will perform a POST request on this route. For all these reasons,
         the cookie won't be added to the request. As a result, if we want to save the session, the server will create
         a new session cookie. Therefore, the previous session and all related information will be lost, so it will lead

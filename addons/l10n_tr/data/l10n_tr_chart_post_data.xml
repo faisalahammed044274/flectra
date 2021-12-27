@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<flectra>
+<odoo>
     <!-- Chart template -->
     <record id="l10ntr_tek_duzen_hesap" model="account.chart.template">
         <field name="property_account_receivable_id" ref="tr120"/>
@@ -10,4 +10,4 @@
         <field name="expense_currency_exchange_account_id" ref="tr656"/>
         <field name="default_pos_receivable_account_id" ref="tr123" />
     </record>
-</flectra>
+</odoo>

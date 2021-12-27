@@ -1,9 +1,9 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo. See LICENSE file for full copyright and licensing details.
 
 from uuid import uuid4
 
-from flectra import api, fields, models
+from odoo import api, fields, models
 
 
 class ChatRoom(models.Model):
@@ -20,7 +20,7 @@ class ChatRoom(models.Model):
     _description = "Chat Room"
 
     def _default_name(self, objname='room'):
-        return "flectra-%s-%s" % (objname, str(uuid4())[:8])
+        return "odoo-%s-%s" % (objname, str(uuid4())[:8])
 
     name = fields.Char(
         "Room Name", required=True, copy=False,

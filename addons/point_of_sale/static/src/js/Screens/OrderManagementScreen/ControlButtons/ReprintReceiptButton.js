@@ -1,4 +1,4 @@
-flectra.define('point_of_sale.ReprintReceiptButton', function (require) {
+odoo.define('point_of_sale.ReprintReceiptButton', function (require) {
     'use strict';
 
     const { useListener } = require('web.custom_hooks');

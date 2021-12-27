@@ -1,4 +1,4 @@
-flectra.define('web_tour.TourManager', function(require) {
+odoo.define('web_tour.TourManager', function(require) {
 "use strict";
 
 var core = require('web.core');

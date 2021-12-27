@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<flectra>
+<odoo>
     <data>
         <record model="ir.ui.view" id="survey_invite_view_form">
             <field name="name">survey.invite.view.form</field>
@@ -62,4 +62,4 @@
             </field>
         </record>
     </data>
-</flectra>
+</odoo>

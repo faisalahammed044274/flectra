@@ -1,4 +1,4 @@
-flectra.define('web.test_utils_modal', function (require) {
+odoo.define('web.test_utils_modal', function (require) {
     "use strict";
 
     /**

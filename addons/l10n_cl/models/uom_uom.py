@@ -1,6 +1,6 @@
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo. See LICENSE file for full copyright and licensing details.
 
-from flectra import fields, models, api, _
+from odoo import fields, models, api, _
 
 
 class UomUom(models.Model):

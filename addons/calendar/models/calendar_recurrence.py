@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo. See LICENSE file for full copyright and licensing details.
 
 from datetime import datetime, time
 import pytz
@@ -7,10 +7,10 @@ import pytz
 from dateutil import rrule
 from dateutil.relativedelta import relativedelta
 
-from flectra import api, fields, models, _
-from flectra.exceptions import UserError
+from odoo import api, fields, models, _
+from odoo.exceptions import UserError
 
-from flectra.addons.base.models.res_partner import _tz_get
+from odoo.addons.base.models.res_partner import _tz_get
 
 
 MAX_RECURRENT_EVENT = 720
@@ -342,7 +342,7 @@ class RecurrenceRule(models.Model):
             data['month_by'] = 'date'
             data['rrule_type'] = 'monthly'
 
-        # Repeat yearly but for flectra it's monthly, take same information as monthly but interval is 12 times
+        # Repeat yearly but for odoo it's monthly, take same information as monthly but interval is 12 times
         if rule._bymonth:
             data['interval'] *= 12
 

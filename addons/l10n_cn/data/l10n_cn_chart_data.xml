@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<flectra>
+<odoo>
 
 <!--
 
@@ -23,6 +23,6 @@ http://kjs.mof.gov.cn/zhengwuxinxi/zhengcefabu/201111/t20111107_605525.html
             <field name="spoken_languages" eval="'en_US'"/>
         </record>
     </data>
-</flectra>
+</odoo>
 
 

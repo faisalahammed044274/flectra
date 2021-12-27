@@ -1,5 +1,5 @@
-from flectra import api, fields, models
-from flectra.http import request
+from odoo import api, fields, models
+from odoo.http import request
 
 
 class ResUsers(models.Model):

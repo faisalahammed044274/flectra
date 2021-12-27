@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-from flectra import SUPERUSER_ID, api
+from odoo import SUPERUSER_ID, api
 
 from . import models
 from . import wizard

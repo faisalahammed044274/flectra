@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<flectra>
+<odoo>
 
     <!-- this header can be used on any Argentinean report, to be useful some variables should be passed -->
     <template id="custom_header">
@@ -273,4 +273,4 @@
         </xpath>
     </template>
 
-</flectra>
+</odoo>

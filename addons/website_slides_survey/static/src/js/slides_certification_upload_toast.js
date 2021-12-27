@@ -1,4 +1,4 @@
-flectra.define('website_slides_survey.certification_upload_toast', function (require) {
+odoo.define('website_slides_survey.certification_upload_toast', function (require) {
 'use strict';
 
 var publicWidget = require('web.public.widget');

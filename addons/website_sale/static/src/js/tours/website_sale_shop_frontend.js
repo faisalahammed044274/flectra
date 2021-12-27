@@ -1,4 +1,4 @@
-flectra.define("website_sale.tour_shop_frontend", function (require) {
+odoo.define("website_sale.tour_shop_frontend", function (require) {
 "use strict";
 
 var tour = require("web_tour.tour");

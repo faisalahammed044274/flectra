@@ -1,4 +1,4 @@
-flectra.define('base_automation.BaseAutomatioErrorDialog', function (require) {
+odoo.define('base_automation.BaseAutomatioErrorDialog', function (require) {
     "use strict";
 
     const CrashManager = require('web.CrashManager');

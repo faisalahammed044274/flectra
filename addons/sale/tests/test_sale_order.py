@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
-from flectra.exceptions import UserError, AccessError
-from flectra.tests import Form, tagged
-from flectra.tools import float_compare
+# Part of Odoo. See LICENSE file for full copyright and licensing details.
+from odoo.exceptions import UserError, AccessError
+from odoo.tests import Form, tagged
+from odoo.tools import float_compare
 
 from .common import TestSaleCommon
 

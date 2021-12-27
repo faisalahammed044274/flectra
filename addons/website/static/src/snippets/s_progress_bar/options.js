@@ -1,4 +1,4 @@
-flectra.define('website.s_progress_bar_options', function (require) {
+odoo.define('website.s_progress_bar_options', function (require) {
 'use strict';
 
 const core = require('web.core');

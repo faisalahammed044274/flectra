@@ -1,4 +1,4 @@
-flectra.define('point_of_sale.HeaderButton', function(require) {
+odoo.define('point_of_sale.HeaderButton', function(require) {
     'use strict';
 
     const { useState } = owl;

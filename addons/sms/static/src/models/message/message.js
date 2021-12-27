@@ -1,4 +1,4 @@
-flectra.define('sms/static/src/models/message/message.js', function (require) {
+odoo.define('sms/static/src/models/message/message.js', function (require) {
 'use strict';
 
 const {

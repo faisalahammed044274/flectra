@@ -1,12 +1,12 @@
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo. See LICENSE file for full copyright and licensing details.
 
 from unittest.mock import patch
 
-import flectra.tests
+import odoo.tests
 
 
-@flectra.tests.common.tagged('post_install', '-at_install')
-class TestUi(flectra.tests.HttpCase):
+@odoo.tests.common.tagged('post_install', '-at_install')
+class TestUi(odoo.tests.HttpCase):
 
     def setUp(self):
         super(TestUi, self).setUp()
@@ -14,7 +14,7 @@ class TestUi(flectra.tests.HttpCase):
         def _get_title_from_url(addr, **kw):
             return 'Contact Us | My Website'
 
-        patcher = patch('flectra.addons.link_tracker.models.link_tracker.LinkTracker._get_title_from_url', wraps=_get_title_from_url)
+        patcher = patch('odoo.addons.link_tracker.models.link_tracker.LinkTracker._get_title_from_url', wraps=_get_title_from_url)
         patcher.start()
         self.addCleanup(patcher.stop)
 

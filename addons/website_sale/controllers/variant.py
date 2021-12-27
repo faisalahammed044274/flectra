@@ -1,9 +1,9 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
-from flectra import http
-from flectra.http import request
+# Part of Odoo. See LICENSE file for full copyright and licensing details.
+from odoo import http
+from odoo.http import request
 
-from flectra.addons.sale.controllers.variant import VariantController
+from odoo.addons.sale.controllers.variant import VariantController
 
 class WebsiteSaleVariantController(VariantController):
     @http.route(['/sale/get_combination_info_website'], type='json', auth="public", methods=['POST'], website=True)

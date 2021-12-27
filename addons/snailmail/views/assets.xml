@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<flectra>
+<odoo>
     <template id="assets_backend" name="iap assets" inherit_id="web.assets_backend">
         <xpath expr="." position="inside">
             <script type="text/javascript" src="/snailmail/static/src/bugfix/bugfix.js"></script>
@@ -30,4 +30,4 @@
             <script type="text/javascript" src="/snailmail/static/src/components/notification_list/notification_list_notification_group_tests.js"/>
         </xpath>
     </template>
-</flectra>
+</odoo>

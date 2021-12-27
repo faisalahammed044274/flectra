@@ -1,11 +1,11 @@
-flectra.define('web.select_create_controllers_registry', function (require) {
+odoo.define('web.select_create_controllers_registry', function (require) {
 "use strict";
 
 return {};
 
 });
 
-flectra.define('web._select_create_controllers_registry', function (require) {
+odoo.define('web._select_create_controllers_registry', function (require) {
 "use strict";
 
 var KanbanController = require('web.KanbanController');

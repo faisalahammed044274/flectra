@@ -1,4 +1,4 @@
-flectra.define('utm.campaing_kanban_examples', function (require) {
+odoo.define('utm.campaing_kanban_examples', function (require) {
 'use strict';
 
 var core = require('web.core');

@@ -1,4 +1,4 @@
-flectra.define('bus.WebClient', function (require) {
+odoo.define('bus.WebClient', function (require) {
     "use strict";
 
     const core = require('web.core');

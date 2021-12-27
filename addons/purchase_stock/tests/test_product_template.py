@@ -1,4 +1,4 @@
-from flectra.tests.common import TransactionCase
+from odoo.tests.common import TransactionCase
 
 
 class TestProductTemplate(TransactionCase):

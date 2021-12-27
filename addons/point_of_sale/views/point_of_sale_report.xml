@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<flectra>
+<odoo>
     <record id="report_user_label" model="ir.actions.report">
         <field name="name">User Labels</field>
         <field name="model">res.users</field>
@@ -28,4 +28,4 @@
 
     <template id="report_invoice" inherit_id="account.report_invoice" primary="True"/>
 
-</flectra>
+</odoo>

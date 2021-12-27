@@ -1,4 +1,4 @@
-flectra.define('mail.ActivityRecord', function (require) {
+odoo.define('mail.ActivityRecord', function (require) {
 "use strict";
 
 var KanbanRecord = require('web.KanbanRecord');

@@ -1,5 +1,5 @@
-from flectra import models, fields, api, _
-from flectra.tools import format_date
+from odoo import models, fields, api, _
+from odoo.tools import format_date
 
 
 class SaleOrder(models.Model):

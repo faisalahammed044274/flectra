@@ -1,4 +1,4 @@
-flectra.define('web.FieldResume', function (require) {
+odoo.define('web.FieldResume', function (require) {
 "use strict";
 
 var time = require('web.time');

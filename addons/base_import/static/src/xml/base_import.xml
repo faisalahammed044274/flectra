@@ -90,7 +90,7 @@
                     </div>
                 </div>
                 <p class="oe_import_noheaders text-muted">If the file contains
-                the column names, Flectra can try auto-detecting the
+                the column names, Odoo can try auto-detecting the
                 field corresponding to the column. This makes imports
                 simpler especially when the file has many columns.</p>
 
@@ -114,7 +114,7 @@
                             <i class="fa fa-download"/> <span><t t-esc="template.label"/></span>
                         </a>
                     </div>
-                    <a href="https://doc.flectrahq.com/2.0/applications/general/base_import/import_faq.html" target="new">Import FAQ</a>
+                    <a href="https://www.odoo.com/documentation/14.0/applications/general/base_import/import_faq.html" target="new">Import FAQ</a>
                 </div>
             </div>
         </form>

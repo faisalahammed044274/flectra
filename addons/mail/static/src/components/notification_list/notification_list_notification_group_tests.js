@@ -1,4 +1,4 @@
-flectra.define('mail/static/src/components/notification_list/notification_list_notification_group_tests.js', function (require) {
+odoo.define('mail/static/src/components/notification_list/notification_list_notification_group_tests.js', function (require) {
 'use strict';
 
 const components = {

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<flectra>
+<odoo>
     <!-- set VAT label to show on invoice report -->
     <record id="base.ae" model="res.country">
         <field name="vat_label">TRN</field>
@@ -11,4 +11,4 @@
         <field name="name">GCC VAT implementing States</field>
         <field name="country_ids" eval="[(6,0,[ref('base.ae'),ref('base.sa'),ref('base.bh')])]"/>
     </record>
-</flectra>
+</odoo>

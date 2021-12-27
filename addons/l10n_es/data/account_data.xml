@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<flectra>
+<odoo>
     <data noupdate="1">
 
         <!-- Account Tax Group -->
@@ -67,4 +67,4 @@
             <field name="name">IVA no deducible</field>
         </record>
     </data>
-</flectra>
+</odoo>

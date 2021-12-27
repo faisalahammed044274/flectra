@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<flectra>
+<odoo>
     <template id="_assets_primary_variables" inherit_id="web._assets_primary_variables">
         <xpath expr="//link[last()]" position="after">
             <link rel="stylesheet" type="text/scss" href="/hr_org_chart/static/src/scss/variables.scss"/>
@@ -18,4 +18,4 @@
             <script type="text/javascript" src="/hr_org_chart/static/tests/hr_org_chart_tests.js"/>
         </xpath>
     </template>
-</flectra>
+</odoo>

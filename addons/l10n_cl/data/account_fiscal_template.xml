@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<flectra>
+<odoo>
     <data>
 
         <record id="afpt_non_recoverable_vat_1" model="account.fiscal.position.template">
@@ -131,4 +131,4 @@
         </record>
 
     </data>
-</flectra> 
+</odoo>

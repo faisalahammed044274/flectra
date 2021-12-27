@@ -1,5 +1,5 @@
 
-from flectra import api, fields, models
+from odoo import api, fields, models
 
 class SnailmailLetterFormatError(models.TransientModel):
     _name = 'snailmail.letter.format.error'

@@ -1,11 +1,11 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo. See LICENSE file for full copyright and licensing details.
 
 from datetime import datetime, timedelta
 
-from flectra import fields
-from flectra.addons.mail.tests.common import mail_new_test_user
-from flectra.tests import common
+from odoo import fields
+from odoo.addons.mail.tests.common import mail_new_test_user
+from odoo.tests import common
 
 
 class TestEventCommon(common.SavepointCase):

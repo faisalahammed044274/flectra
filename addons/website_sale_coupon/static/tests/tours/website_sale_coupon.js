@@ -1,4 +1,4 @@
-flectra.define('website_sale_coupon.test', function (require) {
+odoo.define('website_sale_coupon.test', function (require) {
 'use strict';
 
 require("website_sale.tour");

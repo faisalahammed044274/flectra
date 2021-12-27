@@ -1,4 +1,4 @@
-flectra.define('event_sale.product_configurator', function (require) {
+odoo.define('event_sale.product_configurator', function (require) {
 var ProductConfiguratorWidget = require('sale.product_configurator');
 
 /**

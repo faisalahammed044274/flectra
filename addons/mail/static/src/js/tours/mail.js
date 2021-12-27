@@ -1,4 +1,4 @@
-flectra.define('mail.tour', function (require) {
+odoo.define('mail.tour', function (require) {
 "use strict";
 
 var core = require('web.core');

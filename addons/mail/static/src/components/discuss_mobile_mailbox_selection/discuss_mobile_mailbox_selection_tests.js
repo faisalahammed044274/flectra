@@ -1,4 +1,4 @@
-flectra.define('mail/static/src/components/discuss_mobile_mailbox_selection/discuss_mobile_mailbox_selection_tests.js', function (require) {
+odoo.define('mail/static/src/components/discuss_mobile_mailbox_selection/discuss_mobile_mailbox_selection_tests.js', function (require) {
 'use strict';
 
 const {

@@ -1,4 +1,4 @@
-flectra.define('web.KanbanView', function (require) {
+odoo.define('web.KanbanView', function (require) {
 "use strict";
 
 var BasicView = require('web.BasicView');

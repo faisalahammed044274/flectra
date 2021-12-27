@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo. See LICENSE file for full copyright and licensing details.
 
 from collections import defaultdict
 import math
@@ -10,13 +10,13 @@ from functools import partial
 from itertools import chain
 from pytz import timezone, utc
 
-from flectra import api, fields, models, _
-from flectra.addons.base.models.res_partner import _tz_get
-from flectra.exceptions import ValidationError
-from flectra.osv import expression
-from flectra.tools.float_utils import float_round
+from odoo import api, fields, models, _
+from odoo.addons.base.models.res_partner import _tz_get
+from odoo.exceptions import ValidationError
+from odoo.osv import expression
+from odoo.tools.float_utils import float_round
 
-from flectra.tools import date_utils, float_utils
+from odoo.tools import date_utils, float_utils
 from .resource_mixin import timezone_datetime
 
 # Default hour per day value. The one should

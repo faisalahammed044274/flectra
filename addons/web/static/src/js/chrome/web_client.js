@@ -1,4 +1,4 @@
-flectra.define('web.WebClient', function (require) {
+odoo.define('web.WebClient', function (require) {
 "use strict";
 
 var AbstractWebClient = require('web.AbstractWebClient');
@@ -28,7 +28,7 @@ return AbstractWebClient.extend({
         this._super.apply(this, arguments);
 
         /*
-            Small patch to allow having a link with a href towards an anchor. Since flectra use hashtag
+            Small patch to allow having a link with a href towards an anchor. Since odoo use hashtag
             to represent the current state of the view, we can't easily distinguish between a link
             towards an anchor and a link towards anoter view/state. If we want to navigate towards an
             anchor, we must not change the hash of the url otherwise we will be redirected to the app
@@ -55,7 +55,7 @@ return AbstractWebClient.extend({
         });
     },
     load_menus: function () {
-        return (flectra.loadMenusPromise || flectra.reloadMenus())
+        return (odoo.loadMenusPromise || odoo.reloadMenus())
             .then(function (menuData) {
                 // Compute action_id if not defined on a top menu item
                 for (var i = 0; i < menuData.children.length; i++) {
@@ -70,7 +70,7 @@ return AbstractWebClient.extend({
                         }
                     }
                 }
-                flectra.loadMenusPromise = null;
+                odoo.loadMenusPromise = null;
                 return menuData;
             });
     },

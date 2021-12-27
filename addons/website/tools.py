@@ -1,13 +1,13 @@
 # -*- encoding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo. See LICENSE file for full copyright and licensing details.
 import contextlib
 import re
 from unittest.mock import Mock, MagicMock, patch
 
 import werkzeug
 
-import flectra
-from flectra.tools.misc import DotDict
+import odoo
+from odoo.tools.misc import DotDict
 
 
 def get_video_embed_code(video_url):
@@ -91,7 +91,7 @@ def MockRequest(
         httprequest=Mock(
             host='localhost',
             path='/hello/',
-            app=flectra.http.root,
+            app=odoo.http.root,
             environ={'REMOTE_ADDR': '127.0.0.1'},
             cookies=cookies or {},
             referrer='',
@@ -107,8 +107,8 @@ def MockRequest(
     )
 
     with contextlib.ExitStack() as s:
-        flectra.http._request_stack.push(request)
-        s.callback(flectra.http._request_stack.pop)
-        s.enter_context(patch('flectra.http.root.get_db_router', router))
+        odoo.http._request_stack.push(request)
+        s.callback(odoo.http._request_stack.pop)
+        s.enter_context(patch('odoo.http.root.get_db_router', router))
 
         yield request

@@ -1,4 +1,4 @@
-flectra.define('mail/static/src/model/model_field_command.js', function (require) {
+odoo.define('mail/static/src/model/model_field_command.js', function (require) {
 'use strict';
 
 /**

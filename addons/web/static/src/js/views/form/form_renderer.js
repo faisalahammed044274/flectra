@@ -1,4 +1,4 @@
-flectra.define('web.FormRenderer', function (require) {
+odoo.define('web.FormRenderer', function (require) {
 "use strict";
 
 var BasicRenderer = require('web.BasicRenderer');
@@ -549,7 +549,7 @@ var FormRenderer = BasicRenderer.extend({
     _renderHeaderButton: function (node) {
         var $button = viewUtils.renderButtonFromNode(node);
 
-        // Current API of flectra for rendering buttons is "if classes are given
+        // Current API of odoo for rendering buttons is "if classes are given
         // use those on top of the 'btn' and 'btn-{size}' classes, otherwise act
         // as if 'btn-secondary' class was given". The problem is that, for
         // header buttons only, we allowed users to only indicate their custom
@@ -1138,7 +1138,7 @@ var FormRenderer = BasicRenderer.extend({
 
     /**
      * @private
-     * @param {FlectraEvent} ev
+     * @param {OdooEvent} ev
      */
     _onActivateNextWidget: function (ev) {
         ev.stopPropagation();
@@ -1148,7 +1148,7 @@ var FormRenderer = BasicRenderer.extend({
     /**
      * @override
      * @private
-     * @param {FlectraEvent} ev
+     * @param {OdooEvent} ev
      */
     _onNavigationMove: function (ev) {
         ev.stopPropagation();

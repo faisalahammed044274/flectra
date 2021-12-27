@@ -1,4 +1,4 @@
-flectra.define('hr.StandaloneM2OAvatarEmployee', function (require) {
+odoo.define('hr.StandaloneM2OAvatarEmployee', function (require) {
     'use strict';
 
     const StandaloneFieldManagerMixin = require('web.StandaloneFieldManagerMixin');

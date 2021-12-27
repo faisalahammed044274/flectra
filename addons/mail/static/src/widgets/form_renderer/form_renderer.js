@@ -1,4 +1,4 @@
-flectra.define('mail/static/src/widgets/form_renderer/form_renderer.js', function (require) {
+odoo.define('mail/static/src/widgets/form_renderer/form_renderer.js', function (require) {
 "use strict";
 
 const components = {
@@ -177,7 +177,7 @@ FormRenderer.include({
     /**
      * @abstract
      * @private
-     * @param {FlectraEvent} ev
+     * @param {OdooEvent} ev
      * @param {Object} ev.data
      * @param {mail.attachment[]} ev.data.attachments
      * @param {mail.thread} ev.data.thread

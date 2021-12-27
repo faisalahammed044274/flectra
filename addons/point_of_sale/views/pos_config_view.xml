@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<flectra>
+<odoo>
 
     <!--Account cashbox line-->
 
@@ -309,7 +309,7 @@
                                         <field name="iface_tax_included" class="o_light_label" widget="radio"/>
                                     </div>
                                     <a attrs="{'invisible': [('iface_tax_included', '!=', 'total')]}"
-                                        href="https://doc.flectrahq.com/2.0/applications/finance/accounting/taxation/taxes/B2B_B2C.html"
+                                        href="https://www.odoo.com/documentation/14.0/applications/finance/accounting/taxation/taxes/B2B_B2C.html"
                                         target="_blank" class="oe-link"><i class="fa fa-fw fa-arrow-right"/>How to manage tax-included prices</a>
                                 </div>
                             </div>
@@ -604,4 +604,4 @@
         parent="point_of_sale.pos_menu_products_configuration"  groups="product.group_product_variant" sequence="2"/>
 
     <menuitem id="menu_pos_dashboard" action="action_pos_config_kanban" parent="menu_point_root" name="Dashboard" sequence="1"/>
-</flectra>
+</odoo>

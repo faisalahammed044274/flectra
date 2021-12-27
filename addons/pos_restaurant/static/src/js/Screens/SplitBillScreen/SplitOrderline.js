@@ -1,4 +1,4 @@
-flectra.define('pos_restaurant.SplitOrderline', function(require) {
+odoo.define('pos_restaurant.SplitOrderline', function(require) {
     'use strict';
 
     const { useListener } = require('web.custom_hooks');

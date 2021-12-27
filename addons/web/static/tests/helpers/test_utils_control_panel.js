@@ -1,4 +1,4 @@
-flectra.define('web.test_utils_control_panel', function (require) {
+odoo.define('web.test_utils_control_panel', function (require) {
     "use strict";
 
     const { click, findItem, getNode, triggerEvent } = require('web.test_utils_dom');

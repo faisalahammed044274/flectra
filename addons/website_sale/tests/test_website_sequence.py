@@ -1,10 +1,10 @@
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo. See LICENSE file for full copyright and licensing details.
 
-import flectra.tests
+import odoo.tests
 
 
-@flectra.tests.common.tagged('post_install', '-at_install')
-class TestWebsiteSequence(flectra.tests.TransactionCase):
+@odoo.tests.common.tagged('post_install', '-at_install')
+class TestWebsiteSequence(odoo.tests.TransactionCase):
 
     def setUp(self):
         super(TestWebsiteSequence, self).setUp()

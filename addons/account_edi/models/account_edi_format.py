@@ -1,16 +1,17 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo. See LICENSE file for full copyright and licensing details.
 
-from flectra import models, fields, api
-from flectra.tools.pdf import FlectraPdfFileReader, FlectraPdfFileWriter
-from flectra.osv import expression
-from flectra.tools import html_escape
+from odoo import models, fields, api
+from odoo.tools.pdf import OdooPdfFileReader, OdooPdfFileWriter
+from odoo.osv import expression
+from odoo.tools import html_escape
 
 from lxml import etree
 import base64
 import io
 import logging
 import pathlib
+import re
 
 _logger = logging.getLogger(__name__)
 
@@ -243,7 +244,7 @@ class AccountEdiFormat(models.Model):
         """ Create a new invoice with the data inside a pdf.
 
         :param filename: The name of the pdf.
-        :param reader:   The FlectraPdfFileReader of the pdf to import.
+        :param reader:   The OdooPdfFileReader of the pdf to import.
         :returns:        The created invoice.
         """
         # TO OVERRIDE
@@ -255,7 +256,7 @@ class AccountEdiFormat(models.Model):
         """ Update an existing invoice with the data inside the pdf.
 
         :param filename: The name of the pdf.
-        :param reader:   The FlectraPdfFileReader of the pdf to import.
+        :param reader:   The OdooPdfFileReader of the pdf to import.
         :param invoice:  The invoice to update.
         :returns:        The updated invoice.
         """
@@ -297,7 +298,7 @@ class AccountEdiFormat(models.Model):
         # TO OVERRIDE
         self.ensure_one()
         if self._is_embedding_to_invoice_pdf_needed() and edi_document.attachment_id:
-            pdf_writer.embed_flectra_attachment(edi_document.attachment_id)
+            pdf_writer.embed_odoo_attachment(edi_document.attachment_id)
 
     ####################################################
     # Export Internal methods (not meant to be overridden)
@@ -314,8 +315,8 @@ class AccountEdiFormat(models.Model):
         # Add the attachments to the pdf file
         if to_embed:
             reader_buffer = io.BytesIO(pdf_content)
-            reader = FlectraPdfFileReader(reader_buffer, strict=False)
-            writer = FlectraPdfFileWriter()
+            reader = OdooPdfFileReader(reader_buffer, strict=False)
+            writer = OdooPdfFileWriter()
             writer.cloneReaderDocumentRoot(reader)
             for edi_document in to_embed:
                 edi_document.edi_format_id._prepare_invoice_report(writer, edi_document)
@@ -371,7 +372,7 @@ class AccountEdiFormat(models.Model):
         to_process = []
         try:
             buffer = io.BytesIO(content)
-            pdf_reader = FlectraPdfFileReader(buffer, strict=False)
+            pdf_reader = OdooPdfFileReader(buffer, strict=False)
         except Exception as e:
             # Malformed pdf
             _logger.exception("Error when reading the pdf: %s" % e)
@@ -506,21 +507,88 @@ class AccountEdiFormat(models.Model):
         :param vat:     The vat number of the partner.
         :returns:       A partner or an empty recordset if not found.
         '''
-        domains = []
-        for value, domain in (
-            (name, [('name', 'ilike', name)]),
-            (phone, expression.OR([[('phone', '=', phone)], [('mobile', '=', phone)]])),
-            (mail, [('email', '=', mail)]),
-            (vat, [('vat', 'like', vat)]),
-        ):
-            if value is not None:
-                domains.append(domain)
+        def search_with_vat(extra_domain):
+            if not vat:
+                return None
 
-        domain = expression.AND([
-            expression.OR(domains),
-            [('company_id', 'in', [False, self.env.company.id])],
-        ])
-        return self.env['res.partner'].search(domain, limit=1)
+            # Sometimes, the vat is specified with some whitespaces.
+            normalized_vat = vat.replace(' ', '')
+            country_prefix = re.match('^[a-zA-Z]{2}|^', vat).group()
+
+            partner = self.env['res.partner'].search(extra_domain + [('vat', 'in', (normalized_vat, vat))], limit=1)
+
+            # Try to remove the country code prefix from the vat.
+            if not partner and country_prefix:
+                partner = self.env['res.partner'].search(extra_domain + [
+                    ('vat', 'in', (normalized_vat[2:], vat[2:])),
+                    ('country_id.code', '=', country_prefix.upper()),
+                ], limit=1)
+
+                # The country could be not specified on the partner.
+                if not partner:
+                    partner = self.env['res.partner'].search(extra_domain + [
+                        ('vat', 'in', (normalized_vat[2:], vat[2:])),
+                        ('country_id', '=', False),
+                    ], limit=1)
+
+            # The vat could be a string of alphanumeric values without country code but with missing zeros at the
+            # beginning.
+            if not partner:
+                try:
+                    vat_only_numeric = str(int(re.sub('^\D{2}', '', normalized_vat) or 0))
+                except ValueError:
+                    vat_only_numeric = None
+
+                if vat_only_numeric:
+                    query = self.env['res.partner']._where_calc(extra_domain + [('active', '=', True)])
+                    tables, where_clause, where_params = query.get_sql()
+
+                    if country_prefix:
+                        vat_prefix_regex = f'({country_prefix})?'
+                    else:
+                        vat_prefix_regex = '([A-z]{2})?'
+
+                    self._cr.execute(f'''
+                        SELECT res_partner.id
+                        FROM {tables}
+                        WHERE {where_clause}
+                        AND res_partner.vat ~ %s
+                        LIMIT 1
+                    ''', where_params + ['^%s0*%s$' % (vat_prefix_regex, vat_only_numeric)])
+                    partner_row = self._cr.fetchone()
+                    if partner_row:
+                        partner = self.env['res.partner'].browse(partner_row[0])
+
+            return partner
+
+        def search_with_phone_mail(extra_domain):
+            domains = []
+            if phone:
+                domains.append([('phone', '=', phone)])
+                domains.append([('mobile', '=', phone)])
+            if mail:
+                domains.append([('email', '=', mail)])
+
+            if not domains:
+                return None
+
+            domain = expression.OR(domains)
+            if extra_domain:
+                domain = expression.AND([domain, extra_domain])
+            return self.env['res.partner'].search(domain, limit=1)
+
+        def search_with_name(extra_domain):
+            if not name:
+                return None
+            return self.env['res.partner'].search([('name', 'ilike', name)] + extra_domain, limit=1)
+
+        for search_method in (search_with_vat, search_with_phone_mail, search_with_name):
+            for extra_domain in ([('company_id', '=', self.env.company.id)], []):
+                partner = search_method(extra_domain)
+                if partner:
+                    return partner
+
+        return self.env['res.partner']
 
     def _retrieve_product(self, name=None, default_code=None, barcode=None):
         '''Search all products and find one that matches one of the parameters.

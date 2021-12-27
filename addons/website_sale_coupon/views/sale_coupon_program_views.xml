@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<flectra>
+<odoo>
 
     <menuitem action="coupon.coupon_program_action_promo_program" id="menu_promotion_type_config" name="Promotion Programs" parent="website_sale.menu_catalog" groups="sales_team.group_sale_manager" sequence="50"/>
     <menuitem id="menu_coupon_type_config" action="coupon.coupon_program_action_coupon_program" name="Coupon Programs" parent="website_sale.menu_catalog" groups="sales_team.group_sale_manager" sequence="51"/>
@@ -29,4 +29,4 @@
         </field>
     </record>
 
-</flectra> 
+</odoo>

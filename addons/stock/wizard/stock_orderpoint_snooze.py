@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo. See LICENSE file for full copyright and licensing details.
 
-from flectra import api, fields, models
-from flectra.tools.date_utils import add
+from odoo import api, fields, models
+from odoo.tools.date_utils import add
 
 
 class StockOrderpointSnooze(models.TransientModel):

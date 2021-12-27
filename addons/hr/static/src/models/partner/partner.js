@@ -1,4 +1,4 @@
-flectra.define('hr/static/src/models/partner/partner.js', function (require) {
+odoo.define('hr/static/src/models/partner/partner.js', function (require) {
 'use strict';
 
 const {

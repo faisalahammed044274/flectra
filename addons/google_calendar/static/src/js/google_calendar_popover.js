@@ -1,4 +1,4 @@
-flectra.define('google_calendar.GoogleCalendarPopover', function(require) {
+odoo.define('google_calendar.GoogleCalendarPopover', function(require) {
     "use strict";
 
     const CalendarPopover = require('web.CalendarPopover');

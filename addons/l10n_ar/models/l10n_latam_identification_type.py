@@ -1,5 +1,5 @@
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
-from flectra import models, fields
+# Part of Odoo. See LICENSE file for full copyright and licensing details.
+from odoo import models, fields
 
 
 class L10nLatamIdentificationType(models.Model):

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<flectra><data>
+<odoo><data>
     <!--Private profile-->
     <template id="private_profile" inherit_id="website_profile.private_profile">
         <xpath expr="//div[@id='private_profile_return_link_container']" position="inside">
@@ -175,4 +175,4 @@
             <p class="text-muted">No vote given by you yet!</p>
         </div>
     </template>
-</data></flectra>
+</data></odoo>

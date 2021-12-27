@@ -1,4 +1,4 @@
-flectra.define('web.tools', function (require) {
+odoo.define('web.tools', function (require) {
 "use strict";
 
 /**

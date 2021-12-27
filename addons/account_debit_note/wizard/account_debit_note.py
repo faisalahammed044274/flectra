@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
-from flectra import models, fields, api
-from flectra.tools.translate import _
-from flectra.exceptions import UserError
+from odoo import models, fields, api
+from odoo.tools.translate import _
+from odoo.exceptions import UserError
 
 
 class AccountDebitNote(models.TransientModel):

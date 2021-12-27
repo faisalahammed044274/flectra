@@ -1,4 +1,4 @@
-flectra.define('web.RainbowMan', function (require) {
+odoo.define('web.RainbowMan', function (require) {
 "use strict";
 
 /**

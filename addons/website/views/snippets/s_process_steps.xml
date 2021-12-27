@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<flectra>
+<odoo>
 
 <template name="Steps" id="s_process_steps">
     <section class="s_process_steps pt24 pb24">
@@ -60,4 +60,4 @@
     </xpath>
 </template>
 
-</flectra>
+</odoo>

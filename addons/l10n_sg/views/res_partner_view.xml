@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<flectra>
+<odoo>
     <data>
         <record id="view_partner_form_l10n_sg" model="ir.ui.view">
             <field name="name">l10n_sg.partner.form</field>
@@ -12,4 +12,4 @@
             </field>
         </record>
     </data>
-</flectra>
+</odoo>

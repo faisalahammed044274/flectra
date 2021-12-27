@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<flectra noupdate="True">
+<odoo noupdate="True">
 
     <!-- TODO This demo data is for functional testing and demo but also was used for tests. Test cases should be moved to proper tests -->
     <!-- TODO also, once written the proper tests, we should remove price and name information from lines because it is overwriten by "_onchange_product_id" method. That methods is called to set taxes and uom from products -->
@@ -329,4 +329,4 @@
         <value eval="[ref('demo_invoice_1'), ref('demo_invoice_2'), ref('demo_invoice_3'), ref('demo_invoice_4'), ref('demo_invoice_5'), ref('demo_invoice_6'), ref('demo_invoice_7'), ref('demo_invoice_8'), ref('demo_invoice_10'), ref('demo_invoice_11'), ref('demo_invoice_12'), ref('demo_invoice_13'), ref('demo_invoice_14'), ref('demo_invoice_15'), ref('demo_invoice_16'), ref('demo_invoice_17'), ref('demo_invoice_18'), ref('demo_invoice_19')]"/>
     </function>
 
-</flectra>
+</odoo>

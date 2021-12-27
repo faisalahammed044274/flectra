@@ -1,15 +1,15 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo. See LICENSE file for full copyright and licensing details.
 
 import logging
 
 from hashlib import md5
 from werkzeug import urls
 
-from flectra import api, fields, models, _
-from flectra.tools.float_utils import float_compare
-from flectra.addons.payment_alipay.controllers.main import AlipayController
-from flectra.addons.payment.models.payment_acquirer import ValidationError
+from odoo import api, fields, models, _
+from odoo.tools.float_utils import float_compare
+from odoo.addons.payment_alipay.controllers.main import AlipayController
+from odoo.addons.payment.models.payment_acquirer import ValidationError
 
 _logger = logging.getLogger(__name__)
 
@@ -132,7 +132,7 @@ class PaymentTransaction(models.Model):
                     raise ValidationError(_("""
                         Only transactions in Chinese Yuan (CNY) are allowed for Alipay Express Checkout.\n
                         If you wish to use another currency than CNY for your transactions, switch your
-                        configuration to a Cross-border account on the Alipay payment acquirer in Flectra.
+                        configuration to a Cross-border account on the Alipay payment acquirer in Odoo.
                     """))
         return True
 

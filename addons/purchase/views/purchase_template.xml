@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<flectra>
+<odoo>
 
     <template id="track_po_line_template">
         <div>
@@ -25,4 +25,4 @@
         </div>
     </template>
 
-</flectra>
+</odoo>

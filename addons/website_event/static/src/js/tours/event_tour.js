@@ -1,4 +1,4 @@
-flectra.define('website_event.event_steps', function (require) {
+odoo.define('website_event.event_steps', function (require) {
 "use strict";
 
 var core = require('web.core');

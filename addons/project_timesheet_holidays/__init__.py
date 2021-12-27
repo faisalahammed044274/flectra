@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo. See LICENSE file for full copyright and licensing details.
 
 from . import models
 
@@ -9,7 +9,7 @@ def post_init(cr, registry):
         be sure the internal project/task of res.company are set. (Since timesheet_generate field
         is true by default, those 2 fields are required on the leave type).
     """
-    from flectra import api, SUPERUSER_ID
+    from odoo import api, SUPERUSER_ID
 
     env = api.Environment(cr, SUPERUSER_ID, {})
     for hr_leave_type in env['hr.leave.type'].search([('timesheet_generate', '=', True), ('timesheet_project_id', '=', False)]):

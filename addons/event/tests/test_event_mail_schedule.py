@@ -1,18 +1,18 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo. See LICENSE file for full copyright and licensing details.
 
 from datetime import datetime
 from dateutil.relativedelta import relativedelta
 from freezegun import freeze_time
 
-from flectra.addons.event.tests.common import TestEventCommon
-from flectra.addons.mail.tests.common import MockEmail
-from flectra.tools import formataddr, mute_logger
+from odoo.addons.event.tests.common import TestEventCommon
+from odoo.addons.mail.tests.common import MockEmail
+from odoo.tools import formataddr, mute_logger
 
 
 class TestMailSchedule(TestEventCommon, MockEmail):
 
-    @mute_logger('flectra.addons.base.models.ir_model', 'flectra.models')
+    @mute_logger('odoo.addons.base.models.ir_model', 'odoo.models')
     def test_event_mail_schedule(self):
         """ Test mail scheduling for events """
         event_cron_id = self.env.ref('event.event_mail_scheduler')

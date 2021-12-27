@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo. See LICENSE file for full copyright and licensing details.
 
 import logging
 from contextlib import contextmanager
@@ -8,22 +8,22 @@ import requests
 import pytz
 from dateutil.parser import parse
 
-from flectra import api, fields, models, registry, _
-from flectra.tools import ormcache_context
-from flectra.exceptions import UserError
-from flectra.osv import expression
+from odoo import api, fields, models, registry, _
+from odoo.tools import ormcache_context
+from odoo.exceptions import UserError
+from odoo.osv import expression
 
-from flectra.addons.google_calendar.utils.google_event import GoogleEvent
-from flectra.addons.google_calendar.utils.google_calendar import GoogleCalendarService
-from flectra.addons.google_account.models.google_service import TIMEOUT
+from odoo.addons.google_calendar.utils.google_event import GoogleEvent
+from odoo.addons.google_calendar.utils.google_calendar import GoogleCalendarService
+from odoo.addons.google_account.models.google_service import TIMEOUT
 
 _logger = logging.getLogger(__name__)
 
 
 # API requests are sent to Google Calendar after the current transaction ends.
-# This ensures changes are sent to Google only if they really happened in the Flectra database.
+# This ensures changes are sent to Google only if they really happened in the Odoo database.
 # It is particularly important for event creation , otherwise the event might be created
-# twice in Google if the first creation crashed in Flectra.
+# twice in Google if the first creation crashed in Odoo.
 def after_commit(func):
     @wraps(func)
     def wrapped(self, *args, **kwargs):
@@ -106,7 +106,7 @@ class GoogleSync(models.AbstractModel):
         elif synced:
             # Since we can not delete such an event (see method comment), we archive it.
             # Notice that archiving an event will delete the associated event on Google.
-            # Then, since it has been deleted on Google, the event is also deleted on Flectra DB (_sync_google2flectra).
+            # Then, since it has been deleted on Google, the event is also deleted on Odoo DB (_sync_google2odoo).
             self.action_archive()
             return True
         return super().unlink()
@@ -118,7 +118,7 @@ class GoogleSync(models.AbstractModel):
             return self.browse()
         return self.search([('google_id', 'in', google_ids)])
 
-    def _sync_flectra2google(self, google_service: GoogleCalendarService):
+    def _sync_odoo2google(self, google_service: GoogleCalendarService):
         if not self:
             return
         if self._active_name:
@@ -141,39 +141,39 @@ class GoogleSync(models.AbstractModel):
         self.unlink()
 
     @api.model
-    def _sync_google2flectra(self, google_events: GoogleEvent, default_reminders=()):
-        """Synchronize Google recurrences in Flectra. Creates new recurrences, updates
+    def _sync_google2odoo(self, google_events: GoogleEvent, default_reminders=()):
+        """Synchronize Google recurrences in Odoo. Creates new recurrences, updates
         existing ones.
 
-        :param google_recurrences: Google recurrences to synchronize in Flectra
-        :return: synchronized flectra recurrences
+        :param google_recurrences: Google recurrences to synchronize in Odoo
+        :return: synchronized odoo recurrences
         """
         existing = google_events.exists(self.env)
         new = google_events - existing - google_events.cancelled()
 
-        flectra_values = [
-            dict(self._flectra_values(e, default_reminders), need_sync=False)
+        odoo_values = [
+            dict(self._odoo_values(e, default_reminders), need_sync=False)
             for e in new
         ]
-        new_flectra = self.with_context(dont_notify=True)._create_from_google(new, flectra_values)
+        new_odoo = self.with_context(dont_notify=True)._create_from_google(new, odoo_values)
         # Synced recurrences attendees will be notified once _apply_recurrence is called.
         if not self._context.get("dont_notify") and all(not e.is_recurrence() for e in google_events):
-            new_flectra._notify_attendees()
+            new_odoo._notify_attendees()
 
         cancelled = existing.cancelled()
-        cancelled_flectra = self.browse(cancelled.flectra_ids(self.env))
-        cancelled_flectra._cancel()
-        synced_records = (new_flectra + cancelled_flectra).with_context(dont_notify=self._context.get("dont_notify", False))
+        cancelled_odoo = self.browse(cancelled.odoo_ids(self.env))
+        cancelled_odoo._cancel()
+        synced_records = (new_odoo + cancelled_odoo).with_context(dont_notify=self._context.get("dont_notify", False))
         for gevent in existing - cancelled:
             # Last updated wins.
-            # This could be dangerous if google server time and flectra server time are different
+            # This could be dangerous if google server time and odoo server time are different
             updated = parse(gevent.updated)
-            flectra_record = self.browse(gevent.flectra_id(self.env))
+            odoo_record = self.browse(gevent.odoo_id(self.env))
             # Migration from 13.4 does not fill write_date. Therefore, we force the update from Google.
-            if not flectra_record.write_date or updated >= pytz.utc.localize(flectra_record.write_date):
-                vals = dict(self._flectra_values(gevent, default_reminders), need_sync=False)
-                flectra_record._write_from_google(gevent, vals)
-                synced_records |= flectra_record
+            if not odoo_record.write_date or updated >= pytz.utc.localize(odoo_record.write_date):
+                vals = dict(self._odoo_values(gevent, default_reminders), need_sync=False)
+                odoo_record._write_from_google(gevent, vals)
+                synced_records |= odoo_record
 
         return synced_records
 
@@ -206,7 +206,7 @@ class GoogleSync(models.AbstractModel):
                 })
 
     def _get_records_to_sync(self, full_sync=False):
-        """Return records that should be synced from Flectra to Google
+        """Return records that should be synced from Odoo to Google
 
         :param full_sync: If True, all events attended by the user are returned
         :return: events
@@ -229,10 +229,10 @@ class GoogleSync(models.AbstractModel):
         return self.create(vals_list)
 
     @api.model
-    def _flectra_values(self, google_event: GoogleEvent, default_reminders=()):
-        """Implements this method to return a dict of Flectra values corresponding
+    def _odoo_values(self, google_event: GoogleEvent, default_reminders=()):
+        """Implements this method to return a dict of Odoo values corresponding
         to the Google event given as parameter
-        :return: dict of Flectra formatted values
+        :return: dict of Odoo formatted values
         """
         raise NotImplementedError()
 
@@ -257,8 +257,8 @@ class GoogleSync(models.AbstractModel):
 
     def _notify_attendees(self):
         """ Notify calendar event partners.
-        This is called when creating new calendar events in _sync_google2flectra.
-        At the initialization of a synced calendar, Flectra requests all events for a specific
+        This is called when creating new calendar events in _sync_google2odoo.
+        At the initialization of a synced calendar, Odoo requests all events for a specific
         GoogleCalendar. Among those there will probably be lots of events that will never triggers a notification
         (e.g. single events that occured in the past). Processing all these events through the notification procedure
         of calendar.event.create is a possible performance bottleneck. This method aimed at alleviating that.

@@ -1,4 +1,4 @@
-flectra.define('sale.product_configurator_tests', function (require) {
+odoo.define('sale.product_configurator_tests', function (require) {
     "use strict";
 
     const FormView = require('web.FormView');

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<flectra>
+<odoo>
     <data>
 
         <!--We complete the declaration of the chart of account here.
@@ -16,4 +16,4 @@
         </record>
 
     </data>
-</flectra> 
+</odoo>

@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<flectra>
+<odoo>
     <data>
         <record id="view_order_form_inherit_sale_stock" model="ir.ui.view">
             <field name="name">sale.order.form.sale.dropshipping</field>
@@ -22,4 +22,4 @@
            </field>
         </record>
     </data>
-</flectra>
+</odoo>

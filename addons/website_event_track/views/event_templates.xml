@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<flectra>
+<odoo>
 
 <!-- Add a shortcut to wishlist / talks after registration -->
 <template id="registration_complete" inherit_id="website_event.registration_complete">
@@ -38,7 +38,7 @@
 <template id="pwa_manifest">
     <link rel="manifest" href="/event/manifest.webmanifest" crossorigin="use-credentials"/>
     <link rel="apple-touch-icon" t-att-href="website.image_url(website, 'app_icon', size='192x192')"/>
-    <meta name="theme-color" content="#009EFB"/>
+    <meta name="theme-color" content="#875A7B"/>
 </template>
 
 <template id="pwa_offline" inherit_id="website_event.index" primary="True">
@@ -72,4 +72,4 @@
     </xpath>
 </template>
 
-</flectra>
+</odoo>

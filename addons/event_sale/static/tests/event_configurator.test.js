@@ -1,4 +1,4 @@
-flectra.define('event.configurator.tests', function (require) {
+odoo.define('event.configurator.tests', function (require) {
     "use strict";
 
     var FormView = require('web.FormView');

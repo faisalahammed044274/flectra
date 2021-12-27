@@ -1,12 +1,12 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo. See LICENSE file for full copyright and licensing details.
 
-from flectra import tools
+from odoo import tools
 
-import flectra
-from flectra.addons.point_of_sale.tests.common import TestPoSCommon
+import odoo
+from odoo.addons.point_of_sale.tests.common import TestPoSCommon
 
-@flectra.tests.tagged('post_install', '-at_install')
+@odoo.tests.tagged('post_install', '-at_install')
 class TestPoSProductsWithTax(TestPoSCommon):
     """ Test normal configuration PoS selling products with tax
     """

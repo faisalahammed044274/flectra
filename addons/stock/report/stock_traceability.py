@@ -1,9 +1,9 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo. See LICENSE file for full copyright and licensing details.
 
-from flectra import api, models, _
-from flectra.tools import config
-from flectra.tools import format_datetime
+from odoo import api, models, _
+from odoo.tools import config
+from odoo.tools import format_datetime
 
 
 rec = 0

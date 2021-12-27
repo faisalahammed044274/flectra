@@ -1,11 +1,11 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo. See LICENSE file for full copyright and licensing details.
 
 import ast
 import datetime
 
-from flectra import api, fields, models, _
-from flectra.tools.safe_eval import safe_eval
+from odoo import api, fields, models, _
+from odoo.tools.safe_eval import safe_eval
 
 
 class Team(models.Model):
@@ -138,7 +138,7 @@ class Team(models.Model):
     as a member of one of the Sales Team.
 </p>""")
             if user_team_id:
-                action['help'] += _("<p>As you don't belong to any Sales Team, Flectra opens the first one by default.</p>")
+                action['help'] += _("<p>As you don't belong to any Sales Team, Odoo opens the first one by default.</p>")
 
         action_context = safe_eval(action['context'], {'uid': self.env.uid})
         if user_team_id:

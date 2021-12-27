@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
-from flectra.tests.common import SavepointCase
-from flectra.exceptions import UserError
+from odoo.tests.common import SavepointCase
+from odoo.exceptions import UserError
 
 class TestProjectCommon(SavepointCase):
 

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<flectra>
+<odoo>
     <record id="slide_channel_view_form" model="ir.ui.view">
         <field name="name">slide.channel.view.form.inherit.survey</field>
         <field name="model">slide.channel</field>
@@ -33,4 +33,4 @@
             </xpath>
         </field>
     </record>
-</flectra>
+</odoo>

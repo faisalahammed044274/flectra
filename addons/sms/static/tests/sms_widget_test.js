@@ -1,4 +1,4 @@
-flectra.define('sms.sms_widget_tests', function (require) {
+odoo.define('sms.sms_widget_tests', function (require) {
 "use strict";
 
 var config = require('web.config');
@@ -56,17 +56,17 @@ QUnit.module('fields', {
         assert.strictEqual(form.$('.o_sms_count').text(), '0 characters, fits in 0 SMS (GSM7) ',
             'Should be "0 characters, fits in 0 SMS (GSM7) " by default');
         // GSM-7
-        await testUtils.fields.editAndTrigger(form.$('.o_input'), "Hello from Flectra", 'input');
+        await testUtils.fields.editAndTrigger(form.$('.o_input'), "Hello from Odoo", 'input');
         assert.strictEqual(form.$('.o_sms_count').text(), '15 characters, fits in 1 SMS (GSM7) ',
-            'Should be "15 characters, fits in 1 SMS (GSM7) " for "Hello from Flectra"');
+            'Should be "15 characters, fits in 1 SMS (GSM7) " for "Hello from Odoo"');
         // GSM-7 with \n => this one count as 2 characters
-        form.$('.o_input').val("Hello from Flectra\n").trigger('input');
+        form.$('.o_input').val("Hello from Odoo\n").trigger('input');
         assert.strictEqual(form.$('.o_sms_count').text(), '17 characters, fits in 1 SMS (GSM7) ',
-            'Should be "17 characters, fits in 1 SMS (GSM7) " for "Hello from Flectra\\n"');
+            'Should be "17 characters, fits in 1 SMS (GSM7) " for "Hello from Odoo\\n"');
         // Unicode => ê
-        form.$('.o_input').val("Hêllo from Flectra").trigger('input');
+        form.$('.o_input').val("Hêllo from Odoo").trigger('input');
         assert.strictEqual(form.$('.o_sms_count').text(), '15 characters, fits in 1 SMS (UNICODE) ',
-            'Should be "15 characters, fits in 1 SMS (UNICODE) " for "Hêllo from Flectra"');
+            'Should be "15 characters, fits in 1 SMS (UNICODE) " for "Hêllo from Odoo"');
         // GSM-7 with 160c
         var text = Array(161).join('a');
         await testUtils.fields.editAndTrigger(form.$('.o_input'), text, 'input');

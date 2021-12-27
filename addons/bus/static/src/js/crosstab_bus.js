@@ -1,4 +1,4 @@
-flectra.define('bus.CrossTab', function (require) {
+odoo.define('bus.CrossTab', function (require) {
 "use strict";
 
 var Longpolling = require('bus.Longpolling');
@@ -302,7 +302,7 @@ var CrossTabBus = Longpolling.extend({
      * Handler when the local storage is updated
      *
      * @private
-     * @param {FlectraEvent} event
+     * @param {OdooEvent} event
      * @param {string} event.key
      * @param {string} event.newValue
      */
@@ -335,8 +335,8 @@ var CrossTabBus = Longpolling.extend({
         }
         // update focus
         else if (key === this._generateKey('focus')) {
-            this._isFlectraFocused = value;
-            this.trigger('window_focus', this._isFlectraFocused);
+            this._isOdooFocused = value;
+            this.trigger('window_focus', this._isOdooFocused);
         }
     },
     /**

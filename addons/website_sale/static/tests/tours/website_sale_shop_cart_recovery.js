@@ -1,4 +1,4 @@
-flectra.define('website_sale.tour_shop_cart_recovery', function (require) {
+odoo.define('website_sale.tour_shop_cart_recovery', function (require) {
 'use strict';
 
 var localStorage = require('web.local_storage');

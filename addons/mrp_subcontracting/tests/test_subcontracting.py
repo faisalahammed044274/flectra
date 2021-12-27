@@ -1,11 +1,11 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo. See LICENSE file for full copyright and licensing details.
 
-from flectra.tests import Form
-from flectra.tests.common import TransactionCase
-from flectra.addons.mrp_subcontracting.tests.common import TestMrpSubcontractingCommon
+from odoo.tests import Form
+from odoo.tests.common import TransactionCase
+from odoo.addons.mrp_subcontracting.tests.common import TestMrpSubcontractingCommon
 
-from flectra.tests import tagged
+from odoo.tests import tagged
 from dateutil.relativedelta import relativedelta
 
 

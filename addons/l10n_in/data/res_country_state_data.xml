@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<flectra>
+<odoo>
 
     <record id="state_in_ot" model="res.country.state">
         <field name="name">Other Territory</field>
@@ -117,4 +117,4 @@
         <field name="l10n_in_tin">19</field>
     </record>
 
-</flectra>
+</odoo>

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<flectra>
+<odoo>
     <data noupdate="1">
         <record model="ir.module.category" id="base.module_category_human_resources_contracts">
             <field name="description">Helps you manage your contracts.</field>
@@ -31,4 +31,4 @@
         </record>
 
     </data>
-</flectra>
+</odoo>

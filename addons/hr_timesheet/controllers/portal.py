@@ -1,17 +1,17 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo. See LICENSE file for full copyright and licensing details.
 
 from collections import OrderedDict
 from dateutil.relativedelta import relativedelta
 from operator import itemgetter
 from datetime import datetime
 
-from flectra import fields, http, _
-from flectra.http import request
-from flectra.tools import date_utils, groupby as groupbyelem
-from flectra.osv.expression import AND, OR
+from odoo import fields, http, _
+from odoo.http import request
+from odoo.tools import date_utils, groupby as groupbyelem
+from odoo.osv.expression import AND, OR
 
-from flectra.addons.portal.controllers.portal import CustomerPortal, pager as portal_pager
+from odoo.addons.portal.controllers.portal import CustomerPortal, pager as portal_pager
 
 
 class TimesheetCustomerPortal(CustomerPortal):

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<flectra>
+<odoo>
 
     <!-- VAT domestic sale-->
     <record id="vyc_tuz_21" model="account.tax.template">
@@ -241,4 +241,4 @@
         ]"/>
         <field name="tax_group_id" ref="tax_group_vat_21"/>
     </record>
-</flectra>
+</odoo>

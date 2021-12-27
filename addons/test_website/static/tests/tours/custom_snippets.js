@@ -1,4 +1,4 @@
-flectra.define('test_website.custom_snippets', function (require) {
+odoo.define('test_website.custom_snippets', function (require) {
 'use strict';
 
 var tour = require('web_tour.tour');

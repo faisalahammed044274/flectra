@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<flectra>
+<odoo>
 
 <!-- User Navbar -->
 <template id="user_navbar_inherit_website_event" inherit_id="website.user_navbar">
@@ -18,4 +18,4 @@
     </xpath>
 </template>
 
-</flectra>
+</odoo>

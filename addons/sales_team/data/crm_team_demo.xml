@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<flectra>
+<odoo>
     <data noupdate="1">
         <!-- rename for demo-data -->
         <record model="crm.team" id="team_sales_department">
@@ -21,4 +21,4 @@
             <field name="member_ids" eval="[(4, ref('base.user_demo'))]"/>
         </record>
     </data>
-</flectra>
+</odoo>

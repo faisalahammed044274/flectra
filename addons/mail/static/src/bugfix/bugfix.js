@@ -1,16 +1,16 @@
 /**
  * This file allows introducing new JS modules without contaminating other files.
  * This is useful when bug fixing requires adding such JS modules in stable
- * versions of Flectra. Any module that is defined in this file should be isolated
+ * versions of Odoo. Any module that is defined in this file should be isolated
  * in its own file in master.
  */
-flectra.define('mail/static/src/bugfix/bugfix.js', function (require) {
+odoo.define('mail/static/src/bugfix/bugfix.js', function (require) {
 'use strict';
 
 });
 
 // Should be moved to its own file in master.
-flectra.define('mail/static/src/component_hooks/use_rendered_values/use_rendered_values.js', function (require) {
+odoo.define('mail/static/src/component_hooks/use_rendered_values/use_rendered_values.js', function (require) {
 'use strict';
 
 const { Component } = owl;
@@ -48,7 +48,7 @@ return useRenderedValues;
 });
 
 // Should be moved to its own file in master.
-flectra.define('mail/static/src/component_hooks/use_update/use_update.js', function (require) {
+odoo.define('mail/static/src/component_hooks/use_update/use_update.js', function (require) {
 'use strict';
 
 const { Component } = owl;
@@ -117,7 +117,7 @@ return useUpdate;
 });
 
 // Should be moved to its own file in master.
-flectra.define('mail/static/src/component_hooks/use_should_update_based_on_props/use_should_update_based_on_props.js', function (require) {
+odoo.define('mail/static/src/component_hooks/use_should_update_based_on_props/use_should_update_based_on_props.js', function (require) {
 'use strict';
 
 const { Component } = owl;

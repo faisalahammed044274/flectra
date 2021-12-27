@@ -1,4 +1,4 @@
-flectra.define('web.DataExport', function (require) {
+odoo.define('web.DataExport', function (require) {
 "use strict";
 
 var config = require('web.config');

@@ -1,4 +1,4 @@
-flectra.define('mail/static/src/components/thread_icon/thread_icon.js', function (require) {
+odoo.define('mail/static/src/components/thread_icon/thread_icon.js', function (require) {
 'use strict';
 
 const components = {

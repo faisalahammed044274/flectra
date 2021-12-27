@@ -1,4 +1,4 @@
-flectra.define('pos_restaurant.TicketButton', function (require) {
+odoo.define('pos_restaurant.TicketButton', function (require) {
     'use strict';
 
     const TicketButton = require('point_of_sale.TicketButton');

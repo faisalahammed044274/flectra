@@ -1,4 +1,4 @@
-flectra.define('web_editor.wysiwyg.snippets', function (require) {
+odoo.define('web_editor.wysiwyg.snippets', function (require) {
 'use strict';
 var editor = require('web_editor.editor');
 var Wysiwyg = require('web_editor.wysiwyg');

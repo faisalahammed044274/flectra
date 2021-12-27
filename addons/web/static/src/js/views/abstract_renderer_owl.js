@@ -1,4 +1,4 @@
-flectra.define('web.AbstractRendererOwl', function () {
+odoo.define('web.AbstractRendererOwl', function () {
     "use strict";
 
     // Renderers may display sample data when there is no real data to display. In

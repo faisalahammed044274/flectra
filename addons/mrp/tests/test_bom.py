@@ -1,10 +1,10 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo. See LICENSE file for full copyright and licensing details.
 
-from flectra import exceptions
-from flectra.tests import Form
-from flectra.addons.mrp.tests.common import TestMrpCommon
-from flectra.tools import float_compare, float_round
+from odoo import exceptions
+from odoo.tests import Form
+from odoo.addons.mrp.tests.common import TestMrpCommon
+from odoo.tools import float_compare, float_round
 
 
 class TestBoM(TestMrpCommon):

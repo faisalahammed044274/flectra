@@ -1,13 +1,13 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo. See LICENSE file for full copyright and licensing details.
 from datetime import datetime, time
 from dateutil.relativedelta import relativedelta
 
-from flectra import fields
+from odoo import fields
 
-from flectra.tools import mute_logger
+from odoo.tools import mute_logger
 
-from flectra.addons.hr_holidays.tests.common import TestHrHolidaysCommon
+from odoo.addons.hr_holidays.tests.common import TestHrHolidaysCommon
 
 
 class TestAccrualAllocations(TestHrHolidaysCommon):

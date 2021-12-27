@@ -1,4 +1,4 @@
-flectra.define('website.s_countdown', function (require) {
+odoo.define('website.s_countdown', function (require) {
 'use strict';
 
 const {ColorpickerWidget} = require('web.Colorpicker');

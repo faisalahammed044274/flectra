@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo. See LICENSE file for full copyright and licensing details.
 
-from flectra.addons.crm.tests import common as crm_common
-from flectra.tests.common import tagged, users
+from odoo.addons.crm.tests import common as crm_common
+from odoo.tests.common import tagged, users
 
 
 @tagged('lead_manage', 'crm_performance')

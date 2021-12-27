@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo. See LICENSE file for full copyright and licensing details.
 
 # Copyright (c) 2005-2006 Axelor SARL. (http://www.axelor.com)
 
@@ -8,11 +8,11 @@ import logging
 
 from collections import defaultdict
 
-from flectra import api, fields, models
-from flectra.exceptions import ValidationError
-from flectra.osv import expression
-from flectra.tools.translate import _
-from flectra.tools.float_utils import float_round
+from odoo import api, fields, models
+from odoo.exceptions import ValidationError
+from odoo.osv import expression
+from odoo.tools.translate import _
+from odoo.tools.float_utils import float_round
 
 _logger = logging.getLogger(__name__)
 

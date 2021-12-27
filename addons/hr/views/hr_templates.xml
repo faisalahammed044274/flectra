@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<flectra>
+<odoo>
 
     <template id="assets_backend" name="hr assets" inherit_id="web.assets_backend">
         <xpath expr="." position="inside">
@@ -26,4 +26,4 @@
             <script type="text/javascript" src="/hr/static/tests/standalone_m2o_avatar_employee_tests.js"></script>
         </xpath>
     </template>
-</flectra>
+</odoo>

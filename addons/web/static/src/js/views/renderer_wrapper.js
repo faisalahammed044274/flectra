@@ -1,4 +1,4 @@
-flectra.define('web.RendererWrapper', function (require) {
+odoo.define('web.RendererWrapper', function (require) {
     "use strict";
 
     const { ComponentWrapper } = require('web.OwlCompatibility');

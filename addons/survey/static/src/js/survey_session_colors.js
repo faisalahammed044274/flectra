@@ -1,4 +1,4 @@
-flectra.define('survey.session_colors', function (require) {
+odoo.define('survey.session_colors', function (require) {
 'use strict';
 
 /**

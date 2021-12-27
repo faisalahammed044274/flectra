@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo. See LICENSE file for full copyright and licensing details.
 
 from collections import namedtuple
 from contextlib import contextmanager
@@ -9,9 +9,9 @@ from threading import Lock
 import time
 import traceback
 
-from flectra import _
-from flectra.addons.hw_drivers.event_manager import event_manager
-from flectra.addons.hw_drivers.driver import Driver
+from odoo import _
+from odoo.addons.hw_drivers.event_manager import event_manager
+from odoo.addons.hw_drivers.driver import Driver
 
 _logger = logging.getLogger(__name__)
 

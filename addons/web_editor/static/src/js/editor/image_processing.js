@@ -1,4 +1,4 @@
-flectra.define('web_editor.image_processing', function (require) {
+odoo.define('web_editor.image_processing', function (require) {
 'use strict';
 
 // Fields returned by cropperjs 'getData' method, also need to be passed when

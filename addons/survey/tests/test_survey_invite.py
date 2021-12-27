@@ -1,14 +1,14 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo. See LICENSE file for full copyright and licensing details.
 
 from datetime import datetime
 from dateutil.relativedelta import relativedelta
 
-from flectra import fields
-from flectra.addons.survey.tests import common
-from flectra.exceptions import UserError
-from flectra.tests import Form
-from flectra.tests.common import users
+from odoo import fields
+from odoo.addons.survey.tests import common
+from odoo.exceptions import UserError
+from odoo.tests import Form
+from odoo.tests.common import users
 
 
 class TestSurveyInvite(common.TestSurveyCommon):

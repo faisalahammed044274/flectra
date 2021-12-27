@@ -1,4 +1,4 @@
-flectra.define('stock.SingletonListView', function (require) {
+odoo.define('stock.SingletonListView', function (require) {
 'use strict';
 
 var InventoryReportListView = require('stock.InventoryReportListView');

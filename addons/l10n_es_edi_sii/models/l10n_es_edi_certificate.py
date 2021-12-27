@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo. See LICENSE file for full copyright and licensing details.
 
 from base64 import b64decode
 from pytz import timezone
@@ -8,8 +8,8 @@ from cryptography.hazmat.backends import default_backend
 from cryptography.hazmat.primitives.serialization import Encoding, NoEncryption, PrivateFormat, pkcs12
 
 
-from flectra import _, api, fields, models, tools
-from flectra.exceptions import ValidationError
+from odoo import _, api, fields, models, tools
+from odoo.exceptions import ValidationError
 
 
 class Certificate(models.Model):

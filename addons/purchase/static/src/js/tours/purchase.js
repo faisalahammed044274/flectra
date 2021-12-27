@@ -1,4 +1,4 @@
-flectra.define('purchase.purchase_steps', function (require) {
+odoo.define('purchase.purchase_steps', function (require) {
 "use strict";
 
 var core = require('web.core');
@@ -20,7 +20,7 @@ return PurchaseAdditionalTourSteps;
 
 });
 
-flectra.define('purchase.tour', function(require) {
+odoo.define('purchase.tour', function(require) {
 "use strict";
 
 var core = require('web.core');

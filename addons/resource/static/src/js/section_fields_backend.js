@@ -1,5 +1,5 @@
 
-flectra.define('resource.section_backend', function (require) {
+odoo.define('resource.section_backend', function (require) {
 // The goal of this file is to contain JS hacks related to allowing
 // section on resource calendar.
 

@@ -1,4 +1,4 @@
-flectra.define('hr_holidays/static/tests/helpers/mock_server.js', function (require) {
+odoo.define('hr_holidays/static/tests/helpers/mock_server.js', function (require) {
 'use strict';
 
 require('mail.MockServer'); // ensure mail overrides are applied first

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<flectra>
+<odoo>
     <data>
         <!-- Stock rules -->
         <record id="view_stock_rule_form_stock_inherit_purchase_stock" model="ir.ui.view">
@@ -14,4 +14,4 @@
         </record>
 
     </data>
-</flectra>
+</odoo>

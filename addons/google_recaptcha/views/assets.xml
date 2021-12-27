@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<flectra>
+<odoo>
 
 <template id="assets_frontend" inherit_id="web.assets_frontend">
     <xpath expr="//link[last()]" position="after">
@@ -8,10 +8,10 @@
     <xpath expr="//script[last()]" position="after">
         <t t-set="recaptcha_public_key" t-value="request.env['ir.config_parameter'].sudo().get_param('recaptcha_public_key')"/>
         <script t-if="recaptcha_public_key" type="text/javascript">
-            flectra.reCaptchaPublicKey = '<t t-raw="recaptcha_public_key"/>';
+            odoo.reCaptchaPublicKey = '<t t-raw="recaptcha_public_key"/>';
         </script>
         <script type="text/javascript" src="/google_recaptcha/static/src/js/recaptcha.js"/>
     </xpath>
 </template>
 
-</flectra>
+</odoo>

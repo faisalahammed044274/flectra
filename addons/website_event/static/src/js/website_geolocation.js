@@ -1,4 +1,4 @@
-flectra.define('website_event.geolocation', function (require) {
+odoo.define('website_event.geolocation', function (require) {
 'use strict';
 
 var publicWidget = require('web.public.widget');

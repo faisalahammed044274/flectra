@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo. See LICENSE file for full copyright and licensing details.
 
 import json
 
@@ -7,9 +7,9 @@ from babel.dates import format_date
 from datetime import date
 from dateutil.relativedelta import relativedelta
 
-from flectra import api, fields, models, _
-from flectra.exceptions import UserError
-from flectra.release import version
+from odoo import api, fields, models, _
+from odoo.exceptions import UserError
+from odoo.release import version
 
 
 class CrmTeam(models.Model):
@@ -236,5 +236,5 @@ class CrmTeam(models.Model):
             values[index][y_field] = data_item.get('y_value')
 
         [graph_title, graph_key] = self._graph_title_and_key()
-        color = '#009EFB' if '+e' in version else '#7c7bad'
+        color = '#875A7B' if '+e' in version else '#7c7bad'
         return [{'values': values, 'area': True, 'title': graph_title, 'key': graph_key, 'color': color}]

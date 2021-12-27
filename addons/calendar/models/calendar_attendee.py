@@ -1,11 +1,11 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo. See LICENSE file for full copyright and licensing details.
 import uuid
 import base64
 import logging
 
-from flectra import api, fields, models, _
-from flectra.exceptions import UserError
+from odoo import api, fields, models, _
+from odoo.exceptions import UserError
 
 _logger = logging.getLogger(__name__)
 
@@ -46,7 +46,9 @@ class Attendee(models.Model):
     @api.model_create_multi
     def create(self, vals_list):
         for values in vals_list:
-            if values.get('partner_id') == self.env.user.partner_id.id:
+            # by default, if no state is given for the attendee corresponding to the current user
+            # that means he's the event organizer so we can set his state to "accepted"
+            if 'state' not in values and values.get('partner_id') == self.env.user.partner_id.id:
                 values['state'] = 'accepted'
             if not values.get("email") and values.get("common_name"):
                 common_nameval = values.get("common_name").split(':')
@@ -109,7 +111,7 @@ class Attendee(models.Model):
             'ignore_recurrence': ignore_recurrence,
             'action_id': self.env['ir.actions.act_window'].sudo().search([('view_id', '=', calendar_view.id)], limit=1).id,
             'dbname': self._cr.dbname,
-            'base_url': self.env['ir.config_parameter'].sudo().get_param('web.base.url', default='http://localhost:7073'),
+            'base_url': self.env['ir.config_parameter'].sudo().get_param('web.base.url', default='http://localhost:8069'),
         })
 
         for attendee in self:

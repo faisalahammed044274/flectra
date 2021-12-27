@@ -1,4 +1,4 @@
-flectra.define('purchase_product_matrix.purchase_matrix_tour', function (require) {
+odoo.define('purchase_product_matrix.purchase_matrix_tour', function (require) {
 "use strict";
 
 var tour = require('web_tour.tour');

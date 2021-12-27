@@ -1,12 +1,12 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo. See LICENSE file for full copyright and licensing details.
 
-from flectra.exceptions import UserError
+from odoo.exceptions import UserError
 import pytz
 from datetime import datetime, date
 from dateutil.relativedelta import relativedelta
 
-from flectra.tests.common import SavepointCase
+from odoo.tests.common import SavepointCase
 
 
 class TestRecurrentEvents(SavepointCase):

@@ -1,4 +1,4 @@
-flectra.define('product.generate_pricelist', function (require) {
+odoo.define('product.generate_pricelist', function (require) {
 'use strict';
 
 var AbstractAction = require('web.AbstractAction');
@@ -267,7 +267,7 @@ var GeneratePriceList = AbstractAction.extend(StandaloneFieldManagerMixin, {
      * Reload report when quantities changed.
      *
      * @private
-     * @param {FlectraEvent} ev
+     * @param {OdooEvent} ev
      * @param {integer[]} event.data.quantities
      */
     _onQtyChanged: function (ev) {

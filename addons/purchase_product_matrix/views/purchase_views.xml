@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<flectra>
+<odoo>
 
   <!-- TODO ensure barcode working with matrix (configurator mobile task ?) -->
 
@@ -36,4 +36,4 @@
     </field>
   </record>
 
-</flectra>
+</odoo>

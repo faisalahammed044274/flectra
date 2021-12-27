@@ -1,4 +1,4 @@
-flectra.define('point_of_sale.NumberPopup', function(require) {
+odoo.define('point_of_sale.NumberPopup', function(require) {
     'use strict';
     var core = require('web.core');
     var _t = core._t;

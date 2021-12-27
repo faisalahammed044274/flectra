@@ -1,4 +1,4 @@
-flectra.define('point_of_sale.ErrorPopup', function(require) {
+odoo.define('point_of_sale.ErrorPopup', function(require) {
     'use strict';
 
     const AbstractAwaitablePopup = require('point_of_sale.AbstractAwaitablePopup');

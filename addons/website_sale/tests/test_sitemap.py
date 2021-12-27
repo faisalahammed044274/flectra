@@ -1,6 +1,6 @@
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo. See LICENSE file for full copyright and licensing details.
 
-from flectra.tests import HttpCase, tagged
+from odoo.tests import HttpCase, tagged
 
 
 @tagged('post_install', '-at_install')

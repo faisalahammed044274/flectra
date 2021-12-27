@@ -1,12 +1,12 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo. See LICENSE file for full copyright and licensing details.
 
-import flectra
-import flectra.tests
+import odoo
+import odoo.tests
 
 
-@flectra.tests.common.tagged('post_install', '-at_install')
-class TestSnippets(flectra.tests.HttpCase):
+@odoo.tests.common.tagged('post_install', '-at_install')
+class TestSnippets(odoo.tests.HttpCase):
 
     def test_01_newsletter_popup(self):
         self.start_tour("/?enable_editor=1", "newsletter_popup_edition", login='admin')

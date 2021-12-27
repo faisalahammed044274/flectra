@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo. See LICENSE file for full copyright and licensing details.
 
-from flectra.tests import tagged
-from flectra.tests.common import TransactionCase
+from odoo.tests import tagged
+from odoo.tests.common import TransactionCase
 
 
 @tagged('post_install', '-at_install')
@@ -68,10 +68,10 @@ class TestGetCurrentWebsite(TransactionCase):
         self.assertEqual(Website._get_current_website_id('my-site-1.fr', False), website1.id)
 
         # CASE: domain set: get matching domain (scheme and port supported)
-        self.assertEqual(Website._get_current_website_id('my-site-1.fr:7073', False), website1.id)
+        self.assertEqual(Website._get_current_website_id('my-site-1.fr:8069', False), website1.id)
 
         self.assertEqual(Website._get_current_website_id('my2ndsite.com:80', False), website2.id)
-        self.assertEqual(Website._get_current_website_id('my2ndsite.com:7073', False), website2.id)
+        self.assertEqual(Website._get_current_website_id('my2ndsite.com:8069', False), website2.id)
         self.assertEqual(Website._get_current_website_id('my2ndsite.com', False), website2.id)
 
         # CASE: domain set, wrong domain: get first

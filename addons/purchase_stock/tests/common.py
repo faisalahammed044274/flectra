@@ -1,10 +1,10 @@
 # -*- coding: utf-8 -*-
 from datetime import timedelta
 
-from flectra import fields
-from flectra.addons.stock.tests.common2 import TestStockCommon
-from flectra import tools
-from flectra.modules.module import get_module_resource
+from odoo import fields
+from odoo.addons.stock.tests.common2 import TestStockCommon
+from odoo import tools
+from odoo.modules.module import get_module_resource
 
 
 class PurchaseTestCommon(TestStockCommon):

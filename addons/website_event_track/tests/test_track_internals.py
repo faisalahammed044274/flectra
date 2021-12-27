@@ -1,13 +1,13 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo. See LICENSE file for full copyright and licensing details.
 
 from datetime import datetime, timedelta
 from unittest.mock import patch
 
-from flectra import fields
-from flectra.addons.website.models.website_visitor import WebsiteVisitor
-from flectra.addons.website_event_track.tests.common import TestEventTrackOnlineCommon
-from flectra.tests.common import users
+from odoo import fields
+from odoo.addons.website.models.website_visitor import WebsiteVisitor
+from odoo.addons.website_event_track.tests.common import TestEventTrackOnlineCommon
+from odoo.tests.common import users
 
 
 class TestTrackData(TestEventTrackOnlineCommon):

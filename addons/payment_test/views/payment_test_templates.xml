@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<flectra>
+<odoo>
     <template id="test_s2s_form">
         <input type="hidden" name="data_set" data-create-route="/payment/test/s2s/create_json_3ds"/>
         <input type="hidden" name="acquirer_id" t-att-value="id"/>
@@ -23,4 +23,4 @@
             </div>
         </div>
     </template>
-</flectra>
+</odoo>

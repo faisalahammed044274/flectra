@@ -1,4 +1,4 @@
-flectra.define("website.tour.snippet_version", function (require) {
+odoo.define("website.tour.snippet_version", function (require) {
 "use strict";
 
 var tour = require("web_tour.tour");

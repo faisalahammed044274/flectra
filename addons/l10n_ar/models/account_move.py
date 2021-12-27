@@ -1,6 +1,6 @@
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
-from flectra import models, fields, api, _
-from flectra.exceptions import UserError, RedirectWarning, ValidationError
+# Part of Odoo. See LICENSE file for full copyright and licensing details.
+from odoo import models, fields, api, _
+from odoo.exceptions import UserError, RedirectWarning, ValidationError
 from dateutil.relativedelta import relativedelta
 from lxml import etree
 import logging

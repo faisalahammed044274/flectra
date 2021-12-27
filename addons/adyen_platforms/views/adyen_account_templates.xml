@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<flectra>
+<odoo>
     <template id="kyc_status_message">
         <p>New KYC Status: <t- t-esc="kyc_status"/></p>
         <p t-if="account_holder_messages + shareholder_messages + bank_account_messages">
@@ -27,4 +27,4 @@
             </ul>
         </p>
     </template>
-</flectra>
+</odoo>

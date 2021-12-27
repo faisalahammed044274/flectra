@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<flectra noupdate="1">
+<odoo noupdate="1">
     <!--
         l10n_in_code use in export GSTR hsn section report.
     -->
@@ -60,4 +60,4 @@
     <record id="uom.product_uom_gal" model="uom.uom">
         <field name="l10n_in_code">UGS-US GALLONS</field>
     </record>
-</flectra>
+</odoo>

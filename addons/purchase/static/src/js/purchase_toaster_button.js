@@ -1,4 +1,4 @@
-flectra.define('purchase.ToasterButton', function (require) {
+odoo.define('purchase.ToasterButton', function (require) {
     'use strict';
 
     const widgetRegistry = require('web.widget_registry');

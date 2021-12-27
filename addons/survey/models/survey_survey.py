@@ -1,15 +1,15 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo. See LICENSE file for full copyright and licensing details.
 
 import json
 import random
 import uuid
 import werkzeug
 
-from flectra import api, exceptions, fields, models, _
-from flectra.exceptions import AccessError, UserError
-from flectra.osv import expression
-from flectra.tools import is_html_empty
+from odoo import api, exceptions, fields, models, _
+from odoo.exceptions import AccessError, UserError
+from odoo.osv import expression
+from odoo.tools import is_html_empty
 
 
 class Survey(models.Model):

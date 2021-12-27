@@ -5,10 +5,10 @@ import requests
 
 from uuid import uuid4
 
-from flectra import _
-from flectra.exceptions import UserError
+from odoo import _
+from odoo.exceptions import UserError
 
-from flectra.addons.payment.models.payment_acquirer import _partner_split_name
+from odoo.addons.payment.models.payment_acquirer import _partner_split_name
 
 _logger = logging.getLogger(__name__)
 
@@ -59,7 +59,7 @@ class AuthorizeAPI():
         """Create a payment and customer profile in the Authorize.net backend.
 
         Creates a customer profile for the partner/credit card combination and links
-        a corresponding payment profile to it. Note that a single partner in the Flectra
+        a corresponding payment profile to it. Note that a single partner in the Odoo
         database can have multiple customer profiles in Authorize.net (i.e. a customer
         profile is created for every res.partner/payment.token couple).
 
@@ -79,7 +79,7 @@ class AuthorizeAPI():
                     'transactionKey': self.transaction_key
                 },
                 'profile': {
-                    'description': ('FLECTRA-%s-%s' % (partner.id, uuid4().hex[:8]))[:20],
+                    'description': ('ODOO-%s-%s' % (partner.id, uuid4().hex[:8]))[:20],
                     'email': partner.email or '',
                     'paymentProfiles': {
                         'customerType': 'business' if partner.is_company else 'individual',
@@ -122,7 +122,7 @@ class AuthorizeAPI():
         """Create an Auth.net payment/customer profile from an existing transaction.
 
         Creates a customer profile for the partner/credit card combination and links
-        a corresponding payment profile to it. Note that a single partner in the Flectra
+        a corresponding payment profile to it. Note that a single partner in the Odoo
         database can have multiple customer profiles in Authorize.net (i.e. a customer
         profile is created for every res.partner/payment.token couple).
 
@@ -146,7 +146,7 @@ class AuthorizeAPI():
                 },
                 'transId': transaction_id,
                 'customer': {
-                    'merchantCustomerId': ('FLECTRA-%s-%s' % (partner.id, uuid4().hex[:8]))[:20],
+                    'merchantCustomerId': ('ODOO-%s-%s' % (partner.id, uuid4().hex[:8]))[:20],
                     'email': partner.email or ''
                 }
             }

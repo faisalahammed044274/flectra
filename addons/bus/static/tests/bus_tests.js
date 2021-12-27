@@ -1,4 +1,4 @@
-flectra.define('web.bus_tests', function (require) {
+odoo.define('web.bus_tests', function (require) {
 "use strict";
 
 var BusService = require('bus.BusService');

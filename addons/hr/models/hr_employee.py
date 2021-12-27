@@ -1,15 +1,15 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo. See LICENSE file for full copyright and licensing details.
 
 import base64
 from random import choice
 from string import digits
 from werkzeug.urls import url_encode
 
-from flectra import api, fields, models, _
-from flectra.osv.query import Query
-from flectra.exceptions import ValidationError, AccessError
-from flectra.modules.module import get_module_resource
+from odoo import api, fields, models, _
+from odoo.osv.query import Query
+from odoo.exceptions import ValidationError, AccessError
+from odoo.modules.module import get_module_resource
 
 
 class HrEmployeePrivate(models.Model):
@@ -105,7 +105,7 @@ class HrEmployeePrivate(models.Model):
         string='Tags')
     # misc
     notes = fields.Text('Notes', groups="hr.group_hr_user")
-    color = fields.Integer('Color Index', default=0, groups="hr.group_hr_user")
+    color = fields.Integer('Color Index', default=0)
     barcode = fields.Char(string="Badge ID", help="ID used for employee identification.", groups="hr.group_hr_user", copy=False)
     pin = fields.Char(string="PIN", groups="hr.group_hr_user", copy=False,
         help="PIN used to Check In/Out in Kiosk Mode (if enabled in Configuration).")
@@ -315,7 +315,7 @@ class HrEmployeePrivate(models.Model):
     def _post_author(self):
         """
         When a user updates his own employee's data, all operations are performed
-        by super user. However, tracking messages should not be posted as FlectraBot
+        by super user. However, tracking messages should not be posted as OdooBot
         but as the actual user.
         This method is used in the overrides of `_message_log` and `message_post`
         to post messages as the correct user.

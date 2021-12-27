@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo. See LICENSE file for full copyright and licensing details.
 
 import random
 import requests
@@ -8,14 +8,14 @@ import string
 from lxml import html
 from werkzeug import urls
 
-from flectra import tools, models, fields, api, _
+from odoo import tools, models, fields, api, _
 
 URL_MAX_SIZE = 10 * 1024 * 1024
 
 
 class LinkTracker(models.Model):
     """ Link trackers allow users to wrap any URL into a short URL that can be
-    tracked by Flectra. Clicks are counter on each link. A tracker is linked to
+    tracked by Odoo. Clicks are counter on each link. A tracker is linked to
     UTMs allowing to analyze marketing actions.
 
     This model is also used in mass_mailing where each link in html body is

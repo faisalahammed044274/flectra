@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo. See LICENSE file for full copyright and licensing details.
 import logging
 from datetime import timedelta
 from functools import partial
@@ -8,11 +8,11 @@ import psycopg2
 import pytz
 import re
 
-from flectra import api, fields, models, tools, _
-from flectra.tools import float_is_zero, float_round
-from flectra.exceptions import ValidationError, UserError
-from flectra.http import request
-from flectra.osv.expression import AND
+from odoo import api, fields, models, tools, _
+from odoo.tools import float_is_zero, float_round
+from odoo.exceptions import ValidationError, UserError
+from odoo.http import request
+from odoo.osv.expression import AND
 import base64
 
 _logger = logging.getLogger(__name__)
@@ -201,7 +201,7 @@ class PosOrder(models.Model):
             .mapped('picking_ids.move_lines')\
             ._filter_anglo_saxon_moves(product)\
             .sorted(lambda x: x.date)
-        price_unit = product._compute_average_price(0, quantity, moves)
+        price_unit = product.with_company(self.company_id)._compute_average_price(0, quantity, moves)
         return price_unit
 
     name = fields.Char(string='Order Ref', required=True, readonly=True, copy=False, default='/')
@@ -458,7 +458,7 @@ class PosOrder(models.Model):
                 maxDiff = currency.round(self.config_id.rounding_method.rounding)
 
             diff = currency.round(self.amount_total - self.amount_paid)
-            if not abs(diff) < maxDiff:
+            if not abs(diff) <= maxDiff:
                 raise UserError(_("Order %s is not fully paid.", self.name))
 
         self.write({'state': 'paid'})

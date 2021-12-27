@@ -1,10 +1,10 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo. See LICENSE file for full copyright and licensing details.
 
-from flectra.tests import Form
-from flectra.tests.common import SavepointCase
-from flectra.tools import float_round
-from flectra.exceptions import UserError
+from odoo.tests import Form
+from odoo.tests.common import SavepointCase
+from odoo.tools import float_round
+from odoo.exceptions import UserError
 
 
 class TestPackingCommon(SavepointCase):

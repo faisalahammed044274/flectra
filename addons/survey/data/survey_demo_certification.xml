@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<flectra>
+<odoo>
     <data noupdate="1">
         <record model="gamification.badge" id="vendor_certification_badge">
             <field name="name">MyCompany Vendor</field>
@@ -8,7 +8,7 @@
             <field name="image_1920" type="base64" file="gamification/static/img/badge_good_job-image.png"/>
         </record>
 
-        <!-- Flectra Vendor Certification -->
+        <!-- Odoo Vendor Certification -->
         <record model="survey.survey" id="vendor_certification">
             <field name="title">MyCompany Vendor Certification</field>
             <field name="access_token">4ead4bc8-b8f2-4760-a682-1fde8ddb95ac</field>
@@ -396,4 +396,4 @@
             <field name="state">done</field>
         </record>
     </data>
-</flectra>
+</odoo>

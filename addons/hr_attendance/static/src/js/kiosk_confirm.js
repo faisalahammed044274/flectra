@@ -1,4 +1,4 @@
-flectra.define('hr_attendance.kiosk_confirm', function (require) {
+odoo.define('hr_attendance.kiosk_confirm', function (require) {
 "use strict";
 
 var AbstractAction = require('web.AbstractAction');

@@ -1,4 +1,4 @@
-flectra.define('website_event_track_quiz.event.quiz', function (require) {
+odoo.define('website_event_track_quiz.event.quiz', function (require) {
 
 'use strict';
 
@@ -225,7 +225,7 @@ var Quiz = publicWidget.Widget.extend({
      * When clicking on an answer, this one should be marked as "checked".
      *
      * @private
-     * @param FlectraEvent ev
+     * @param OdooEvent ev
      */
     _onAnswerClick: function (ev) {
         ev.preventDefault();

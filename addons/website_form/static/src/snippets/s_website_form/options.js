@@ -1,4 +1,4 @@
-flectra.define('website_form_editor', function (require) {
+odoo.define('website_form_editor', function (require) {
 'use strict';
 
 const core = require('web.core');

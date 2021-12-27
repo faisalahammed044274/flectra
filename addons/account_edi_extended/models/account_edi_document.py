@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
-from flectra import models, fields, _
+# Part of Odoo. See LICENSE file for full copyright and licensing details.
+from odoo import models, fields, _
 import logging
 
 _logger = logging.getLogger(__name__)

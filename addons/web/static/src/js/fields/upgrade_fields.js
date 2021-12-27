@@ -1,4 +1,4 @@
-flectra.define('web.upgrade_widgets', function (require) {
+odoo.define('web.upgrade_widgets', function (require) {
 "use strict";
 
 /**
@@ -31,7 +31,7 @@ var AbstractFieldUpgrade = {
     //--------------------------------------------------------------------------
 
     /**
-     * Redirects the user to the flectra-enterprise/uprade page
+     * Redirects the user to the odoo-enterprise/uprade page
      *
      * @private
      * @returns {Promise}
@@ -43,7 +43,7 @@ var AbstractFieldUpgrade = {
                 args: [[["share", "=", false]]],
             })
             .then(function (data) {
-                framework.redirect("https://www.flectrahq.com/flectra-enterprise/upgrade?num_users=" + data);
+                framework.redirect("https://www.odoo.com/odoo-enterprise/upgrade?num_users=" + data);
             });
     },
     /**
@@ -83,7 +83,7 @@ var AbstractFieldUpgrade = {
             $content: $('<div>', {
                 html: message,
             }),
-            title: _t("Flectra Enterprise"),
+            title: _t("Odoo Enterprise"),
         }).open();
     },
     /**

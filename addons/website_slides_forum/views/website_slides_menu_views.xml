@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<flectra>
+<odoo>
     <menuitem name="Forum"
         id="website_slides_menu_forum"
         parent="website_slides.website_slides_menu_root"
@@ -20,4 +20,4 @@
         parent="website_slides.website_slides_menu_report"
         sequence="8"
         action="forum_post_action_report"/>
-</flectra>
+</odoo>

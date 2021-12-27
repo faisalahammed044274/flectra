@@ -1,6 +1,6 @@
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
-from flectra import fields, models, api, _
-from flectra.exceptions import UserError, ValidationError
+# Part of Odoo. See LICENSE file for full copyright and licensing details.
+from odoo import fields, models, api, _
+from odoo.exceptions import UserError, ValidationError
 import stdnum.ar
 import re
 import logging
@@ -62,7 +62,7 @@ class ResPartner(models.Model):
         """ Since we validate more documents than the vat for Argentinian partners (CUIT - VAT AR, CUIL, DNI) we
         extend this method in order to process it. """
         # NOTE by the moment we include the CUIT (VAT AR) validation also here because we extend the messages
-        # errors to be more friendly to the user. In a future when Flectra improve the base_vat message errors
+        # errors to be more friendly to the user. In a future when Odoo improve the base_vat message errors
         # we can change this method and use the base_vat.check_vat_ar method.s
         l10n_ar_partners = self.filtered(lambda x: x.l10n_latam_identification_type_id.l10n_ar_afip_code)
         l10n_ar_partners.l10n_ar_identification_validation()

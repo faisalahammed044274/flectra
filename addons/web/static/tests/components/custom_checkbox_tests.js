@@ -1,4 +1,4 @@
-flectra.define('web.custom_checkbox_tests', function (require) {
+odoo.define('web.custom_checkbox_tests', function (require) {
     "use strict";
 
     const CustomCheckbox = require('web.CustomCheckbox');

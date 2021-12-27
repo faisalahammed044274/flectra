@@ -1,12 +1,12 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo. See LICENSE file for full copyright and licensing details.
 
 import io
 import base64
 
 from PIL import Image
 
-from flectra.tests.common import HttpCase, tagged
+from odoo.tests.common import HttpCase, tagged
 
 
 @tagged('-at_install', 'post_install')

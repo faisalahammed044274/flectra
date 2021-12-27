@@ -1,4 +1,4 @@
-flectra.define('mail/static/src/model/model_manager.js', function (require) {
+odoo.define('mail/static/src/model/model_manager.js', function (require) {
 'use strict';
 
 const { registry } = require('mail/static/src/model/model_core.js');

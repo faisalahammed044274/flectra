@@ -1,4 +1,4 @@
-flectra.define('web.mixins', function (require) {
+odoo.define('web.mixins', function (require) {
 "use strict";
 
 var Class = require('web.Class');
@@ -116,7 +116,7 @@ var ParentedMixin = {
     },
 };
 
-function FlectraEvent(target, name, data) {
+function OdooEvent(target, name, data) {
     this.target = target;
     this.name = name;
     this.data = Object.create(null);
@@ -124,11 +124,11 @@ function FlectraEvent(target, name, data) {
     this.stopped = false;
 }
 
-FlectraEvent.prototype.stopPropagation = function () {
+OdooEvent.prototype.stopPropagation = function () {
     this.stopped = true;
 };
 
-FlectraEvent.prototype.is_stopped = function () {
+OdooEvent.prototype.is_stopped = function () {
     return this.stopped;
 };
 
@@ -329,7 +329,7 @@ var EventDispatcherMixin = _.extend({}, ParentedMixin, {
         return this;
     },
     trigger_up: function (name, info) {
-        var event = new FlectraEvent(this, name, info);
+        var event = new OdooEvent(this, name, info);
         //console.info('event: ', name, info);
         this._trigger_up(event);
         return event;

@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-from flectra import models
+from odoo import models
 
 
 class AccountEdiFormat(models.Model):

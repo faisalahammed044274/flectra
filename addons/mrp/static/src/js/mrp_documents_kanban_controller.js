@@ -1,4 +1,4 @@
-flectra.define('mrp.MrpDocumentsKanbanController', function (require) {
+odoo.define('mrp.MrpDocumentsKanbanController', function (require) {
 "use strict";
 
 /**

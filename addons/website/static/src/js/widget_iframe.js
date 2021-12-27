@@ -1,4 +1,4 @@
-flectra.define('website.iframe_widget', function (require) {
+odoo.define('website.iframe_widget', function (require) {
 "use strict";
 
 

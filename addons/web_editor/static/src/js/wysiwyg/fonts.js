@@ -1,4 +1,4 @@
-flectra.define('wysiwyg.fonts', function (require) {
+odoo.define('wysiwyg.fonts', function (require) {
 'use strict';
 
 return {

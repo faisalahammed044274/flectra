@@ -1,4 +1,4 @@
-flectra.define('calendar.CalendarRenderer', function (require) {
+odoo.define('calendar.CalendarRenderer', function (require) {
 "use strict";
 
 const CalendarRenderer = require('web.CalendarRenderer');

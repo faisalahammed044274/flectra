@@ -1,4 +1,4 @@
-flectra.define('website_slides.slides_share', function (require) {
+odoo.define('website_slides.slides_share', function (require) {
 'use strict';
 
 var publicWidget = require('web.public.widget');

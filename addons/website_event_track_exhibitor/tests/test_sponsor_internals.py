@@ -1,12 +1,12 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo. See LICENSE file for full copyright and licensing details.
 
 from datetime import datetime
 from unittest.mock import patch
 
-from flectra.addons.website_event_track.tests.common import TestEventTrackOnlineCommon
-from flectra.fields import Datetime as FieldsDatetime
-from flectra.tests.common import users
+from odoo.addons.website_event_track.tests.common import TestEventTrackOnlineCommon
+from odoo.fields import Datetime as FieldsDatetime
+from odoo.tests.common import users
 
 
 class TestSponsorData(TestEventTrackOnlineCommon):
@@ -21,7 +21,7 @@ class TestSponsorData(TestEventTrackOnlineCommon):
         })
 
         cls.wevent_exhib_dt = patch(
-            'flectra.addons.website_event_track_exhibitor.models.event_sponsor.fields.Datetime',
+            'odoo.addons.website_event_track_exhibitor.models.event_sponsor.fields.Datetime',
             wraps=FieldsDatetime
         )
         cls.mock_wevent_exhib_dt = cls.wevent_exhib_dt.start()

@@ -30,7 +30,7 @@
                             notificationGroupLocalId="notification.notificationGroup.localId"
                         />
                     </t>
-                    <t t-if="notification.type === 'flectrabotRequest'">
+                    <t t-if="notification.type === 'odoobotRequest'">
                         <NotificationRequest
                             class="o_NotificationList_notificationRequest"
                             t-att-class="{ 'o-mobile': env.messaging.device.isMobile }"

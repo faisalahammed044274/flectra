@@ -1,10 +1,10 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo. See LICENSE file for full copyright and licensing details.
 
 from dateutil.relativedelta import relativedelta
-from flectra.fields import Datetime
-from flectra import tests
-from flectra.addons.website_slides.tests.test_ui_wslides import TestUICommon
+from odoo.fields import Datetime
+from odoo import tests
+from odoo.addons.website_slides.tests.test_ui_wslides import TestUICommon
 
 @tests.common.tagged('post_install', '-at_install')
 class TestUi(TestUICommon):
@@ -158,6 +158,6 @@ class TestUi(TestUICommon):
 
         self.browser_js(
             '/slides',
-            'flectra.__DEBUG__.services["web_tour.tour"].run("certification_member")',
-            'flectra.__DEBUG__.services["web_tour.tour"].tours.certification_member.ready',
+            'odoo.__DEBUG__.services["web_tour.tour"].run("certification_member")',
+            'odoo.__DEBUG__.services["web_tour.tour"].tours.certification_member.ready',
             login=user_demo.login)

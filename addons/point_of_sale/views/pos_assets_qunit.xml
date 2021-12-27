@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<flectra>
+<odoo>
 
 <template id="point_of_sale.qunit_suite_assets">
     <t t-call-assets="point_of_sale.pos_assets_backend" t-js="false"/>
@@ -64,7 +64,7 @@
         <t t-set="head">
             <!-- we need session_info in order to properly instantiate PosModel -->
             <script type="text/javascript">
-                var flectra = <t t-raw="json.dumps({
+                var odoo = <t t-raw="json.dumps({
                     'csrf_token': request.csrf_token(None),
                     'session_info': session_info,
                     'debug': debug,
@@ -81,4 +81,4 @@
     </t>
 </template>
 
-</flectra>
+</odoo>

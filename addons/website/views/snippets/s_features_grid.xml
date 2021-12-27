@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<flectra>
+<odoo>
 
 <template id="s_features_grid" name="Features Grid">
     <section class="s_features_grid pt48 pb24">
@@ -74,4 +74,4 @@
     </xpath>
 </template>
 
-</flectra>
+</odoo>

@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo. See LICENSE file for full copyright and licensing details.
 
-from flectra.tests import common, Form
-from flectra.tools import mute_logger
+from odoo.tests import common, Form
+from odoo.tools import mute_logger
 
 
 class TestDropship(common.TransactionCase):
@@ -89,7 +89,7 @@ class TestDropship(common.TransactionCase):
         so_form = Form(self.env['sale.order'])
         so_form.partner_id = self.env['res.partner'].create({'name': 'My Test Partner'})
         so_form.payment_term_id = self.env.ref('account.account_payment_term_end_following_month')
-        with mute_logger('flectra.tests.common.onchange'):
+        with mute_logger('odoo.tests.common.onchange'):
             # otherwise complains that there's not enough inventory and
             # apparently that's normal according to @jco and @sle
             with so_form.order_line.new() as line:

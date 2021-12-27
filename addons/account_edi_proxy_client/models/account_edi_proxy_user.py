@@ -1,6 +1,6 @@
-from flectra import models, fields, _
-from flectra.exceptions import UserError
-from .account_edi_proxy_auth import FlectraEdiProxyAuth
+from odoo import models, fields, _
+from odoo.exceptions import UserError
+from .account_edi_proxy_auth import OdooEdiProxyAuth
 
 from cryptography.hazmat.backends import default_backend
 from cryptography.hazmat.primitives.asymmetric import rsa
@@ -17,7 +17,7 @@ import logging
 _logger = logging.getLogger(__name__)
 
 
-SERVER_URL = 'https://l10n-it-edi.api.flectrahq.com'
+SERVER_URL = 'https://l10n-it-edi.api.odoo.com'
 TIMEOUT = 30
 
 
@@ -33,7 +33,7 @@ class AccountEdiProxyClientUser(models.Model):
     """Represents a user of the proxy for an electronic invoicing format.
     An edi_proxy_user has a unique identification on a specific format (for example, the vat for Peppol) which
     allows to identify him when receiving a document addressed to him. It is linked to a specific company on a specific
-    Flectra database.
+    Odoo database.
     It also owns a key with which each file should be decrypted with (the proxy encrypt all the files with the public key).
     """
     _name = 'account_edi_proxy_client.user'
@@ -74,7 +74,7 @@ class AccountEdiProxyClientUser(models.Model):
                 json=payload,
                 timeout=TIMEOUT,
                 headers={'content-type': 'application/json'},
-                auth=FlectraEdiProxyAuth(user=self)).json()
+                auth=OdooEdiProxyAuth(user=self)).json()
         except (ValueError, requests.exceptions.ConnectionError, requests.exceptions.MissingSchema, requests.exceptions.Timeout, requests.exceptions.HTTPError):
             raise AccountEdiProxyError('connection_error',
                 _('The url that this service requested returned an error. The url it tried to contact was %s', url))
@@ -163,7 +163,7 @@ class AccountEdiProxyClientUser(models.Model):
             # we don't want two database to be able to query the proxy with the same user
             # because it could lead to not inconsistent data.
             _logger.error(response['error'])
-            raise UserError('Proxy error, please contact Flectra (code: 3)')
+            raise UserError('Proxy error, please contact Odoo (code: 3)')
         self.refresh_token = response['refresh_token']
 
     def _decrypt_data(self, data, symmetric_key):

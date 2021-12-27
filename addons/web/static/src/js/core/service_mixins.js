@@ -1,4 +1,4 @@
-flectra.define('web.ServiceProviderMixin', function (require) {
+odoo.define('web.ServiceProviderMixin', function (require) {
 "use strict";
 
 var core = require('web.core');
@@ -79,7 +79,7 @@ var ServiceProviderMixin = {
      * the target so that it can call back the caller.
      *
      * @private
-     * @param  {FlectraEvent} event
+     * @param  {OdooEvent} event
      */
     _call_service: function (event) {
         var args = event.data.args || [];
@@ -97,7 +97,7 @@ return ServiceProviderMixin;
 
 });
 
-flectra.define('web.ServicesMixin', function (require) {
+odoo.define('web.ServicesMixin', function (require) {
 "use strict";
 
 var rpc = require('web.rpc');

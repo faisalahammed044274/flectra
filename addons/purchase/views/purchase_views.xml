@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<flectra>
+<odoo>
 
         <!-- Top menu item -->
         <menuitem name="Purchase"
@@ -806,4 +806,4 @@
         <field name="target">main</field>
     </record>
 
-</flectra>
+</odoo>

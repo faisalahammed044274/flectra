@@ -1,5 +1,5 @@
 
-from flectra import _, api, fields, models
+from odoo import _, api, fields, models
 
 class SnailmailLetterMissingRequiredFields(models.TransientModel):
     _name = 'snailmail.letter.missing.required.fields'

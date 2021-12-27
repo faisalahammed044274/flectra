@@ -1,4 +1,4 @@
-flectra.define('web.viewUtils', function (require) {
+odoo.define('web.viewUtils', function (require) {
 "use strict";
 
 var dom = require('web.dom');

@@ -1,15 +1,15 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo. See LICENSE file for full copyright and licensing details.
 
 from uuid import uuid4
 import requests
 import json
 import logging
 
-from flectra import api, _
-from flectra.tools import exception_to_unicode
-from flectra.addons.google_calendar.utils.google_event import GoogleEvent
-from flectra.addons.google_account.models.google_service import TIMEOUT
+from odoo import api, _
+from odoo.tools import exception_to_unicode
+from odoo.addons.google_calendar.utils.google_event import GoogleEvent
+from odoo.addons.google_account.models.google_service import TIMEOUT
 
 
 _logger = logging.getLogger(__name__)
@@ -69,7 +69,7 @@ class GoogleCalendarService():
     def patch(self, event_id, values, token=None, timeout=TIMEOUT):
         url = "/calendar/v3/calendars/primary/events/%s?sendUpdates=all" % event_id
         headers = {'Content-type': 'application/json', 'Authorization': 'Bearer %s' % token}
-        self.google_service._do_request(url, json.dumps(values), headers, method='PUT', timeout=timeout)
+        self.google_service._do_request(url, json.dumps(values), headers, method='PATCH', timeout=timeout)
 
     @requires_auth_token
     def delete(self, event_id, token=None, timeout=TIMEOUT):
@@ -97,7 +97,7 @@ class GoogleCalendarService():
         readonly = '.readonly' if RO else ''
         return 'https://www.googleapis.com/auth/calendar%s' % (readonly)
 
-    def _google_authentication_url(self, from_url='http://www.flectrahq.com'):
+    def _google_authentication_url(self, from_url='http://www.odoo.com'):
         return self.google_service._get_authorize_uri(from_url, service='calendar', scope=self._get_calendar_scope())
 
     def _can_authorize_google(self, user):

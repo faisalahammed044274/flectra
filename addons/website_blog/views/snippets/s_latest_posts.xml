@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<flectra>
+<odoo>
 <!-- Snippet -->
 <template id="s_latest_posts" name="Blog Posts">
     <section class="s_latest_posts pt16 pb16" data-vcss="001">
@@ -145,4 +145,4 @@
     </xpath>
 </template>
 
-</flectra>
+</odoo>

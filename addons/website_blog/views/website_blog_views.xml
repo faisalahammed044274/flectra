@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<flectra>
+<odoo>
 
         <!-- Blog views -->
         <record id="view_blog_blog_list" model="ir.ui.view">
@@ -271,4 +271,4 @@
         <menuitem id="menu_blog_tag_global" parent="menu_website_blog_root_global" name="Tags" action="action_tags" sequence="40" />
 
         <menuitem id="menu_blog_global" parent="menu_website_blog_root_global" name="Blogs" action="action_blog_blog" sequence="20"/>
-</flectra>
+</odoo>

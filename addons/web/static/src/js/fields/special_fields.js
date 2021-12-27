@@ -1,4 +1,4 @@
-flectra.define('web.special_fields', function (require) {
+odoo.define('web.special_fields', function (require) {
 "use strict";
 
 var core = require('web.core');

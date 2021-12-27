@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<flectra>
+<odoo>
 
     <!-- tax definitions for VAT on sales (income) -->
     <record id="ivat19" model="account.tax.template">
@@ -317,4 +317,4 @@
                 }),
             ]"/>
     </record>
-</flectra>
+</odoo>

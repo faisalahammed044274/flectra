@@ -1,11 +1,11 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo. See LICENSE file for full copyright and licensing details.
 
 from datetime import datetime, timedelta
 
-from flectra import fields
-from flectra.addons.website_event.tests.common import TestWebsiteEventCommon
-from flectra.tests.common import users
+from odoo import fields
+from odoo.addons.website_event.tests.common import TestWebsiteEventCommon
+from odoo.tests.common import users
 
 
 class TestEventWebsite(TestWebsiteEventCommon):

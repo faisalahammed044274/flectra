@@ -1,4 +1,4 @@
-flectra.define('web.BasicView', function (require) {
+odoo.define('web.BasicView', function (require) {
 "use strict";
 
 /**

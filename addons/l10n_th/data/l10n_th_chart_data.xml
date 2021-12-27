@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<flectra>
+<odoo>
     <menuitem id="account_reports_th_statements_menu" name="Thailand" parent="account.menu_finance_reports" sequence="0" groups="account.group_account_readonly"/>
 <!-- ACCOUNT TYPES -->
 
@@ -17,4 +17,4 @@
     <field name="transfer_account_code_prefix">16</field>
     <field name="currency_id" ref="base.THB"/>
 </record>
-</flectra>
+</odoo>

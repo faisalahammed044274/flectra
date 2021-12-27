@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<flectra>
+<odoo>
 <!-- Reports -->
     <record id="stock_replenishment_report_product_product_action" model="ir.actions.report">
         <field name="name">Forecasted Report</field>
@@ -176,4 +176,4 @@
     <template id="report_product_template_replenishment">
         <t t-call="stock.report_product_product_replenishment"/>
     </template>
-</flectra>
+</odoo>

@@ -1,4 +1,4 @@
-flectra.define('web_tour.tour', function (require) {
+odoo.define('web_tour.tour', function (require) {
 "use strict";
 
 var rootWidget = require('root.widget');
@@ -181,7 +181,7 @@ return session.is_bound.then(function () {
             };
         }
         // helper to start a tour manually (or from a python test with its counterpart start_tour function)
-        flectra.startTour = tour_manager.run.bind(tour_manager);
+        odoo.startTour = tour_manager.run.bind(tour_manager);
         return tour_manager;
     });
 });

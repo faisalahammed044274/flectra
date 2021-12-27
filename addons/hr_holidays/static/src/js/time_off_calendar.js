@@ -1,4 +1,4 @@
-flectra.define('hr_holidays.dashboard.view_custo', function(require) {
+odoo.define('hr_holidays.dashboard.view_custo', function(require) {
     'use strict';
 
     var core = require('web.core');

@@ -1,9 +1,9 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo. See LICENSE file for full copyright and licensing details.
 
-from flectra import exceptions
-from flectra.addons.mass_mailing.tests.common import MassMailCommon
-from flectra.tests.common import Form, users
+from odoo import exceptions
+from odoo.addons.mass_mailing.tests.common import MassMailCommon
+from odoo.tests.common import Form, users
 
 
 class TestMailingListMerge(MassMailCommon):

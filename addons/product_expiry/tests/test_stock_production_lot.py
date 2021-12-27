@@ -1,13 +1,13 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo. See LICENSE file for full copyright and licensing details.
 
 from datetime import datetime, timedelta
 from dateutil.relativedelta import relativedelta
 
-from flectra import fields
-from flectra.addons.mail.tests.common import mail_new_test_user
-from flectra.addons.stock.tests.common import TestStockCommon
-from flectra.tests.common import Form
+from odoo import fields
+from odoo.addons.mail.tests.common import mail_new_test_user
+from odoo.addons.stock.tests.common import TestStockCommon
+from odoo.tests.common import Form
 
 
 class TestStockProductionLot(TestStockCommon):

@@ -1,4 +1,4 @@
-flectra.define('im_livechat.ImLivechatChannelFormController', function (require) {
+odoo.define('im_livechat.ImLivechatChannelFormController', function (require) {
 'use strict';
 
 const FormController = require('web.FormController');
@@ -43,7 +43,7 @@ const ImLivechatChannelFormController = FormController.extend({
      */
     async _onClickLivechatChatWindowColorsResetButton() {
         await this._updateColors({
-            header_background_color: "#009EFB",
+            header_background_color: "#875A7B",
             title_color: "#FFFFFF",
         });
     },

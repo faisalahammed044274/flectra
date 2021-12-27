@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<flectra>
+<odoo>
     <data>
 
         <record id="edi_facturx_1_0_05" model="account.edi.format">
@@ -8,4 +8,4 @@
         </record>
 
     </data>
-</flectra> 
+</odoo>

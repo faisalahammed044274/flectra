@@ -1,4 +1,4 @@
-flectra.define('test_website_slides_full.tour.slide.certification.member', function (require) {
+odoo.define('test_website_slides_full.tour.slide.certification.member', function (require) {
 "use strict";
 
 var tour = require('web_tour.tour');

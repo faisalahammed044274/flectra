@@ -4,8 +4,8 @@ import logging
 import pprint
 import werkzeug
 
-from flectra import http
-from flectra.http import request
+from odoo import http
+from odoo.http import request
 
 _logger = logging.getLogger(__name__)
 
@@ -59,4 +59,4 @@ class StripeController(http.Controller):
     def stripe_webhook(self, **kwargs):
         data = json.loads(request.httprequest.data)
         request.env['payment.acquirer'].sudo()._handle_stripe_webhook(data)
-        return 'OK' 
+        return 'OK'

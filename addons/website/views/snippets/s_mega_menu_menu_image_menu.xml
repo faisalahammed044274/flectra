@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<flectra>
+<odoo>
 
 <template id="s_mega_menu_menu_image_menu" name="Menu - Image - Menu">
     <section class="s_mega_menu_menu_image_menu py-4">
@@ -35,4 +35,4 @@
     </section>
 </template>
 
-</flectra>
+</odoo>

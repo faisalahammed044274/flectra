@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<flectra noupdate="1">
+<odoo noupdate="1">
 
     <!-- VAT Taxes -->
 
@@ -210,4 +210,4 @@
         <field name="l10n_ar_tribute_afip_code">09</field>
     </record>
 
-</flectra>
+</odoo>

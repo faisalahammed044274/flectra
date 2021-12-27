@@ -1,4 +1,4 @@
-flectra.define('mail/static/src/components/activity_mark_done_popover/activity_mark_done_popover_tests.js', function (require) {
+odoo.define('mail/static/src/components/activity_mark_done_popover/activity_mark_done_popover_tests.js', function (require) {
 'use strict';
 
 const components = {

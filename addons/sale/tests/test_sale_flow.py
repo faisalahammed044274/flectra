@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-from flectra.addons.sale.tests.common import TestSaleCommonBase
+from odoo.addons.sale.tests.common import TestSaleCommonBase
 
 
 class TestSaleFlow(TestSaleCommonBase):

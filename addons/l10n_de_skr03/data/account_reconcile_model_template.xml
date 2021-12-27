@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<flectra>
+<odoo>
     <data noupdate="1">
         <record id="reconcile_3731" model="account.reconcile.model.template">
             <field name="name">Skonto-EK-7%</field>
@@ -74,4 +74,4 @@
             <field name="label">Forderungsverlust-19%</field>
         </record>
     </data>
-</flectra>
+</odoo>

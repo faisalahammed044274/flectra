@@ -1,4 +1,4 @@
-flectra.define('web.Notification', function (require) {
+odoo.define('web.Notification', function (require) {
 'use strict';
 
 var Widget = require('web.Widget');

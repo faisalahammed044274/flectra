@@ -1,4 +1,4 @@
-flectra.define('sale.VariantMixin', function (require) {
+odoo.define('sale.VariantMixin', function (require) {
 'use strict';
 
 var concurrency = require('web.concurrency');

@@ -1,4 +1,4 @@
-flectra.define('website_blog.s_latest_posts_frontend', function (require) {
+odoo.define('website_blog.s_latest_posts_frontend', function (require) {
 'use strict';
 
 var core = require('web.core');

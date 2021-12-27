@@ -1,4 +1,4 @@
-flectra.define('website.tour.rte', function (require) {
+odoo.define('website.tour.rte', function (require) {
 'use strict';
 
 var ajax = require('web.ajax');

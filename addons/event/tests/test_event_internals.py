@@ -1,14 +1,14 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo. See LICENSE file for full copyright and licensing details.
 
 from datetime import date, datetime, timedelta
 from unittest.mock import patch
 
-from flectra.addons.event.tests.common import TestEventCommon
-from flectra import exceptions
-from flectra.fields import Datetime as FieldsDatetime, Date as FieldsDate
-from flectra.tests.common import users
-from flectra.tools import mute_logger
+from odoo.addons.event.tests.common import TestEventCommon
+from odoo import exceptions
+from odoo.fields import Datetime as FieldsDatetime, Date as FieldsDate
+from odoo.tests.common import users
+from odoo.tools import mute_logger
 
 
 class TestEventData(TestEventCommon):
@@ -16,7 +16,7 @@ class TestEventData(TestEventCommon):
     @classmethod
     def setUpClass(cls):
         super(TestEventData, cls).setUpClass()
-        cls.patcher = patch('flectra.addons.event.models.event_event.fields.Datetime', wraps=FieldsDatetime)
+        cls.patcher = patch('odoo.addons.event.models.event_event.fields.Datetime', wraps=FieldsDatetime)
         cls.mock_datetime = cls.patcher.start()
         cls.mock_datetime.now.return_value = datetime(2020, 1, 31, 10, 0, 0)
         cls.addClassCleanup(cls.patcher.stop)
@@ -70,7 +70,7 @@ class TestEventData(TestEventCommon):
         self.assertFalse(event.is_ongoing)
 
     @users('user_eventmanager')
-    @mute_logger('flectra.models.unlink')
+    @mute_logger('odoo.models.unlink')
     def test_event_configuration_from_type(self):
         """ Test data computation of event coming from its event.type template.
         Some one2many notably are duplicated from type configuration and some
@@ -410,7 +410,7 @@ class TestEventTicketData(TestEventCommon):
 
     def setUp(self):
         super(TestEventTicketData, self).setUp()
-        self.ticket_date_patcher = patch('flectra.addons.event.models.event_ticket.fields.Date', wraps=FieldsDate)
+        self.ticket_date_patcher = patch('odoo.addons.event.models.event_ticket.fields.Date', wraps=FieldsDate)
         self.ticket_date_patcher_mock = self.ticket_date_patcher.start()
         self.ticket_date_patcher_mock.context_today.return_value = date(2020, 1, 31)
 

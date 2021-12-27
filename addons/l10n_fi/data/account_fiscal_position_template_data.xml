@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<flectra>
+<odoo>
 
     <!-- # Fiscal positions -->
     <record id="aland" model="account.fiscal.position.template">
@@ -285,4 +285,4 @@
         <field name="tax_dest_id" ref="tax_construct_sales_0"/>
     </record>
 
-</flectra>
+</odoo>

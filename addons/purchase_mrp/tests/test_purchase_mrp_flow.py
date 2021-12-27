@@ -1,9 +1,9 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo. See LICENSE file for full copyright and licensing details.
 
-from flectra.tests.common import Form, TransactionCase
-from flectra.tests import Form
-from flectra import fields
+from odoo.tests.common import Form, TransactionCase
+from odoo.tests import Form
+from odoo import fields
 
 
 class TestSaleMrpFlow(TransactionCase):

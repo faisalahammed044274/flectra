@@ -1,17 +1,17 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo. See LICENSE file for full copyright and licensing details.
 
 from datetime import datetime, date
 from dateutil.relativedelta import relativedelta
 from pytz import timezone, UTC
 
-from flectra import fields
-from flectra.exceptions import ValidationError
-from flectra.tools import mute_logger
-from flectra.tests.common import Form
-from flectra.tests import tagged
+from odoo import fields
+from odoo.exceptions import ValidationError
+from odoo.tools import mute_logger
+from odoo.tests.common import Form
+from odoo.tests import tagged
 
-from flectra.addons.hr_holidays.tests.common import TestHrHolidaysCommon
+from odoo.addons.hr_holidays.tests.common import TestHrHolidaysCommon
 
 @tagged('leave_requests')
 class TestLeaveRequests(TestHrHolidaysCommon):
@@ -67,7 +67,7 @@ class TestLeaveRequests(TestHrHolidaysCommon):
                        WHERE id = %s
                        """ % (newdate, id))
 
-    @mute_logger('flectra.models.unlink', 'flectra.addons.mail.models.mail_mail')
+    @mute_logger('odoo.models.unlink', 'odoo.addons.mail.models.mail_mail')
     def test_overlapping_requests(self):
         """  Employee cannot create a new leave request at the same time, avoid interlapping  """
         self.env['hr.leave'].with_user(self.user_employee_id).create({
@@ -89,7 +89,7 @@ class TestLeaveRequests(TestHrHolidaysCommon):
                 'number_of_days': 1,
             })
 
-    @mute_logger('flectra.models.unlink', 'flectra.addons.mail.models.mail_mail')
+    @mute_logger('odoo.models.unlink', 'odoo.addons.mail.models.mail_mail')
     def test_limited_type_no_days(self):
         """  Employee creates a leave request in a limited category but has not enough days left  """
 
@@ -103,7 +103,7 @@ class TestLeaveRequests(TestHrHolidaysCommon):
                 'number_of_days': 1,
             })
 
-    @mute_logger('flectra.models.unlink', 'flectra.addons.mail.models.mail_mail')
+    @mute_logger('odoo.models.unlink', 'odoo.addons.mail.models.mail_mail')
     def test_limited_type_days_left(self):
         """  Employee creates a leave request in a limited category and has enough days left  """
         aloc1_user_group = self.env['hr.leave.allocation'].with_user(self.user_hruser_id).create({
@@ -134,7 +134,7 @@ class TestLeaveRequests(TestHrHolidaysCommon):
         holiday_status.invalidate_cache(['max_leaves'])
         self._check_holidays_status(holiday_status, 2.0, 2.0, 0.0, 0.0)
 
-    @mute_logger('flectra.models.unlink', 'flectra.addons.mail.models.mail_mail')
+    @mute_logger('odoo.models.unlink', 'odoo.addons.mail.models.mail_mail')
     def test_accrual_validity_time_valid(self):
         """  Employee ask leave during a valid validity time """
         self.env['hr.leave'].with_user(self.user_employee_id).create({
@@ -146,7 +146,7 @@ class TestLeaveRequests(TestHrHolidaysCommon):
             'number_of_days': 1,
         })
 
-    @mute_logger('flectra.models.unlink', 'flectra.addons.mail.models.mail_mail')
+    @mute_logger('odoo.models.unlink', 'odoo.addons.mail.models.mail_mail')
     def test_accrual_validity_time_not_valid(self):
         """  Employee ask leav during a not valid validity time """
         with self.assertRaises(ValidationError):
@@ -159,7 +159,7 @@ class TestLeaveRequests(TestHrHolidaysCommon):
                 'number_of_days': 1,
             })
 
-    @mute_logger('flectra.models.unlink', 'flectra.addons.mail.models.mail_mail')
+    @mute_logger('odoo.models.unlink', 'odoo.addons.mail.models.mail_mail')
     def test_department_leave(self):
         """ Create a department leave """
         self.employee_hrmanager.write({'department_id': self.hr_dept.id})
@@ -175,7 +175,7 @@ class TestLeaveRequests(TestHrHolidaysCommon):
         member_ids = self.hr_dept.member_ids.ids
         self.assertEqual(self.env['hr.leave'].search_count([('employee_id', 'in', member_ids)]), len(member_ids), "Leave should be created for members of department")
 
-    @mute_logger('flectra.models.unlink', 'flectra.addons.mail.models.mail_mail')
+    @mute_logger('odoo.models.unlink', 'odoo.addons.mail.models.mail_mail')
     def test_allocation_request(self):
         """ Create an allocation request """
         # employee should be set to current user
@@ -184,7 +184,7 @@ class TestLeaveRequests(TestHrHolidaysCommon):
         allocation_form.holiday_status_id = self.holidays_type_2
         allocation = allocation_form.save()
 
-    @mute_logger('flectra.models.unlink', 'flectra.addons.mail.models.mail_mail')
+    @mute_logger('odoo.models.unlink', 'odoo.addons.mail.models.mail_mail')
     def test_employee_is_absent(self):
         """ Only the concerned employee should be considered absent """
         self.env['hr.leave'].with_user(self.user_employee_id).create({
@@ -199,7 +199,7 @@ class TestLeaveRequests(TestHrHolidaysCommon):
         self.assertTrue(self.employee_emp.is_absent, "He should be considered absent")
         self.assertFalse(self.employee_hrmanager.is_absent, "He should not be considered absent")
 
-    @mute_logger('flectra.models.unlink', 'flectra.addons.mail.models.mail_mail')
+    @mute_logger('odoo.models.unlink', 'odoo.addons.mail.models.mail_mail')
     def test_timezone_employee_leave_request(self):
         """ Create a leave request for an employee in another timezone """
         self.employee_emp.tz = 'NZ'  # GMT+12
@@ -215,7 +215,7 @@ class TestLeaveRequests(TestHrHolidaysCommon):
         self.assertEqual(leave.date_from, datetime(2019, 5, 5, 20, 0, 0), "It should have been localized before saving in UTC")
         self.assertEqual(leave.date_to, datetime(2019, 5, 6, 5, 0, 0), "It should have been localized before saving in UTC")
 
-    @mute_logger('flectra.models.unlink', 'flectra.addons.mail.models.mail_mail')
+    @mute_logger('odoo.models.unlink', 'odoo.addons.mail.models.mail_mail')
     def test_timezone_company_leave_request(self):
         """ Create a leave request for a company in another timezone """
         company = self.env['res.company'].create({'name': "Hergé"})
@@ -234,7 +234,7 @@ class TestLeaveRequests(TestHrHolidaysCommon):
         self.assertEqual(leave.date_from, datetime(2019, 5, 5, 20, 0, 0), "It should have been localized before saving in UTC")
         self.assertEqual(leave.date_to, datetime(2019, 5, 6, 5, 0, 0), "It should have been localized before saving in UTC")
 
-    @mute_logger('flectra.models.unlink', 'flectra.addons.mail.models.mail_mail')
+    @mute_logger('odoo.models.unlink', 'odoo.addons.mail.models.mail_mail')
     def test_timezone_company_validated(self):
         """ Create a leave request for a company in another timezone and validate it """
         self.env.user.tz = 'NZ' # GMT+12
@@ -255,7 +255,7 @@ class TestLeaveRequests(TestHrHolidaysCommon):
             "Timezone should be kept between company and employee leave"
         )
 
-    @mute_logger('flectra.models.unlink', 'flectra.addons.mail.models.mail_mail')
+    @mute_logger('odoo.models.unlink', 'odoo.addons.mail.models.mail_mail')
     def test_timezone_department_leave_request(self):
         """ Create a leave request for a department in another timezone """
         company = self.env['res.company'].create({'name': "Hergé"})
@@ -416,7 +416,7 @@ class TestLeaveRequests(TestHrHolidaysCommon):
         leave = self.env['hr.leave'].with_user(self.user_employee_id).new(values)
         self.assertEqual(leave.number_of_days, number_of_days)
 
-    @mute_logger('flectra.models.unlink', 'flectra.addons.mail.models.mail_mail')
+    @mute_logger('odoo.models.unlink', 'odoo.addons.mail.models.mail_mail')
     def test_leave_defaults_with_timezones(self):
         """ Make sure that leaves start with correct defaults for non-UTC timezones """
         timezones_to_test = ('UTC', 'Pacific/Midway', 'US/Pacific', 'Asia/Taipei', 'Pacific/Kiritimati')  # UTC, UTC -11, UTC -8, UTC +8, UTC +14

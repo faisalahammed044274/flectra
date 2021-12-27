@@ -1,13 +1,13 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo. See LICENSE file for full copyright and licensing details.
 
 from datetime import datetime, timedelta, time
 from unittest.mock import patch
 
-from flectra.addons.event.tests.common import TestEventCommon
-from flectra.addons.mail.tests.common import mail_new_test_user
-from flectra.fields import Datetime as FieldsDatetime, Date as FieldsDate
-from flectra.tests.common import SavepointCase
+from odoo.addons.event.tests.common import TestEventCommon
+from odoo.addons.mail.tests.common import mail_new_test_user
+from odoo.fields import Datetime as FieldsDatetime, Date as FieldsDate
+from odoo.tests.common import SavepointCase
 
 
 class EventDtPatcher(SavepointCase):
@@ -20,23 +20,23 @@ class EventDtPatcher(SavepointCase):
         cls.reference_today = datetime(2020, 7, 6)
 
         cls.event_dt = patch(
-            'flectra.addons.event.models.event_event.fields.Datetime',
+            'odoo.addons.event.models.event_event.fields.Datetime',
             wraps=FieldsDatetime
         )
         cls.wevent_dt = patch(
-            'flectra.addons.website_event.models.event_event.fields.Datetime',
+            'odoo.addons.website_event.models.event_event.fields.Datetime',
             wraps=FieldsDatetime
         )
         cls.wevent_main_dt = patch(
-            'flectra.addons.website_event.controllers.main.fields.Datetime',
+            'odoo.addons.website_event.controllers.main.fields.Datetime',
             wraps=FieldsDatetime
         )
         cls.event_date = patch(
-            'flectra.addons.event.models.event_event.fields.Date',
+            'odoo.addons.event.models.event_event.fields.Date',
             wraps=FieldsDate
         )
         cls.wevent_main_date = patch(
-            'flectra.addons.website_event.controllers.main.fields.Date',
+            'odoo.addons.website_event.controllers.main.fields.Date',
             wraps=FieldsDate
         )
         cls.mock_event_dt = cls.event_dt.start()

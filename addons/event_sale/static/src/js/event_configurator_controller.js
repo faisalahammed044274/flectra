@@ -1,4 +1,4 @@
-flectra.define('event.EventConfiguratorFormController', function (require) {
+odoo.define('event.EventConfiguratorFormController', function (require) {
 "use strict";
 
 var FormController = require('web.FormController');

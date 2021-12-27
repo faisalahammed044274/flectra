@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<flectra>
+<odoo>
      <template id="my_view_name" inherit_id="l10n_it_edi.account_invoice_it_FatturaPA_export">
             <xpath expr='//DatiDDT' position="after">
                 <t t-if="ddt_dict and not record.l10n_it_ddt_id">
@@ -17,4 +17,4 @@
                 </t>
             </xpath>
         </template>
-</flectra>
+</odoo>

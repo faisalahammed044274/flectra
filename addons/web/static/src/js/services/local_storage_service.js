@@ -1,4 +1,4 @@
-flectra.define('web.LocalStorageService', function (require) {
+odoo.define('web.LocalStorageService', function (require) {
 'use strict';
 
 /**

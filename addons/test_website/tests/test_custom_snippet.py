@@ -1,13 +1,13 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo. See LICENSE file for full copyright and licensing details.
 
-import flectra.tests
-from flectra.tools import mute_logger
+import odoo.tests
+from odoo.tools import mute_logger
 
 
-@flectra.tests.common.tagged('post_install', '-at_install')
-class TestCustomSnippet(flectra.tests.HttpCase):
+@odoo.tests.common.tagged('post_install', '-at_install')
+class TestCustomSnippet(odoo.tests.HttpCase):
 
-    @mute_logger('flectra.addons.http_routing.models.ir_http', 'flectra.http')
+    @mute_logger('odoo.addons.http_routing.models.ir_http', 'odoo.http')
     def test_01_run_tour(self):
         self.start_tour("/", 'test_custom_snippet', login="admin")

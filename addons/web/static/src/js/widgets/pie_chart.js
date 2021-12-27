@@ -1,4 +1,4 @@
-flectra.define('web.PieChart', function (require) {
+odoo.define('web.PieChart', function (require) {
 "use strict";
 
 /**

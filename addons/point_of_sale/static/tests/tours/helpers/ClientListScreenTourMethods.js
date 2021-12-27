@@ -1,4 +1,4 @@
-flectra.define('point_of_sale.tour.ClientListScreenTourMethods', function (require) {
+odoo.define('point_of_sale.tour.ClientListScreenTourMethods', function (require) {
     'use strict';
 
     const { createTourMethods } = require('point_of_sale.tour.utils');

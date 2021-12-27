@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-from flectra.addons.account_edi.tests.common import AccountEdiTestCommon
+from odoo.addons.account_edi.tests.common import AccountEdiTestCommon
 
 
 class TestUBL(AccountEdiTestCommon):

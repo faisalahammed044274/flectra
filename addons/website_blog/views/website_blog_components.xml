@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<flectra>
+<odoo>
 
 
 <!-- ======   Template: Blogs Navbar   =========================================
@@ -279,4 +279,4 @@ Display a sidebar beside the post content.
     </xpath>
 </template>
 
-</flectra>
+</odoo>

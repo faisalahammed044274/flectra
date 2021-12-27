@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
-from flectra import _, api, models
-from flectra.exceptions import UserError
+from odoo import _, api, models
+from odoo.exceptions import UserError
 
 
 class AccountTax(models.Model):

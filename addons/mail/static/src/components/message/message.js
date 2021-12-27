@@ -1,4 +1,4 @@
-flectra.define('mail/static/src/components/message/message.js', function (require) {
+odoo.define('mail/static/src/components/message/message.js', function (require) {
 'use strict';
 
 const components = {
@@ -151,7 +151,7 @@ class Message extends Component {
             this.message.author &&
             this.message.author === this.env.messaging.partnerRoot
         ) {
-            return '/mail/static/src/img/flectrabot.png';
+            return '/mail/static/src/img/odoobot.png';
         } else if (this.message.author) {
             // TODO FIXME for public user this might not be accessible. task-2223236
             // we should probably use the correspondig attachment id + access token

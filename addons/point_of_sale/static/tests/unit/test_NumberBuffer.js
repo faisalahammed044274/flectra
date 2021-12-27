@@ -1,4 +1,4 @@
-flectra.define('point_of_sale.tests.NumberBuffer', function(require) {
+odoo.define('point_of_sale.tests.NumberBuffer', function(require) {
     'use strict';
 
     const { Component, useState } = owl;

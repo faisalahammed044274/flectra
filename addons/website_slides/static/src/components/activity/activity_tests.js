@@ -1,4 +1,4 @@
-flectra.define('website_slides/static/src/tests/activity_tests.js', function (require) {
+odoo.define('website_slides/static/src/tests/activity_tests.js', function (require) {
 'use strict';
 
 const components = {

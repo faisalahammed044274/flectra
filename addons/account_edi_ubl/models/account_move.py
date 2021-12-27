@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
-from flectra import models
-from flectra.tools import float_repr
+# Part of Odoo. See LICENSE file for full copyright and licensing details.
+from odoo import models
+from odoo.tools import float_repr
 
 
 class AccountMove(models.Model):

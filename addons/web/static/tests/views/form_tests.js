@@ -1,4 +1,4 @@
-flectra.define('web.form_tests', function (require) {
+odoo.define('web.form_tests', function (require) {
 "use strict";
 
 const AbstractField = require("web.AbstractField");
@@ -1290,8 +1290,8 @@ QUnit.module('Views', {
     QUnit.test('tooltips on multiple occurrences of fields and labels', async function (assert) {
         assert.expect(4);
 
-        const initialDebugMode = flectra.debug;
-        flectra.debug = false;
+        const initialDebugMode = odoo.debug;
+        odoo.debug = false;
 
         this.data.partner.fields.foo.help = 'foo tooltip';
         this.data.partner.fields.bar.help = 'bar tooltip';
@@ -1339,7 +1339,7 @@ QUnit.module('Views', {
         assert.strictEqual($('.tooltip .oe_tooltip_help').text().trim(), "bar tooltip");
         $barLabel2.trigger($.Event('mouseleave'));
 
-        flectra.debug = initialDebugMode;
+        odoo.debug = initialDebugMode;
         form.destroy();
     });
 
@@ -7761,8 +7761,8 @@ QUnit.module('Views', {
     QUnit.test('display tooltips for buttons', async function (assert) {
         assert.expect(2);
 
-        var initialDebugMode = flectra.debug;
-        flectra.debug = true;
+        var initialDebugMode = odoo.debug;
+        odoo.debug = true;
 
         var form = await createView({
             View: FormView,
@@ -7792,7 +7792,7 @@ QUnit.module('Views', {
             "should have rendered a tooltip");
         $secondButton.trigger($.Event('mouseleave'));
 
-        flectra.debug = initialDebugMode;
+        odoo.debug = initialDebugMode;
         form.destroy();
     });
 
@@ -8116,8 +8116,8 @@ QUnit.module('Views', {
     QUnit.test('proper stringification in debug mode tooltip', async function (assert) {
         assert.expect(6);
 
-        var initialDebugMode = flectra.debug;
-        flectra.debug = true;
+        var initialDebugMode = odoo.debug;
+        odoo.debug = true;
 
         var form = await createView({
             View: FormView,
@@ -8150,7 +8150,7 @@ QUnit.module('Views', {
         assert.strictEqual($('.oe_tooltip_technical>li[data-item="widget"]')[0].lastChild.wholeText.trim(),
             'Many2one (many2one)', "widget description should be correct");
 
-        flectra.debug = initialDebugMode;
+        odoo.debug = initialDebugMode;
         form.destroy();
     });
 

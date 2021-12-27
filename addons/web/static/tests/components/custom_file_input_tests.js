@@ -1,4 +1,4 @@
-flectra.define('web.custom_file_input_tests', function (require) {
+odoo.define('web.custom_file_input_tests', function (require) {
     "use strict";
 
     const CustomFileInput = require('web.CustomFileInput');
@@ -21,7 +21,7 @@ flectra.define('web.custom_file_input_tests', function (require) {
                     services: {
                         async httpRequest(route, params) {
                             assert.deepEqual(params, {
-                                csrf_token: flectra.csrf_token,
+                                csrf_token: odoo.csrf_token,
                                 ufile: [],
                             });
                             assert.step(route);
@@ -55,7 +55,7 @@ flectra.define('web.custom_file_input_tests', function (require) {
                             assert.deepEqual(params, {
                                 id: 5,
                                 model: 'res.model',
-                                csrf_token: flectra.csrf_token,
+                                csrf_token: odoo.csrf_token,
                                 ufile: [],
                             });
                             assert.step(route);

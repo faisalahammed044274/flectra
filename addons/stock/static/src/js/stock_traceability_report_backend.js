@@ -1,4 +1,4 @@
-flectra.define('stock.stock_report_generic', function (require) {
+odoo.define('stock.stock_report_generic', function (require) {
 'use strict';
 
 var AbstractAction = require('web.AbstractAction');

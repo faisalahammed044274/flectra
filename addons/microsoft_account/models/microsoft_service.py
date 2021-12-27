@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo. See LICENSE file for full copyright and licensing details.
 
 from datetime import datetime
 import json
@@ -8,7 +8,7 @@ import logging
 import requests
 from werkzeug import urls
 
-from flectra import api, fields, models, _
+from odoo import api, fields, models, _
 
 _logger = logging.getLogger(__name__)
 
@@ -60,7 +60,7 @@ class MicrosoftService(models.AbstractModel):
 
     @api.model
     def _get_authorize_uri(self, from_url, service, scope):
-        """ This method return the url needed to allow this instance of Flectra to access to the scope
+        """ This method return the url needed to allow this instance of Odoo to access to the scope
             of gmail specified as parameters
         """
         state = {
@@ -70,7 +70,7 @@ class MicrosoftService(models.AbstractModel):
         }
 
         get_param = self.env['ir.config_parameter'].sudo().get_param
-        base_url = get_param('web.base.url', default='http://www.flectrahq.com?NoBaseUrl')
+        base_url = get_param('web.base.url', default='http://www.odoo.com?NoBaseUrl')
         client_id = get_param('microsoft_%s_client_id' % (service,), default=False)
 
         encoded_params = urls.url_encode({
@@ -90,7 +90,7 @@ class MicrosoftService(models.AbstractModel):
             not be redirected.
         """
         get_param = self.env['ir.config_parameter'].sudo().get_param
-        base_url = get_param('web.base.url', default='http://www.flectrahq.com?NoBaseUrl')
+        base_url = get_param('web.base.url', default='http://www.odoo.com?NoBaseUrl')
         client_id = get_param('microsoft_%s_client_id' % (service,), default=False)
         client_secret = get_param('microsoft_%s_client_secret' % (service,), default=False)
         scope = self._get_calendar_scope()

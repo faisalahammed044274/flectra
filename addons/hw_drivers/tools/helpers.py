@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo. See LICENSE file for full copyright and licensing details.
 
 import datetime
 from importlib import util
@@ -16,8 +16,8 @@ import zipfile
 from threading import Thread
 import time
 
-from flectra import _, http
-from flectra.modules.module import get_resource_path
+from odoo import _, http
+from odoo.modules.module import get_resource_path
 
 _logger = logging.getLogger(__name__)
 
@@ -27,7 +27,7 @@ _logger = logging.getLogger(__name__)
 
 class IoTRestart(Thread):
     """
-    Thread to restart flectra server in IoT Box when we must return a answer before
+    Thread to restart odoo server in IoT Box when we must return a answer before
     """
     def __init__(self, delay):
         Thread.__init__(self)
@@ -35,20 +35,20 @@ class IoTRestart(Thread):
 
     def run(self):
         time.sleep(self.delay)
-        subprocess.check_call(["sudo", "service", "flectra", "restart"])
+        subprocess.check_call(["sudo", "service", "odoo", "restart"])
 
 def access_point():
     return get_ip() == '10.11.12.1'
 
 def add_credential(db_uuid, enterprise_code):
-    write_file('flectra-db-uuid.conf', db_uuid)
-    write_file('flectra-enterprise-code.conf', enterprise_code)
+    write_file('odoo-db-uuid.conf', db_uuid)
+    write_file('odoo-enterprise-code.conf', enterprise_code)
 
 def check_certificate():
     """
     Check if the current certificate is up to date or not authenticated
     """
-    server = get_flectra_server_url()
+    server = get_odoo_server_url()
     if server:
         path = Path('/etc/ssl/certs/nginx-cert.crt')
         if path.exists():
@@ -58,7 +58,7 @@ def check_certificate():
                 for key in cert.get_subject().get_components():
                     if key[0] == b'CN':
                         cn = key[1].decode('utf-8')
-                if cn == 'FlectraTempIoTBoxCertificate' or datetime.datetime.now() > cert_end_date:
+                if cn == 'OdooTempIoTBoxCertificate' or datetime.datetime.now() > cert_end_date:
                     _logger.info(_('Your certificate %s must be updated') % (cn))
                     load_certificate()
                 else:
@@ -68,10 +68,10 @@ def check_certificate():
 
 def check_git_branch():
     """
-    Check if the local branch is the same than the connected Flectra DB and
+    Check if the local branch is the same than the connected Odoo DB and
     checkout to match it if needed.
     """
-    server = get_flectra_server_url()
+    server = get_odoo_server_url()
     if server:
         urllib3.disable_warnings()
         http = urllib3.PoolManager(cert_reqs='CERT_NONE')
@@ -84,7 +84,7 @@ def check_git_branch():
             )
 
             if response.status == 200:
-                git = ['git', '--work-tree=/home/pi/flectra/', '--git-dir=/home/pi/flectra/.git']
+                git = ['git', '--work-tree=/home/pi/odoo/', '--git-dir=/home/pi/odoo/.git']
 
                 db_branch = json.loads(response.data)['result']['server_serie'].replace('~', '-')
                 if not subprocess.check_output(git + ['ls-remote', 'origin', db_branch]):
@@ -94,11 +94,11 @@ def check_git_branch():
 
                 if db_branch != local_branch:
                     subprocess.call(["sudo", "mount", "-o", "remount,rw", "/"])
-                    subprocess.check_call(["rm", "-rf", "/home/pi/flectra/addons/hw_drivers/iot_handlers/drivers/*"])
-                    subprocess.check_call(["rm", "-rf", "/home/pi/flectra/addons/hw_drivers/iot_handlers/interfaces/*"])
+                    subprocess.check_call(["rm", "-rf", "/home/pi/odoo/addons/hw_drivers/iot_handlers/drivers/*"])
+                    subprocess.check_call(["rm", "-rf", "/home/pi/odoo/addons/hw_drivers/iot_handlers/interfaces/*"])
                     subprocess.check_call(git + ['branch', '-m', db_branch])
                     subprocess.check_call(git + ['remote', 'set-branches', 'origin', db_branch])
-                    os.system('/home/pi/flectra/addons/point_of_sale/tools/posbox/configuration/posbox_update.sh')
+                    os.system('/home/pi/odoo/addons/point_of_sale/tools/posbox/configuration/posbox_update.sh')
                     subprocess.call(["sudo", "mount", "-o", "remount,ro", "/"])
                     subprocess.call(["sudo", "mount", "-o", "remount,rw", "/root_bypass_ramdisks/etc/cups"])
 
@@ -110,7 +110,7 @@ def check_image():
     """
     Check if the current image of IoT Box is up to date
     """
-    url = 'https://nightly.flectrahq.com/master/iotbox/SHA1SUMS.txt'
+    url = 'https://nightly.odoo.com/master/iotbox/SHA1SUMS.txt'
     urllib3.disable_warnings()
     http = urllib3.PoolManager(cert_reqs='CERT_NONE')
     response = http.request('GET', url)
@@ -171,17 +171,17 @@ def get_ssid():
     process_grep = subprocess.Popen(['grep', 'ESSID:"'], stdin=process_iwconfig.stdout, stdout=subprocess.PIPE)
     return subprocess.check_output(['sed', 's/.*"\\(.*\\)"/\\1/'], stdin=process_grep.stdout).decode('utf-8').rstrip()
 
-def get_flectra_server_url():
+def get_odoo_server_url():
     ap = subprocess.call(['systemctl', 'is-active', '--quiet', 'hostapd']) # if service is active return 0 else inactive
     if not ap:
         return False
-    return read_file_first_line('flectra-remote-server.conf')
+    return read_file_first_line('odoo-remote-server.conf')
 
 def get_token():
     return read_file_first_line('token')
 
 def get_version():
-    return subprocess.check_output(['cat', '/var/flectra/iotbox_version']).decode().rstrip()
+    return subprocess.check_output(['cat', '/var/odoo/iotbox_version']).decode().rstrip()
 
 def get_wifi_essid():
     wifi_options = []
@@ -195,12 +195,12 @@ def get_wifi_essid():
 
 def load_certificate():
     """
-    Send a request to Flectra with customer db_uuid and enterprise_code to get a true certificate
+    Send a request to Odoo with customer db_uuid and enterprise_code to get a true certificate
     """
-    db_uuid = read_file_first_line('flectra-db-uuid.conf')
-    enterprise_code = read_file_first_line('flectra-enterprise-code.conf')
+    db_uuid = read_file_first_line('odoo-db-uuid.conf')
+    enterprise_code = read_file_first_line('odoo-enterprise-code.conf')
     if db_uuid and enterprise_code:
-        url = 'https://www.flectrahq.com/flectra-enterprise/iot/x509'
+        url = 'https://www.odoo.com/odoo-enterprise/iot/x509'
         data = {
             'params': {
                 'db_uuid': db_uuid,
@@ -217,7 +217,7 @@ def load_certificate():
         )
         result = json.loads(response.data.decode('utf8'))['result']
         if result:
-            write_file('flectra-subject.conf', result['subject_cn'])
+            write_file('odoo-subject.conf', result['subject_cn'])
             subprocess.call(["sudo", "mount", "-o", "remount,rw", "/"])
             subprocess.call(["sudo", "mount", "-o", "remount,rw", "/root_bypass_ramdisks/"])
             Path('/etc/ssl/certs/nginx-cert.crt').write_text(result['x509_pem'])
@@ -231,9 +231,9 @@ def load_certificate():
 
 def download_iot_handlers(auto=True):
     """
-    Get the drivers from the configured Flectra server
+    Get the drivers from the configured Odoo server
     """
-    server = get_flectra_server_url()
+    server = get_odoo_server_url()
     if server:
         urllib3.disable_warnings()
         pm = urllib3.PoolManager(cert_reqs='CERT_NONE')
@@ -242,7 +242,7 @@ def download_iot_handlers(auto=True):
             resp = pm.request('POST', server, fields={'mac': get_mac_address(), 'auto': auto})
             if resp.data:
                 subprocess.call(["sudo", "mount", "-o", "remount,rw", "/"])
-                drivers_path = Path.home() / 'flectra/addons/hw_drivers/iot_handlers'
+                drivers_path = Path.home() / 'odoo/addons/hw_drivers/iot_handlers'
                 zip_file = zipfile.ZipFile(io.BytesIO(resp.data))
                 zip_file.extractall(drivers_path)
                 subprocess.call(["sudo", "mount", "-o", "remount,ro", "/"])
@@ -253,8 +253,8 @@ def download_iot_handlers(auto=True):
 
 def load_iot_handlers():
     """
-    This method loads local files: 'flectra/addons/hw_drivers/iot_handlers/drivers' and
-    'flectra/addons/hw_drivers/iot_handlers/interfaces'
+    This method loads local files: 'odoo/addons/hw_drivers/iot_handlers/drivers' and
+    'odoo/addons/hw_drivers/iot_handlers/interfaces'
     And execute these python drivers and interfaces
     """
     for directory in ['interfaces', 'drivers']:
@@ -269,7 +269,7 @@ def load_iot_handlers():
     http.addons_manifest = {}
     http.root = http.Root()
 
-def flectra_restart(delay):
+def odoo_restart(delay):
     IR = IoTRestart(delay)
     IR.start()
 

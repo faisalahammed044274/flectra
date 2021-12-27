@@ -1,11 +1,11 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo. See LICENSE file for full copyright and licensing details.
 
-from flectra.tests import tagged, Form
-from flectra.addons.mail.tests.common import mail_new_test_user
-from flectra.addons.test_mail.tests.common import TestMailCommon
-from flectra.exceptions import AccessError, ValidationError, UserError
-from flectra.tools import mute_logger, formataddr
+from odoo.tests import tagged, Form
+from odoo.addons.mail.tests.common import mail_new_test_user
+from odoo.addons.test_mail.tests.common import TestMailCommon
+from odoo.exceptions import AccessError, ValidationError, UserError
+from odoo.tools import mute_logger, formataddr
 
 
 @tagged('mail_channel')
@@ -34,7 +34,7 @@ class TestChannelAccessRights(TestMailCommon):
             'name': 'Private',
             'public': 'private'})
 
-    @mute_logger('flectra.addons.base.models.ir_model', 'flectra.models')
+    @mute_logger('odoo.addons.base.models.ir_model', 'odoo.models')
     def test_access_rights_public(self):
         # Read public group -> ok
         self.group_public.with_user(self.user_public).read()
@@ -59,7 +59,7 @@ class TestChannelAccessRights(TestMailCommon):
         with self.assertRaises(AccessError):
             self.group_public.with_user(self.user_public).unlink()
 
-    @mute_logger('flectra.addons.base.models.ir_model', 'flectra.models', 'flectra.models.unlink')
+    @mute_logger('odoo.addons.base.models.ir_model', 'odoo.models', 'odoo.models.unlink')
     def test_access_rights_groups(self):
         # Employee read employee-based group: ok
         self.group_pigs.with_user(self.user_employee).read()
@@ -81,7 +81,7 @@ class TestChannelAccessRights(TestMailCommon):
         with self.assertRaises(AccessError):
             self.group_private.with_user(self.user_employee).write({'name': 're-modified'})
 
-    @mute_logger('flectra.addons.base.models.ir_model', 'flectra.models')
+    @mute_logger('odoo.addons.base.models.ir_model', 'odoo.models')
     def test_access_rights_followers_ko(self):
         # self.group_private.name has been put in the cache during the setup as sudo
         # It must therefore be removed from the cache in other to validate the fact user_portal can't read it.
@@ -154,7 +154,7 @@ class TestChannelFeatures(TestMailCommon):
         self.assertEqual(self.test_channel.message_channel_ids, self.test_channel)
         self.assertEqual(self.test_channel.message_partner_ids, self.env['res.partner'])
 
-    @mute_logger('flectra.addons.mail.models.mail_mail', 'flectra.models.unlink')
+    @mute_logger('odoo.addons.mail.models.mail_mail', 'odoo.models.unlink')
     def test_channel_mailing_list_recipients(self):
         """ Posting a message on a mailing list should send one email to all recipients """
         self.env['ir.config_parameter'].set_param('mail.catchall.domain', 'schlouby.fr')
@@ -173,7 +173,7 @@ class TestChannelFeatures(TestMailCommon):
             self.test_channel.message_post(body="Test", message_type='comment', subtype_xmlid='mail.mt_comment')
         self.assertSentEmail(self.test_channel.env.user.partner_id, [self.partner_employee, self.test_partner])
 
-    @mute_logger('flectra.addons.mail.models.mail_mail', 'flectra.models.unlink')
+    @mute_logger('odoo.addons.mail.models.mail_mail', 'odoo.models.unlink')
     def test_channel_chat_recipients(self):
         """ Posting a message on a chat should not send emails """
         self.env['ir.config_parameter'].set_param('mail.catchall.domain', 'schlouby.fr')
@@ -184,7 +184,7 @@ class TestChannelFeatures(TestMailCommon):
         self.assertNotSentEmail()
         self.assertEqual(len(self._mails), 0)
 
-    @mute_logger('flectra.addons.mail.models.mail_mail', 'flectra.models.unlink')
+    @mute_logger('odoo.addons.mail.models.mail_mail', 'odoo.models.unlink')
     def test_channel_classic_recipients(self):
         """ Posting a message on a classic channel should work like classic post """
         self.test_channel.write({'alias_name': False})
@@ -258,7 +258,7 @@ class TestChannelFeatures(TestMailCommon):
             "Last message id should stay the same after mark channel as seen with an older message"
         )
 
-    @mute_logger('flectra.models.unlink')
+    @mute_logger('odoo.models.unlink')
     def test_channel_auto_unsubscribe_archived_or_deleted_users(self):
         """Archiving / deleting a user should automatically unsubscribe related partner from private channels"""
         test_channel_private = self.env['mail.channel'].with_context(self._test_context).create({
@@ -473,7 +473,7 @@ class TestChannelModeration(TestMailCommon):
         ]})
         self.assertEqual(self.channel_1.moderation_count, 2)
 
-    @mute_logger('flectra.addons.mail.models.mail_channel', 'flectra.models.unlink')
+    @mute_logger('odoo.addons.mail.models.mail_channel', 'odoo.models.unlink')
     def test_send_guidelines(self):
         self.channel_1.write({'channel_partner_ids': [(4, self.partner_portal.id), (4, self.partner_admin.id)]})
         self.channel_1._update_moderation_email([self.partner_admin.email], 'ban')
@@ -535,7 +535,7 @@ class TestChannelModeration(TestMailCommon):
             ('model', '=', 'mail.channel'), ('res_id', '=', self.channel_2.id)
         ]), 0)
 
-    @mute_logger('flectra.models.unlink')
+    @mute_logger('odoo.models.unlink')
     def test_message_post(self):
         email1 = 'test0@example.com'
         email2 = 'test1@example.com'

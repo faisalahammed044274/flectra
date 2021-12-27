@@ -1,4 +1,4 @@
-flectra.define('website_sale_coupon_delivery.checkout', function (require) {
+odoo.define('website_sale_coupon_delivery.checkout', function (require) {
 'use strict';
 
 var core = require('web.core');

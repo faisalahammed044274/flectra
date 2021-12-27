@@ -1,4 +1,4 @@
-flectra.define('web.mathUtils', function () {
+odoo.define('web.mathUtils', function () {
 "use strict";
 
 /**

@@ -1,4 +1,4 @@
-flectra.define('website_sale.tracking', function (require) {
+odoo.define('website_sale.tracking', function (require) {
 
 var publicWidget = require('web.public.widget');
 

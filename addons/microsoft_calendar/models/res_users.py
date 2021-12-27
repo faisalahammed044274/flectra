@@ -1,16 +1,16 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo. See LICENSE file for full copyright and licensing details.
 
 import logging
 import requests
-from flectra.addons.microsoft_calendar.models.microsoft_sync import microsoft_calendar_token
+from odoo.addons.microsoft_calendar.models.microsoft_sync import microsoft_calendar_token
 from datetime import timedelta
 
-from flectra import api, fields, models, _
-from flectra.exceptions import UserError
-from flectra.loglevels import exception_to_unicode
-from flectra.addons.microsoft_account.models.microsoft_service import MICROSOFT_TOKEN_ENDPOINT
-from flectra.addons.microsoft_calendar.utils.microsoft_calendar import MicrosoftCalendarService, InvalidSyncToken
+from odoo import api, fields, models, _
+from odoo.exceptions import UserError
+from odoo.loglevels import exception_to_unicode
+from odoo.addons.microsoft_account.models.microsoft_service import MICROSOFT_TOKEN_ENDPOINT
+from odoo.addons.microsoft_calendar.utils.microsoft_calendar import MicrosoftCalendarService, InvalidSyncToken
 
 _logger = logging.getLogger(__name__)
 
@@ -82,18 +82,18 @@ class User(models.Model):
                 full_sync = True
         self.microsoft_calendar_sync_token = next_sync_token
 
-        # Microsoft -> Flectra
+        # Microsoft -> Odoo
         recurrences = events.filter(lambda e: e.is_recurrent())
-        synced_events, synced_recurrences = self.env['calendar.event']._sync_microsoft2flectra(events, default_reminders=default_reminders) if events else (self.env['calendar.event'], self.env['calendar.recurrence'])
+        synced_events, synced_recurrences = self.env['calendar.event']._sync_microsoft2odoo(events, default_reminders=default_reminders) if events else (self.env['calendar.event'], self.env['calendar.recurrence'])
 
-        # Flectra -> Microsoft
+        # Odoo -> Microsoft
         recurrences = self.env['calendar.recurrence']._get_microsoft_records_to_sync(full_sync=full_sync)
         recurrences -= synced_recurrences
-        recurrences._sync_flectra2microsoft(calendar_service)
+        recurrences._sync_odoo2microsoft(calendar_service)
         synced_events |= recurrences.calendar_event_ids
 
         events = self.env['calendar.event']._get_microsoft_records_to_sync(full_sync=full_sync)
-        (events - synced_events)._sync_flectra2microsoft(calendar_service)
+        (events - synced_events)._sync_odoo2microsoft(calendar_service)
 
         return bool(events | synced_events) or bool(recurrences | synced_recurrences)
 

@@ -1,4 +1,4 @@
-flectra.define('lunch.LunchListView', function (require) {
+odoo.define('lunch.LunchListView', function (require) {
 "use strict";
 
 var LunchListController = require('lunch.LunchListController');

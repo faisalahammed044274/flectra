@@ -1,5 +1,5 @@
 # coding: utf-8
-from flectra import models, fields
+from odoo import models, fields
 
 
 class AccountTaxTemplate(models.Model):

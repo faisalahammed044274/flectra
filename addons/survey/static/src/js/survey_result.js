@@ -1,4 +1,4 @@
-flectra.define('survey.result', function (require) {
+odoo.define('survey.result', function (require) {
 'use strict';
 
 var _t = require('web.core')._t;

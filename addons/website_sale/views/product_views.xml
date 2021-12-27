@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<flectra>
+<odoo>
     <record id="product_template_search_view_website" model="ir.ui.view">
         <field name="name">product.template.search.published</field>
         <field name="model">product.template</field>
@@ -277,4 +277,4 @@
         </field>
     </record>
 
-</flectra>
+</odoo>
