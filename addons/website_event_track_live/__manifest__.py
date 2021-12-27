@@ -8,7 +8,7 @@
     'sequence': 1006,
     'version': '1.0',
     'summary': 'Support live tracks: streaming, participation, youtube',
-    'website': 'https://www.flectrahq.com/page/events',
+    'website': 'https://flectrahq.com/page/events',
     'description': "",
     'depends': [
         'website_event_track',

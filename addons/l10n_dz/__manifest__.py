@@ -6,7 +6,7 @@
     'version': '1.0',
     'category': 'Accounting/Localizations/Account Charts',
     'description': """
-This is the module to manage the accounting chart for Algeria in Flectra.
+This is the module to manage the accounting chart for Algeria in Odoo, Flectra.
 ======================================================================
 This module applies to companies based in Algeria.
 """,

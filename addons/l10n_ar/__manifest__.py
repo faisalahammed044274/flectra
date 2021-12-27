@@ -32,7 +32,7 @@ Demo data for testing:
   * Gritti (Monotributo)
   * Cerro Castor. IVA Liberado in Zona Franca
   * Expresso (Cliente del Exterior)
-  * Flectra (Proveedor del Exterior)
+  * Odoo (Proveedor del Exterior)
 
 Highlights:
 

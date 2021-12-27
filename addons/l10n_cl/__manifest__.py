@@ -9,7 +9,7 @@ Chilean accounting chart and tax localization.
 Plan contable chileno e impuestos de acuerdo a disposiciones vigentes
     """,
     'author': 'Blanco Martín & Asociados',
-    'website': 'https://doc.flectrahq.com/2.0/applications/finance/accounting/fiscal_localizations/localizations/chile.html',
+    'website': 'https://flectrahq.com/documentation/14.0/applications/finance/accounting/fiscal_localizations/localizations/chile.html',
     'category': 'Accounting/Localizations/Account Charts',
     'depends': [
         'contacts',

@@ -6,7 +6,7 @@
     'version': '0.1',
     'summary': "Subcontract Productions",
     'description': "",
-    'website': 'https://www.flectrahq.com/page/manufacturing',
+    'website': 'https://flectrahq.com/page/manufacturing',
     'category': 'Manufacturing/Manufacturing',
     'depends': ['mrp'],
     'data': [

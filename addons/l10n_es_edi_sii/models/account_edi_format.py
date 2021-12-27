@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Flectra. See LICENSE file for full copyright and licensing details.
 from collections import defaultdict
 from urllib3.util.ssl_ import create_urllib3_context, DEFAULT_CIPHERS
 from OpenSSL.crypto import load_certificate, load_privatekey, FILETYPE_PEM
@@ -37,13 +37,12 @@ class PatchedHTTPAdapter(requests.adapters.HTTPAdapter):
         # still made without checking temporary files exist.
         super().cert_verify(conn, url, verify, None)
         conn.cert_file = cert
-        conn.key_file = cert
+        conn.key_file = None
 
     def get_connection(self, url, proxies=None):
         # OVERRIDE
         # Patch the OpenSSLContext to decode the certificate in-memory.
         conn = super().get_connection(url, proxies=proxies)
-
         context = conn.conn_kw['ssl_context']
 
         def patched_load_cert_chain(l10n_es_flectra_certificate, keyfile=None, password=None):
@@ -673,5 +672,5 @@ class AccountEdiFormat(models.Model):
                     'res_model': inv._name,
                     'res_id': inv.id,
                 })
-                res[inv] = {'attachment': attachment}
+                res[inv]['attachment'] = attachment
         return res

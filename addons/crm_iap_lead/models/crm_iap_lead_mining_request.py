@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Flectra. See LICENSE file for full copyright and licensing details.
 
 import logging
 
@@ -8,7 +8,7 @@ from flectra.addons.iap.tools import iap_tools
 
 _logger = logging.getLogger(__name__)
 
-DEFAULT_ENDPOINT = 'https://iap-services.flectrahq.com'
+DEFAULT_ENDPOINT = 'https://iap-services.flectra.com'
 
 MAX_LEAD = 200
 

@@ -9,12 +9,12 @@
         'fetchmail',
         'account_edi'
     ],
-    'author': 'Flectra',
+    'author': 'Odoo',
     'description': """
 E-invoice implementation
     """,
     'category': 'Accounting/Localizations/EDI',
-    'website': 'http://www.flectrahq.com/',
+    'website': 'http://https://flectrahq.com/',
     'data': [
         'security/ir.model.access.csv',
         'data/account_edi_data.xml',

@@ -6,7 +6,7 @@
 
 # List of contributors:
 # Mag. Wolfgang Taferner <wolfgang.taferner@wt-io-it.at>
-# Josse Colpaert <jco@flectrahq.com>
+# Josse Colpaert <jco@flectra.com>
 
 {
     "name": "Austria - Accounting",

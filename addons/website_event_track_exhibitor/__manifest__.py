@@ -8,7 +8,7 @@
     'sequence': 1004,
     'version': '1.0',
     'summary': 'Event: upgrade sponsors to exhibitors',
-    'website': 'https://www.flectrahq.com/page/events',
+    'website': 'https://flectrahq.com/page/events',
     'description': "",
     'depends': [
         'website_event_track',

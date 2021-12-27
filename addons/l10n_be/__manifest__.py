@@ -6,7 +6,7 @@
     'version': '2.0',
     'category': 'Accounting/Localizations/Account Charts',
     'description': """
-This is the base module to manage the accounting chart for Belgium in Flectra.
+This is the base module to manage the accounting chart for Belgium in Odoo, Flectra.
 ==============================================================================
 
 After installing this module, the Configuration wizard for accounting is launched.
@@ -34,7 +34,7 @@ Wizards provided by this module:
         **Path to access :** Invoicing/Reporting/Legal Reports/Belgium Statements/Annual Listing Of VAT-Subjected Customers
 
     """,
-    'author': 'Noviat, FlectraHQ Inc.',
+    'author': 'Noviat, Odoo SA',
     'depends': [
         'account',
         'base_iban',

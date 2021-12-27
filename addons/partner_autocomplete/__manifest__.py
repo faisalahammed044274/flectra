@@ -9,7 +9,7 @@
     'description': """
        Auto-complete partner companies' data
     """,
-    'author': "FlectraHQ Inc.",
+    'author': "Odoo SA",
     'category': 'Hidden/Tools',
     'version': '1.0',
     'depends': [
@@ -26,6 +26,6 @@
     'qweb': [
         'static/src/xml/partner_autocomplete.xml',
     ],
-    'auto_install': False,
+    'auto_install': True,
     'license': 'LGPL-3',
 }

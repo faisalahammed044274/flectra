@@ -3,7 +3,7 @@
 {
     'name': 'G.C.C. - Arabic/English Invoice',
     'version': '1.0.0',
-    'author': 'Flectra',
+    'author': 'Odoo',
     'category': 'Accounting/Localizations',
     'description': """
     Arabic/English for GCC

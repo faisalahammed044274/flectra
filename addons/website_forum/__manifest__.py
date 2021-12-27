@@ -10,7 +10,7 @@
     'description': """
 Ask questions, get answers, no distractions
         """,
-    'website': 'https://www.flectrahq.com/page/community-builder',
+    'website': 'https://flectrahq.com/page/community-builder',
     'depends': [
         'auth_signup',
         'website_mail',

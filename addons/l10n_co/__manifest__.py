@@ -14,7 +14,7 @@
     'category': 'Accounting/Localizations/Account Charts',
     'description': 'Colombian Accounting and Tax Preconfiguration',
     'author': 'David Arnold (XOE Solutions)',
-    'website': 'https://www.flectrahq.com/colombia',
+    'website': 'https://flectrahq.com/colombia',
     'depends': [
         'account',
         'base_address_city',

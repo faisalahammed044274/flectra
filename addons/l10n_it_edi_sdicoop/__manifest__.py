@@ -9,13 +9,13 @@
         'account_edi_extended',
         'account_edi_proxy_client',
     ],
-    'author': 'Flectra',
+    'author': 'Odoo',
     'description': """
 E-invoice implementation for Italy with the web-service. Ability to send and receive document from SdiCoop. Files sent by SdiCoop are first stored on the proxy
 and then fetched by this module.
     """,
     'category': 'Accounting/Localizations/EDI',
-    'website': 'http://www.flectrahq.com/',
+    'website': 'http://https://flectrahq.com/',
     'data': [
         'data/cron.xml',
         'views/l10n_it_view.xml',

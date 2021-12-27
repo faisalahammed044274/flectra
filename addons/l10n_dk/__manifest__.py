@@ -4,8 +4,8 @@
 {
     'name': 'Denmark - Accounting',
     'version': '1.0',
-    'author': 'Flectra House ApS',
-    'website': 'https://odoohouse.dk',
+    'author': 'Odoo House ApS',
+    'website': 'https://flectrahouse.dk',
     'category': 'Accounting/Localizations/Account Charts',
     'description': """
 
@@ -87,7 +87,7 @@ Produkt setup:
 
 .
 
-Copyright 2018 Flectra House ApS
+Copyright 2018 Odoo House ApS
     """,
     'depends': ['account', 'base_iban', 'base_vat'],
     'data': [

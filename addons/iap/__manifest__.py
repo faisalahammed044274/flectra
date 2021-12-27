@@ -8,7 +8,7 @@
     'summary': 'Basic models and helpers to support In-App purchases.',
     'description': """
 This module provides standard tools (account model, context manager and helpers)
-to support In-App purchases inside Flectra. """,
+to support In-App purchases inside Odoo, Flectra. """,
     'depends': [
         'web',
         'base_setup'

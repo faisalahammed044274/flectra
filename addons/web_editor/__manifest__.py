@@ -5,7 +5,7 @@
     'name': 'Web Editor',
     'category': 'Hidden',
     'description': """
-Flectra Web Editor widget.
+Odoo Web Editor widget.
 ==========================
 
 """,

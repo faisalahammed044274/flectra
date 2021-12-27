@@ -9,7 +9,7 @@
 # Carlos Liébana <carlos.liebana@factorlibre.com>
 # Hugo Santos <hugo.santos@factorlibre.com>
 # Albert Cabedo <albert@gafic.com>
-# Olivier Colson <oco@flectrahq.com>
+# Olivier Colson <oco@flectra.com>
 # Roberto Lizana <robertolizana@trey.es>
 
 {

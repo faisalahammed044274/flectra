@@ -7,10 +7,10 @@
     'version': '1.0',
     'description':
         """
-Flectra Web core module.
+Odoo Web core module.
 ========================
 
-This module provides the core of the Flectra Web Client.
+This module provides the core of the Odoo Web Client.
         """,
     'depends': ['base'],
     'auto_install': True,

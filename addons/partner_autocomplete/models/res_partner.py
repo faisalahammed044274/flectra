@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Flectra. See LICENSE file for full copyright and licensing details.
 
 import logging
 import json
@@ -10,7 +10,7 @@ from requests.exceptions import ConnectionError, HTTPError
 
 _logger = logging.getLogger(__name__)
 
-DEFAULT_ENDPOINT = 'https://partner-autocomplete.flectrahq.com'
+DEFAULT_ENDPOINT = 'https://partner-autocomplete.flectra.com'
 
 class ResPartner(models.Model):
     _name = 'res.partner'

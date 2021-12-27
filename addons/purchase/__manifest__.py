@@ -8,7 +8,7 @@
     'sequence': 35,
     'summary': 'Purchase orders, tenders and agreements',
     'description': "",
-    'website': 'https://www.flectrahq.com/page/purchase',
+    'website': 'https://flectrahq.com/page/purchase',
     'depends': ['account'],
     'data': [
         'security/purchase_security.xml',
