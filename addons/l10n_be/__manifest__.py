@@ -1,12 +1,12 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo. See LICENSE file for full copyright and licensing details.
 
 {
     'name': 'Belgium - Accounting',
     'version': '2.0',
     'category': 'Accounting/Localizations/Account Charts',
     'description': """
-This is the base module to manage the accounting chart for Belgium in Odoo, Flectra.
+This is the base module to manage the accounting chart for Belgium in Odoo.
 ==============================================================================
 
 After installing this module, the Configuration wizard for accounting is launched.
