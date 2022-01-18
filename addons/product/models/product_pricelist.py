@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-# Part of Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
 
 from itertools import chain
 
@@ -584,8 +584,8 @@ class PricelistItem(models.Model):
         res = super(PricelistItem, self).write(values)
         # When the pricelist changes we need the product.template price
         # to be invalided and recomputed.
-        self.flush()
-        self.invalidate_cache()
+        self.env['product.template'].invalidate_cache(['price'])
+        self.env['product.product'].invalidate_cache(['price'])
         return res
 
     def _compute_price(self, price, price_uom, product, quantity=1.0, partner=False):

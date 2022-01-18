@@ -1,4 +1,4 @@
-# Part of Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
 from flectra.tests.common import SavepointCase, tagged
 from flectra.exceptions import ValidationError
 from unittest.mock import patch

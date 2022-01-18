@@ -1,4 +1,4 @@
-# Part of Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
 from flectra import fields
 from flectra.tests.common import Form
 from flectra.addons.account.tests.common import AccountTestInvoicingCommon

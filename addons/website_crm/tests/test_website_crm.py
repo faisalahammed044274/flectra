@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-# Part of Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
 
 import flectra.tests
 
@@ -15,4 +15,4 @@ class TestWebsiteCrm(flectra.tests.HttpCase):
         self.assertEqual(len(record), 1)
         self.assertEqual(record.contact_name, 'John Smith')
         self.assertEqual(record.email_from, 'john@smith.com')
-        self.assertEqual(record.partner_name, 'Flectra S.A.')
+        self.assertEqual(record.partner_name, 'FlectraHQ, Odoo S.A.')

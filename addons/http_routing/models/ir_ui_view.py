@@ -1,5 +1,5 @@
 # -*- coding: ascii -*-
-# Part of Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
 
 from flectra import api, models
 from flectra.addons.http_routing.models.ir_http import slug, unslug_url

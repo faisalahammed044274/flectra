@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-# Part of Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
 
 from flectra import models, _
 from flectra.tools import html2plaintext, html_escape

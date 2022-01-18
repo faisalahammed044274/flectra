@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-# Part of Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
 
 from uuid import uuid4
 import requests
@@ -97,7 +97,7 @@ class GoogleCalendarService():
         readonly = '.readonly' if RO else ''
         return 'https://www.googleapis.com/auth/calendar%s' % (readonly)
 
-    def _google_authentication_url(self, from_url='http://www.flectra.com'):
+    def _google_authentication_url(self, from_url='http://www.flectrahq.com'):
         return self.google_service._get_authorize_uri(from_url, service='calendar', scope=self._get_calendar_scope())
 
     def _can_authorize_google(self, user):

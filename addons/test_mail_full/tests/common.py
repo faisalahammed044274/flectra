@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-# Part of Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
 
 from flectra.addons.phone_validation.tools import phone_validation
 from flectra.addons.mass_mailing_sms.tests.common import MassSMSCommon
@@ -19,7 +19,7 @@ class TestMailFullCommon(TestMassMailCommon, MassSMSCommon):
             'mailing_model_id': cls.env['ir.model']._get('mail.test.sms').id,
             'mailing_type': 'sms',
             'mailing_domain': '%s' % repr([('name', 'ilike', 'SMSTest')]),
-            'body_plaintext': 'Dear ${object.display_name} this is a mass SMS with two links http://www.flectra.com/smstest and http://www.flectra.com/smstest/${object.id}',
+            'body_plaintext': 'Dear ${object.display_name} this is a mass SMS with two links http://www.flectrahq.com/smstest and http://www.flectrahq.com/smstest/${object.id}',
             'sms_force_send': True,
             'sms_allow_unsubscribe': True,
         })

@@ -1,4 +1,4 @@
-# Part of Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
 from flectra.addons.point_of_sale.controllers.main import PosController
 from flectra import http
 from flectra.http import request

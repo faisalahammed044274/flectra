@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-# Part of Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
 import logging
 from datetime import timedelta
 from functools import partial
@@ -633,7 +633,6 @@ class PosOrder(models.Model):
             'datas': ticket,
             'res_model': 'pos.order',
             'res_id': self.ids[0],
-            'store_fname': filename,
             'mimetype': 'image/jpeg',
         })
         mail_values = {
@@ -652,7 +651,6 @@ class PosOrder(models.Model):
                 'name': filename,
                 'type': 'binary',
                 'datas': base64.b64encode(report[0]),
-                'store_fname': filename,
                 'res_model': 'pos.order',
                 'res_id': self.ids[0],
                 'mimetype': 'application/x-pdf'

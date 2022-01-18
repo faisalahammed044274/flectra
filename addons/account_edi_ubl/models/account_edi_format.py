@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-# Part of Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
 from flectra import api, models, fields, tools, _
 from flectra.tools import DEFAULT_SERVER_DATE_FORMAT, float_repr
 from flectra.tests.common import Form

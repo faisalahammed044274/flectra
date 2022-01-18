@@ -1,5 +1,5 @@
 # -*- coding:utf-8 -*-
-#az Part of Flectra. See LICENSE file for full copyright and licensing details.
+#az Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
 
 from flectra import api, fields, models, tools
 

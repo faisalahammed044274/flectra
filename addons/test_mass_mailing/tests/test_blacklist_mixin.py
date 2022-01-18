@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-# Part of Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
 
 from flectra.addons.test_mass_mailing.models.mailing_models import MailingBLacklist
 from flectra.addons.test_mass_mailing.tests import common

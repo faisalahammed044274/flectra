@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-# Part of Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
 
 from flectra import api, fields, models, _
 from flectra.addons.base_iban.models.res_partner_bank import normalize_iban, pretty_iban, validate_iban

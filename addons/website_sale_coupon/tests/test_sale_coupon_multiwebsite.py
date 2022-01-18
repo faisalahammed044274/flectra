@@ -1,4 +1,4 @@
-# Part of Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
 
 from flectra.addons.sale_coupon.tests.test_program_numbers import TestSaleCouponProgramNumbers
 from flectra.addons.website.tools import MockRequest

@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-# Part of Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
 
 from flectra.addons.sale_timesheet.tests.common_reporting import TestCommonReporting
 from flectra.tools import float_compare, float_is_zero

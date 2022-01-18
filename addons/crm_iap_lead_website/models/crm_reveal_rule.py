@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-# Part of Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
 
 import datetime
 import itertools
@@ -15,7 +15,7 @@ from flectra.exceptions import ValidationError
 
 _logger = logging.getLogger(__name__)
 
-DEFAULT_ENDPOINT = 'https://iap-services.flectra.com'
+DEFAULT_ENDPOINT = 'https://iap-services.flectrahq.com'
 DEFAULT_REVEAL_BATCH_LIMIT = 25
 DEFAULT_REVEAL_MONTH_VALID = 6
 

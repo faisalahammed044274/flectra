@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-# Part of Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
 
 import itertools
 import random
@@ -64,8 +64,8 @@ class MailBot(models.AbstractModel):
             # help message
             elif self._is_help_requested(body) or flectrabot_state == 'idle':
                 return _("Unfortunately, I'm just a bot 😞 I don't understand! If you need help discovering our product, please check "
-                         "<a href=\"https://www.flectra.com/page/docs\" target=\"_blank\">our documentation</a> or "
-                         "<a href=\"https://www.flectra.com/slides\" target=\"_blank\">our videos</a>.")
+                         "<a href=\"https://www.flectrahq.com/page/docs\" target=\"_blank\">our documentation</a> or "
+                         "<a href=\"https://www.flectrahq.com/slides\" target=\"_blank\">our videos</a>.")
             else:
                 # repeat question
                 if flectrabot_state == 'onboarding_emoji':

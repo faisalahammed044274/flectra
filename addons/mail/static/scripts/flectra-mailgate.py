@@ -1,5 +1,5 @@
 #!/usr/bin/env python2
-# Part of Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
 #
 # flectra-mailgate
 #

@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-# Part of Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
 import unittest
 from flectra.addons.stock_landed_costs.tests.common import TestStockLandedCostsCommon
 from flectra.addons.stock_landed_costs.tests.test_stockvaluationlayer import TestStockValuationLCCommon

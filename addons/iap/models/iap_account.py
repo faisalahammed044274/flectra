@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-# Part of Flectra. See LICENSE file for full copyright and licensing details.
+# Part of Odoo, Flectra. See LICENSE file for full copyright and licensing details.
 
 import logging
 import uuid
@@ -10,7 +10,7 @@ from flectra.addons.iap.tools import iap_tools
 
 _logger = logging.getLogger(__name__)
 
-DEFAULT_ENDPOINT = 'https://iap.flectra.com'
+DEFAULT_ENDPOINT = 'https://iap.flectrahq.com'
 
 
 class IapAccount(models.Model):
