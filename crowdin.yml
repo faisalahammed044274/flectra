@@ -1,0 +1,4 @@
+files:
+  - source: /addons/l10n_ch/i18n/*.pot
+    translation: /%original_path%/%locale_with_underscore%.po
+
