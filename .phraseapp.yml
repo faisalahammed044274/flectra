@@ -1,1 +1,13 @@
-
+phrase:
+  access_token: 48127e731bd082cbd4b97e4d3732afad8bfe6227af9a350774959216f6e21a8f
+  project_id: 02a1000a65abc6d740d47ef5cedb70ba
+  push:
+    sources:
+    - file: /addons/l10n_ch/i18n/<locale_name>.po
+      params:
+        file_format: gettext
+  pull:
+    targets:
+    - file: /addons/l10n_ch/i18n/l10n_ch.pot
+      params:
+        file_format: gettext_template
