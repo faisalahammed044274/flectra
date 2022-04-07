@@ -3,11 +3,11 @@ phrase:
   project_id: 02a1000a65abc6d740d47ef5cedb70ba
   push:
     sources:
-    - file: /addons/l10n_ch/i18n/<locale_name>.po
+    - file: ./addons/l10n_ch/i18n/<locale_name>.po
       params:
         file_format: gettext
   pull:
     targets:
-    - file: /addons/l10n_ch/i18n/l10n_ch.pot
+    - file: ./addons/l10n_ch/i18n/l10n_ch.pot
       params:
         file_format: gettext_template
